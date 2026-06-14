@@ -1,0 +1,26 @@
+{
+  "id": "object-create",
+  "title": "Object.create",
+  "aliases": [
+    "Object.create(null)"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "prototype-chain",
+    "object-assign",
+    "null-value"
+  ],
+  "usedInFlashcards": [
+    54,
+    55
+  ],
+  "body": "## Definition\r\n\r\n**`Object.create(proto)`** creates a new object with the specified object as its `[[Prototype]]` — or `null` for a dictionary with no inherited properties.\r\n\r\n## Why it exists\r\n\r\nExplicit prototype wiring without constructors; pure map objects without `Object.prototype` pollution.\r\n\r\n## How it works\r\n\r\n```js\r\nconst dict = Object.create(null);\r\ndict.count = 1; // no inherited toString/hasOwnProperty\r\n\r\nconst child = Object.create(parent);\r\n```\r\n\r\nAlternative to `new Constructor()` when you only need prototype linkage.\r\n\r\n## Common confusion\r\n\r\n`Object.create({})` still inherits from `Object.prototype` via the empty object proto. Use `null` for true dictionaries.\r\n\r\n## In practice\r\n\r\nSafe maps, prototype delegation patterns, and polyfilling `Object.create` in older environments.",
+  "bodyLinked": "## Definition\r\n\r\n**`Object.create(proto)`** creates a [new](concept:new-operator) object with the specified object as its [[[Prototype]]](concept:prototype-chain) — or [null](concept:null-value) for a dictionary with no inherited properties.\r\n\r\n## Why it exists\r\n\r\nExplicit [prototype](concept:prototype-chain) wiring without constructors; pure [map objects](concept:map-data-structure) without [Object.prototype](concept:prototype-chain) pollution.\r\n\r\n## How it works\r\n\r\n```js\r\nconst dict = Object.create(null);\r\ndict.count = 1; // no inherited toString/hasOwnProperty\r\n\r\nconst child = Object.create(parent);\r\n```\r\n\r\nAlternative to `new Constructor()` when you only need [prototype](concept:prototype-chain) linkage.\r\n\r\n## Common confusion\r\n\r\n`Object.create({})` still inherits from [Object.prototype](concept:prototype-chain) via the empty object proto. Use [null](concept:null-value) for true dictionaries.\r\n\r\n## In practice\r\n\r\nSafe maps, [prototype](concept:prototype-chain) delegation patterns, and polyfilling [Object.create](concept:object-create) in older environments.",
+  "conceptIds": [
+    "new-operator",
+    "null-value",
+    "prototype-chain",
+    "map-data-structure",
+    "object-create"
+  ]
+}

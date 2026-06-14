@@ -1,0 +1,33 @@
+{
+  "id": "use-callback",
+  "title": "useCallback",
+  "aliases": [
+    "useCallback hook",
+    "React useCallback"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "use-memo",
+    "react-memo",
+    "closure"
+  ],
+  "usedInFlashcards": [
+    140,
+    141,
+    146,
+    148,
+    182,
+    189,
+    201,
+    210
+  ],
+  "body": "## Definition\r\n\r\n**useCallback** memoizes a **function reference** between renders when [dependencies](concept:dependency-array) are unchanged.\r\n\r\n## Why it exists\r\n\r\nStable function props for [React.memo](concept:react-memo) children and stable effect dependencies.\r\n\r\n## How it works\r\n\r\n```js\r\nconst onSave = useCallback(() => save(user), [user]);\r\n```\r\n\r\nInternally similar to `useMemo(() => fn, deps)`. Empty deps → same function forever (watch stale [closures](concept:closure)).\r\n\r\n## Common confusion\r\n\r\nDoes not memoize child by itself — child must be wrapped in `memo`. Overuse everywhere adds complexity without benefit.\r\n\r\n## In practice\r\n\r\nUse when profiling shows unnecessary child renders or dep churn in effects.",
+  "bodyLinked": "## Definition\r\n\r\n**[useCallback](concept:use-callback)** memoizes a **function reference** between renders when [dependencies](concept:dependency-array) are unchanged.\r\n\r\n## Why it exists\r\n\r\nStable function props for [React.memo](concept:react-memo) children and stable [effect dependencies](concept:dependency-array).\r\n\r\n## How it works\r\n\r\n```js\r\nconst onSave = useCallback(() => save(user), [user]);\r\n```\r\n\r\nInternally similar to `useMemo(() => fn, deps)`. Empty deps → same function forever (watch stale [closures](concept:closure)).\r\n\r\n## Common confusion\r\n\r\nDoes not memoize child by itself — child must be wrapped in [memo](concept:react-memo). Overuse everywhere adds complexity without benefit.\r\n\r\n## In practice\r\n\r\nUse when [profiling](concept:js-profiling) shows unnecessary child renders or dep churn in effects.",
+  "conceptIds": [
+    "use-callback",
+    "dependency-array",
+    "react-memo",
+    "closure",
+    "js-profiling"
+  ]
+}

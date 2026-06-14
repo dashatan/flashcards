@@ -1,0 +1,36 @@
+{
+  "id": "getters-setters",
+  "title": "Getters and setters",
+  "aliases": [
+    "accessor properties",
+    "get",
+    "set",
+    "getters",
+    "setters"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "es6-class",
+    "object-define-property",
+    "getters-setters"
+  ],
+  "usedInFlashcards": [
+    30,
+    56,
+    59,
+    60,
+    61,
+    68,
+    87,
+    135,
+    274
+  ],
+  "body": "## Definition\r\n\r\n**Getters** and **setters** are accessor properties defined with `get`/`set` that intercept read and write operations on an object.\r\n\r\n## Why it exists\r\n\r\nComputed properties, validation on assignment, lazy initialization, and encapsulation without separate methods.\r\n\r\n## How it works\r\n\r\n```js\r\nconst user = {\r\n  first: \"Ada\",\r\n  last: \"Lovelace\",\r\n  get fullName() { return `${this.first} ${this.last}`; },\r\n  set fullName(v) {\r\n    [this.first, this.last] = v.split(\" \");\r\n  },\r\n};\r\n```\r\n\r\nAlso defined via [Object.defineProperty](concept:object-define-property) or class syntax.\r\n\r\n## Common confusion\r\n\r\nGetters run on every access — avoid expensive work without memoization. Setters without getters create read-only properties at runtime.\r\n\r\n## In practice\r\n\r\nCommon in data models, Vue 2 reactivity, and API wrappers that expose derived fields.",
+  "bodyLinked": "## Definition\r\n\r\n**[Getters](concept:getters-setters)** and **[setters](concept:getters-setters)** are [accessor properties](concept:getters-setters) defined with [get](concept:getters-setters)/[set](concept:getters-setters) that intercept read and write operations on an object.\r\n\r\n## Why it exists\r\n\r\nComputed properties, validation on assignment, lazy initialization, and encapsulation without separate methods.\r\n\r\n## How it works\r\n\r\n```js\r\nconst user = {\r\n  first: \"Ada\",\r\n  last: \"Lovelace\",\r\n  get fullName() { return `${this.first} ${this.last}`; },\r\n  set fullName(v) {\r\n    [this.first, this.last] = v.split(\" \");\r\n  },\r\n};\r\n```\r\n\r\nAlso defined via [Object.defineProperty](concept:object-define-property) or [class syntax](concept:es6-class).\r\n\r\n## Common confusion\r\n\r\n[Getters](concept:getters-setters) run on [every](concept:array-some-every) access — avoid expensive work without memoization. [Setters](concept:getters-setters) without [getters](concept:getters-setters) create read-only properties at runtime.\r\n\r\n## In practice\r\n\r\nCommon in data models, Vue 2 reactivity, and API wrappers that expose derived fields.",
+  "conceptIds": [
+    "getters-setters",
+    "object-define-property",
+    "es6-class",
+    "array-some-every"
+  ]
+}

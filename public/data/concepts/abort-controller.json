@@ -1,0 +1,30 @@
+{
+  "id": "abort-controller",
+  "title": "AbortController",
+  "aliases": [
+    "AbortController",
+    "AbortSignal",
+    "abort signal"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "fetch",
+    "promise",
+    "async-await"
+  ],
+  "usedInFlashcards": [
+    47,
+    139
+  ],
+  "body": "## Definition\r\n\r\n**`AbortController`** provides an **`AbortSignal`** to cancel async operations like `fetch`, event listeners, and some APIs cooperatively.\r\n\r\n## Why it exists\r\n\r\nCancel in-flight requests when users navigate away, debounce searches, or abort stale responses.\r\n\r\n## How it works\r\n\r\n```js\r\nconst controller = new AbortController();\r\nfetch(\"/api\", { signal: controller.signal });\r\ncontroller.abort(); // rejects fetch with AbortError\r\n```\r\n\r\nPass `signal` to supported APIs; listen with `signal.addEventListener(\"abort\", ...)`.\r\n\r\n## Common confusion\r\n\r\nAbort is cooperative — code must respect the signal. Aborted [Promises](concept:promise) reject; handle errors explicitly.\r\n\r\n## In practice\r\n\r\nStandard for cancellable `fetch` in React effects cleanup and [TanStack Query](concept:tanstack-query) cancellation.",
+  "bodyLinked": "## Definition\r\n\r\n**[AbortController](concept:abort-controller)** provides an **[AbortSignal](concept:abort-controller)** to cancel [async](concept:async-await) operations like [fetch](concept:fetch), event listeners, and [some](concept:array-some-every) APIs cooperatively.\r\n\r\n## Why it exists\r\n\r\nCancel in-flight requests when users navigate away, [debounce](concept:debounce-throttle) searches, or abort stale responses.\r\n\r\n## How it works\r\n\r\n```js\r\nconst controller = new AbortController();\r\nfetch(\"/api\", { signal: controller.signal });\r\ncontroller.abort(); // rejects fetch with AbortError\r\n```\r\n\r\nPass `signal` to supported APIs; listen with `signal.addEventListener(\"abort\", ...)`.\r\n\r\n## Common confusion\r\n\r\nAbort is cooperative — code must respect the signal. Aborted [Promises](concept:promise) reject; handle errors explicitly.\r\n\r\n## In practice\r\n\r\nStandard for cancellable [fetch](concept:fetch) in React effects cleanup and [TanStack Query](concept:tanstack-query) cancellation.",
+  "conceptIds": [
+    "abort-controller",
+    "async-await",
+    "fetch",
+    "array-some-every",
+    "debounce-throttle",
+    "promise",
+    "tanstack-query"
+  ]
+}

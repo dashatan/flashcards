@@ -1,0 +1,26 @@
+{
+  "id": "service-worker",
+  "title": "Service Worker",
+  "aliases": [
+    "service workers",
+    "Service Worker API"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "pwa",
+    "lazy-loading"
+  ],
+  "usedInFlashcards": [
+    299,
+    300
+  ],
+  "body": "## Definition\r\n\r\nA **service worker** is a script the browser runs between your app and the network — enabling offline caches, push notifications, and background sync.\r\n\r\n## Why it exists\r\n\r\n[PWA](concept:pwa) offline shells and advanced caching strategies beyond HTTP cache alone.\r\n\r\n## How it works\r\n\r\n`navigator.serviceWorker.register(\"/sw.js\")` — separate thread; intercepts fetch events. Strategies: cache-first, network-first, stale-while-revalidate.\r\n\r\n## In practice\r\n\r\nThis app uses Serwist for precaching; MSW uses SW in tests.",
+  "bodyLinked": "## Definition\r\n\r\nA **[service worker](concept:service-worker)** is a script the browser runs between your app and the network — enabling offline caches, push notifications, and background sync.\r\n\r\n## Why it exists\r\n\r\n[PWA](concept:pwa) offline shells and advanced caching strategies beyond HTTP cache alone.\r\n\r\n## How it works\r\n\r\n`navigator.serviceWorker.register(\"/sw.js\")` — separate thread; intercepts [fetch](concept:fetch) events. Strategies: cache-first, network-first, stale-while-revalidate.\r\n\r\n## In practice\r\n\r\n[This](concept:this-binding) app uses Serwist for precaching; [MSW](concept:msw) uses SW in tests.",
+  "conceptIds": [
+    "service-worker",
+    "pwa",
+    "fetch",
+    "this-binding",
+    "msw"
+  ]
+}

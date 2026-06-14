@@ -1,0 +1,23 @@
+{
+  "id": "strangler-fig-pattern",
+  "title": "Strangler Fig Pattern",
+  "aliases": [
+    "strangler fig",
+    "strangler pattern"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "technical-debt",
+    "micro-frontends"
+  ],
+  "usedInFlashcards": [
+    320
+  ],
+  "body": "## Definition\r\n\r\nThe **strangler fig pattern** incrementally replaces a legacy system by routing slices of traffic/features to the new implementation until the old system is “strangled.”\r\n\r\n## Why it exists\r\n\r\nAvoid risky big-bang rewrites; deliver value while migrating.\r\n\r\n## How it works\r\n\r\nProxy or router sends `/new-feature` to new stack, rest to legacy. Expand coverage over releases.\r\n\r\n## In practice\r\n\r\nLegacy React class app → hooks + new routes; old SPA → Next.js piece by piece.",
+  "bodyLinked": "## Definition\r\n\r\nThe **[strangler fig pattern](concept:strangler-fig-pattern)** incrementally replaces a legacy system by routing slices of traffic/features to the [new](concept:new-operator) implementation until the old system is “strangled.”\r\n\r\n## Why it exists\r\n\r\nAvoid risky big-bang rewrites; deliver value while migrating.\r\n\r\n## How it works\r\n\r\nProxy or router sends `/new-feature` to [new](concept:new-operator) stack, rest to legacy. Expand coverage over releases.\r\n\r\n## In practice\r\n\r\nLegacy React [class](concept:es6-class) app → hooks + [new](concept:new-operator) routes; old SPA → Next.js piece by piece.",
+  "conceptIds": [
+    "strangler-fig-pattern",
+    "new-operator",
+    "es6-class"
+  ]
+}

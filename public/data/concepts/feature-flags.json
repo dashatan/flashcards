@@ -1,0 +1,24 @@
+{
+  "id": "feature-flags",
+  "title": "Feature Flags",
+  "aliases": [
+    "feature flags",
+    "feature toggles"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "ci-cd",
+    "strangler-fig-pattern"
+  ],
+  "usedInFlashcards": [
+    320,
+    321
+  ],
+  "body": "## Definition\r\n\r\n**Feature flags** gate features behind runtime configuration — enable gradual rollout, A/B tests, or kill switches without redeploy.\r\n\r\n## Why it exists\r\n\r\nSafe delivery of risky changes; canary releases; decouple deploy from release.\r\n\r\n## How it works\r\n\r\nTools: LaunchDarkly, Unleash, or config service. Wrap UI: `if (flags.newDashboard) ...`. Clean up flags after full rollout.\r\n\r\n## In practice\r\n\r\nPair with [CI/CD](concept:ci-cd); avoid permanent flag accumulation (technical debt).",
+  "bodyLinked": "## Definition\r\n\r\n**[Feature flags](concept:feature-flags)** gate features behind runtime configuration — enable gradual rollout, A/B tests, or kill switches without redeploy.\r\n\r\n## Why it exists\r\n\r\nSafe delivery of risky changes; canary releases; decouple deploy from release.\r\n\r\n## How it works\r\n\r\nTools: LaunchDarkly, Unleash, or config service. Wrap UI: `if (flags.newDashboard) ...`. Clean up flags after full rollout.\r\n\r\n## In practice\r\n\r\nPair with [CI/CD](concept:ci-cd); avoid permanent flag accumulation ([technical debt](concept:technical-debt)).",
+  "conceptIds": [
+    "feature-flags",
+    "ci-cd",
+    "technical-debt"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "react-testing-library",
+  "title": "React Testing Library",
+  "aliases": [
+    "RTL",
+    "Testing Library",
+    "testing-library/react"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "testing-pyramid",
+    "msw"
+  ],
+  "usedInFlashcards": [
+    232,
+    238,
+    239
+  ],
+  "body": "## Definition\r\n\r\n**React Testing Library** tests components by querying the DOM like users do — roles, labels, text — not internal implementation.\r\n\r\n## Why it exists\r\n\r\nConfidence that UI works for users; resists brittle tests on state/private methods (unlike Enzyme).\r\n\r\n## How it works\r\n\r\n```js\r\nrender(<Login />);\r\nawait userEvent.click(screen.getByRole(\"button\", { name: /sign in/i }));\r\nexpect(screen.getByText(\"Welcome\")).toBeInTheDocument();\r\n```\r\n\r\nUse `waitFor`, `findBy*` for async; `act()` for state updates.\r\n\r\n## In practice\r\n\r\nDefault React unit/integration test stack with Vitest or Jest.",
+  "bodyLinked": "## Definition\r\n\r\n**[React Testing Library](concept:react-testing-library)** tests components by querying the [DOM](concept:dom) like users do — roles, labels, text — not internal implementation.\r\n\r\n## Why it exists\r\n\r\nConfidence that UI works for users; resists brittle tests on state/private methods (unlike Enzyme).\r\n\r\n## How it works\r\n\r\n```js\r\nrender(<Login />);\r\nawait userEvent.click(screen.getByRole(\"button\", { name: /sign in/i }));\r\nexpect(screen.getByText(\"Welcome\")).toBeInTheDocument();\r\n```\r\n\r\nUse `waitFor`, `findBy*` for [async](concept:async-await); [act()](concept:react-act) for state updates.\r\n\r\n## In practice\r\n\r\nDefault React unit/integration test stack with Vitest or Jest.",
+  "conceptIds": [
+    "react-testing-library",
+    "dom",
+    "async-await",
+    "react-act"
+  ]
+}

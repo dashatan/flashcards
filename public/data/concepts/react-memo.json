@@ -1,0 +1,33 @@
+{
+  "id": "react-memo",
+  "title": "React.memo",
+  "aliases": [
+    "memo",
+    "React.memo"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "use-memo",
+    "use-callback",
+    "react-re-render"
+  ],
+  "usedInFlashcards": [
+    146,
+    148,
+    150,
+    182,
+    186,
+    189,
+    210
+  ],
+  "body": "## Definition\r\n\r\n**React.memo** wraps a component to skip [re-render](concept:react-re-render) when props are shallowly equal to the previous render.\r\n\r\n## Why it exists\r\n\r\nCut unnecessary work for pure presentational components with stable props.\r\n\r\n## How it works\r\n\r\n```js\r\nconst Row = memo(function Row({ item }) { ... });\r\n```\r\n\r\nCustom `arePropsEqual` optional. Compares each prop with `Object.is`.\r\n\r\n## Common confusion\r\n\r\nNew object/function props every parent render break memo — pair with [useMemo](concept:use-memo)/[useCallback](concept:use-callback). Memo adds comparison overhead.\r\n\r\n## In practice\r\n\r\nList rows, heavy charts, icon components — profile before sprinkling memo everywhere.",
+  "bodyLinked": "## Definition\r\n\r\n**[React.memo](concept:react-memo)** wraps a component to skip [re-render](concept:react-re-render) when props are shallowly equal to the previous render.\r\n\r\n## Why it exists\r\n\r\nCut unnecessary work for pure presentational components with stable props.\r\n\r\n## How it works\r\n\r\n```js\r\nconst Row = memo(function Row({ item }) { ... });\r\n```\r\n\r\nCustom `arePropsEqual` optional. Compares each prop with `Object.is`.\r\n\r\n## Common confusion\r\n\r\n[New](concept:new-operator) object/function props [every](concept:array-some-every) parent render break [memo](concept:react-memo) — pair with [useMemo](concept:use-memo)/[useCallback](concept:use-callback). [Memo](concept:react-memo) adds comparison overhead.\r\n\r\n## In practice\r\n\r\nList rows, heavy charts, icon components — profile before sprinkling [memo](concept:react-memo) everywhere.",
+  "conceptIds": [
+    "react-memo",
+    "react-re-render",
+    "new-operator",
+    "array-some-every",
+    "use-memo",
+    "use-callback"
+  ]
+}

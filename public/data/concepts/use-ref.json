@@ -1,0 +1,28 @@
+{
+  "id": "use-ref",
+  "title": "useRef",
+  "aliases": [
+    "useRef hook",
+    "React useRef"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "use-state",
+    "closure",
+    "dom"
+  ],
+  "usedInFlashcards": [
+    151,
+    152
+  ],
+  "body": "## Definition\r\n\r\n**useRef** returns a mutable `{ current }` object persisting across renders without causing [re-renders](concept:react-re-render) when `current` changes.\r\n\r\n## Why it exists\r\n\r\nDOM node access, timer IDs, previous value storage, and instance-like variables in function components.\r\n\r\n## How it works\r\n\r\n```js\r\nconst inputRef = useRef(null);\r\ninputRef.current?.focus();\r\n```\r\n\r\nUpdating `ref.current` does not trigger render. Ref identity is stable.\r\n\r\n## Common confusion\r\n\r\nNot for derived UI state — use [useState](concept:use-state). Reading/writing `ref.current` during render is discouraged except initialization patterns.\r\n\r\n## In practice\r\n\r\nFocus management, scroll containers, integrating non-React libraries, avoiding stale closures in callbacks.",
+  "bodyLinked": "## Definition\r\n\r\n**[useRef](concept:use-ref)** returns a mutable `{ current }` object persisting across renders without causing [re-renders](concept:react-re-render) when `current` changes.\r\n\r\n## Why it exists\r\n\r\n[DOM](concept:dom) node access, timer IDs, previous value storage, and instance-like variables in function components.\r\n\r\n## How it works\r\n\r\n```js\r\nconst inputRef = useRef(null);\r\ninputRef.current?.focus();\r\n```\r\n\r\nUpdating `ref.current` does not trigger render. Ref identity is stable.\r\n\r\n## Common confusion\r\n\r\nNot for derived [UI state](concept:server-state-vs-client-state) — use [useState](concept:use-state). Reading/writing `ref.current` during render is discouraged except initialization patterns.\r\n\r\n## In practice\r\n\r\nFocus management, scroll containers, integrating non-React libraries, avoiding stale [closures](concept:closure) in callbacks.",
+  "conceptIds": [
+    "use-ref",
+    "react-re-render",
+    "dom",
+    "server-state-vs-client-state",
+    "use-state",
+    "closure"
+  ]
+}

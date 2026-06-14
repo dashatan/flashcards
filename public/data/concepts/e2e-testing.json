@@ -1,0 +1,27 @@
+{
+  "id": "e2e-testing",
+  "title": "End-to-end testing",
+  "aliases": [
+    "e2e testing",
+    "e2e tests",
+    "Playwright",
+    "Cypress"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "testing-pyramid",
+    "react-testing-library"
+  ],
+  "usedInFlashcards": [
+    232,
+    244
+  ],
+  "body": "## Definition\r\n\r\n**End-to-end tests** drive the real app in a browser (or WebDriver) validating full user flows — login, checkout, critical paths.\r\n\r\n## Why it exists\r\n\r\nCatch integration issues unit tests miss — routing, network, and real [DOM](concept:dom) together.\r\n\r\n## How it works\r\n\r\nTools like Playwright/Cypress open pages, click, type, assert visibility, intercept network optionally.\r\n\r\n## Common confusion\r\n\r\nSlow and flaky if overused — follow [testing pyramid](concept:testing-pyramid): few critical e2e, more integration/unit.\r\n\r\n## In practice\r\n\r\nSmoke tests on CI for release; stable selectors (`data-testid`, roles) over CSS classes.",
+  "bodyLinked": "## Definition\r\n\r\n**End-to-end tests** drive the real app in a browser (or WebDriver) validating full user flows — login, checkout, critical paths.\r\n\r\n## Why it exists\r\n\r\n[Catch](concept:try-catch-finally) integration issues [unit tests](concept:testing-pyramid) miss — routing, network, and real [DOM](concept:dom) together.\r\n\r\n## How it works\r\n\r\nTools like [Playwright](concept:e2e-testing)/Cypress open pages, click, type, assert visibility, intercept network optionally.\r\n\r\n## Common confusion\r\n\r\nSlow and flaky if overused — follow [testing pyramid](concept:testing-pyramid): few critical e2e, more integration/unit.\r\n\r\n## In practice\r\n\r\nSmoke tests on CI for release; stable selectors (`data-testid`, roles) over CSS classes.",
+  "conceptIds": [
+    "try-catch-finally",
+    "testing-pyramid",
+    "dom",
+    "e2e-testing"
+  ]
+}

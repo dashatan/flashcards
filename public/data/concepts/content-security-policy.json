@@ -1,0 +1,22 @@
+{
+  "id": "content-security-policy",
+  "title": "Content Security Policy (CSP)",
+  "aliases": [
+    "CSP",
+    "Content Security Policy"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "xss"
+  ],
+  "usedInFlashcards": [
+    280
+  ],
+  "body": "## Definition\r\n\r\n**CSP** is an HTTP header restricting which scripts, styles, images, and connections the browser may load — mitigating [XSS](concept:xss).\r\n\r\n## Why it exists\r\n\r\nEven if attacker injects script tag, CSP blocks execution unless allowlisted.\r\n\r\n## How it works\r\n\r\n`Content-Security-Policy: script-src 'self' https://cdn.example.com`\r\n\r\nUse nonces/hashes for inline scripts in strict policies.\r\n\r\n## In practice\r\n\r\nProduction security requirement; report-uri for violations monitoring.",
+  "bodyLinked": "## Definition\r\n\r\n**[CSP](concept:content-security-policy)** is an HTTP header restricting which scripts, styles, images, and connections the browser may load — mitigating [XSS](concept:xss).\r\n\r\n## Why it exists\r\n\r\nEven if attacker injects script tag, [CSP](concept:content-security-policy) blocks execution unless allowlisted.\r\n\r\n## How it works\r\n\r\n`Content-Security-Policy: script-src 'self' https://cdn.example.com`\r\n\r\nUse nonces/hashes for inline scripts in strict policies.\r\n\r\n## In practice\r\n\r\nProduction security requirement; report-uri for violations [monitoring](concept:observability).",
+  "conceptIds": [
+    "content-security-policy",
+    "xss",
+    "observability"
+  ]
+}

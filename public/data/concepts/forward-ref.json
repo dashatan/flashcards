@@ -1,0 +1,26 @@
+{
+  "id": "forward-ref",
+  "title": "forwardRef",
+  "aliases": [
+    "React.forwardRef",
+    "forward ref"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "use-ref",
+    "use-imperative-handle",
+    "controlled-component"
+  ],
+  "usedInFlashcards": [
+    153,
+    208
+  ],
+  "body": "## Definition\r\n\r\n**`forwardRef`** lets a function component receive a `ref` from its parent and pass it to an inner DOM node or [useImperativeHandle](concept:use-imperative-handle).\r\n\r\n## Why it exists\r\n\r\nRefs don't pass through components like props — `forwardRef` bridges parent refs to children.\r\n\r\n## How it works\r\n\r\n```tsx\r\nconst Input = forwardRef<HTMLInputElement, Props>((props, ref) => (\r\n  <input ref={ref} {...props} />\r\n));\r\n```\r\n\r\nReact 19+ can pass ref as a regular prop in some cases.\r\n\r\n## Common confusion\r\n\r\nOveruse blocks component encapsulation — expose minimal API via imperative handle when needed.\r\n\r\n## In practice\r\n\r\nDesign system inputs, focus management, and measuring DOM elements from parent effects.",
+  "bodyLinked": "## Definition\r\n\r\n**[forwardRef](concept:forward-ref)** lets a function component receive a `ref` from its parent and pass it to an inner [DOM](concept:dom) node or [useImperativeHandle](concept:use-imperative-handle).\r\n\r\n## Why it exists\r\n\r\nRefs don't pass through components like props — [forwardRef](concept:forward-ref) bridges parent refs to children.\r\n\r\n## How it works\r\n\r\n```tsx\r\nconst Input = forwardRef<HTMLInputElement, Props>((props, ref) => (\r\n  <input ref={ref} {...props} />\r\n));\r\n```\r\n\r\nReact 19+ can pass ref as a regular prop in [some](concept:array-some-every) cases.\r\n\r\n## Common confusion\r\n\r\nOveruse blocks component encapsulation — expose minimal API via imperative handle when needed.\r\n\r\n## In practice\r\n\r\nDesign system inputs, focus management, and measuring [DOM](concept:dom) elements from parent effects.",
+  "conceptIds": [
+    "forward-ref",
+    "dom",
+    "use-imperative-handle",
+    "array-some-every"
+  ]
+}

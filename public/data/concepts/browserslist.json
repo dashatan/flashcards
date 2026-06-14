@@ -1,0 +1,26 @@
+{
+  "id": "browserslist",
+  "title": "Browserslist",
+  "aliases": [
+    "browserslist config",
+    ".browserslistrc"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "babel",
+    "vite",
+    "core-web-vitals"
+  ],
+  "usedInFlashcards": [
+    251,
+    276
+  ],
+  "body": "## Definition\r\n\r\n**Browserslist** is a shared config (`package.json` or `.browserslistrc`) defining target browsers for Autoprefixer, Babel, and build tools.\r\n\r\n## Why it exists\r\n\r\nOne source of truth for “which browsers we support” across the toolchain.\r\n\r\n## How it works\r\n\r\n```json\r\n\"browserslist\": [\">0.2%\", \"not dead\", \"not op_mini all\"]\r\n```\r\n\r\nTools query `caniuse` data to decide polyfills and CSS prefixes.\r\n\r\n## Common confusion\r\n\r\nDifferent tools may interpret queries differently — verify output bundles in CI.\r\n\r\n## In practice\r\n\r\nAlign with product analytics on user browsers; tighten targets to reduce polyfill weight.",
+  "bodyLinked": "## Definition\r\n\r\n**[Browserslist](concept:browserslist)** is a shared config (`package.json` or [.browserslistrc](concept:browserslist)) defining target browsers for [Autoprefixer](concept:postcss), [Babel](concept:babel), and build tools.\r\n\r\n## Why it exists\r\n\r\nOne source of truth for “which browsers we support” across the toolchain.\r\n\r\n## How it works\r\n\r\n```json\r\n\"browserslist\": [\">0.2%\", \"not dead\", \"not op_mini all\"]\r\n```\r\n\r\nTools query `caniuse` data to decide polyfills and CSS prefixes.\r\n\r\n## Common confusion\r\n\r\nDifferent tools may interpret queries differently — verify output bundles in CI.\r\n\r\n## In practice\r\n\r\nAlign with product analytics on user browsers; tighten targets to [reduce](concept:array-map-filter-reduce) polyfill weight.",
+  "conceptIds": [
+    "browserslist",
+    "postcss",
+    "babel",
+    "array-map-filter-reduce"
+  ]
+}

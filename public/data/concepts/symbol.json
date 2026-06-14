@@ -1,0 +1,29 @@
+{
+  "id": "symbol",
+  "title": "Symbol",
+  "aliases": [
+    "Symbols",
+    "Symbol.iterator",
+    "well-known symbols"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "prototype-chain",
+    "property-descriptors"
+  ],
+  "usedInFlashcards": [
+    56,
+    58,
+    69
+  ],
+  "body": "## Definition\r\n\r\n**`Symbol`** is a primitive type for unique, immutable identifiers — often used as non-colliding property keys.\r\n\r\n## Why it exists\r\n\r\nAvoid name clashes on objects shared across code (metadata on DOM nodes, library internals).\r\n\r\n## How it works\r\n\r\n```js\r\nconst id = Symbol(\"id\");\r\nconst obj = { [id]: 42 };\r\n\r\nconst sym = Symbol.iterator; // well-known symbol\r\n```\r\n\r\nSymbols are unique even with the same description string.\r\n\r\n## Common confusion\r\n\r\n`Symbol(\"a\") === Symbol(\"a\")` is false. Symbols are not enumerable in `for...in` / `Object.keys`.\r\n\r\n## In practice\r\n\r\nIterators (`Symbol.iterator`), `Symbol.toStringTag`, React's `Symbol.for('react.element')` legacy, and private-like keys.",
+  "bodyLinked": "## Definition\r\n\r\n**[Symbol](concept:symbol)** is a primitive type for unique, immutable [identifiers](concept:identifier) — often used as non-colliding property keys.\r\n\r\n## Why it exists\r\n\r\nAvoid name clashes on objects shared across code (metadata on [DOM](concept:dom) nodes, library internals).\r\n\r\n## How it works\r\n\r\n```js\r\nconst id = Symbol(\"id\");\r\nconst obj = { [id]: 42 };\r\n\r\nconst sym = Symbol.iterator; // well-known symbol\r\n```\r\n\r\n[Symbols](concept:symbol) are unique even with the same description string.\r\n\r\n## Common confusion\r\n\r\n`Symbol(\"a\") === Symbol(\"a\")` is false. [Symbols](concept:symbol) are not [enumerable](concept:property-descriptors) in [for...in](concept:for-loops) / `Object.keys`.\r\n\r\n## In practice\r\n\r\n[Iterators](concept:iterator) ([Symbol.iterator](concept:iterator)), `Symbol.toStringTag`, React's `Symbol.for('react.element')` legacy, and private-like keys.",
+  "conceptIds": [
+    "symbol",
+    "identifier",
+    "dom",
+    "property-descriptors",
+    "for-loops",
+    "iterator"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "react-batching",
+  "title": "React State Batching",
+  "aliases": [
+    "batching",
+    "automatic batching",
+    "React 18 batching"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "react-re-render",
+    "use-state"
+  ],
+  "usedInFlashcards": [
+    126,
+    130,
+    131
+  ],
+  "body": "## Definition\r\n\r\n**Batching** groups multiple state updates into a single [re-render](concept:react-re-render) for consistency and performance.\r\n\r\n## Why it exists\r\n\r\nAvoids partial UI states and redundant renders when several `setState` calls happen in one logical event.\r\n\r\n## How it works\r\n\r\nReact 18 **automatic batching**: updates inside event handlers, promises, `setTimeout`, and native handlers batch together. One render after all updates in the same tick (in most cases).\r\n\r\n## Example\r\n\r\n```js\r\nsetCount(c => c + 1);\r\nsetFlag(true);\r\n// one re-render in React 18\r\n```\r\n\r\n## Common confusion\r\n\r\n`flushSync` forces synchronous render — escape hatch, use rarely.\r\n\r\n## In practice\r\n\r\nExplain React 18 upgrade benefits; `await` boundaries may end batch in some legacy patterns.",
+  "bodyLinked": "## Definition\r\n\r\n**[Batching](concept:react-batching)** groups multiple state updates into a single [re-render](concept:react-re-render) for consistency and performance.\r\n\r\n## Why it exists\r\n\r\nAvoids partial [UI states](concept:server-state-vs-client-state) and redundant renders when several `setState` [calls](concept:call-apply-bind) happen in one logical event.\r\n\r\n## How it works\r\n\r\nReact 18 **[automatic batching](concept:react-batching)**: updates inside [event handlers](concept:typescript-react-events), [promises](concept:promise), [setTimeout](concept:timers), and native handlers batch together. One render after all updates in the same tick (in most cases).\r\n\r\n## Example\r\n\r\n```js\r\nsetCount(c => c + 1);\r\nsetFlag(true);\r\n// one re-render in React 18\r\n```\r\n\r\n## Common confusion\r\n\r\n`flushSync` forces synchronous render — escape hatch, use rarely.\r\n\r\n## In practice\r\n\r\nExplain React 18 upgrade benefits; [await](concept:async-await) boundaries may end batch in [some](concept:array-some-every) legacy patterns.",
+  "conceptIds": [
+    "react-batching",
+    "react-re-render",
+    "server-state-vs-client-state",
+    "call-apply-bind",
+    "typescript-react-events",
+    "promise",
+    "timers",
+    "async-await",
+    "array-some-every"
+  ]
+}

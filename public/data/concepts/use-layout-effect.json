@@ -1,0 +1,29 @@
+{
+  "id": "use-layout-effect",
+  "title": "useLayoutEffect",
+  "aliases": [
+    "useLayoutEffect hook"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "use-effect",
+    "reflow-repaint"
+  ],
+  "usedInFlashcards": [
+    121,
+    128,
+    129,
+    143,
+    144,
+    145
+  ],
+  "body": "## Definition\r\n\r\n**useLayoutEffect** fires synchronously after DOM mutations but **before** the browser paints — blocking visual update.\r\n\r\n## Why it exists\r\n\r\nMeasure or mutate DOM when flicker would occur if you waited for [useEffect](concept:use-effect).\r\n\r\n## How it works\r\n\r\nSame signature as `useEffect`. Runs before user sees frame — use for layout measurements, scroll sync, tooltip positioning.\r\n\r\n## Common confusion\r\n\r\nBlocks paint → hurts INP if overused. Default to `useEffect`; use layout effect only when you see visual flicker.\r\n\r\n## In practice\r\n\r\nRead `getBoundingClientRect`, set scroll position, sync canvas size before paint.",
+  "bodyLinked": "## Definition\r\n\r\n**[useLayoutEffect](concept:use-layout-effect)** fires synchronously after [DOM](concept:dom) mutations but **before** the browser paints — blocking visual update.\r\n\r\n## Why it exists\r\n\r\nMeasure or mutate [DOM](concept:dom) when flicker would occur if you waited for [useEffect](concept:use-effect).\r\n\r\n## How it works\r\n\r\nSame signature as [useEffect](concept:use-effect). Runs before user sees frame — use for layout measurements, scroll sync, tooltip positioning.\r\n\r\n## Common confusion\r\n\r\nBlocks paint → hurts [INP](concept:inp) if overused. Default to [useEffect](concept:use-effect); [use layout effect](concept:use-layout-effect) only when you see visual flicker.\r\n\r\n## In practice\r\n\r\nRead `getBoundingClientRect`, [set](concept:getters-setters) scroll position, sync canvas size before paint.",
+  "conceptIds": [
+    "use-layout-effect",
+    "dom",
+    "use-effect",
+    "inp",
+    "getters-setters"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "typescript-mapped-types",
+  "title": "TypeScript mapped types",
+  "aliases": [
+    "mapped types",
+    "keyof mapped types"
+  ],
+  "depth": "advanced",
+  "related": [
+    "typescript-generics",
+    "typescript-conditional-types"
+  ],
+  "usedInFlashcards": [
+    223,
+    229
+  ],
+  "body": "## Definition\r\n\r\n**Mapped types** transform each property of an existing type: `{ [K in keyof T]: ... }` — basis for `Partial`, `Readonly`, and custom mappers.\r\n\r\n## Why it exists\r\n\r\nDerive form state, optional update payloads, and readonly views from a single source type.\r\n\r\n## How it works\r\n\r\n```ts\r\ntype Optional<T> = { [K in keyof T]?: T[K] };\r\ntype ReadonlyFields<T> = { readonly [K in keyof T]: T[K] };\r\n```\r\n\r\nCombine with conditional types for fine control (`-?`, `+readonly` modifiers).\r\n\r\n## Common confusion\r\n\r\nLarge mapped types can slow tsc — split types or simplify generics.\r\n\r\n## In practice\r\n\r\nReact form libraries, API patch types, and table column definitions keyed by row shape.",
+  "bodyLinked": "## Definition\r\n\r\n**[Mapped types](concept:typescript-mapped-types)** transform each property of an existing type: `{ [K in keyof T]: ... }` — basis for `Partial`, `Readonly`, and custom mappers.\r\n\r\n## Why it exists\r\n\r\nDerive form state, optional update payloads, and readonly views from a single source type.\r\n\r\n## How it works\r\n\r\n```ts\r\ntype Optional<T> = { [K in keyof T]?: T[K] };\r\ntype ReadonlyFields<T> = { readonly [K in keyof T]: T[K] };\r\n```\r\n\r\nCombine with [conditional types](concept:typescript-conditional-types) for fine control (`-?`, `+readonly` modifiers).\r\n\r\n## Common confusion\r\n\r\nLarge [mapped types](concept:typescript-mapped-types) can slow tsc — split types or simplify [generics](concept:typescript-generics).\r\n\r\n## In practice\r\n\r\nReact form libraries, API patch types, and table column definitions keyed by row shape.",
+  "conceptIds": [
+    "typescript-mapped-types",
+    "typescript-conditional-types",
+    "typescript-generics"
+  ]
+}

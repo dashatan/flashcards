@@ -1,0 +1,24 @@
+{
+  "id": "typescript-generics",
+  "title": "TypeScript generics",
+  "aliases": [
+    "generics",
+    "generic types",
+    "generic components"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "type-guards",
+    "discriminated-unions",
+    "es6-class"
+  ],
+  "usedInFlashcards": [
+    220
+  ],
+  "body": "## Definition\r\n\r\n**Generics** parameterize types and functions with type variables (`<T>`) so one implementation works for many types while staying type-safe.\r\n\r\n## Why it exists\r\n\r\nReusable utilities (`Array<T>`, `Promise<T>`) and React components that preserve prop types across usages.\r\n\r\n## How it works\r\n\r\n```tsx\r\nfunction identity<T>(value: T): T { return value; }\r\n\r\ntype ListProps<T> = { items: T[]; render: (item: T) => React.ReactNode };\r\n```\r\n\r\nConstraints: `<T extends { id: string }>`.\r\n\r\n## Common confusion\r\n\r\nGenerics are compile-time only — erased at runtime. Over-generic APIs hurt readability.\r\n\r\n## In practice\r\n\r\n`useState<User | null>`, generic table components, and API response wrappers.",
+  "bodyLinked": "## Definition\r\n\r\n**[Generics](concept:typescript-generics)** parameterize types and functions with type variables (`<T>`) so one implementation works for many types while staying type-safe.\r\n\r\n## Why it exists\r\n\r\nReusable utilities (`Array<T>`, `Promise<T>`) and React components that preserve prop types across usages.\r\n\r\n## How it works\r\n\r\n```tsx\r\nfunction identity<T>(value: T): T { return value; }\r\n\r\ntype ListProps<T> = { items: T[]; render: (item: T) => React.ReactNode };\r\n```\r\n\r\nConstraints: `<T extends { id: string }>`.\r\n\r\n## Common confusion\r\n\r\n[Generics](concept:typescript-generics) are compile-time only — erased at runtime. Over-generic APIs hurt [readability](concept:coding-standards).\r\n\r\n## In practice\r\n\r\n`useState<User | null>`, generic table components, and API response wrappers.",
+  "conceptIds": [
+    "typescript-generics",
+    "coding-standards"
+  ]
+}

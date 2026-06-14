@@ -1,0 +1,29 @@
+{
+  "id": "memory-leak",
+  "title": "Memory Leak",
+  "aliases": [
+    "memory leaks",
+    "retained memory"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "closure",
+    "event-delegation"
+  ],
+  "usedInFlashcards": [
+    70,
+    114,
+    139,
+    197
+  ],
+  "body": "## Definition\r\n\r\nA **memory leak** is when memory stays allocated after it is no longer needed, often because references remain reachable.\r\n\r\n## Why it exists\r\n\r\nGC cannot free objects still referenced from listeners, closures, caches, or detached DOM nodes.\r\n\r\n## How it works\r\n\r\nCommon causes: forgotten `removeEventListener`, intervals, closures holding large data, global caches without eviction, retained DOM in JS references.\r\n\r\n## Example\r\n\r\n```js\r\nuseEffect(() => {\r\n  window.addEventListener(\"resize\", onResize);\r\n  return () => window.removeEventListener(\"resize\", onResize);\r\n}, []);\r\n```\r\n\r\n## Common confusion\r\n\r\nNot every growth is a leak — growing cache by design needs bounds (WeakMap, TTL).\r\n\r\n## In practice\r\n\r\nCleanup in `useEffect`, Chrome Memory heap snapshots, detach listeners, abort fetches with `AbortController`.",
+  "bodyLinked": "## Definition\r\n\r\nA **[memory leak](concept:memory-leak)** is when memory stays allocated after it is no longer needed, often because references remain reachable.\r\n\r\n## Why it exists\r\n\r\nGC cannot free objects still referenced from listeners, [closures](concept:closure), caches, or detached [DOM](concept:dom) nodes.\r\n\r\n## How it works\r\n\r\nCommon causes: forgotten `removeEventListener`, intervals, [closures](concept:closure) holding large data, global caches without eviction, retained [DOM](concept:dom) in JS references.\r\n\r\n## Example\r\n\r\n```js\r\nuseEffect(() => {\r\n  window.addEventListener(\"resize\", onResize);\r\n  return () => window.removeEventListener(\"resize\", onResize);\r\n}, []);\r\n```\r\n\r\n## Common confusion\r\n\r\nNot [every](concept:array-some-every) growth is a leak — growing cache by design needs bounds (WeakMap, TTL).\r\n\r\n## In practice\r\n\r\nCleanup in [useEffect](concept:use-effect), Chrome Memory heap snapshots, detach listeners, abort fetches with [AbortController](concept:abort-controller).",
+  "conceptIds": [
+    "memory-leak",
+    "closure",
+    "dom",
+    "array-some-every",
+    "use-effect",
+    "abort-controller"
+  ]
+}

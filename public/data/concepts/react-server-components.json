@@ -1,0 +1,26 @@
+{
+  "id": "react-server-components",
+  "title": "React Server Components (RSC)",
+  "aliases": [
+    "Server Components",
+    "RSC",
+    "React Server Components"
+  ],
+  "depth": "advanced",
+  "related": [
+    "server-side-rendering",
+    "hydration",
+    "react-server-actions"
+  ],
+  "usedInFlashcards": [
+    202,
+    203
+  ],
+  "body": "## Definition\r\n\r\n**React Server Components** run only on the server — their logic is not shipped to the client bundle; they can read databases and filesystem directly.\r\n\r\n## Why it exists\r\n\r\nZero client JS for static/server logic; smaller bundles; close to data sources.\r\n\r\n## How it works\r\n\r\nCompose with Client Components (`\"use client\"`) for interactivity. Server Components render to a special format streamed to the client; they are **not** [hydrated](concept:hydration) like [SSR](concept:server-side-rendering) client trees.\r\n\r\n## Common confusion\r\n\r\nRSC ≠ SSR alone — SSR can still ship component JS for hydration. RSC removes server component JS from client.\r\n\r\n## In practice\r\n\r\nNext.js App Router default; know boundaries for interviews at senior level.",
+  "bodyLinked": "## Definition\r\n\r\n**[React Server Components](concept:react-server-components)** run only on the server — their logic is not shipped to the client bundle; they can read databases and filesystem directly.\r\n\r\n## Why it exists\r\n\r\nZero client JS for static/server logic; smaller bundles; close to data sources.\r\n\r\n## How it works\r\n\r\nCompose with Client Components (`\"use client\"`) for interactivity. [Server Components](concept:react-server-components) render to a special format streamed to the client; they are **not** [hydrated](concept:hydration) like [SSR](concept:server-side-rendering) client trees.\r\n\r\n## Common confusion\r\n\r\n[RSC](concept:react-server-components) ≠ [SSR](concept:server-side-rendering) alone — [SSR](concept:server-side-rendering) can still ship component JS for [hydration](concept:hydration). [RSC](concept:react-server-components) removes server component JS from client.\r\n\r\n## In practice\r\n\r\nNext.js App Router default; know boundaries for interviews at senior level.",
+  "conceptIds": [
+    "react-server-components",
+    "hydration",
+    "server-side-rendering"
+  ]
+}

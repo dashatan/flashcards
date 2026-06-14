@@ -1,0 +1,49 @@
+{
+  "id": "new-operator",
+  "title": "new operator",
+  "aliases": [
+    "new",
+    "new keyword"
+  ],
+  "depth": "foundation",
+  "related": [
+    "prototype-chain",
+    "this-binding",
+    "es6-class"
+  ],
+  "usedInFlashcards": [
+    7,
+    13,
+    20,
+    23,
+    25,
+    30,
+    45,
+    53,
+    64,
+    86,
+    91,
+    105,
+    124,
+    125,
+    183,
+    189,
+    200,
+    208,
+    216,
+    249,
+    319,
+    329
+  ],
+  "body": "## Definition\r\n\r\nThe **`new`** operator creates an object, wires its `[[Prototype]]` from the constructor's `prototype`, binds `this`, runs the constructor, and returns the object (unless constructor returns an object).\r\n\r\n## Why it exists\r\n\r\nStandard pattern for instance creation before class syntax.\r\n\r\n## How it works\r\n\r\n```js\r\nfunction Person(name) {\r\n  this.name = name;\r\n}\r\nPerson.prototype.greet = function () { return this.name; };\r\n\r\nconst ada = new Person(\"Ada\");\r\n```\r\n\r\nEquivalent to `class` instance creation under the hood.\r\n\r\n## Common confusion\r\n\r\nForgetting `new` on a constructor leaves `this` as `undefined` (strict) or the global object (sloppy). Arrow functions cannot be used as constructors.\r\n\r\n## In practice\r\n\r\nModern code uses `class`; understanding `new` explains [prototype chain](concept:prototype-chain) interview questions.",
+  "bodyLinked": "## Definition\r\n\r\nThe **[new](concept:new-operator)** operator creates an object, wires its [[[Prototype]]](concept:prototype-chain) from the constructor's [prototype](concept:prototype-chain), [binds](concept:call-apply-bind) [this](concept:this-binding), runs the constructor, and returns the object (unless constructor returns an object).\r\n\r\n## Why it exists\r\n\r\nStandard pattern for instance creation before [class syntax](concept:es6-class).\r\n\r\n## How it works\r\n\r\n```js\r\nfunction Person(name) {\r\n  this.name = name;\r\n}\r\nPerson.prototype.greet = function () { return this.name; };\r\n\r\nconst ada = new Person(\"Ada\");\r\n```\r\n\r\nEquivalent to [class](concept:es6-class) instance creation under the hood.\r\n\r\n## Common confusion\r\n\r\nForgetting [new](concept:new-operator) on a constructor leaves [this](concept:this-binding) as [undefined](concept:undefined) (strict) or the global object (sloppy). [Arrow functions](concept:arrow-function) cannot be used as constructors.\r\n\r\n## In practice\r\n\r\nModern code uses [class](concept:es6-class); understanding [new](concept:new-operator) explains [prototype chain](concept:prototype-chain) interview questions.",
+  "conceptIds": [
+    "new-operator",
+    "prototype-chain",
+    "call-apply-bind",
+    "this-binding",
+    "es6-class",
+    "undefined",
+    "arrow-function"
+  ]
+}

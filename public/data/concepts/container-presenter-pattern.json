@@ -1,0 +1,22 @@
+{
+  "id": "container-presenter-pattern",
+  "title": "Container/Presenter Pattern",
+  "aliases": [
+    "container presenter",
+    "smart dumb components"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "custom-hooks",
+    "feature-based-architecture"
+  ],
+  "usedInFlashcards": [
+    308
+  ],
+  "body": "## Definition\r\n\r\n**Container/Presenter** splits data/logic containers from pure UI presenters that only receive props.\r\n\r\n## Why it exists\r\n\r\nSeparation of concerns before hooks — containers fetch and mutate; presenters render.\r\n\r\n## How it works\r\n\r\nToday largely replaced by [custom hooks](concept:custom-hooks) + dumb components: hook = container logic, component = presenter.\r\n\r\n## In practice\r\n\r\nStill valid mental model; interview “how do you structure data vs UI?”",
+  "bodyLinked": "## Definition\r\n\r\n**Container/Presenter** splits data/logic containers from pure UI presenters that only receive props.\r\n\r\n## Why it exists\r\n\r\nSeparation of concerns before hooks — containers [fetch](concept:fetch) and mutate; presenters render.\r\n\r\n## How it works\r\n\r\nToday largely replaced by [custom hooks](concept:custom-hooks) + dumb components: hook = container logic, component = presenter.\r\n\r\n## In practice\r\n\r\nStill valid mental model; interview “how do you structure data vs UI?”",
+  "conceptIds": [
+    "fetch",
+    "custom-hooks"
+  ]
+}

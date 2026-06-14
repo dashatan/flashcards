@@ -1,0 +1,27 @@
+{
+  "id": "typescript-conditional-types",
+  "title": "TypeScript conditional types",
+  "aliases": [
+    "conditional types",
+    {
+      "extends ?": null
+    },
+    {
+      "T extends U ? X": "Y"
+    }
+  ],
+  "depth": "advanced",
+  "related": [
+    "typescript-generics",
+    "discriminated-unions",
+    "type-guards"
+  ],
+  "usedInFlashcards": [
+    228
+  ],
+  "body": "## Definition\r\n\r\n**Conditional types** pick types based on a condition: `T extends U ? X : Y` — power utility types like `Exclude`, `Extract`, and `NonNullable`.\r\n\r\n## Why it exists\r\n\r\nExpress type-level logic for libraries and advanced React prop inference.\r\n\r\n## How it works\r\n\r\n```ts\r\ntype IsString<T> = T extends string ? true : false;\r\ntype Result = IsString<\"a\">; // true\r\n```\r\n\r\nDistributive over unions when `T` is naked type parameter.\r\n\r\n## Common confusion\r\n\r\nHard to debug errors — start simple; use built-in utility types before custom conditionals.\r\n\r\n## In practice\r\n\r\nTyped hooks, polymorphic components, and mapping API DTOs to UI models.",
+  "bodyLinked": "## Definition\r\n\r\n**[Conditional types](concept:typescript-conditional-types)** pick types based on a condition: `T extends U ? X : Y` — power utility types like `Exclude`, `Extract`, and `NonNullable`.\r\n\r\n## Why it exists\r\n\r\nExpress type-level logic for libraries and advanced React prop inference.\r\n\r\n## How it works\r\n\r\n```ts\r\ntype IsString<T> = T extends string ? true : false;\r\ntype Result = IsString<\"a\">; // true\r\n```\r\n\r\nDistributive over unions when `T` is naked type parameter.\r\n\r\n## Common confusion\r\n\r\nHard to debug errors — start simple; use built-in utility types before custom conditionals.\r\n\r\n## In practice\r\n\r\nTyped hooks, polymorphic components, and mapping API DTOs to UI models.",
+  "conceptIds": [
+    "typescript-conditional-types"
+  ]
+}

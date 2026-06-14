@@ -1,0 +1,31 @@
+{
+  "id": "coding-standards",
+  "title": "Coding standards",
+  "aliases": [
+    "coding conventions",
+    "style guide",
+    "lint rules",
+    "readable code",
+    "code readable",
+    "clear naming"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "technical-debt",
+    "ci-cd",
+    "monorepo"
+  ],
+  "usedInFlashcards": [
+    37,
+    306,
+    318,
+    330
+  ],
+  "body": "## Definition\r\n\r\n**Coding standards** are team agreements on style, patterns, naming, and review expectations — often enforced by ESLint, Prettier, and CI.\r\n\r\n## Why it exists\r\n\r\nConsistent readable code, fewer bikeshedding debates, and safer refactors across large teams.\r\n\r\n## How it works\r\n\r\nESLint rules (`eqeqeq`, hooks rules), Prettier formatting, ADR docs, and PR checklists.\r\n\r\n## Common confusion\r\n\r\nStandards should evolve — avoid cargo cult rules without rationale.\r\n\r\n## In practice\r\n\r\nShare configs via [monorepo](concept:monorepo) packages; document exceptions in [ADRs](concept:adr).",
+  "bodyLinked": "## Definition\r\n\r\n**[Coding standards](concept:coding-standards)** are team agreements on style, patterns, naming, and review expectations — often enforced by ESLint, Prettier, and CI.\r\n\r\n## Why it exists\r\n\r\nConsistent [readable code](concept:coding-standards), fewer bikeshedding debates, and safer refactors across large teams.\r\n\r\n## How it works\r\n\r\nESLint rules (`eqeqeq`, hooks rules), Prettier formatting, [ADR](concept:adr) docs, and PR checklists.\r\n\r\n## Common confusion\r\n\r\nStandards should evolve — avoid cargo cult rules without rationale.\r\n\r\n## In practice\r\n\r\nShare configs via [monorepo](concept:monorepo) packages; document exceptions in [ADRs](concept:adr).",
+  "conceptIds": [
+    "coding-standards",
+    "adr",
+    "monorepo"
+  ]
+}

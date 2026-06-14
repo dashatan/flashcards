@@ -1,0 +1,24 @@
+{
+  "id": "selective-hydration",
+  "title": "Selective Hydration",
+  "aliases": [
+    "selective hydration"
+  ],
+  "depth": "advanced",
+  "related": [
+    "hydration",
+    "streaming-ssr"
+  ],
+  "usedInFlashcards": [
+    207
+  ],
+  "body": "## Definition\r\n\r\n**Selective hydration** prioritizes hydrating interactive regions first (often based on user interaction) instead of the full page sequentially.\r\n\r\n## Why it exists\r\n\r\nImprove time-to-interactive and [INP](concept:inp) on large SSR pages.\r\n\r\n## How it works\r\n\r\nReact 18 schedules hydration for components users interact with while other regions hydrate in background.\r\n\r\n## In practice\r\n\r\nSenior React 18+ interview topic linked to streaming and Core Web Vitals.",
+  "bodyLinked": "## Definition\r\n\r\n**[Selective hydration](concept:selective-hydration)** prioritizes hydrating interactive regions first (often based on user interaction) instead of the full page sequentially.\r\n\r\n## Why it exists\r\n\r\nImprove time-to-interactive and [INP](concept:inp) on large [SSR](concept:server-side-rendering) pages.\r\n\r\n## How it works\r\n\r\nReact 18 schedules [hydration](concept:hydration) for components users interact with while other regions [hydrate](concept:hydration) in background.\r\n\r\n## In practice\r\n\r\nSenior React 18+ interview topic linked to streaming and [Core Web Vitals](concept:core-web-vitals).",
+  "conceptIds": [
+    "selective-hydration",
+    "inp",
+    "server-side-rendering",
+    "hydration",
+    "core-web-vitals"
+  ]
+}

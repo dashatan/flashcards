@@ -1,0 +1,52 @@
+{
+  "id": "promise",
+  "title": "Promise",
+  "aliases": [
+    "Promises",
+    "promise"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "microtask",
+    "event-loop",
+    "async-await"
+  ],
+  "usedInFlashcards": [
+    31,
+    32,
+    33,
+    37,
+    38,
+    39,
+    40,
+    41,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    111,
+    112,
+    118,
+    130,
+    131,
+    205,
+    206,
+    277
+  ],
+  "body": "## Definition\r\n\r\nA **Promise** is an object representing the eventual result of async work — states: pending, fulfilled, or rejected — with `.then` / `.catch` handlers scheduled as [microtasks](concept:microtask).\r\n\r\n## Why it exists\r\n\r\nReplaces callback pyramids with composable async chains and standardized error propagation.\r\n\r\n## How it works\r\n\r\nSettling a Promise queues reactions on the [microtask](concept:microtask) queue. Chaining returns new Promises; returning a Promise from `.then` flattens the chain. Integrates with [async/await](concept:async-await).\r\n\r\n## Example\r\n\r\n```js\r\nfetch(\"/api/user\")\r\n  .then((res) => res.json())\r\n  .then((user) => console.log(user.name))\r\n  .catch(console.error);\r\n```\r\n\r\n## Common confusion\r\n\r\n`new Promise` executor runs synchronously; handlers run async. Unhandled rejections crash Node / trigger global handlers.\r\n\r\n## In practice\r\n\r\nAll modern network code, TanStack Query, and React Server Actions build on Promises.",
+  "bodyLinked": "## Definition\r\n\r\nA **[Promise](concept:promise)** is an object representing the eventual result of [async](concept:async-await) work — states: pending, fulfilled, or rejected — with `.then` / `.catch` handlers scheduled as [microtasks](concept:microtask).\r\n\r\n## Why it exists\r\n\r\nReplaces callback pyramids with composable [async](concept:async-await) chains and standardized error [propagation](concept:event-bubbling-capturing).\r\n\r\n## How it works\r\n\r\nSettling a [Promise](concept:promise) queues reactions on the [microtask](concept:microtask) queue. Chaining returns [new](concept:new-operator) [Promises](concept:promise); returning a [Promise](concept:promise) from `.then` flattens the chain. Integrates with [async/await](concept:async-await).\r\n\r\n## Example\r\n\r\n```js\r\nfetch(\"/api/user\")\r\n  .then((res) => res.json())\r\n  .then((user) => console.log(user.name))\r\n  .catch(console.error);\r\n```\r\n\r\n## Common confusion\r\n\r\n`new Promise` executor runs synchronously; handlers run [async](concept:async-await). [Unhandled rejections](concept:unhandled-promise-rejection) crash Node / trigger global handlers.\r\n\r\n## In practice\r\n\r\nAll modern network code, [TanStack Query](concept:tanstack-query), and [React Server Actions](concept:react-server-actions) build on [Promises](concept:promise).",
+  "conceptIds": [
+    "promise",
+    "async-await",
+    "microtask",
+    "event-bubbling-capturing",
+    "new-operator",
+    "unhandled-promise-rejection",
+    "tanstack-query",
+    "react-server-actions"
+  ]
+}

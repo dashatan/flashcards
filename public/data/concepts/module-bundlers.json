@@ -1,0 +1,39 @@
+{
+  "id": "module-bundlers",
+  "title": "Module bundlers",
+  "aliases": [
+    "module bundler",
+    "bundlers",
+    "bundling"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "webpack",
+    "vite",
+    "es-modules",
+    "code-splitting"
+  ],
+  "usedInFlashcards": [
+    42,
+    117,
+    198,
+    247,
+    248,
+    250,
+    252,
+    253,
+    259
+  ],
+  "body": "## Definition\r\n\r\n**Module bundlers** resolve [ES module](concept:es-modules) graphs, transform assets, and emit optimized files for browsers — [Webpack](concept:webpack), [Vite](concept:vite), Rollup, esbuild.\r\n\r\n## Why it exists\r\n\r\nBrowsers need bundled/split output; bundlers apply [tree shaking](concept:tree-shaking), [code splitting](concept:code-splitting), and loaders.\r\n\r\n## How it works\r\n\r\nEntry → dependency graph → plugins/loaders (Babel, CSS) → chunks + asset hashes for cache busting.\r\n\r\n## Common confusion\r\n\r\nDev server (Vite) vs production bundle (Rollup/esbuild) — different pipelines, same mental model.\r\n\r\n## In practice\r\n\r\nChoose Vite for modern DX; Webpack where legacy plugin ecosystem required.",
+  "bodyLinked": "## Definition\r\n\r\n**[Module bundlers](concept:module-bundlers)** resolve [ES module](concept:es-modules) graphs, transform assets, and emit optimized files for browsers — [Webpack](concept:webpack), [Vite](concept:vite), Rollup, esbuild.\r\n\r\n## Why it exists\r\n\r\nBrowsers need [bundled](concept:module-bundlers)/split output; [bundlers](concept:module-bundlers) [apply](concept:call-apply-bind) [tree shaking](concept:tree-shaking), [code splitting](concept:code-splitting), and loaders.\r\n\r\n## How it works\r\n\r\nEntry → dependency graph → plugins/loaders ([Babel](concept:babel), CSS) → chunks + asset hashes for cache busting.\r\n\r\n## Common confusion\r\n\r\nDev server ([Vite](concept:vite)) vs production bundle (Rollup/esbuild) — different pipelines, same mental model.\r\n\r\n## In practice\r\n\r\nChoose [Vite](concept:vite) for modern DX; [Webpack](concept:webpack) where legacy plugin ecosystem required.",
+  "conceptIds": [
+    "module-bundlers",
+    "es-modules",
+    "webpack",
+    "vite",
+    "call-apply-bind",
+    "tree-shaking",
+    "code-splitting",
+    "babel"
+  ]
+}

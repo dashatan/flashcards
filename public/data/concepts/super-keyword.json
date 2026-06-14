@@ -1,0 +1,26 @@
+{
+  "id": "super-keyword",
+  "title": "super keyword",
+  "aliases": [
+    "super()",
+    "super keyword"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "es6-class",
+    "prototype-chain",
+    "this-binding"
+  ],
+  "usedInFlashcards": [
+    67
+  ],
+  "body": "## Definition\r\n\r\n**`super`** in classes calls the parent constructor (`super()`) or invokes parent methods on the subclass prototype chain.\r\n\r\n## Why it exists\r\n\r\nExtend built-in or custom classes while preserving parent initialization and behavior.\r\n\r\n## How it works\r\n\r\n```js\r\nclass Admin extends User {\r\n  constructor(name, role) {\r\n    super(name); // must call before using `this`\r\n    this.role = role;\r\n  }\r\n  greet() { return super.greet() + ` (${this.role})`; }\r\n}\r\n```\r\n\r\n`super` references the parent prototype for method calls.\r\n\r\n## Common confusion\r\n\r\nMust call `super()` in derived constructors before `this`. In methods, `super` is not the same as `this`.\r\n\r\n## In practice\r\n\r\nStandard in class components, service hierarchies, and extending native types (use cautiously).",
+  "bodyLinked": "## Definition\r\n\r\n**`super`** in classes [calls](concept:call-apply-bind) the parent constructor ([super()](concept:super-keyword)) or invokes parent methods on the subclass [prototype chain](concept:prototype-chain).\r\n\r\n## Why it exists\r\n\r\nExtend built-in or custom classes while preserving parent initialization and behavior.\r\n\r\n## How it works\r\n\r\n```js\r\nclass Admin extends User {\r\n  constructor(name, role) {\r\n    super(name); // must call before using `this`\r\n    this.role = role;\r\n  }\r\n  greet() { return super.greet() + ` (${this.role})`; }\r\n}\r\n```\r\n\r\n`super` references the parent [prototype](concept:prototype-chain) for method [calls](concept:call-apply-bind).\r\n\r\n## Common confusion\r\n\r\nMust [call](concept:call-apply-bind) [super()](concept:super-keyword) in derived constructors before [this](concept:this-binding). In methods, `super` is not the same as [this](concept:this-binding).\r\n\r\n## In practice\r\n\r\nStandard in [class](concept:es6-class) components, service hierarchies, and extending native types (use cautiously).",
+  "conceptIds": [
+    "call-apply-bind",
+    "super-keyword",
+    "prototype-chain",
+    "this-binding",
+    "es6-class"
+  ]
+}

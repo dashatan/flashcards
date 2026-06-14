@@ -1,0 +1,22 @@
+{
+  "id": "source-map",
+  "title": "Source Map",
+  "aliases": [
+    "source maps",
+    "sourcemap"
+  ],
+  "depth": "intermediate",
+  "related": [],
+  "usedInFlashcards": [
+    117,
+    254,
+    256
+  ],
+  "body": "## Definition\r\n\r\nA **source map** maps minified/bundled code positions back to original source files for debugging.\r\n\r\n## Why it exists\r\n\r\nProduction bundles are transformed; stack traces without maps point to unreadable line 1 of `chunk.js`.\r\n\r\n## How it works\r\n\r\nBundler emits `.map` files. DevTools and Sentry use them to show real file names and TypeScript lines.\r\n\r\n## Common confusion\r\n\r\n`hidden-source-map` uploads to Sentry only — maps not served to users. Never expose sensitive source in public maps without intent.\r\n\r\n## In practice\r\n\r\nEnable in production for error tracking; use fast `eval` maps in dev via Vite.",
+  "bodyLinked": "## Definition\r\n\r\nA **[source map](concept:source-map)** maps minified/bundled code positions back to original source files for debugging.\r\n\r\n## Why it exists\r\n\r\nProduction bundles are transformed; stack traces without maps point to unreadable line 1 of `chunk.js`.\r\n\r\n## How it works\r\n\r\nBundler emits `.map` files. [DevTools](concept:js-debugging-tools) and Sentry use them to show real file names and TypeScript lines.\r\n\r\n## Common confusion\r\n\r\n`hidden-source-map` uploads to Sentry only — maps not served to users. Never expose sensitive source in public maps without intent.\r\n\r\n## In practice\r\n\r\nEnable in production for error tracking; use fast `eval` maps in dev via [Vite](concept:vite).",
+  "conceptIds": [
+    "source-map",
+    "js-debugging-tools",
+    "vite"
+  ]
+}

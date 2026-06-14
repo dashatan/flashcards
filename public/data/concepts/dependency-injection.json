@@ -1,0 +1,23 @@
+{
+  "id": "dependency-injection",
+  "title": "Dependency Injection (DI)",
+  "aliases": [
+    "dependency injection",
+    "DI in React"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "react-context-api",
+    "api-layer"
+  ],
+  "usedInFlashcards": [
+    309
+  ],
+  "body": "## Definition\r\n\r\n**Dependency injection** supplies dependencies (API client, logger, config) from outside rather than hard-coding imports inside modules.\r\n\r\n## Why it exists\r\n\r\nTestability with mocks, swap implementations per environment, clear boundaries.\r\n\r\n## How it works\r\n\r\nIn React: Context providers (`ApiProvider`), prop injection, or module factories. Tests wrap with mock providers.\r\n\r\n## In practice\r\n\r\n`createApiClient(baseUrl)` injected via Context; MSW replaces network in tests.",
+  "bodyLinked": "## Definition\r\n\r\n**[Dependency injection](concept:dependency-injection)** supplies dependencies (API client, logger, config) from outside rather than hard-coding imports inside modules.\r\n\r\n## Why it exists\r\n\r\nTestability with mocks, swap implementations per environment, clear boundaries.\r\n\r\n## How it works\r\n\r\nIn React: [Context](concept:use-context) providers (`ApiProvider`), prop injection, or module factories. Tests wrap with mock providers.\r\n\r\n## In practice\r\n\r\n`createApiClient(baseUrl)` injected via [Context](concept:use-context); [MSW](concept:msw) replaces network in tests.",
+  "conceptIds": [
+    "dependency-injection",
+    "use-context",
+    "msw"
+  ]
+}

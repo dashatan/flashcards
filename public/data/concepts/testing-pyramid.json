@@ -1,0 +1,28 @@
+{
+  "id": "testing-pyramid",
+  "title": "Testing Pyramid",
+  "aliases": [
+    "test pyramid",
+    "testing strategy",
+    "unit tests",
+    "integration tests",
+    "e2e tests",
+    "unit integration e2e"
+  ],
+  "depth": "foundation",
+  "related": [
+    "react-testing-library",
+    "msw"
+  ],
+  "usedInFlashcards": [
+    232,
+    234
+  ],
+  "body": "## Definition\r\n\r\nThe **testing pyramid** recommends many fast **unit** tests, fewer **integration** tests, and few **e2e** tests — each layer costs more but covers more realism.\r\n\r\n## Why it exists\r\n\r\nBalance speed, maintenance, and confidence.\r\n\r\n## How it works\r\n\r\n- Unit: pure functions, hooks with mocks.\r\n- Integration: component + user flow (RTL).\r\n- E2E: Playwright/Cypress full browser journeys.\r\n\r\n## In practice\r\n\r\nInterview answer for “how do you test React?” — behavior over implementation.",
+  "bodyLinked": "## Definition\r\n\r\nThe **[testing pyramid](concept:testing-pyramid)** recommends many fast **unit** tests, fewer **integration** tests, and few **e2e** tests — each layer costs more but covers more realism.\r\n\r\n## Why it exists\r\n\r\nBalance speed, maintenance, and confidence.\r\n\r\n## How it works\r\n\r\n- Unit: pure functions, hooks with mocks.\r\n- Integration: component + user flow ([RTL](concept:react-testing-library)).\r\n- E2E: [Playwright](concept:e2e-testing)/Cypress full browser journeys.\r\n\r\n## In practice\r\n\r\nInterview answer for “how do you test React?” — behavior over implementation.",
+  "conceptIds": [
+    "testing-pyramid",
+    "react-testing-library",
+    "e2e-testing"
+  ]
+}

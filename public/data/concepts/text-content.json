@@ -1,0 +1,28 @@
+{
+  "id": "text-content",
+  "title": "textContent",
+  "aliases": [
+    "textContent property",
+    "innerText"
+  ],
+  "depth": "foundation",
+  "related": [
+    "dom",
+    "inner-html",
+    "xss"
+  ],
+  "usedInFlashcards": [
+    263
+  ],
+  "body": "## Definition\r\n\r\n**`textContent`** is a [DOM](concept:dom) property returning the raw text content of a node and its descendants — including text in `<script>` and `<style>`.\r\n\r\n## Why it exists\r\n\r\nSafe way to read and set text without parsing HTML — avoids HTML injection unlike `innerHTML`.\r\n\r\n## How it works\r\n\r\n```js\r\nelement.textContent = \"Hello\";\r\nconsole.log(div.textContent); // all descendant text, concatenated\r\n```\r\n\r\nSetting `textContent` replaces all children with a single text node.\r\n\r\n## Common confusion\r\n\r\n`innerText` is layout-aware and can trigger reflow; `textContent` is faster and more predictable. Neither interprets HTML entities when setting plain strings.\r\n\r\n## In practice\r\n\r\nPrefer `textContent` over `innerHTML` for user-visible text updates to reduce [XSS](concept:xss) risk.",
+  "bodyLinked": "## Definition\r\n\r\n**[textContent](concept:text-content)** is a [DOM](concept:dom) property returning the raw [text content](concept:text-content) of a node and its descendants — including text in `<script>` and `<style>`.\r\n\r\n## Why it exists\r\n\r\nSafe way to read and [set](concept:getters-setters) text without parsing HTML — avoids HTML injection unlike [innerHTML](concept:inner-html).\r\n\r\n## How it works\r\n\r\n```js\r\nelement.textContent = \"Hello\";\r\nconsole.log(div.textContent); // all descendant text, concatenated\r\n```\r\n\r\nSetting [textContent](concept:text-content) replaces all children with a single text node.\r\n\r\n## Common confusion\r\n\r\n[innerText](concept:text-content) is layout-aware and can trigger [reflow](concept:reflow-repaint); [textContent](concept:text-content) is faster and more predictable. Neither interprets HTML entities when setting plain strings.\r\n\r\n## In practice\r\n\r\nPrefer [textContent](concept:text-content) over [innerHTML](concept:inner-html) for user-visible text updates to [reduce](concept:array-map-filter-reduce) [XSS](concept:xss) risk.",
+  "conceptIds": [
+    "text-content",
+    "dom",
+    "getters-setters",
+    "inner-html",
+    "reflow-repaint",
+    "array-map-filter-reduce",
+    "xss"
+  ]
+}

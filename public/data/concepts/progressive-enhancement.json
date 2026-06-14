@@ -1,0 +1,23 @@
+{
+  "id": "progressive-enhancement",
+  "title": "Progressive Enhancement",
+  "aliases": [
+    "progressive enhancement",
+    "graceful degradation"
+  ],
+  "depth": "foundation",
+  "related": [
+    "pwa",
+    "dom"
+  ],
+  "usedInFlashcards": [
+    276,
+    294
+  ],
+  "body": "## Definition\r\n\r\n**Progressive enhancement** builds core functionality with HTML/CSS first, then enhances with JavaScript for richer UX.\r\n\r\n## Why it exists\r\n\r\nWorks without JS (where possible), better accessibility, resilient on slow devices.\r\n\r\n## How it works\r\n\r\nSemantic HTML forms submit without JS; JS layer adds validation and SPA nav. Feature detect (`'IntersectionObserver' in window`) before using APIs.\r\n\r\n## In practice\r\n\r\nPublic sector sites, content sites; React apps often JS-required but APIs should degrade thoughtfully.",
+  "bodyLinked": "## Definition\r\n\r\n**[Progressive enhancement](concept:progressive-enhancement)** builds core functionality with HTML/CSS first, then enhances with JavaScript for richer UX.\r\n\r\n## Why it exists\r\n\r\nWorks without JS (where possible), better [accessibility](concept:accessibility-a11y), resilient on slow devices.\r\n\r\n## How it works\r\n\r\nSemantic HTML forms submit without JS; JS layer adds validation and SPA nav. Feature detect (`'IntersectionObserver' in window`) before using APIs.\r\n\r\n## In practice\r\n\r\nPublic sector sites, content sites; React apps often JS-required but APIs should degrade thoughtfully.",
+  "conceptIds": [
+    "progressive-enhancement",
+    "accessibility-a11y"
+  ]
+}

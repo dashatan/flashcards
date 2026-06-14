@@ -1,0 +1,30 @@
+{
+  "id": "execution-context",
+  "title": "Execution Context",
+  "aliases": [
+    "execution context",
+    "EC"
+  ],
+  "depth": "foundation",
+  "related": [
+    "call-stack",
+    "lexical-environment",
+    "hoisting"
+  ],
+  "usedInFlashcards": [],
+  "body": "## Definition\r\n\r\nAn **execution context** is the environment in which JavaScript code runs — it includes the [lexical environment](concept:lexical-environment), `this` binding, and metadata for the currently executing code (global, function, or eval).\r\n\r\n## Why it exists\r\n\r\nEach time code enters global scope or invokes a function, the engine needs an isolated place for locals, hoisting, and return behavior.\r\n\r\n## How it works\r\n\r\n1. **Creation phase**: create environment, hoist declarations ([hoisting](concept:hoisting)), set up `this`.\r\n2. **Execution phase**: run statements line by line.\r\n3. Context is pushed on the [call stack](concept:call-stack) when entering, popped when leaving.\r\n\r\n## Example\r\n\r\nCalling `greet()` creates a new function execution context with its own locals while the caller's context waits on the stack.\r\n\r\n```js\r\nfunction greet(name) {\r\n  const msg = `Hi ${name}`;\r\n  return msg;\r\n}\r\ngreet(\"Ada\");\r\n```\r\n\r\n## Common confusion\r\n\r\nExecution context is spec-level; developers often say “scope” or “stack frame.” One function call = one frame on the call stack with its own context.\r\n\r\n## In practice\r\n\r\nExplains hoisting timing, why `return` exits the current context, and how the event loop picks the next context to run after the stack clears.",
+  "bodyLinked": "## Definition\r\n\r\nAn **[execution context](concept:execution-context)** is the environment in which JavaScript code runs — it includes the [lexical environment](concept:lexical-environment), [this](concept:this-binding) [binding](concept:binding), and metadata for the currently executing code (global, function, or eval).\r\n\r\n## Why it exists\r\n\r\nEach time code enters global scope or invokes a function, the engine needs an isolated place for locals, [hoisting](concept:hoisting), and return behavior.\r\n\r\n## How it works\r\n\r\n1. **Creation phase**: create environment, hoist declarations ([hoisting](concept:hoisting)), [set](concept:getters-setters) up [this](concept:this-binding).\r\n2. **Execution phase**: run statements line by line.\r\n3. [Context](concept:use-context) is pushed on the [call stack](concept:call-stack) when entering, popped when leaving.\r\n\r\n## Example\r\n\r\nCalling `greet()` creates a [new](concept:new-operator) function [execution context](concept:execution-context) with its own locals while the caller's [context](concept:use-context) waits on the stack.\r\n\r\n```js\r\nfunction greet(name) {\r\n  const msg = `Hi ${name}`;\r\n  return msg;\r\n}\r\ngreet(\"Ada\");\r\n```\r\n\r\n## Common confusion\r\n\r\n[Execution context](concept:execution-context) is spec-level; developers often say “scope” or “[stack frame](concept:call-stack).” One function [call](concept:call-apply-bind) = one frame on the [call stack](concept:call-stack) with its own [context](concept:use-context).\r\n\r\n## In practice\r\n\r\nExplains [hoisting](concept:hoisting) timing, why `return` exits the current [context](concept:use-context), and how the [event loop](concept:event-loop) picks the next [context](concept:use-context) to run after the stack clears.",
+  "conceptIds": [
+    "execution-context",
+    "lexical-environment",
+    "this-binding",
+    "binding",
+    "hoisting",
+    "getters-setters",
+    "use-context",
+    "call-stack",
+    "new-operator",
+    "call-apply-bind",
+    "event-loop"
+  ]
+}

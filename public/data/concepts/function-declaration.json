@@ -1,0 +1,29 @@
+{
+  "id": "function-declaration",
+  "title": "Function Declaration",
+  "aliases": [
+    "function declaration",
+    "function declarations"
+  ],
+  "depth": "foundation",
+  "related": [
+    "hoisting",
+    "function-expression"
+  ],
+  "usedInFlashcards": [
+    10,
+    19
+  ],
+  "body": "## Definition\r\n\r\nA **function declaration** is `function name() {}` — fully [hoisted](concept:hoisting) so the function name is available throughout its scope before the line where it appears.\r\n\r\n## Why it exists\r\n\r\nAllows mutual recursion and organizing code without worrying about declaration order within a scope.\r\n\r\n## How it works\r\n\r\nHoisting registers both the name and the function body during the creation phase of the [execution context](concept:execution-context). Contrast with assigning a [function expression](concept:function-expression) to `const` — only the variable is hoisted (TDZ until line runs).\r\n\r\n## Example\r\n\r\n```js\r\nhoisted(); // works\r\n\r\nfunction hoisted() {\r\n  return 42;\r\n}\r\n```\r\n\r\n## Common confusion\r\n\r\nFunction declarations in blocks are block-scoped in ES6+ strict mode but behave oddly in sloppy mode (historical). Anonymous function declarations are only allowed as `export default function () {}` forms.\r\n\r\n## In practice\r\n\r\nUse declarations for top-level helpers; use expressions/arrows for callbacks and conditional creation.",
+  "bodyLinked": "## Definition\r\n\r\nA **[function declaration](concept:function-declaration)** is `function name() {}` — fully [hoisted](concept:hoisting) so the function name is available throughout its scope before the line where it appears.\r\n\r\n## Why it exists\r\n\r\nAllows mutual recursion and organizing code without worrying about declaration order within a scope.\r\n\r\n## How it works\r\n\r\n[Hoisting](concept:hoisting) registers both the name and the function body during the creation phase of the [execution context](concept:execution-context). Contrast with assigning a [function expression](concept:function-expression) to [const](concept:const) — only the variable is [hoisted](concept:hoisting) ([TDZ](concept:temporal-dead-zone) until line runs).\r\n\r\n## Example\r\n\r\n```js\r\nhoisted(); // works\r\n\r\nfunction hoisted() {\r\n  return 42;\r\n}\r\n```\r\n\r\n## Common confusion\r\n\r\n[Function declarations](concept:function-declaration) in blocks are [block-scoped](concept:block-scope) in ES6+ [strict mode](concept:strict-mode) but behave oddly in sloppy mode (historical). Anonymous [function declarations](concept:function-declaration) are only allowed as `export default function () {}` forms.\r\n\r\n## In practice\r\n\r\nUse declarations for top-level helpers; use expressions/arrows for callbacks and conditional creation.",
+  "conceptIds": [
+    "function-declaration",
+    "hoisting",
+    "execution-context",
+    "function-expression",
+    "const",
+    "temporal-dead-zone",
+    "block-scope",
+    "strict-mode"
+  ]
+}

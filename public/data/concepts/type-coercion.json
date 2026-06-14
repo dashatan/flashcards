@@ -1,0 +1,31 @@
+{
+  "id": "type-coercion",
+  "title": "Type Coercion",
+  "aliases": [
+    "type conversion",
+    "implicit conversion",
+    "explicit conversion"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "strict-equality",
+    "truthy-falsy",
+    "nan"
+  ],
+  "usedInFlashcards": [
+    71,
+    72,
+    77
+  ],
+  "body": "## Definition\r\n\r\n**Type coercion** is JavaScript automatically or manually converting a value from one type to another (string, number, boolean, object) during operations.\r\n\r\n## Why it exists\r\n\r\nLoose operators and APIs expect flexible inputs; coercion lets `\"5\"` participate in math after conversion.\r\n\r\n## How it works\r\n\r\n- **Implicit**: `==`, `+`, `if (value)`, template literals call abstract operations `ToNumber`, `ToString`, `ToBoolean`.\r\n- **Explicit**: `Number(x)`, `String(x)`, `Boolean(x)`.\r\n- `+` prefers string if either operand is a string; otherwise numeric addition.\r\n\r\n## Example\r\n\r\n```js\r\n\"5\" + 1;    // \"51\" (string concat)\r\n\"5\" - 1;    // 4 (numbers)\r\nBoolean(\"\"); // false\r\n```\r\n\r\n## Common confusion\r\n\r\nCoercion is not the same as [strict equality](concept:strict-equality). `[]` is [truthy](concept:truthy-falsy) but `Number([])` is `0`.\r\n\r\n## In practice\r\n\r\nUse `===` and explicit conversions in production code. Coercion puzzles are common in interviews (`[] + {}`).",
+  "bodyLinked": "## Definition\r\n\r\n**[Type coercion](concept:type-coercion)** is JavaScript automatically or manually converting a value from one type to another (string, number, [boolean](concept:boolean-conversion), object) during operations.\r\n\r\n## Why it exists\r\n\r\nLoose operators and APIs expect flexible inputs; coercion lets `\"5\"` participate in math after conversion.\r\n\r\n## How it works\r\n\r\n- **Implicit**: [==](concept:loose-equality), `+`, `if (value)`, template literals [call](concept:call-apply-bind) [abstract operations](concept:abstract-operations) [ToNumber](concept:abstract-operations), [ToString](concept:abstract-operations), [ToBoolean](concept:boolean-conversion).\r\n- **Explicit**: `Number(x)`, `String(x)`, `Boolean(x)`.\r\n- `+` prefers string if either operand is a string; otherwise numeric addition.\r\n\r\n## Example\r\n\r\n```js\r\n\"5\" + 1;    // \"51\" (string concat)\r\n\"5\" - 1;    // 4 (numbers)\r\nBoolean(\"\"); // false\r\n```\r\n\r\n## Common confusion\r\n\r\nCoercion is not the same as [strict equality](concept:strict-equality). `[]` is [truthy](concept:truthy-falsy) but `Number([])` is `0`.\r\n\r\n## In practice\r\n\r\nUse [===](concept:strict-equality) and [explicit conversions](concept:type-coercion) in production code. Coercion puzzles are common in interviews (`[] + {}`).",
+  "conceptIds": [
+    "type-coercion",
+    "boolean-conversion",
+    "loose-equality",
+    "call-apply-bind",
+    "abstract-operations",
+    "strict-equality",
+    "truthy-falsy"
+  ]
+}

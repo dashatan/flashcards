@@ -1,0 +1,27 @@
+{
+  "id": "nullish-coalescing",
+  "title": "Nullish Coalescing (??)",
+  "aliases": [
+    "nullish coalescing",
+    "?? operator"
+  ],
+  "depth": "foundation",
+  "related": [
+    "optional-chaining",
+    "undefined",
+    "truthy-falsy"
+  ],
+  "usedInFlashcards": [
+    79,
+    225
+  ],
+  "body": "## Definition\r\n\r\nThe **nullish coalescing operator** (`??`) returns the right operand only when the left is `null` or `undefined`.\r\n\r\n## Why it exists\r\n\r\nUnlike `||`, it does not treat `0`, `\"\"`, or `false` as missing — only nullish values.\r\n\r\n## How it works\r\n\r\n```js\r\n0 ?? 5;        // 0\r\n\"\" ?? \"default\"; // \"\"\r\nnull ?? 5;     // 5\r\nundefined ?? 5; // 5\r\n```\r\n\r\n## Common confusion\r\n\r\n`??` cannot mix with `&&`/`||` without parentheses (syntax error). Combine with [optional chaining](concept:optional-chaining): `user?.name ?? \"Guest\"`.\r\n\r\n## In practice\r\n\r\nDefault values for config, API fields, and form state where `0` or empty string are valid.",
+  "bodyLinked": "## Definition\r\n\r\nThe **[nullish coalescing](concept:nullish-coalescing) operator** (`??`) returns the right operand only when the left is [null](concept:null-value) or [undefined](concept:undefined).\r\n\r\n## Why it exists\r\n\r\nUnlike `||`, it does not treat `0`, `\"\"`, or `false` as missing — only nullish values.\r\n\r\n## How it works\r\n\r\n```js\r\n0 ?? 5;        // 0\r\n\"\" ?? \"default\"; // \"\"\r\nnull ?? 5;     // 5\r\nundefined ?? 5; // 5\r\n```\r\n\r\n## Common confusion\r\n\r\n`??` cannot mix with `&&`/`||` without parentheses ([syntax error](concept:syntax-error)). Combine with [optional chaining](concept:optional-chaining): `user?.name ?? \"Guest\"`.\r\n\r\n## In practice\r\n\r\nDefault values for config, API fields, and form state where `0` or empty string are valid.",
+  "conceptIds": [
+    "nullish-coalescing",
+    "null-value",
+    "undefined",
+    "syntax-error",
+    "optional-chaining"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "id": "let",
+  "title": "let",
+  "aliases": [
+    "let keyword"
+  ],
+  "depth": "foundation",
+  "related": [
+    "block-scope",
+    "binding",
+    "temporal-dead-zone",
+    "var"
+  ],
+  "usedInFlashcards": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    7,
+    9,
+    10,
+    11,
+    12,
+    18,
+    224
+  ],
+  "body": "## Definition\r\n\r\n**`let`** declares a [block-scoped](concept:block-scope), reassignable [binding](concept:binding) subject to the [temporal dead zone](concept:temporal-dead-zone).\r\n\r\n## Why it exists\r\n\r\nModern alternative to [var](concept:var) — no function-scope leakage, no silent redeclaration, and correct loop [closure](concept:closure) behavior.\r\n\r\n## How it works\r\n\r\n```js\r\nlet count = 0;\r\ncount = 1; // OK\r\nlet count = 2; // SyntaxError in same scope\r\n```\r\n\r\n[Hoisted](concept:hoisting) but inaccessible until the declaration line runs.\r\n\r\n## Common confusion\r\n\r\n`let` allows reassignment unlike [const](concept:const). It does not hoist like `var` with `undefined` — TDZ applies until initialized.\r\n\r\n## In practice\r\n\r\nDefault to [const](concept:const); use `let` only when reassignment is required.",
+  "bodyLinked": "## Definition\r\n\r\n**[let](concept:let)** declares a [block-scoped](concept:block-scope), reassignable [binding](concept:binding) subject to the [temporal dead zone](concept:temporal-dead-zone).\r\n\r\n## Why it exists\r\n\r\nModern alternative to [var](concept:var) — no [function-scope](concept:function-scope) leakage, no silent redeclaration, and correct loop [closure](concept:closure) behavior.\r\n\r\n## How it works\r\n\r\n```js\r\nlet count = 0;\r\ncount = 1; // OK\r\nlet count = 2; // SyntaxError in same scope\r\n```\r\n\r\n[Hoisted](concept:hoisting) but inaccessible until the declaration line runs.\r\n\r\n## Common confusion\r\n\r\n[let](concept:let) allows reassignment unlike [const](concept:const). It does not hoist like [var](concept:var) with [undefined](concept:undefined) — [TDZ](concept:temporal-dead-zone) applies until initialized.\r\n\r\n## In practice\r\n\r\nDefault to [const](concept:const); use [let](concept:let) only when reassignment is required.",
+  "conceptIds": [
+    "let",
+    "block-scope",
+    "binding",
+    "temporal-dead-zone",
+    "var",
+    "function-scope",
+    "closure",
+    "hoisting",
+    "const",
+    "undefined"
+  ]
+}

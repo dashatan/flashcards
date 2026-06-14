@@ -1,0 +1,29 @@
+{
+  "id": "api-layer",
+  "title": "API Layer",
+  "aliases": [
+    "API layer",
+    "data access layer",
+    "fetch wrapper"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "tanstack-query",
+    "cors"
+  ],
+  "usedInFlashcards": [
+    315,
+    316
+  ],
+  "body": "## Definition\r\n\r\nAn **API layer** centralizes HTTP calls — typed clients, error handling, auth headers — separate from UI components.\r\n\r\n## Why it exists\r\n\r\nSingle place for retries, logging, base URL, and [CORS](concept:cors)-related config; components stay thin.\r\n\r\n## How it works\r\n\r\n`lib/api/client.ts` + feature hooks using [TanStack Query](concept:tanstack-query). Map responses to view models in selectors/mappers.\r\n\r\n## In practice\r\n\r\nNever fetch directly inside presentational components; colocate query hooks per domain.",
+  "bodyLinked": "## Definition\r\n\r\nAn **[API layer](concept:api-layer)** centralizes HTTP [calls](concept:call-apply-bind) — typed clients, error handling, auth headers — separate from UI components.\r\n\r\n## Why it exists\r\n\r\nSingle place for retries, [logging](concept:observability), base URL, and [CORS](concept:cors)-related config; components stay thin.\r\n\r\n## How it works\r\n\r\n`lib/api/client.ts` + feature hooks using [TanStack Query](concept:tanstack-query). [Map](concept:array-map-filter-reduce) responses to view models in selectors/mappers.\r\n\r\n## In practice\r\n\r\nNever [fetch](concept:fetch) directly inside presentational components; colocate query hooks per domain.",
+  "conceptIds": [
+    "api-layer",
+    "call-apply-bind",
+    "observability",
+    "cors",
+    "tanstack-query",
+    "array-map-filter-reduce",
+    "fetch"
+  ]
+}

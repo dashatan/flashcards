@@ -1,0 +1,29 @@
+{
+  "id": "iife",
+  "title": "IIFE",
+  "aliases": [
+    "IIFE",
+    "immediately invoked function expression"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "function-expression",
+    "closure",
+    "lexical-scope"
+  ],
+  "usedInFlashcards": [
+    18
+  ],
+  "body": "## Definition\r\n\r\nAn **IIFE** (Immediately Invoked Function Expression) is `(function () { ... })()` — runs a [function expression](concept:function-expression) once at definition time to create a private scope.\r\n\r\n## Why it exists\r\n\r\nBefore ES modules and [block scope](concept:block-scope), IIFEs avoided global pollution and simulated private variables via [closures](concept:closure).\r\n\r\n## How it works\r\n\r\nThe outer parentheses make `function` an expression; trailing `()` invokes it immediately, creating a fresh [lexical environment](concept:lexical-environment) that dies unless closures escape.\r\n\r\n## Example\r\n\r\n```js\r\nconst module = (function () {\r\n  let secret = 0;\r\n  return {\r\n    inc() { secret++; },\r\n    get() { return secret; },\r\n  };\r\n})();\r\n```\r\n\r\n## Common confusion\r\n\r\nModern code uses ES modules or block-scoped `let` instead. IIFEs still appear in build output and legacy bundles.\r\n\r\n## In practice\r\n\r\nUnderstand for interviews and reading minified code; prefer modules for new code.",
+  "bodyLinked": "## Definition\r\n\r\nAn **[IIFE](concept:iife)** ([Immediately Invoked Function Expression](concept:iife)) is `(function () { ... })()` — runs a [function expression](concept:function-expression) once at definition time to create a private scope.\r\n\r\n## Why it exists\r\n\r\nBefore [ES modules](concept:es-modules) and [block scope](concept:block-scope), [IIFEs](concept:iife) avoided global pollution and simulated private variables via [closures](concept:closure).\r\n\r\n## How it works\r\n\r\nThe outer parentheses make `function` an expression; trailing `()` invokes it immediately, creating a fresh [lexical environment](concept:lexical-environment) that dies unless [closures](concept:closure) escape.\r\n\r\n## Example\r\n\r\n```js\r\nconst module = (function () {\r\n  let secret = 0;\r\n  return {\r\n    inc() { secret++; },\r\n    get() { return secret; },\r\n  };\r\n})();\r\n```\r\n\r\n## Common confusion\r\n\r\nModern code uses [ES modules](concept:es-modules) or [block-scoped](concept:block-scope) [let](concept:let) instead. [IIFEs](concept:iife) still appear in build output and legacy bundles.\r\n\r\n## In practice\r\n\r\nUnderstand for interviews and reading minified code; prefer modules for [new](concept:new-operator) code.",
+  "conceptIds": [
+    "iife",
+    "function-expression",
+    "es-modules",
+    "block-scope",
+    "closure",
+    "lexical-environment",
+    "let",
+    "new-operator"
+  ]
+}

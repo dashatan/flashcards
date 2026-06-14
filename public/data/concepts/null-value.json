@@ -1,0 +1,37 @@
+{
+  "id": "null-value",
+  "title": "null",
+  "aliases": [
+    "null",
+    "null value"
+  ],
+  "depth": "foundation",
+  "related": [
+    "undefined",
+    "truthy-falsy",
+    "nullish-coalescing",
+    "strict-equality"
+  ],
+  "usedInFlashcards": [
+    29,
+    52,
+    71,
+    73,
+    78,
+    79,
+    80,
+    84,
+    225
+  ],
+  "body": "## Definition\r\n\r\n**`null`** is a primitive value representing intentional absence of any object value — distinct from [undefined](concept:undefined).\r\n\r\n## Why it exists\r\n\r\nExplicit signal: “this variable intentionally has no object,” e.g. `document.getElementById` returning null when not found.\r\n\r\n## How it works\r\n\r\n```js\r\ntypeof null === \"object\"; // historical bug\r\nnull == undefined; // true (loose)\r\nnull === undefined; // false (strict)\r\n```\r\n\r\nFalsy in boolean context ([truthy/falsy](concept:truthy-falsy)).\r\n\r\n## Common confusion\r\n\r\nUse [strict equality](concept:strict-equality) (`=== null`) instead of `== null` unless you intentionally check both null and undefined.\r\n\r\n## In practice\r\n\r\nPrefer `undefined` for missing parameters; use `null` for explicit empty states in APIs and JSON.",
+  "bodyLinked": "## Definition\r\n\r\n**[null](concept:null-value)** is a primitive value representing intentional absence of any object value — distinct from [undefined](concept:undefined).\r\n\r\n## Why it exists\r\n\r\nExplicit signal: “[this](concept:this-binding) variable intentionally has no object,” e.g. `document.getElementById` returning [null](concept:null-value) when not found.\r\n\r\n## How it works\r\n\r\n```js\r\ntypeof null === \"object\"; // historical bug\r\nnull == undefined; // true (loose)\r\nnull === undefined; // false (strict)\r\n```\r\n\r\n[Falsy](concept:truthy-falsy) in [boolean](concept:boolean-conversion) [context](concept:use-context) ([truthy/falsy](concept:truthy-falsy)).\r\n\r\n## Common confusion\r\n\r\nUse [strict equality](concept:strict-equality) (`=== null`) instead of `== null` unless you intentionally check both [null](concept:null-value) and [undefined](concept:undefined).\r\n\r\n## In practice\r\n\r\nPrefer [undefined](concept:undefined) for missing parameters; use [null](concept:null-value) for explicit empty states in APIs and JSON.",
+  "conceptIds": [
+    "null-value",
+    "undefined",
+    "this-binding",
+    "truthy-falsy",
+    "boolean-conversion",
+    "use-context",
+    "strict-equality"
+  ]
+}

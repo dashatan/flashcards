@@ -1,0 +1,23 @@
+{
+  "id": "database-migrations",
+  "title": "Database migrations",
+  "aliases": [
+    "DB migrations",
+    "schema migrations",
+    "migration scripts"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "ci-cd",
+    "api-layer",
+    "technical-debt"
+  ],
+  "usedInFlashcards": [
+    323
+  ],
+  "body": "## Definition\r\n\r\n**Database migrations** are versioned scripts that evolve schema/data safely — up/down steps applied in order across environments.\r\n\r\n## Why it exists\r\n\r\nReproducible schema changes tied to app releases; avoid manual prod SQL drift.\r\n\r\n## How it works\r\n\r\nTools (Prisma, Flyway, Knex) track applied migrations; CI runs migrations before/at deploy; backward-compatible steps for zero-downtime when possible.\r\n\r\n## Common confusion\r\n\r\nFrontend devs still need basics — API contracts depend on schema; coordinate breaking changes.\r\n\r\n## In practice\r\n\r\nExpand-contract pattern for column renames; never edit applied migration history in shared envs.",
+  "bodyLinked": "## Definition\r\n\r\n**[Database migrations](concept:database-migrations)** are versioned scripts that evolve schema/data safely — up/down steps applied in order across environments.\r\n\r\n## Why it exists\r\n\r\nReproducible schema changes tied to app releases; avoid manual prod SQL drift.\r\n\r\n## How it works\r\n\r\nTools (Prisma, Flyway, Knex) track applied migrations; CI runs migrations before/at deploy; backward-compatible steps for zero-downtime when possible.\r\n\r\n## Common confusion\r\n\r\nFrontend devs still need basics — API contracts depend on schema; coordinate breaking changes.\r\n\r\n## In practice\r\n\r\nExpand-contract pattern for column renames; never edit applied migration history in shared envs.",
+  "conceptIds": [
+    "database-migrations"
+  ]
+}

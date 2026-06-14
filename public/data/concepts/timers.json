@@ -1,0 +1,40 @@
+{
+  "id": "timers",
+  "title": "Timers (setTimeout / setInterval)",
+  "aliases": [
+    "setTimeout",
+    "setInterval",
+    "setImmediate",
+    "timer APIs"
+  ],
+  "depth": "foundation",
+  "related": [
+    "event-loop",
+    "macrotask",
+    "debounce-throttle"
+  ],
+  "usedInFlashcards": [
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    131,
+    151,
+    235,
+    236,
+    271
+  ],
+  "body": "## Definition\r\n\r\n**`setTimeout`** and **`setInterval`** schedule callbacks on the timer queue — [macrotasks](concept:macrotask) processed by the [event loop](concept:event-loop) after current sync code and [microtasks](concept:microtask).\r\n\r\n## Why it exists\r\n\r\nDefer work, poll, animations (legacy), and implement [debounce/throttle](concept:debounce-throttle).\r\n\r\n## How it works\r\n\r\n```js\r\nsetTimeout(() => console.log(\"later\"), 0);\r\nconst id = setInterval(tick, 1000);\r\nclearInterval(id);\r\n```\r\n\r\n`setTimeout(fn, 0)` does not run immediately — waits for the stack to clear.\r\n\r\n## Common confusion\r\n\r\n`setInterval` does not account for callback duration — can drift. `setTimeout(0)` still runs after [Promise](concept:promise) microtasks.\r\n\r\n## In practice\r\n\r\nPrefer `requestAnimationFrame` for visual updates; use `clearTimeout`/`clearInterval` to avoid leaks.",
+  "bodyLinked": "## Definition\r\n\r\n**[setTimeout](concept:timers)** and **[setInterval](concept:timers)** schedule callbacks on the timer queue — [macrotasks](concept:macrotask) processed by the [event loop](concept:event-loop) after current sync code and [microtasks](concept:microtask).\r\n\r\n## Why it exists\r\n\r\nDefer work, poll, animations (legacy), and implement [debounce/throttle](concept:debounce-throttle).\r\n\r\n## How it works\r\n\r\n```js\r\nsetTimeout(() => console.log(\"later\"), 0);\r\nconst id = setInterval(tick, 1000);\r\nclearInterval(id);\r\n```\r\n\r\n`setTimeout(fn, 0)` does not run immediately — waits for the stack to clear.\r\n\r\n## Common confusion\r\n\r\n[setInterval](concept:timers) does not account for callback duration — can drift. [setTimeout(0)](concept:timers) still runs after [Promise](concept:promise) [microtasks](concept:microtask).\r\n\r\n## In practice\r\n\r\nPrefer [requestAnimationFrame](concept:request-animation-frame) for visual updates; use `clearTimeout`/`clearInterval` to avoid leaks.",
+  "conceptIds": [
+    "timers",
+    "macrotask",
+    "event-loop",
+    "microtask",
+    "debounce-throttle",
+    "promise",
+    "request-animation-frame"
+  ]
+}

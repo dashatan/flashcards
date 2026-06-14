@@ -1,0 +1,25 @@
+{
+  "id": "cross-cutting-concerns",
+  "title": "Cross-Cutting Concerns",
+  "aliases": [
+    "cross-cutting concerns"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "dependency-injection",
+    "observability",
+    "error-boundary"
+  ],
+  "usedInFlashcards": [
+    304
+  ],
+  "body": "## Definition\r\n\r\n**Cross-cutting concerns** are functionality spanning many features — auth, logging, analytics, theming, error handling.\r\n\r\n## Why it exists\r\n\r\nAvoid duplicating auth checks and telemetry in every feature module.\r\n\r\n## How it works\r\n\r\nApp shell: [error boundaries](concept:error-boundary), Context, middleware, layout wrappers, [observability](concept:observability) SDKs at root.\r\n\r\n## In practice\r\n\r\nNext.js middleware for auth; Sentry `beforeSend` globally; theme Provider once.",
+  "bodyLinked": "## Definition\r\n\r\n**[Cross-cutting concerns](concept:cross-cutting-concerns)** are functionality spanning many features — auth, [logging](concept:observability), analytics, theming, error handling.\r\n\r\n## Why it exists\r\n\r\nAvoid duplicating auth checks and telemetry in [every](concept:array-some-every) feature module.\r\n\r\n## How it works\r\n\r\nApp shell: [error boundaries](concept:error-boundary), [Context](concept:use-context), middleware, layout wrappers, [observability](concept:observability) SDKs at root.\r\n\r\n## In practice\r\n\r\nNext.js middleware for auth; Sentry `beforeSend` globally; theme Provider once.",
+  "conceptIds": [
+    "cross-cutting-concerns",
+    "observability",
+    "array-some-every",
+    "error-boundary",
+    "use-context"
+  ]
+}

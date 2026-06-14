@@ -1,0 +1,36 @@
+{
+  "id": "const",
+  "title": "const",
+  "aliases": [
+    "const keyword"
+  ],
+  "depth": "foundation",
+  "related": [
+    "let",
+    "binding",
+    "value-vs-reference",
+    "block-scope"
+  ],
+  "usedInFlashcards": [
+    2,
+    3,
+    4,
+    6,
+    7,
+    8,
+    9,
+    10,
+    13,
+    18
+  ],
+  "body": "## Definition\r\n\r\n**`const`** declares a [block-scoped](concept:block-scope) [binding](concept:binding) that cannot be reassigned after initialization.\r\n\r\n## Why it exists\r\n\r\nSignals intent that a name will always point to the same value; prevents accidental rebinding bugs.\r\n\r\n## How it works\r\n\r\n```js\r\nconst user = { name: \"Ada\" };\r\nuser.name = \"Grace\"; // OK — mutate object\r\nuser = {}; // TypeError — cannot rebind\r\n```\r\n\r\nMust be initialized at declaration. Subject to [TDZ](concept:temporal-dead-zone) like `let`.\r\n\r\n## Common confusion\r\n\r\n`const` does not make objects deeply immutable — only the [binding](concept:binding) is fixed ([value vs reference](concept:value-vs-reference)).\r\n\r\n## In practice\r\n\r\nUse `const` by default in modern JavaScript and TypeScript.",
+  "bodyLinked": "## Definition\r\n\r\n**[const](concept:const)** declares a [block-scoped](concept:block-scope) [binding](concept:binding) that cannot be reassigned after initialization.\r\n\r\n## Why it exists\r\n\r\nSignals intent that a name will always point to the same value; prevents accidental rebinding bugs.\r\n\r\n## How it works\r\n\r\n```js\r\nconst user = { name: \"Ada\" };\r\nuser.name = \"Grace\"; // OK — mutate object\r\nuser = {}; // TypeError — cannot rebind\r\n```\r\n\r\nMust be initialized at declaration. Subject to [TDZ](concept:temporal-dead-zone) like [let](concept:let).\r\n\r\n## Common confusion\r\n\r\n[const](concept:const) does not make objects deeply immutable — only the [binding](concept:binding) is fixed ([value vs reference](concept:value-vs-reference)).\r\n\r\n## In practice\r\n\r\nUse [const](concept:const) by default in modern JavaScript and TypeScript.",
+  "conceptIds": [
+    "const",
+    "block-scope",
+    "binding",
+    "temporal-dead-zone",
+    "let",
+    "value-vs-reference"
+  ]
+}

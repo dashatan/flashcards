@@ -1,0 +1,29 @@
+{
+  "id": "prop-drilling",
+  "title": "Prop Drilling",
+  "aliases": [
+    "prop drilling"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "react-context-api",
+    "react-composition"
+  ],
+  "usedInFlashcards": [
+    162,
+    169,
+    174,
+    214
+  ],
+  "body": "## Definition\r\n\r\n**Prop drilling** is passing props through many intermediate components that do not use them, only to reach a deep child.\r\n\r\n## Why it exists\r\n\r\nNot intentional — symptom of [one-way data flow](concept:one-way-data-flow) without better structure.\r\n\r\n## How it works\r\n\r\nFixes: [composition](concept:react-composition) (children slots), Context, colocate state, or external store (Zustand).\r\n\r\n## Common confusion\r\n\r\nDrilling 1–2 levels is fine. Context for everything causes broad [re-renders](concept:react-re-render).\r\n\r\n## In practice\r\n\r\nInterview tradeoff question: Context vs composition vs Zustand vs TanStack Query for server data.",
+  "bodyLinked": "## Definition\r\n\r\n**[Prop drilling](concept:prop-drilling)** is passing props through many intermediate components that do not use them, only to reach a deep child.\r\n\r\n## Why it exists\r\n\r\nNot intentional — symptom of [one-way data flow](concept:one-way-data-flow) without better structure.\r\n\r\n## How it works\r\n\r\nFixes: [composition](concept:react-composition) (children slots), [Context](concept:use-context), colocate state, or external store ([Zustand](concept:zustand)).\r\n\r\n## Common confusion\r\n\r\nDrilling 1–2 levels is fine. [Context](concept:use-context) for everything causes broad [re-renders](concept:react-re-render).\r\n\r\n## In practice\r\n\r\nInterview tradeoff question: [Context](concept:use-context) vs [composition](concept:react-composition) vs [Zustand](concept:zustand) vs [TanStack Query](concept:tanstack-query) for server data.",
+  "conceptIds": [
+    "prop-drilling",
+    "one-way-data-flow",
+    "react-composition",
+    "use-context",
+    "zustand",
+    "react-re-render",
+    "tanstack-query"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "identifier",
+  "title": "Identifier",
+  "aliases": [
+    "identifiers"
+  ],
+  "depth": "foundation",
+  "related": [
+    "binding",
+    "lexical-scope"
+  ],
+  "usedInFlashcards": [
+    15
+  ],
+  "body": "## Definition\r\n\r\nAn **identifier** is the name you give to a variable, function, class, or other binding in source code (e.g. `count`, `fetchUser`).\r\n\r\n## Why it exists\r\n\r\nIdentifiers let humans and tools refer to values and behavior by name instead of memory addresses.\r\n\r\n## How it works\r\n\r\nWhen JavaScript parses code, it registers identifiers in the current [lexical scope](concept:lexical-scope). When execution reaches a declaration, the engine creates a [binding](concept:binding) between that identifier and a value (or leaves it uninitialized in the [temporal dead zone](concept:temporal-dead-zone) for `let`/`const`).\r\n\r\n## Example\r\n\r\n```js\r\nconst userId = 42; // `userId` is the identifier\r\nfunction greet(name) { // `greet` and `name` are identifiers\r\n  return `Hello ${name}`;\r\n}\r\n```\r\n\r\n## Common confusion\r\n\r\nIdentifiers are not the values themselves — `userId` is the name; `42` is the value. Renaming an identifier in your editor does not change runtime behavior unless you change what the code actually references.\r\n\r\n## In practice\r\n\r\nLint rules (no unused vars), refactoring tools, and readable APIs all depend on clear identifier names. In interviews, “identifier lookup” means how the engine resolves a name through the [scope chain](concept:scope-chain).",
+  "bodyLinked": "## Definition\r\n\r\nAn **[identifier](concept:identifier)** is the name you give to a variable, function, [class](concept:es6-class), or other [binding](concept:binding) in source code (e.g. `count`, `fetchUser`).\r\n\r\n## Why it exists\r\n\r\n[Identifiers](concept:identifier) [let](concept:let) humans and tools refer to values and behavior by name instead of memory addresses.\r\n\r\n## How it works\r\n\r\nWhen JavaScript parses code, it registers [identifiers](concept:identifier) in the current [lexical scope](concept:lexical-scope). When execution reaches a declaration, the engine creates a [binding](concept:binding) between that [identifier](concept:identifier) and a value (or leaves it uninitialized in the [temporal dead zone](concept:temporal-dead-zone) for [let](concept:let)/[const](concept:const)).\r\n\r\n## Example\r\n\r\n```js\r\nconst userId = 42; // `userId` is the identifier\r\nfunction greet(name) { // `greet` and `name` are identifiers\r\n  return `Hello ${name}`;\r\n}\r\n```\r\n\r\n## Common confusion\r\n\r\n[Identifiers](concept:identifier) are not the values themselves — `userId` is the name; `42` is the value. Renaming an [identifier](concept:identifier) in your editor does not change runtime behavior unless you change what the code actually references.\r\n\r\n## In practice\r\n\r\n[Lint rules](concept:coding-standards) (no unused vars), refactoring tools, and readable APIs all depend on clear [identifier](concept:identifier) names. In interviews, “[identifier](concept:identifier) lookup” means how the engine resolves a name through the [scope chain](concept:scope-chain).",
+  "conceptIds": [
+    "identifier",
+    "es6-class",
+    "binding",
+    "let",
+    "lexical-scope",
+    "temporal-dead-zone",
+    "const",
+    "coding-standards",
+    "scope-chain"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "array-sort",
+  "title": "Array.sort",
+  "aliases": [
+    "sort",
+    "Array.sort",
+    "comparator"
+  ],
+  "depth": "foundation",
+  "related": [
+    "array-map-filter-reduce",
+    "big-o-complexity"
+  ],
+  "usedInFlashcards": [
+    103,
+    104,
+    105
+  ],
+  "body": "## Definition\r\n\r\n**`Array.sort`** sorts elements in place using UTF-16 string conversion by default, or a custom comparator for numeric/date ordering.\r\n\r\n## Why it exists\r\n\r\nOrder collections for display, binary search prep, and deterministic output.\r\n\r\n## How it works\r\n\r\n```js\r\n[10, 2, 1].sort(); // [1, 10, 2] — string sort!\r\n[10, 2, 1].sort((a, b) => a - b); // [1, 2, 10]\r\n```\r\n\r\nMutates the original array — copy first if immutability matters: `[...arr].sort()`.\r\n\r\n## Common confusion\r\n\r\nDefault sort is lexicographic, not numeric. Comparator must return negative/zero/positive, not boolean.\r\n\r\n## In practice\r\n\r\nAlways pass comparator for numbers; stable sort in modern engines preserves equal element order.",
+  "bodyLinked": "## Definition\r\n\r\n**[Array.sort](concept:array-sort)** [sorts](concept:array-sort) elements in place using UTF-16 string conversion by default, or a custom [comparator](concept:array-sort) for numeric/date ordering.\r\n\r\n## Why it exists\r\n\r\nOrder collections for display, binary search prep, and deterministic output.\r\n\r\n## How it works\r\n\r\n```js\r\n[10, 2, 1].sort(); // [1, 10, 2] — string sort!\r\n[10, 2, 1].sort((a, b) => a - b); // [1, 2, 10]\r\n```\r\n\r\nMutates the original array — copy first if immutability matters: `[...arr].sort()`.\r\n\r\n## Common confusion\r\n\r\nDefault [sort](concept:array-sort) is lexicographic, not numeric. [Comparator](concept:array-sort) must return negative/zero/positive, not [boolean](concept:boolean-conversion).\r\n\r\n## In practice\r\n\r\nAlways pass [comparator](concept:array-sort) for numbers; stable [sort](concept:array-sort) in modern engines preserves equal element order.",
+  "conceptIds": [
+    "array-sort",
+    "boolean-conversion"
+  ]
+}

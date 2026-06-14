@@ -1,0 +1,23 @@
+{
+  "id": "critical-rendering-path",
+  "title": "Critical Rendering Path",
+  "aliases": [
+    "critical rendering path",
+    "CRP"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "reflow-repaint",
+    "core-web-vitals"
+  ],
+  "usedInFlashcards": [
+    286
+  ],
+  "body": "## Definition\r\n\r\nThe **critical rendering path** is the sequence: HTML → DOM, CSS → CSSOM → render tree → layout → paint → composite.\r\n\r\n## Why it exists\r\n\r\nUnderstanding what blocks first paint guides performance optimization.\r\n\r\n## How it works\r\n\r\nRender-blocking CSS and sync JS in `<head>` delay first render. Optimize by minimizing blocking resources, inline critical CSS, defer JS.\r\n\r\n## In practice\r\n\r\nInterview diagram topic; ties to [LCP](concept:lcp) and TTFB improvements.",
+  "bodyLinked": "## Definition\r\n\r\nThe **[critical rendering path](concept:critical-rendering-path)** is the sequence: HTML → [DOM](concept:dom), CSS → CSSOM → render tree → layout → paint → composite.\r\n\r\n## Why it exists\r\n\r\nUnderstanding what blocks first paint guides performance optimization.\r\n\r\n## How it works\r\n\r\nRender-blocking CSS and sync JS in `<head>` delay first render. Optimize by minimizing blocking resources, inline critical CSS, defer JS.\r\n\r\n## In practice\r\n\r\nInterview diagram topic; ties to [LCP](concept:lcp) and TTFB improvements.",
+  "conceptIds": [
+    "critical-rendering-path",
+    "dom",
+    "lcp"
+  ]
+}

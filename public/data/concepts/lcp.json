@@ -1,0 +1,24 @@
+{
+  "id": "lcp",
+  "title": "LCP (Largest Contentful Paint)",
+  "aliases": [
+    "LCP",
+    "Largest Contentful Paint"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "core-web-vitals",
+    "lazy-loading"
+  ],
+  "usedInFlashcards": [
+    282,
+    283
+  ],
+  "body": "## Definition\r\n\r\n**LCP** measures when the largest visible content element (hero image, heading block) finishes rendering — loading performance.\r\n\r\n## Why it exists\r\n\r\nUsers perceive page as loaded when main content appears.\r\n\r\n## How it works\r\n\r\nImprove via image optimization, preload hero, reduce TTFB ([SSR](concept:server-side-rendering)), eliminate render-blocking CSS/JS, CDN.\r\n\r\n## Good threshold\r\n\r\n≤ 2.5s at 75th percentile (field).\r\n\r\n## In practice\r\n\r\nOptimize above-the-fold assets first.",
+  "bodyLinked": "## Definition\r\n\r\n**[LCP](concept:lcp)** measures when the largest visible content element (hero image, heading block) finishes rendering — loading performance.\r\n\r\n## Why it exists\r\n\r\nUsers perceive page as loaded when main content appears.\r\n\r\n## How it works\r\n\r\nImprove via image optimization, preload hero, [reduce](concept:array-map-filter-reduce) TTFB ([SSR](concept:server-side-rendering)), eliminate render-blocking CSS/JS, CDN.\r\n\r\n## Good threshold\r\n\r\n≤ 2.5s at 75th percentile (field).\r\n\r\n## In practice\r\n\r\nOptimize above-the-fold assets first.",
+  "conceptIds": [
+    "lcp",
+    "array-map-filter-reduce",
+    "server-side-rendering"
+  ]
+}

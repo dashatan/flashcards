@@ -1,0 +1,26 @@
+{
+  "id": "object-define-property",
+  "title": "Object.defineProperty",
+  "aliases": [
+    "defineProperty"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "property-descriptors",
+    "getters-setters",
+    "object-freeze-seal"
+  ],
+  "usedInFlashcards": [
+    59,
+    60
+  ],
+  "body": "## Definition\r\n\r\n**`Object.defineProperty`** defines or modifies a property on an object using an explicit [property descriptor](concept:property-descriptors).\r\n\r\n## Why it exists\r\n\r\nCreate non-enumerable keys, read-only fields, or accessor properties that intercept reads/writes.\r\n\r\n## How it works\r\n\r\n```js\r\nconst obj = {};\r\nObject.defineProperty(obj, \"secret\", {\r\n  get() { return 42; },\r\n  enumerable: false,\r\n});\r\n```\r\n\r\nReturns the object. Throws if `configurable: false` and you try incompatible changes.\r\n\r\n## Common confusion\r\n\r\nDefining a getter without a setter makes the property read-only at runtime. Default descriptor values differ from assignment (`obj.x = 1`).\r\n\r\n## In practice\r\n\r\nFoundation for `Object.defineProperties`, some ORM/proxy patterns, and legacy `__defineGetter__` replacements.",
+  "bodyLinked": "## Definition\r\n\r\n**[Object.defineProperty](concept:object-define-property)** defines or modifies a property on an object using an explicit [property descriptor](concept:property-descriptors).\r\n\r\n## Why it exists\r\n\r\nCreate non-[enumerable](concept:property-descriptors) keys, read-only fields, or [accessor properties](concept:getters-setters) that intercept reads/writes.\r\n\r\n## How it works\r\n\r\n```js\r\nconst obj = {};\r\nObject.defineProperty(obj, \"secret\", {\r\n  get() { return 42; },\r\n  enumerable: false,\r\n});\r\n```\r\n\r\nReturns the object. Throws if `configurable: false` and you [try](concept:try-catch-finally) incompatible changes.\r\n\r\n## Common confusion\r\n\r\nDefining a getter without a setter makes the property read-only at runtime. Default descriptor values differ from assignment (`obj.x = 1`).\r\n\r\n## In practice\r\n\r\nFoundation for `Object.defineProperties`, [some](concept:array-some-every) ORM/proxy patterns, and legacy `__defineGetter__` replacements.",
+  "conceptIds": [
+    "object-define-property",
+    "property-descriptors",
+    "getters-setters",
+    "try-catch-finally",
+    "array-some-every"
+  ]
+}

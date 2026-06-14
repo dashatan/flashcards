@@ -1,0 +1,27 @@
+{
+  "id": "typescript-react-components",
+  "title": "Typing React components",
+  "aliases": [
+    "type React components",
+    "React.FC",
+    "FC",
+    "function components TypeScript"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "typescript-generics",
+    "props-vs-state",
+    "controlled-component"
+  ],
+  "usedInFlashcards": [
+    217,
+    218
+  ],
+  "body": "## Definition\r\n\r\nTyping React components means annotating props (and optional `children`) — prefer explicit prop interfaces over `React.FC` in modern code.\r\n\r\n## Why it exists\r\n\r\nCatch missing/extra props at compile time; document component contracts.\r\n\r\n## How it works\r\n\r\n```tsx\r\ntype ButtonProps = { label: string; onClick: () => void };\r\nfunction Button({ label, onClick }: ButtonProps) { ... }\r\n```\r\n\r\n`React.FC` adds implicit `children` — often unwanted.\r\n\r\n## Common confusion\r\n\r\n`FC` vs plain functions: community prefers plain functions + explicit props for clarity and generic support.\r\n\r\n## In practice\r\n\r\nExport prop types; use `ComponentProps<\"button\">` to extend native elements; generics for reusable UI.",
+  "bodyLinked": "## Definition\r\n\r\n[Typing React components](concept:typescript-react-components) means annotating props (and optional `children`) — prefer explicit prop interfaces over [React.FC](concept:typescript-react-components) in modern code.\r\n\r\n## Why it exists\r\n\r\n[Catch](concept:try-catch-finally) missing/extra props at compile time; document component contracts.\r\n\r\n## How it works\r\n\r\n```tsx\r\ntype ButtonProps = { label: string; onClick: () => void };\r\nfunction Button({ label, onClick }: ButtonProps) { ... }\r\n```\r\n\r\n[React.FC](concept:typescript-react-components) adds implicit `children` — often unwanted.\r\n\r\n## Common confusion\r\n\r\n[FC](concept:typescript-react-components) vs plain functions: community prefers plain functions + explicit props for clarity and generic support.\r\n\r\n## In practice\r\n\r\nExport prop types; use `ComponentProps<\"button\">` to extend native elements; [generics](concept:typescript-generics) for reusable UI.",
+  "conceptIds": [
+    "typescript-react-components",
+    "try-catch-finally",
+    "typescript-generics"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": "postcss",
+  "title": "PostCSS",
+  "aliases": [
+    "PostCSS plugins",
+    "autoprefixer"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "css-in-react",
+    "browserslist",
+    "vite"
+  ],
+  "usedInFlashcards": [
+    261,
+    276
+  ],
+  "body": "## Definition\r\n\r\n**PostCSS** transforms CSS with JavaScript plugins — Autoprefixer, nesting, custom syntax — in the build pipeline.\r\n\r\n## Why it exists\r\n\r\nFuture CSS features and vendor prefixes via [Browserslist](concept:browserslist) without manual `-webkit-` maintenance.\r\n\r\n## How it works\r\n\r\nCSS → PostCSS plugin chain → output CSS. Often integrated in Vite/Webpack alongside Tailwind (which uses PostCSS).\r\n\r\n## Common confusion\r\n\r\nNot a preprocessor like Sass — plugin ecosystem defines behavior. Tailwind is a PostCSS plugin.\r\n\r\n## In practice\r\n\r\nAutoprefixer + cssnano for production minification; `@tailwind` directives in global CSS.",
+  "bodyLinked": "## Definition\r\n\r\n**[PostCSS](concept:postcss)** transforms CSS with JavaScript plugins — [Autoprefixer](concept:postcss), nesting, custom syntax — in the build pipeline.\r\n\r\n## Why it exists\r\n\r\nFuture CSS features and vendor prefixes via [Browserslist](concept:browserslist) without manual `-webkit-` maintenance.\r\n\r\n## How it works\r\n\r\nCSS → [PostCSS](concept:postcss) plugin chain → output CSS. Often integrated in [Vite](concept:vite)/Webpack alongside [Tailwind](concept:css-in-react) (which uses [PostCSS](concept:postcss)).\r\n\r\n## Common confusion\r\n\r\nNot a preprocessor like Sass — plugin ecosystem defines behavior. [Tailwind](concept:css-in-react) is a [PostCSS](concept:postcss) plugin.\r\n\r\n## In practice\r\n\r\n[Autoprefixer](concept:postcss) + cssnano for production minification; `@tailwind` directives in global CSS.",
+  "conceptIds": [
+    "postcss",
+    "browserslist",
+    "vite",
+    "css-in-react"
+  ]
+}

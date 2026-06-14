@@ -1,0 +1,46 @@
+{
+  "id": "use-context",
+  "title": "useContext",
+  "aliases": [
+    "useContext hook",
+    "React Context"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "react-context-api",
+    "prop-drilling",
+    "react-re-render"
+  ],
+  "usedInFlashcards": [
+    76,
+    77,
+    122,
+    123,
+    132,
+    162,
+    163,
+    164,
+    165,
+    166,
+    167,
+    168,
+    169,
+    173,
+    182,
+    183,
+    196,
+    237,
+    307,
+    309,
+    314
+  ],
+  "body": "## Definition\r\n\r\n**useContext** reads the current value from a React Context provided by an ancestor `Provider`.\r\n\r\n## Why it exists\r\n\r\nShare data across deep trees without [prop drilling](concept:prop-drilling).\r\n\r\n## How it works\r\n\r\n```js\r\nconst theme = useContext(ThemeContext);\r\n```\r\n\r\nWhen Provider value changes, all consuming components [re-render](concept:react-re-render) — even if they only use part of the value.\r\n\r\n## Common confusion\r\n\r\nNot a performance-free global store — frequent updates hurt. Split contexts or use external stores (Zustand) for hot state.\r\n\r\n## In practice\r\n\r\nTheme, locale, auth snapshot, DI for services. See [React Context API](concept:react-context-api).",
+  "bodyLinked": "## Definition\r\n\r\n**[useContext](concept:use-context)** reads the current value from a [React Context](concept:react-context-api) provided by an ancestor `Provider`.\r\n\r\n## Why it exists\r\n\r\nShare data across deep trees without [prop drilling](concept:prop-drilling).\r\n\r\n## How it works\r\n\r\n```js\r\nconst theme = useContext(ThemeContext);\r\n```\r\n\r\nWhen Provider value changes, all consuming components [re-render](concept:react-re-render) — even if they only use part of the value.\r\n\r\n## Common confusion\r\n\r\nNot a performance-free global store — frequent updates hurt. Split [contexts](concept:use-context) or use external stores ([Zustand](concept:zustand)) for hot state.\r\n\r\n## In practice\r\n\r\nTheme, locale, auth snapshot, DI for services. See [React Context API](concept:react-context-api).",
+  "conceptIds": [
+    "use-context",
+    "react-context-api",
+    "prop-drilling",
+    "react-re-render",
+    "zustand"
+  ]
+}

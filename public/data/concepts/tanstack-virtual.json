@@ -1,0 +1,23 @@
+{
+  "id": "tanstack-virtual",
+  "title": "TanStack Virtual",
+  "aliases": [
+    "@tanstack/react-virtual",
+    "useVirtualizer",
+    "TanStack Virtual"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "react-list-virtualization",
+    "tanstack-query"
+  ],
+  "usedInFlashcards": [
+    190,
+    192
+  ],
+  "body": "## Definition\r\n\r\n**TanStack Virtual** (`@tanstack/react-virtual`) provides headless virtualizers that compute visible item ranges for scrollable lists and grids.\r\n\r\n## Why it exists\r\n\r\nPerformant virtualization with flexible layouts without heavy table components.\r\n\r\n## How it works\r\n\r\n```tsx\r\nconst virtualizer = useVirtualizer({\r\n  count: items.length,\r\n  getScrollElement: () => parentRef.current,\r\n  estimateSize: () => 48,\r\n});\r\n```\r\n\r\nMaps virtual items to absolute positioning inside a tall inner container.\r\n\r\n## Common confusion\r\n\r\nRequires explicit scroll parent ref and size estimates; horizontal mode needs width estimates.\r\n\r\n## In practice\r\n\r\nPairs well with TanStack ecosystem; alternative: react-window for simpler fixed-height lists.",
+  "bodyLinked": "## Definition\r\n\r\n**[TanStack Virtual](concept:tanstack-virtual)** ([@tanstack/react-virtual](concept:tanstack-virtual)) provides headless virtualizers that compute visible item ranges for scrollable lists and grids.\r\n\r\n## Why it exists\r\n\r\nPerformant virtualization with flexible layouts without heavy table components.\r\n\r\n## How it works\r\n\r\n```tsx\r\nconst virtualizer = useVirtualizer({\r\n  count: items.length,\r\n  getScrollElement: () => parentRef.current,\r\n  estimateSize: () => 48,\r\n});\r\n```\r\n\r\nMaps virtual items to absolute positioning inside a tall inner container.\r\n\r\n## Common confusion\r\n\r\nRequires explicit scroll parent ref and size estimates; horizontal mode needs width estimates.\r\n\r\n## In practice\r\n\r\nPairs well with TanStack ecosystem; alternative: react-window for simpler fixed-height lists.",
+  "conceptIds": [
+    "tanstack-virtual"
+  ]
+}

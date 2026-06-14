@@ -1,0 +1,31 @@
+{
+  "id": "accessibility-a11y",
+  "title": "Accessibility (a11y)",
+  "aliases": [
+    "accessibility",
+    "a11y",
+    "accessible",
+    "WCAG"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "react-testing-library",
+    "dom",
+    "inp"
+  ],
+  "usedInFlashcards": [
+    159,
+    243,
+    275,
+    281,
+    294,
+    298
+  ],
+  "body": "## Definition\r\n\r\n**Accessibility** ensures UIs work for keyboard, screen reader, and assistive-tech users — semantics, focus, contrast, and ARIA when needed.\r\n\r\n## Why it exists\r\n\r\nLegal/compliance (WCAG), better UX for everyone, and SEO; impacts [INP](concept:inp) when focus management is wrong.\r\n\r\n## How it works\r\n\r\nUse native elements (`button`, `label`), visible focus, `alt` text, heading order, and test with keyboard + axe.\r\n\r\n## Common confusion\r\n\r\nARIA is not a substitute for semantic HTML. `div onClick` is not a button.\r\n\r\n## In practice\r\n\r\nTest with [React Testing Library](concept:react-testing-library) + jest-axe; manual keyboard walks for critical flows.",
+  "bodyLinked": "## Definition\r\n\r\n**[Accessibility](concept:accessibility-a11y)** ensures UIs work for keyboard, screen reader, and assistive-tech users — semantics, focus, contrast, and ARIA when needed.\r\n\r\n## Why it exists\r\n\r\nLegal/compliance ([WCAG](concept:accessibility-a11y)), better UX for everyone, and SEO; impacts [INP](concept:inp) when focus management is wrong.\r\n\r\n## How it works\r\n\r\nUse native elements (`button`, `label`), visible focus, `alt` text, heading order, and test with keyboard + axe.\r\n\r\n## Common confusion\r\n\r\nARIA is not a substitute for semantic HTML. `div onClick` is not a button.\r\n\r\n## In practice\r\n\r\nTest with [React Testing Library](concept:react-testing-library) + jest-axe; manual keyboard walks for critical flows.",
+  "conceptIds": [
+    "accessibility-a11y",
+    "inp",
+    "react-testing-library"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "id": "event-loop",
+  "title": "Event Loop",
+  "aliases": [
+    "event loop",
+    "javascript event loop"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "call-stack",
+    "microtask",
+    "macrotask"
+  ],
+  "usedInFlashcards": [
+    31,
+    34,
+    35,
+    36
+  ],
+  "body": "## Definition\r\n\r\nThe **event loop** is the mechanism that lets JavaScript handle asynchronous work on a single thread by cycling: run [call stack](concept:call-stack) → drain [microtasks](concept:microtask) → take one [macrotask](concept:macrotask) → repeat.\r\n\r\n## Why it exists\r\n\r\nWithout threads for every I/O operation, JS still needs timers, network, and UI events. The event loop interleaves async callbacks with synchronous code.\r\n\r\n## How it works\r\n\r\n1. Execute synchronous code on the stack until empty.\r\n2. Run all pending microtasks (Promise reactions, `queueMicrotask`).\r\n3. Run one macrotask (`setTimeout`, I/O callback, user event).\r\n4. Go to step 2.\r\n\r\n## Example\r\n\r\n```js\r\nconsole.log(\"1\");\r\nsetTimeout(() => console.log(\"2\"), 0);\r\nPromise.resolve().then(() => console.log(\"3\"));\r\nconsole.log(\"4\");\r\n// 1, 4, 3, 2\r\n```\r\n\r\n## Common confusion\r\n\r\n`async/await` is still Promise-based — `await` schedules continuation as microtasks. `requestAnimationFrame` is neither micro nor macro in the simple model; it runs before paint.\r\n\r\n## In practice\r\n\r\nCore interview topic. Explains UI freezing, Promise ordering puzzles, and why `setTimeout(fn, 0)` is not “immediate.”",
+  "bodyLinked": "## Definition\r\n\r\nThe **[event loop](concept:event-loop)** is the mechanism that lets JavaScript handle asynchronous work on a single thread by cycling: run [call stack](concept:call-stack) → drain [microtasks](concept:microtask) → take one [macrotask](concept:macrotask) → repeat.\r\n\r\n## Why it exists\r\n\r\nWithout threads for [every](concept:array-some-every) I/O operation, JS still needs [timers](concept:timers), network, and UI events. The [event loop](concept:event-loop) interleaves [async](concept:async-await) callbacks with synchronous code.\r\n\r\n## How it works\r\n\r\n1. Execute synchronous code on the stack until empty.\r\n2. Run all pending [microtasks](concept:microtask) ([Promise](concept:promise) reactions, `queueMicrotask`).\r\n3. Run one [macrotask](concept:macrotask) ([setTimeout](concept:timers), I/O callback, user event).\r\n4. Go to step 2.\r\n\r\n## Example\r\n\r\n```js\r\nconsole.log(\"1\");\r\nsetTimeout(() => console.log(\"2\"), 0);\r\nPromise.resolve().then(() => console.log(\"3\"));\r\nconsole.log(\"4\");\r\n// 1, 4, 3, 2\r\n```\r\n\r\n## Common confusion\r\n\r\n[async/await](concept:async-await) is still Promise-based — [await](concept:async-await) schedules continuation as [microtasks](concept:microtask). [requestAnimationFrame](concept:request-animation-frame) is neither micro nor macro in the simple model; it runs before paint.\r\n\r\n## In practice\r\n\r\nCore interview topic. Explains UI freezing, [Promise](concept:promise) ordering puzzles, and why `setTimeout(fn, 0)` is not “immediate.”",
+  "conceptIds": [
+    "event-loop",
+    "call-stack",
+    "microtask",
+    "macrotask",
+    "array-some-every",
+    "timers",
+    "async-await",
+    "promise",
+    "request-animation-frame"
+  ]
+}

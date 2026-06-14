@@ -1,0 +1,22 @@
+{
+  "id": "type-guards",
+  "title": "Type Guards",
+  "aliases": [
+    "type guard",
+    "TypeScript narrowing"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "discriminated-unions",
+    "optional-chaining"
+  ],
+  "usedInFlashcards": [
+    225,
+    226
+  ],
+  "body": "## Definition\r\n\r\nA **type guard** is a function or check that narrows a TypeScript type in a branch — often `x is User` predicate.\r\n\r\n## Why it exists\r\n\r\nSafely parse `unknown` API JSON and handle union props in components.\r\n\r\n## How it works\r\n\r\n```ts\r\nfunction isUser(x: unknown): x is User {\r\n  return typeof x === \"object\" && x !== null && \"id\" in x;\r\n}\r\n```\r\n\r\n`in`, `typeof`, `instanceof`, and discriminant checks all narrow types.\r\n\r\n## In practice\r\n\r\nValidate API responses at boundaries; avoid `as` casts when possible.",
+  "bodyLinked": "## Definition\r\n\r\nA **[type guard](concept:type-guards)** is a function or check that narrows a TypeScript type in a branch — often `x is User` predicate.\r\n\r\n## Why it exists\r\n\r\nSafely parse `unknown` API JSON and handle union props in components.\r\n\r\n## How it works\r\n\r\n```ts\r\nfunction isUser(x: unknown): x is User {\r\n  return typeof x === \"object\" && x !== null && \"id\" in x;\r\n}\r\n```\r\n\r\n`in`, `typeof`, `instanceof`, and discriminant checks all narrow types.\r\n\r\n## In practice\r\n\r\nValidate API responses at boundaries; avoid `as` casts when possible.",
+  "conceptIds": [
+    "type-guards"
+  ]
+}

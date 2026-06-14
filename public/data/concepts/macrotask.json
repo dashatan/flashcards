@@ -1,0 +1,32 @@
+{
+  "id": "macrotask",
+  "title": "Macrotask",
+  "aliases": [
+    "macrotasks",
+    "task queue",
+    "macrotask queue"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "event-loop",
+    "microtask"
+  ],
+  "usedInFlashcards": [
+    31,
+    32,
+    33
+  ],
+  "body": "## Definition\r\n\r\nA **macrotask** (task) is a queued callback from timers, I/O, UI events, or `setImmediate` (Node) — processed one at a time per [event loop](concept:event-loop) turn after [microtasks](concept:microtask) drain.\r\n\r\n## Why it exists\r\n\r\nBrowser and Node schedule network, timers, and input as separate tasks so microtasks (Promises) can complete consistently first.\r\n\r\n## How it works\r\n\r\n`setTimeout`, `setInterval`, DOM event handlers, and message channel callbacks are macrotasks. One macrotask runs per loop iteration (then all microtasks again).\r\n\r\n## Example\r\n\r\n```js\r\nsetTimeout(() => console.log(\"timeout\"), 0); // macrotask\r\nsetTimeout(() => console.log(\"timeout 2\"), 0); // next loop iteration\r\n```\r\n\r\n## Common confusion\r\n\r\n`setTimeout(fn, 0)` minimum delay is clamped (often ~4ms in nested timers). Background tabs throttle macrotasks heavily.\r\n\r\n## In practice\r\n\r\nUse macrotask timing for yielding to browser paint; use microtasks for Promise consistency. `requestIdleCallback` is yet another scheduling lane.",
+  "bodyLinked": "## Definition\r\n\r\nA **[macrotask](concept:macrotask)** (task) is a queued callback from [timers](concept:timers), I/O, UI events, or [setImmediate](concept:timers) (Node) — processed one at a time per [event loop](concept:event-loop) turn after [microtasks](concept:microtask) drain.\r\n\r\n## Why it exists\r\n\r\nBrowser and Node schedule network, [timers](concept:timers), and input as separate tasks so [microtasks](concept:microtask) ([Promises](concept:promise)) can complete consistently first.\r\n\r\n## How it works\r\n\r\n[setTimeout](concept:timers), [setInterval](concept:timers), [DOM](concept:dom) [event handlers](concept:typescript-react-events), and message channel callbacks are [macrotasks](concept:macrotask). One [macrotask](concept:macrotask) runs per loop [iteration](concept:iterator) (then all [microtasks](concept:microtask) again).\r\n\r\n## Example\r\n\r\n```js\r\nsetTimeout(() => console.log(\"timeout\"), 0); // macrotask\r\nsetTimeout(() => console.log(\"timeout 2\"), 0); // next loop iteration\r\n```\r\n\r\n## Common confusion\r\n\r\n`setTimeout(fn, 0)` minimum delay is clamped (often ~4ms in nested [timers](concept:timers)). Background tabs [throttle](concept:debounce-throttle) [macrotasks](concept:macrotask) heavily.\r\n\r\n## In practice\r\n\r\nUse [macrotask](concept:macrotask) timing for yielding to browser paint; use [microtasks](concept:microtask) for [Promise](concept:promise) consistency. `requestIdleCallback` is yet another scheduling lane.",
+  "conceptIds": [
+    "macrotask",
+    "timers",
+    "event-loop",
+    "microtask",
+    "promise",
+    "dom",
+    "typescript-react-events",
+    "iterator",
+    "debounce-throttle"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "truthy-falsy",
+  "title": "Truthy and Falsy Values",
+  "aliases": [
+    "truthy",
+    "falsy",
+    "boolean coercion"
+  ],
+  "depth": "foundation",
+  "related": [
+    "type-coercion",
+    "undefined"
+  ],
+  "usedInFlashcards": [
+    73,
+    79
+  ],
+  "body": "## Definition\r\n\r\nA value is **falsy** if it coerces to `false` in a boolean context; **truthy** if it coerces to `true`.\r\n\r\n## Why it exists\r\n\r\n`if`, `&&`, `||`, and `!` need predictable boolean interpretation.\r\n\r\n## How it works\r\n\r\n**Falsy only:** `false`, `0`, `-0`, `0n`, `\"\"`, `null`, `undefined`, `NaN`.\r\n\r\nEverything else is truthy — including `[]`, `{}`, `\"0\"`, `\"false\"`.\r\n\r\n## Example\r\n\r\n```js\r\nif (\"0\") console.log(\"truthy\");\r\n!![]; // true\r\nBoolean(\"\"); // false\r\n```\r\n\r\n## Common confusion\r\n\r\nTruthy does not mean “valid” or “non-empty” — empty arrays/objects are truthy.\r\n\r\n## In practice\r\n\r\nUse explicit checks for arrays (`length`), objects (`keys`), and numbers instead of relying on truthiness alone.",
+  "bodyLinked": "## Definition\r\n\r\nA value is **[falsy](concept:truthy-falsy)** if it coerces to `false` in a [boolean](concept:boolean-conversion) [context](concept:use-context); **[truthy](concept:truthy-falsy)** if it coerces to `true`.\r\n\r\n## Why it exists\r\n\r\n`if`, `&&`, `||`, and `!` need predictable [boolean](concept:boolean-conversion) interpretation.\r\n\r\n## How it works\r\n\r\n**[Falsy](concept:truthy-falsy) only:** `false`, `0`, `-0`, `0n`, `\"\"`, [null](concept:null-value), [undefined](concept:undefined), [NaN](concept:nan).\r\n\r\nEverything else is [truthy](concept:truthy-falsy) — including `[]`, `{}`, `\"0\"`, `\"false\"`.\r\n\r\n## Example\r\n\r\n```js\r\nif (\"0\") console.log(\"truthy\");\r\n!![]; // true\r\nBoolean(\"\"); // false\r\n```\r\n\r\n## Common confusion\r\n\r\n[Truthy](concept:truthy-falsy) does not mean “valid” or “non-empty” — empty arrays/objects are [truthy](concept:truthy-falsy).\r\n\r\n## In practice\r\n\r\nUse explicit checks for arrays (`length`), objects (`keys`), and numbers instead of relying on truthiness alone.",
+  "conceptIds": [
+    "truthy-falsy",
+    "boolean-conversion",
+    "use-context",
+    "null-value",
+    "undefined",
+    "nan"
+  ]
+}

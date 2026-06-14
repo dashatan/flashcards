@@ -1,0 +1,31 @@
+{
+  "id": "loose-equality",
+  "title": "Loose equality (==)",
+  "aliases": [
+    "==",
+    "abstract equality",
+    "double equals"
+  ],
+  "depth": "foundation",
+  "related": [
+    "strict-equality",
+    "type-coercion",
+    "truthy-falsy",
+    "null-value"
+  ],
+  "usedInFlashcards": [
+    71,
+    72,
+    77
+  ],
+  "body": "## Definition\r\n\r\n**Loose equality (`==`)** compares values with [type coercion](concept:type-coercion) — `null == undefined` is true, but `null == 0` is false.\r\n\r\n## Why it exists\r\n\r\nLegacy JavaScript behavior before `===` was widely adopted.\r\n\r\n## How it works\r\n\r\n```js\r\n0 == false; // true\r\n\"\" == 0; // true\r\nnull == undefined; // true\r\n[] == false; // true\r\n```\r\n\r\nCoercion rules follow abstract equality algorithm — often surprising.\r\n\r\n## Common confusion\r\n\r\nAlmost always prefer [strict equality](concept:strict-equality) (`===`). Exception: `value == null` checks both `null` and [undefined](concept:undefined).\r\n\r\n## In practice\r\n\r\nLint rules (`eqeqeq`) ban `==` in modern codebases except intentional null checks.",
+  "bodyLinked": "## Definition\r\n\r\n**[Loose equality](concept:loose-equality) ([==](concept:loose-equality))** compares values with [type coercion](concept:type-coercion) — `null == undefined` is true, but `null == 0` is false.\r\n\r\n## Why it exists\r\n\r\nLegacy JavaScript behavior before [===](concept:strict-equality) was widely adopted.\r\n\r\n## How it works\r\n\r\n```js\r\n0 == false; // true\r\n\"\" == 0; // true\r\nnull == undefined; // true\r\n[] == false; // true\r\n```\r\n\r\nCoercion rules follow [abstract equality](concept:loose-equality) algorithm — often surprising.\r\n\r\n## Common confusion\r\n\r\nAlmost always prefer [strict equality](concept:strict-equality) ([===](concept:strict-equality)). Exception: `value == null` checks both [null](concept:null-value) and [undefined](concept:undefined).\r\n\r\n## In practice\r\n\r\n[Lint rules](concept:coding-standards) (`eqeqeq`) ban [==](concept:loose-equality) in modern codebases except intentional [null](concept:null-value) checks.",
+  "conceptIds": [
+    "loose-equality",
+    "type-coercion",
+    "strict-equality",
+    "null-value",
+    "undefined",
+    "coding-standards"
+  ]
+}

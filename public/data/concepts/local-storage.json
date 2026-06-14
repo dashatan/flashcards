@@ -1,0 +1,28 @@
+{
+  "id": "local-storage",
+  "title": "localStorage",
+  "aliases": [
+    "localStorage",
+    "local storage"
+  ],
+  "depth": "foundation",
+  "related": [
+    "session-storage",
+    "cookies",
+    "xss"
+  ],
+  "usedInFlashcards": [
+    181,
+    273,
+    275
+  ],
+  "body": "## Definition\r\n\r\n**localStorage** stores string key-value pairs (~5MB) per origin, persisting until explicitly cleared.\r\n\r\n## Why it exists\r\n\r\nSimple client persistence for preferences, drafts, non-sensitive UI state.\r\n\r\n## How it works\r\n\r\n```js\r\nlocalStorage.setItem(\"theme\", \"dark\");\r\n```\r\n\r\nSynchronous — can block main thread on large reads. Same-origin only. Accessible to any script on page — [XSS](concept:xss) can exfiltrate.\r\n\r\n## In practice\r\n\r\nPrefer IndexedDB for large data; never store tokens if XSS risk; use httpOnly cookies for sensitive session.",
+  "bodyLinked": "## Definition\r\n\r\n**[localStorage](concept:local-storage)** stores string key-value pairs (~5MB) per origin, persisting until explicitly cleared.\r\n\r\n## Why it exists\r\n\r\nSimple client persistence for preferences, drafts, non-sensitive [UI state](concept:server-state-vs-client-state).\r\n\r\n## How it works\r\n\r\n```js\r\nlocalStorage.setItem(\"theme\", \"dark\");\r\n```\r\n\r\nSynchronous — can block main thread on large reads. Same-origin only. [Accessible](concept:accessibility-a11y) to any script on page — [XSS](concept:xss) can exfiltrate.\r\n\r\n## In practice\r\n\r\nPrefer IndexedDB for large data; never store tokens if [XSS](concept:xss) risk; use httpOnly [cookies](concept:cookies) for sensitive session.",
+  "conceptIds": [
+    "local-storage",
+    "server-state-vs-client-state",
+    "accessibility-a11y",
+    "xss",
+    "cookies"
+  ]
+}

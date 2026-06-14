@@ -1,0 +1,24 @@
+{
+  "id": "use-imperative-handle",
+  "title": "useImperativeHandle",
+  "aliases": [
+    "useImperativeHandle hook"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "use-ref",
+    "forward-ref",
+    "controlled-component"
+  ],
+  "usedInFlashcards": [
+    153
+  ],
+  "body": "## Definition\r\n\r\n**`useImperativeHandle`** customizes the instance value exposed when a parent calls `ref` on a child wrapped in `forwardRef`.\r\n\r\n## Why it exists\r\n\r\nExpose imperative methods (focus, scroll, play) on reusable components without leaking full DOM nodes.\r\n\r\n## How it works\r\n\r\n```tsx\r\nuseImperativeHandle(ref, () => ({\r\n  focus: () => inputRef.current?.focus(),\r\n}), []);\r\n```\r\n\r\nParent: `ref.current?.focus()`.\r\n\r\n## Common confusion\r\n\r\nPrefer declarative props when possible — imperative handles are escape hatches. Must pair with `forwardRef`.\r\n\r\n## In practice\r\n\r\nInput wrappers, media players, and design-system components integrating non-React libraries.",
+  "bodyLinked": "## Definition\r\n\r\n**[useImperativeHandle](concept:use-imperative-handle)** customizes the instance value exposed when a parent [calls](concept:call-apply-bind) `ref` on a child wrapped in [forwardRef](concept:forward-ref).\r\n\r\n## Why it exists\r\n\r\nExpose imperative methods (focus, scroll, play) on reusable components without leaking full [DOM](concept:dom) nodes.\r\n\r\n## How it works\r\n\r\n```tsx\r\nuseImperativeHandle(ref, () => ({\r\n  focus: () => inputRef.current?.focus(),\r\n}), []);\r\n```\r\n\r\nParent: `ref.current?.focus()`.\r\n\r\n## Common confusion\r\n\r\nPrefer declarative props when possible — imperative handles are escape hatches. Must pair with [forwardRef](concept:forward-ref).\r\n\r\n## In practice\r\n\r\nInput wrappers, media players, and design-system components integrating non-React libraries.",
+  "conceptIds": [
+    "use-imperative-handle",
+    "call-apply-bind",
+    "forward-ref",
+    "dom"
+  ]
+}

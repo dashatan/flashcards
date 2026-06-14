@@ -1,0 +1,30 @@
+{
+  "id": "babel",
+  "title": "Babel",
+  "aliases": [
+    "Babel transpiler",
+    "@babel/preset-env"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "webpack",
+    "vite",
+    "es-modules",
+    "tree-shaking"
+  ],
+  "usedInFlashcards": [
+    251,
+    252,
+    258
+  ],
+  "body": "## Definition\r\n\r\n**Babel** is a JavaScript **transpiler** that converts modern syntax (JSX, class fields, optional chaining) to targets browsers can run, often via presets and plugins.\r\n\r\n## Why it exists\r\n\r\nShip modern syntax while supporting older browsers; enable experimental proposals before native support.\r\n\r\n## How it works\r\n\r\nSource → parse → transform plugins → generate code. `@babel/preset-env` uses [browserslist](concept:browserslist) to pick transforms.\r\n\r\n## Common confusion\r\n\r\nBabel does not bundle — pair with [Webpack](concept:webpack) or [Vite](concept:vite). [esbuild](concept:vite) can replace Babel for faster dev transpile.\r\n\r\n## In practice\r\n\r\n`@babel/preset-react` for JSX; `preset-typescript` strips types (no type checking).",
+  "bodyLinked": "## Definition\r\n\r\n**[Babel](concept:babel)** is a JavaScript **transpiler** that converts modern syntax (JSX, [class](concept:es6-class) fields, [optional chaining](concept:optional-chaining)) to targets browsers can run, often via presets and plugins.\r\n\r\n## Why it exists\r\n\r\nShip modern syntax while supporting older browsers; enable experimental proposals before native support.\r\n\r\n## How it works\r\n\r\nSource → parse → transform plugins → generate code. [@babel/preset-env](concept:babel) uses [browserslist](concept:browserslist) to pick transforms.\r\n\r\n## Common confusion\r\n\r\n[Babel](concept:babel) does not bundle — pair with [Webpack](concept:webpack) or [Vite](concept:vite). [esbuild](concept:vite) can replace [Babel](concept:babel) for faster dev transpile.\r\n\r\n## In practice\r\n\r\n`@babel/preset-react` for JSX; `preset-typescript` strips types (no type checking).",
+  "conceptIds": [
+    "babel",
+    "es6-class",
+    "optional-chaining",
+    "browserslist",
+    "webpack",
+    "vite"
+  ]
+}

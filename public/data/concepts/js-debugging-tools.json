@@ -1,0 +1,44 @@
+{
+  "id": "js-debugging-tools",
+  "title": "JavaScript debugging tools",
+  "aliases": [
+    "debugging tools",
+    "Chrome DevTools",
+    "Firefox DevTools",
+    "DevTools",
+    "React DevTools",
+    "VS Code debugger",
+    "console methods"
+  ],
+  "depth": "foundation",
+  "related": [
+    "js-profiling",
+    "source-map",
+    "call-stack"
+  ],
+  "usedInFlashcards": [
+    114,
+    115,
+    117,
+    156,
+    162,
+    163,
+    184,
+    185,
+    243,
+    254,
+    298
+  ],
+  "body": "## Definition\r\n\r\n**JavaScript debugging tools** include browser DevTools (Sources, Console, Network), `debugger` statements, breakpoints, and [source maps](concept:source-map) for readable stack traces.\r\n\r\n## Why it exists\r\n\r\nStep through code, inspect scope, watch variables, and reproduce bugs without `console.log` sprawl.\r\n\r\n## How it works\r\n\r\nSet breakpoints in Sources tab; use conditional breakpoints; inspect [call stack](concept:call-stack) and async stacks for [Promises](concept:promise).\r\n\r\n## Common confusion\r\n\r\nProduction minified code needs source maps to map stacks back to TypeScript. `debugger` pauses only when DevTools open.\r\n\r\n## In practice\r\n\r\nCombine with [profiling](concept:js-profiling) for performance issues; log structured errors in prod, debug locally with maps.",
+  "bodyLinked": "## Definition\r\n\r\n**[JavaScript debugging tools](concept:js-debugging-tools)** include browser [DevTools](concept:js-debugging-tools) (Sources, Console, Network), `debugger` statements, breakpoints, and [source maps](concept:source-map) for readable stack traces.\r\n\r\n## Why it exists\r\n\r\nStep through code, inspect scope, watch variables, and reproduce bugs without `console.log` sprawl.\r\n\r\n## How it works\r\n\r\n[Set](concept:getters-setters) breakpoints in Sources tab; use conditional breakpoints; inspect [call stack](concept:call-stack) and [async](concept:async-await) stacks for [Promises](concept:promise).\r\n\r\n## Common confusion\r\n\r\nProduction minified code needs [source maps](concept:source-map) to [map](concept:array-map-filter-reduce) stacks back to TypeScript. `debugger` pauses only when [DevTools](concept:js-debugging-tools) open.\r\n\r\n## In practice\r\n\r\nCombine with [profiling](concept:js-profiling) for performance issues; log structured errors in prod, debug locally with maps.",
+  "conceptIds": [
+    "js-debugging-tools",
+    "source-map",
+    "getters-setters",
+    "call-stack",
+    "async-await",
+    "promise",
+    "array-map-filter-reduce",
+    "js-profiling"
+  ]
+}

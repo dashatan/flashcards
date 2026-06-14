@@ -1,0 +1,37 @@
+{
+  "id": "undefined",
+  "title": "undefined",
+  "aliases": [
+    "undefined value"
+  ],
+  "depth": "foundation",
+  "related": [
+    "hoisting",
+    "var"
+  ],
+  "usedInFlashcards": [
+    1,
+    4,
+    5,
+    29,
+    51,
+    71,
+    73,
+    78,
+    79,
+    80,
+    91,
+    93
+  ],
+  "body": "## Definition\r\n\r\n**undefined** is a primitive value meaning “no value assigned” — the default for uninitialized `var` [hoisting](concept:hoisting), missing object properties, and functions with no `return`.\r\n\r\n## Why it exists\r\n\r\nDistinguishes “assigned nothing yet” from `null` (intentional empty) in older APIs.\r\n\r\n## How it works\r\n\r\n```js\r\nvar x;\r\nconsole.log(x); // undefined\r\n\r\nconst obj = {};\r\nconsole.log(obj.missing); // undefined\r\n\r\nfunction noop() {}\r\nconsole.log(noop()); // undefined\r\n```\r\n\r\n## Common confusion\r\n\r\n`undefined` is falsy but `null == undefined` is true with loose equality. `typeof undefined` is `\"undefined\"` but `typeof undeclared` is also `\"undefined\"` (no throw).\r\n\r\n## In practice\r\n\r\nDefault parameters treat only `undefined` as missing (`null` is passed through). Optional chaining returns `undefined` for nullish bases.",
+  "bodyLinked": "## Definition\r\n\r\n**[undefined](concept:undefined)** is a primitive value meaning “no value assigned” — the default for uninitialized [var](concept:var) [hoisting](concept:hoisting), missing object properties, and functions with no `return`.\r\n\r\n## Why it exists\r\n\r\nDistinguishes “assigned nothing yet” from [null](concept:null-value) (intentional empty) in older APIs.\r\n\r\n## How it works\r\n\r\n```js\r\nvar x;\r\nconsole.log(x); // undefined\r\n\r\nconst obj = {};\r\nconsole.log(obj.missing); // undefined\r\n\r\nfunction noop() {}\r\nconsole.log(noop()); // undefined\r\n```\r\n\r\n## Common confusion\r\n\r\n[undefined](concept:undefined) is [falsy](concept:truthy-falsy) but `null == undefined` is true with [loose equality](concept:loose-equality). `typeof undefined` is `\"undefined\"` but `typeof undeclared` is also `\"undefined\"` (no throw).\r\n\r\n## In practice\r\n\r\nDefault parameters treat only [undefined](concept:undefined) as missing ([null](concept:null-value) is passed through). [Optional chaining](concept:optional-chaining) returns [undefined](concept:undefined) for nullish bases.",
+  "conceptIds": [
+    "undefined",
+    "var",
+    "hoisting",
+    "null-value",
+    "truthy-falsy",
+    "loose-equality",
+    "optional-chaining"
+  ]
+}

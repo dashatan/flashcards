@@ -1,0 +1,22 @@
+{
+  "id": "snapshot-testing",
+  "title": "Snapshot testing",
+  "aliases": [
+    "snapshot tests",
+    "toMatchSnapshot"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "react-testing-library",
+    "testing-pyramid"
+  ],
+  "usedInFlashcards": [
+    242
+  ],
+  "body": "## Definition\r\n\r\n**Snapshot testing** serializes UI output (often HTML/JSON) and compares to a stored snapshot on each test run.\r\n\r\n## Why it exists\r\n\r\nQuick regression detection for stable output — useful sparingly for complex static markup.\r\n\r\n## How it works\r\n\r\n```js\r\nconst { container } = render(<Card />);\r\nexpect(container).toMatchSnapshot();\r\n```\r\n\r\nUpdate snapshots intentionally when UI changes (`-u` flag).\r\n\r\n## Common confusion\r\n\r\nBrittle for volatile UI — prefer RTL queries and user-visible assertions for behavior.\r\n\r\n## In practice\r\n\r\nUse for design-system primitives or serialized data; avoid large page snapshots that churn constantly.",
+  "bodyLinked": "## Definition\r\n\r\n**[Snapshot testing](concept:snapshot-testing)** serializes UI output (often HTML/JSON) and compares to a stored snapshot on each test run.\r\n\r\n## Why it exists\r\n\r\nQuick regression detection for stable output — useful sparingly for complex static markup.\r\n\r\n## How it works\r\n\r\n```js\r\nconst { container } = render(<Card />);\r\nexpect(container).toMatchSnapshot();\r\n```\r\n\r\nUpdate snapshots intentionally when UI changes (`-u` flag).\r\n\r\n## Common confusion\r\n\r\nBrittle for volatile UI — prefer [RTL](concept:react-testing-library) queries and user-visible assertions for behavior.\r\n\r\n## In practice\r\n\r\nUse for design-system primitives or serialized data; avoid large page snapshots that churn constantly.",
+  "conceptIds": [
+    "snapshot-testing",
+    "react-testing-library"
+  ]
+}

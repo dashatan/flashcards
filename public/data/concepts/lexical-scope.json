@@ -1,0 +1,32 @@
+{
+  "id": "lexical-scope",
+  "title": "Lexical Scope",
+  "aliases": [
+    "static scope"
+  ],
+  "depth": "foundation",
+  "related": [
+    "scope-chain",
+    "closure",
+    "lexical-environment"
+  ],
+  "usedInFlashcards": [
+    16,
+    21
+  ],
+  "body": "## Definition\r\n\r\n**Lexical scope** means a function's access to variables is determined by where functions and blocks are **written** in source code, not where they are **called**.\r\n\r\n## Why it exists\r\n\r\nLexical scope makes behavior predictable: inner code can read outer declarations, and [closures](concept:closure) can capture stable variable environments.\r\n\r\n## How it works\r\n\r\nEach block or function creates a nested scope. When code reads an [identifier](concept:identifier), the engine walks the [scope chain](concept:scope-chain) outward from the inner [lexical environment](concept:lexical-environment) until it finds a binding or throws [ReferenceError](concept:reference-error).\r\n\r\n## Example\r\n\r\n```js\r\nconst factor = 2;\r\nfunction scale(n) {\r\n  return n * factor; // `factor` resolved lexically, not from caller's scope\r\n}\r\n```\r\n\r\n## Common confusion\r\n\r\nLexical scope is not dynamic scope (where caller's variables would matter). `this` binding is separate from lexical scope — see [this binding](concept:this-binding).\r\n\r\n## In practice\r\n\r\nFoundation for closures, module patterns, hooks (stable closures over state), and why loop `var` vs `let` behaves differently with callbacks.",
+  "bodyLinked": "## Definition\r\n\r\n**[Lexical scope](concept:lexical-scope)** means a function's access to variables is determined by where functions and blocks are **written** in source code, not where they are **called**.\r\n\r\n## Why it exists\r\n\r\n[Lexical scope](concept:lexical-scope) makes behavior predictable: inner code can read outer declarations, and [closures](concept:closure) can capture stable variable environments.\r\n\r\n## How it works\r\n\r\nEach block or function creates a nested scope. When code reads an [identifier](concept:identifier), the engine walks the [scope chain](concept:scope-chain) outward from the inner [lexical environment](concept:lexical-environment) until it [finds](concept:array-map-filter-reduce) a [binding](concept:binding) or throws [ReferenceError](concept:reference-error).\r\n\r\n## Example\r\n\r\n```js\r\nconst factor = 2;\r\nfunction scale(n) {\r\n  return n * factor; // `factor` resolved lexically, not from caller's scope\r\n}\r\n```\r\n\r\n## Common confusion\r\n\r\n[Lexical scope](concept:lexical-scope) is not dynamic scope (where caller's variables would matter). [this](concept:this-binding) [binding](concept:binding) is separate from [lexical scope](concept:lexical-scope) — see [this binding](concept:this-binding).\r\n\r\n## In practice\r\n\r\nFoundation for [closures](concept:closure), module patterns, hooks (stable [closures](concept:closure) over state), and why loop [var](concept:var) vs [let](concept:let) behaves differently with callbacks.",
+  "conceptIds": [
+    "lexical-scope",
+    "closure",
+    "identifier",
+    "scope-chain",
+    "lexical-environment",
+    "array-map-filter-reduce",
+    "binding",
+    "reference-error",
+    "this-binding",
+    "var",
+    "let"
+  ]
+}

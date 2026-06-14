@@ -1,0 +1,37 @@
+{
+  "id": "binding",
+  "title": "Binding",
+  "aliases": [
+    "bindings",
+    "variable binding"
+  ],
+  "depth": "foundation",
+  "related": [
+    "identifier",
+    "value-vs-reference",
+    "temporal-dead-zone"
+  ],
+  "usedInFlashcards": [
+    1,
+    2,
+    6,
+    8,
+    11,
+    13,
+    21,
+    136
+  ],
+  "body": "## Definition\r\n\r\nA **binding** is the link between an [identifier](concept:identifier) and a storage cell that holds a value (or remains uninitialized).\r\n\r\n## Why it exists\r\n\r\nJavaScript needs a concrete rule for what happens when you declare `const x = 1` — the engine creates a binding named `x` in the current environment.\r\n\r\n## How it works\r\n\r\n- `let` / `const` / `var` each create bindings differently regarding [hoisting](concept:hoisting), [temporal dead zone](concept:temporal-dead-zone), and reassignment.\r\n- `const` forbids **reassigning the binding** (the name → new value), but if the bound value is an object, you can still mutate the object's properties because the binding still points to the same object ([value vs reference](concept:value-vs-reference)).\r\n\r\n## Example\r\n\r\n```js\r\nconst user = { name: \"Ada\" };\r\nuser.name = \"Grace\"; // OK — mutating the object\r\nuser = {}; // TypeError — rebinding `user` is forbidden\r\n```\r\n\r\n## Common confusion\r\n\r\n“Immutable `const`” is often misunderstood. Only the binding is immutable, not necessarily the value it points to.\r\n\r\n## In practice\r\n\r\nUnderstanding bindings explains `const` object mutation interview questions and why destructuring creates new bindings from existing values.",
+  "bodyLinked": "## Definition\r\n\r\nA **[binding](concept:binding)** is the link between an [identifier](concept:identifier) and a storage cell that holds a value (or remains uninitialized).\r\n\r\n## Why it exists\r\n\r\nJavaScript needs a concrete rule for what happens when you declare `const x = 1` — the engine creates a [binding](concept:binding) named `x` in the current environment.\r\n\r\n## How it works\r\n\r\n- [let](concept:let) / [const](concept:const) / [var](concept:var) each create [bindings](concept:binding) differently regarding [hoisting](concept:hoisting), [temporal dead zone](concept:temporal-dead-zone), and reassignment.\r\n- [const](concept:const) forbids **reassigning the [binding](concept:binding)** (the name → [new](concept:new-operator) value), but if the bound value is an object, you can still mutate the object's properties because the [binding](concept:binding) still points to the same object ([value vs reference](concept:value-vs-reference)).\r\n\r\n## Example\r\n\r\n```js\r\nconst user = { name: \"Ada\" };\r\nuser.name = \"Grace\"; // OK — mutating the object\r\nuser = {}; // TypeError — rebinding `user` is forbidden\r\n```\r\n\r\n## Common confusion\r\n\r\n“Immutable [const](concept:const)” is often misunderstood. Only the [binding](concept:binding) is immutable, not necessarily the value it points to.\r\n\r\n## In practice\r\n\r\nUnderstanding [bindings](concept:binding) explains [const](concept:const) object mutation interview questions and why destructuring creates [new](concept:new-operator) [bindings](concept:binding) from existing values.",
+  "conceptIds": [
+    "binding",
+    "identifier",
+    "let",
+    "const",
+    "var",
+    "hoisting",
+    "temporal-dead-zone",
+    "new-operator",
+    "value-vs-reference"
+  ]
+}

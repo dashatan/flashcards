@@ -1,0 +1,31 @@
+{
+  "id": "error-boundary",
+  "title": "Error Boundary",
+  "aliases": [
+    "error boundaries",
+    "React error boundary"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "try-catch-finally",
+    "react-re-render"
+  ],
+  "usedInFlashcards": [
+    118,
+    120,
+    212,
+    213,
+    240,
+    304,
+    314
+  ],
+  "body": "## Definition\r\n\r\nAn **error boundary** is a React component that catches JavaScript errors in its **child render tree** and shows fallback UI instead of crashing the whole app.\r\n\r\n## Why it exists\r\n\r\nIsolate failures (broken widget, bad API shape) so the rest of the app stays usable.\r\n\r\n## How it works\r\n\r\nClass: `getDerivedStateFromError` + `componentDidCatch`. Libraries: `react-error-boundary`.\r\n\r\nDoes **not** catch: event handler errors, async code, SSR errors alone, errors in the boundary itself.\r\n\r\n## Common confusion\r\n\r\nNot a replacement for try/catch in handlers — use both. Log to Sentry in `onError`.\r\n\r\n## In practice\r\n\r\nWrap route segments, risky third-party widgets, and data-heavy panels.",
+  "bodyLinked": "## Definition\r\n\r\nAn **[error boundary](concept:error-boundary)** is a React component that catches JavaScript errors in its **child render tree** and shows fallback UI instead of crashing the whole app.\r\n\r\n## Why it exists\r\n\r\nIsolate failures (broken widget, bad API shape) so the rest of the app stays usable.\r\n\r\n## How it works\r\n\r\n[Class](concept:es6-class): `getDerivedStateFromError` + `componentDidCatch`. Libraries: [react-error-boundary](concept:error-boundary).\r\n\r\nDoes **not** [catch](concept:try-catch-finally): event handler errors, [async](concept:async-await) code, [SSR](concept:server-side-rendering) errors alone, errors in the boundary itself.\r\n\r\n## Common confusion\r\n\r\nNot a replacement for [try](concept:try-catch-finally)/catch in handlers — use both. Log to Sentry in `onError`.\r\n\r\n## In practice\r\n\r\nWrap route segments, risky third-party widgets, and data-heavy panels.",
+  "conceptIds": [
+    "error-boundary",
+    "es6-class",
+    "try-catch-finally",
+    "async-await",
+    "server-side-rendering"
+  ]
+}

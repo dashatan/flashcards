@@ -1,0 +1,29 @@
+{
+  "id": "use-state",
+  "title": "useState",
+  "aliases": [
+    "useState hook",
+    "React useState"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "react-re-render",
+    "react-batching"
+  ],
+  "usedInFlashcards": [
+    123,
+    154,
+    155,
+    167
+  ],
+  "body": "## Definition\r\n\r\n**useState** is a React hook returning a state value and an updater function that triggers a [re-render](concept:react-re-render) when called.\r\n\r\n## Why it exists\r\n\r\nLocal component state in function components without classes.\r\n\r\n## How it works\r\n\r\n```js\r\nconst [count, setCount] = useState(0);\r\nsetCount(1);\r\nsetCount(c => c + 1); // updater form\r\n```\r\n\r\nState updates are scheduled and [batched](concept:react-batching). Initializer can be `useState(() => expensive())`.\r\n\r\n## Common confusion\r\n\r\nState updates are async relative to the next render — reading `count` right after `setCount` shows old value. Same reference mutation does not trigger update.\r\n\r\n## In practice\r\n\r\nColocate state; lift when siblings need to share; pair with [useReducer](concept:use-reducer) for complex logic.",
+  "bodyLinked": "## Definition\r\n\r\n**[useState](concept:use-state)** is a React hook returning a state value and an updater function that triggers a [re-render](concept:react-re-render) when called.\r\n\r\n## Why it exists\r\n\r\nLocal [component state](concept:props-vs-state) in function components without classes.\r\n\r\n## How it works\r\n\r\n```js\r\nconst [count, setCount] = useState(0);\r\nsetCount(1);\r\nsetCount(c => c + 1); // updater form\r\n```\r\n\r\nState updates are scheduled and [batched](concept:react-batching). Initializer can be `useState(() => expensive())`.\r\n\r\n## Common confusion\r\n\r\nState updates are [async](concept:async-await) relative to the next render — reading `count` right after `setCount` shows old value. Same reference mutation does not trigger update.\r\n\r\n## In practice\r\n\r\nColocate state; lift when siblings need to share; pair with [useReducer](concept:use-reducer) for complex logic.",
+  "conceptIds": [
+    "use-state",
+    "react-re-render",
+    "props-vs-state",
+    "react-batching",
+    "async-await",
+    "use-reducer"
+  ]
+}

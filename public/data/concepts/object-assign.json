@@ -1,0 +1,30 @@
+{
+  "id": "object-assign",
+  "title": "Object.assign",
+  "aliases": [
+    "assign"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "shallow-copy",
+    "property-descriptors",
+    "object-freeze-seal"
+  ],
+  "usedInFlashcards": [
+    13,
+    56,
+    57,
+    135,
+    293,
+    329
+  ],
+  "body": "## Definition\r\n\r\n**`Object.assign(target, ...sources)`** copies enumerable own properties from sources onto the target and returns the target — a [shallow copy](concept:shallow-copy) merge.\r\n\r\n## Why it exists\r\n\r\nMerge defaults, clone shallow objects, and polyfill `Object.assign` patterns before spread syntax.\r\n\r\n## How it works\r\n\r\n```js\r\nconst defaults = { role: \"user\", active: true };\r\nconst user = Object.assign({}, defaults, { name: \"Ada\" });\r\n```\r\n\r\nCopies getters by **invoking** them and assigning the returned value.\r\n\r\n## Common confusion\r\n\r\nShallow only — nested objects are shared. Does not copy non-enumerable or symbol keys by default.\r\n\r\n## In practice\r\n\r\nOften replaced by `{ ...defaults, ...patch }` but still common in legacy code and certain merge utilities.",
+  "bodyLinked": "## Definition\r\n\r\n**`Object.assign(target, ...sources)`** copies [enumerable](concept:property-descriptors) own properties from sources onto the target and returns the target — a [shallow copy](concept:shallow-copy) merge.\r\n\r\n## Why it exists\r\n\r\nMerge defaults, clone shallow objects, and polyfill [Object.assign](concept:object-assign) patterns before spread syntax.\r\n\r\n## How it works\r\n\r\n```js\r\nconst defaults = { role: \"user\", active: true };\r\nconst user = Object.assign({}, defaults, { name: \"Ada\" });\r\n```\r\n\r\nCopies [getters](concept:getters-setters) by **invoking** them and assigning the returned value.\r\n\r\n## Common confusion\r\n\r\nShallow only — nested objects are shared. Does not copy non-[enumerable](concept:property-descriptors) or [symbol](concept:symbol) keys by default.\r\n\r\n## In practice\r\n\r\nOften replaced by `{ ...defaults, ...patch }` but still common in legacy code and certain merge utilities.",
+  "conceptIds": [
+    "property-descriptors",
+    "shallow-copy",
+    "object-assign",
+    "getters-setters",
+    "symbol"
+  ]
+}

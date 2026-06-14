@@ -1,0 +1,28 @@
+{
+  "id": "tree-shaking",
+  "title": "Tree Shaking",
+  "aliases": [
+    "tree shaking",
+    "dead code elimination"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "es-modules",
+    "vite",
+    "webpack"
+  ],
+  "usedInFlashcards": [
+    198,
+    199,
+    248,
+    250,
+    253,
+    254
+  ],
+  "body": "## Definition\r\n\r\n**Tree shaking** removes unused exports from production bundles when modules are statically analyzable.\r\n\r\n## Why it exists\r\n\r\nSmaller JS payloads — only ship code you import.\r\n\r\n## How it works\r\n\r\nRequires [ES modules](concept:es-modules) `import`/`export`. Side-effect-free packages (`\"sideEffects\": false` in package.json). Bundler marks unreachable exports and drops them.\r\n\r\n## Common confusion\r\n\r\nCJS `require` trees shake poorly. Barrel files can accidentally import entire libraries.\r\n\r\n## In practice\r\n\r\nAudit bundle analyzer; import `lodash-es` per function; check library side effects.",
+  "bodyLinked": "## Definition\r\n\r\n**[Tree shaking](concept:tree-shaking)** removes unused exports from production bundles when modules are statically analyzable.\r\n\r\n## Why it exists\r\n\r\nSmaller JS payloads — only ship code you import.\r\n\r\n## How it works\r\n\r\nRequires [ES modules](concept:es-modules) `import`/`export`. Side-effect-free packages (`\"sideEffects\": false` in package.json). Bundler marks unreachable exports and drops them.\r\n\r\n## Common confusion\r\n\r\nCJS `require` trees shake poorly. Barrel files can accidentally import entire libraries.\r\n\r\n## In practice\r\n\r\nAudit bundle analyzer; import `lodash-es` per function; check library side effects.",
+  "conceptIds": [
+    "tree-shaking",
+    "es-modules"
+  ]
+}

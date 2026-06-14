@@ -1,0 +1,22 @@
+{
+  "id": "event-delegation",
+  "title": "Event Delegation",
+  "aliases": [
+    "event delegation"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "dom",
+    "event-bubbling-capturing"
+  ],
+  "usedInFlashcards": [
+    264
+  ],
+  "body": "## Definition\r\n\r\n**Event delegation** attaches one listener on a parent element and uses `event.target` to handle events from descendants.\r\n\r\n## Why it exists\r\n\r\nFewer listeners for dynamic lists; new child elements work without rebinding.\r\n\r\n## How it works\r\n\r\nRelies on [event bubbling](concept:event-bubbling-capturing) from target to parent. Check `target` matches expected child (closest, matches).\r\n\r\n## Common confusion\r\n\r\nNot suitable if you stop propagation on children inconsistently. `pointer-events: none` affects targeting.\r\n\r\n## In practice\r\n\r\nList rows, tables, menus — alternative to per-row listeners in vanilla JS; React often uses direct handlers but pattern still applies.",
+  "bodyLinked": "## Definition\r\n\r\n**[Event delegation](concept:event-delegation)** attaches one listener on a parent element and uses `event.target` to handle events from descendants.\r\n\r\n## Why it exists\r\n\r\nFewer listeners for dynamic lists; [new](concept:new-operator) child elements work without rebinding.\r\n\r\n## How it works\r\n\r\nRelies on [event bubbling](concept:event-bubbling-capturing) from target to parent. Check `target` matches expected child (closest, matches).\r\n\r\n## Common confusion\r\n\r\nNot suitable if you stop [propagation](concept:event-bubbling-capturing) on children inconsistently. `pointer-events: none` affects targeting.\r\n\r\n## In practice\r\n\r\nList rows, tables, menus — alternative to per-row listeners in vanilla JS; React often uses direct handlers but pattern still applies.",
+  "conceptIds": [
+    "event-delegation",
+    "new-operator",
+    "event-bubbling-capturing"
+  ]
+}

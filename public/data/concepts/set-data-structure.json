@@ -1,0 +1,24 @@
+{
+  "id": "set-data-structure",
+  "title": "Set (Data Structure)",
+  "aliases": [
+    "ES6 Set",
+    "JavaScript Set",
+    "Set object"
+  ],
+  "depth": "foundation",
+  "related": [
+    "big-o-complexity",
+    "map-data-structure"
+  ],
+  "usedInFlashcards": [
+    58,
+    97
+  ],
+  "body": "## Definition\r\n\r\nA **Set** is a collection of unique values (primitives or object references) with fast add/has/delete.\r\n\r\n## Why it exists\r\n\r\nRemove duplicates, membership tests, and tag sets without duplicate keys like objects.\r\n\r\n## How it works\r\n\r\n```js\r\nconst ids = new Set([1, 2, 2, 3]);\r\nids.has(2); // true\r\n[...new Set(arr)]; // unique array\r\n```\r\n\r\nAverage O(1) `has` vs O(n) for `array.includes`.\r\n\r\n## Common confusion\r\n\r\nSet compares objects by reference, not deep equality. `new Set([{}])` size 1; two `{}` are distinct entries.\r\n\r\n## In practice\r\n\r\nDeduping arrays, tracking visited nodes, permission sets, and optimizing lookups in hot paths.",
+  "bodyLinked": "## Definition\r\n\r\nA **[Set](concept:getters-setters)** is a collection of unique values (primitives or object references) with fast add/has/delete.\r\n\r\n## Why it exists\r\n\r\nRemove duplicates, membership tests, and tag sets without duplicate keys like objects.\r\n\r\n## How it works\r\n\r\n```js\r\nconst ids = new Set([1, 2, 2, 3]);\r\nids.has(2); // true\r\n[...new Set(arr)]; // unique array\r\n```\r\n\r\nAverage O(1) `has` vs O(n) for `array.includes`.\r\n\r\n## Common confusion\r\n\r\n[Set](concept:getters-setters) compares objects [by reference](concept:value-vs-reference), not deep equality. `new Set([{}])` size 1; two `{}` are distinct entries.\r\n\r\n## In practice\r\n\r\nDeduping arrays, tracking visited nodes, permission sets, and optimizing lookups in hot paths.",
+  "conceptIds": [
+    "getters-setters",
+    "value-vs-reference"
+  ]
+}

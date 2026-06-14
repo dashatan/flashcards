@@ -1,0 +1,23 @@
+{
+  "id": "cookies",
+  "title": "Cookies",
+  "aliases": [
+    "HTTP cookies",
+    "browser cookies"
+  ],
+  "depth": "foundation",
+  "related": [
+    "local-storage",
+    "cors",
+    "xss"
+  ],
+  "usedInFlashcards": [
+    274
+  ],
+  "body": "## Definition\r\n\r\n**Cookies** are small key-value strings the browser stores and sends with HTTP requests to matching domains.\r\n\r\n## Why it exists\r\n\r\nSession authentication, preferences, analytics — server-readable client storage.\r\n\r\n## How it works\r\n\r\n~4KB per cookie. Flags: `HttpOnly` (no JS access), `Secure` (HTTPS), `SameSite` (CSRF mitigation). Unlike [localStorage](concept:local-storage), sent automatically on requests.\r\n\r\n## In practice\r\n\r\nSession tokens with HttpOnly + Secure; know GDPR/consent for tracking cookies.",
+  "bodyLinked": "## Definition\r\n\r\n**[Cookies](concept:cookies)** are small key-value strings the browser stores and sends with HTTP requests to matching domains.\r\n\r\n## Why it exists\r\n\r\nSession authentication, preferences, analytics — server-readable client storage.\r\n\r\n## How it works\r\n\r\n~4KB per cookie. Flags: `HttpOnly` (no JS access), `Secure` (HTTPS), `SameSite` (CSRF mitigation). Unlike [localStorage](concept:local-storage), sent automatically on requests.\r\n\r\n## In practice\r\n\r\nSession tokens with HttpOnly + Secure; know GDPR/consent for tracking [cookies](concept:cookies).",
+  "conceptIds": [
+    "cookies",
+    "local-storage"
+  ]
+}

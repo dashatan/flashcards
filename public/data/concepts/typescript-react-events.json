@@ -1,0 +1,32 @@
+{
+  "id": "typescript-react-events",
+  "title": "Typing React event handlers",
+  "aliases": [
+    "event handlers",
+    "React.ChangeEvent",
+    "React.MouseEvent"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "typescript-generics",
+    "controlled-component",
+    "es6-class"
+  ],
+  "usedInFlashcards": [
+    17,
+    111,
+    118,
+    130,
+    131,
+    213,
+    222,
+    285
+  ],
+  "body": "## Definition\r\n\r\nReact + TypeScript event handlers use typed synthetic events — `React.ChangeEvent<HTMLInputElement>`, `React.MouseEvent<HTMLButtonElement>`, etc.\r\n\r\n## Why it exists\r\n\r\nCorrect `event.target` typing and autocomplete for DOM properties without `any`.\r\n\r\n## How it works\r\n\r\n```tsx\r\nconst onChange = (e: React.ChangeEvent<HTMLInputElement>) => {\r\n  setValue(e.target.value);\r\n};\r\n```\r\n\r\nUse element-specific types; `React.FormEvent` for forms.\r\n\r\n## Common confusion\r\n\r\n`e.target` in union events may need narrowing. Avoid `(e: any)` — use `unknown` + guards if needed.\r\n\r\n## In practice\r\n\r\nPair with [controlled components](concept:controlled-component); use `ComponentProps<\"input\">` for native prop spreading.",
+  "bodyLinked": "## Definition\r\n\r\nReact + TypeScript [event handlers](concept:typescript-react-events) use typed synthetic events — `React.ChangeEvent<HTMLInputElement>`, `React.MouseEvent<HTMLButtonElement>`, etc.\r\n\r\n## Why it exists\r\n\r\nCorrect `event.target` typing and autocomplete for [DOM](concept:dom) properties without `any`.\r\n\r\n## How it works\r\n\r\n```tsx\r\nconst onChange = (e: React.ChangeEvent<HTMLInputElement>) => {\r\n  setValue(e.target.value);\r\n};\r\n```\r\n\r\nUse element-specific types; `React.FormEvent` for forms.\r\n\r\n## Common confusion\r\n\r\n`e.target` in union events may need narrowing. Avoid `(e: any)` — use `unknown` + guards if needed.\r\n\r\n## In practice\r\n\r\nPair with [controlled components](concept:controlled-component); use `ComponentProps<\"input\">` for native prop spreading.",
+  "conceptIds": [
+    "typescript-react-events",
+    "dom",
+    "controlled-component"
+  ]
+}

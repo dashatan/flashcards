@@ -1,0 +1,29 @@
+{
+  "id": "component-lifecycle",
+  "title": "React class lifecycle",
+  "aliases": [
+    "componentDidMount",
+    "componentWillUnmount",
+    "componentDidUpdate",
+    "lifecycle methods"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "use-effect",
+    "react-re-render"
+  ],
+  "usedInFlashcards": [
+    121,
+    128,
+    129,
+    136
+  ],
+  "body": "## Definition\r\n\r\n**Class lifecycle methods** are hooks on React class components that run at mount, update, and unmount — e.g. `componentDidMount`, `componentDidUpdate`, `componentWillUnmount`.\r\n\r\n## Why it exists\r\n\r\nSynchronize components with external systems before hooks (`useEffect`) were the standard pattern.\r\n\r\n## How it works\r\n\r\n```js\r\nclass Panel extends React.Component {\r\n  componentDidMount() { this.loadData(); }\r\n  componentDidUpdate(prev) { if (prev.id !== this.props.id) this.loadData(); }\r\n  componentWillUnmount() { this.cleanup(); }\r\n}\r\n```\r\n\r\nModern equivalent: [useEffect](concept:use-effect) with mount/update/unmount semantics.\r\n\r\n## Common confusion\r\n\r\n`componentWillMount` is legacy/deprecated paths — know mount/update/unmount trio. Hooks replace most lifecycle usage.\r\n\r\n## In practice\r\n\r\nStill appears in legacy codebases; interview answers should map each method to hook equivalents.",
+  "bodyLinked": "## Definition\r\n\r\n**[Class](concept:es6-class) [lifecycle methods](concept:component-lifecycle)** are hooks on React [class](concept:es6-class) components that run at mount, update, and unmount — e.g. [componentDidMount](concept:component-lifecycle), [componentDidUpdate](concept:component-lifecycle), [componentWillUnmount](concept:component-lifecycle).\r\n\r\n## Why it exists\r\n\r\nSynchronize components with external systems before hooks ([useEffect](concept:use-effect)) were the standard pattern.\r\n\r\n## How it works\r\n\r\n```js\r\nclass Panel extends React.Component {\r\n  componentDidMount() { this.loadData(); }\r\n  componentDidUpdate(prev) { if (prev.id !== this.props.id) this.loadData(); }\r\n  componentWillUnmount() { this.cleanup(); }\r\n}\r\n```\r\n\r\nModern equivalent: [useEffect](concept:use-effect) with mount/update/unmount semantics.\r\n\r\n## Common confusion\r\n\r\n`componentWillMount` is legacy/deprecated paths — know mount/update/unmount trio. Hooks replace most lifecycle usage.\r\n\r\n## In practice\r\n\r\nStill appears in legacy codebases; interview answers should [map](concept:array-map-filter-reduce) each method to hook equivalents.",
+  "conceptIds": [
+    "es6-class",
+    "component-lifecycle",
+    "use-effect",
+    "array-map-filter-reduce"
+  ]
+}

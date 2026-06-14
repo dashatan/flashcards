@@ -1,0 +1,22 @@
+{
+  "id": "cors",
+  "title": "CORS",
+  "aliases": [
+    "Cross-Origin Resource Sharing",
+    "CORS"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "cookies",
+    "api-layer"
+  ],
+  "usedInFlashcards": [
+    279
+  ],
+  "body": "## Definition\r\n\r\n**CORS** is a browser security mechanism blocking cross-origin HTTP requests unless the server sends permissive `Access-Control-*` headers.\r\n\r\n## Why it exists\r\n\r\nPrevent malicious sites from reading private API responses using user cookies (with caveats).\r\n\r\n## How it works\r\n\r\nBrowser sends preflight `OPTIONS` for non-simple requests. Server responds `Access-Control-Allow-Origin`. Cannot be “disabled” from client — fix server or dev proxy.\r\n\r\n## In practice\r\n\r\nCommon dev headache; production fix is server config, not frontend hack.",
+  "bodyLinked": "## Definition\r\n\r\n**[CORS](concept:cors)** is a browser security mechanism blocking cross-origin HTTP requests unless the server sends permissive `Access-Control-*` headers.\r\n\r\n## Why it exists\r\n\r\nPrevent malicious sites from reading private API responses using user [cookies](concept:cookies) (with caveats).\r\n\r\n## How it works\r\n\r\nBrowser sends preflight `OPTIONS` for non-simple requests. Server responds `Access-Control-Allow-Origin`. Cannot be “disabled” from client — fix server or dev proxy.\r\n\r\n## In practice\r\n\r\nCommon dev headache; production fix is server config, not frontend hack.",
+  "conceptIds": [
+    "cors",
+    "cookies"
+  ]
+}

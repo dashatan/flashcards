@@ -1,0 +1,26 @@
+{
+  "id": "environment-variables",
+  "title": "Environment variables",
+  "aliases": [
+    "env variables",
+    "process.env",
+    "import.meta.env"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "vite",
+    "webpack",
+    "ci-cd"
+  ],
+  "usedInFlashcards": [
+    254,
+    255
+  ],
+  "body": "## Definition\r\n\r\n**Environment variables** inject config at build or runtime — API URLs, feature toggles, secrets — without hardcoding in source.\r\n\r\n## Why it exists\r\n\r\nDifferent values per environment (dev/staging/prod) and keep secrets out of git.\r\n\r\n## How it works\r\n\r\nVite: `import.meta.env.VITE_API_URL` (client must be `VITE_` prefixed). Node/Webpack: `process.env.NODE_ENV`.\r\n\r\n## Common confusion\r\n\r\nClient bundles expose `VITE_*` values — never put private keys in frontend env vars.\r\n\r\n## In practice\r\n\r\n`.env.local` for dev; CI injects production vars; validate required env at startup.",
+  "bodyLinked": "## Definition\r\n\r\n**[Environment variables](concept:environment-variables)** inject config at build or runtime — API URLs, [feature toggles](concept:feature-flags), secrets — without hardcoding in source.\r\n\r\n## Why it exists\r\n\r\nDifferent values per environment (dev/staging/prod) and keep secrets out of git.\r\n\r\n## How it works\r\n\r\n[Vite](concept:vite): `import.meta.env.VITE_API_URL` (client must be `VITE_` prefixed). Node/Webpack: `process.env.NODE_ENV`.\r\n\r\n## Common confusion\r\n\r\nClient bundles expose `VITE_*` values — never put private keys in frontend [env](concept:environment-variables) vars.\r\n\r\n## In practice\r\n\r\n`.env.local` for dev; CI injects production vars; validate required [env](concept:environment-variables) at startup.",
+  "conceptIds": [
+    "environment-variables",
+    "feature-flags",
+    "vite"
+  ]
+}

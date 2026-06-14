@@ -1,0 +1,30 @@
+{
+  "id": "server-state-vs-client-state",
+  "title": "Server State vs Client State",
+  "aliases": [
+    "server state",
+    "client state",
+    "UI state"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "tanstack-query",
+    "use-state"
+  ],
+  "usedInFlashcards": [
+    166,
+    170,
+    179
+  ],
+  "body": "## Definition\r\n\r\n**Server state** lives on the backend (users, posts) — async, shared, stale. **Client state** is UI-only (modal open, tab, draft text) — local and immediate.\r\n\r\n## Why it exists\r\n\r\nDifferent lifecycles and tools: don’t duplicate API data in Redux if a cache library handles it.\r\n\r\n## How it works\r\n\r\nServer: TanStack Query / SWR — fetch, cache, revalidate. Client: [useState](concept:use-state), Zustand, URL state.\r\n\r\n## Common confusion\r\n\r\n“Global state” is not all one bucket — auth profile (server) vs sidebar collapsed (client).\r\n\r\n## In practice\r\n\r\nColocate server state in query hooks; keep global client state minimal.",
+  "bodyLinked": "## Definition\r\n\r\n**[Server state](concept:server-state-vs-client-state)** lives on the backend (users, posts) — [async](concept:async-await), shared, stale. **[Client state](concept:server-state-vs-client-state)** is UI-only (modal open, tab, draft text) — local and immediate.\r\n\r\n## Why it exists\r\n\r\nDifferent lifecycles and tools: don’t duplicate API data in Redux if a cache library handles it.\r\n\r\n## How it works\r\n\r\nServer: [TanStack Query](concept:tanstack-query) / SWR — [fetch](concept:fetch), cache, revalidate. Client: [useState](concept:use-state), [Zustand](concept:zustand), URL state.\r\n\r\n## Common confusion\r\n\r\n“[Global state](concept:react-context-api)” is not all one bucket — auth profile (server) vs sidebar collapsed (client).\r\n\r\n## In practice\r\n\r\nColocate [server state](concept:server-state-vs-client-state) in query hooks; keep global [client state](concept:server-state-vs-client-state) minimal.",
+  "conceptIds": [
+    "server-state-vs-client-state",
+    "async-await",
+    "tanstack-query",
+    "fetch",
+    "use-state",
+    "zustand",
+    "react-context-api"
+  ]
+}

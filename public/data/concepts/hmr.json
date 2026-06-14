@@ -1,0 +1,27 @@
+{
+  "id": "hmr",
+  "title": "Hot Module Replacement (HMR)",
+  "aliases": [
+    "HMR",
+    "hot reload",
+    "hot module replacement"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "vite",
+    "webpack"
+  ],
+  "usedInFlashcards": [
+    247,
+    248,
+    249,
+    254
+  ],
+  "body": "## Definition\r\n\r\n**HMR** updates modules in the running app when source files change, preserving application state where possible.\r\n\r\n## Why it exists\r\n\r\nFast feedback loop during development without full page reload.\r\n\r\n## How it works\r\n\r\nBundler sends patch events; runtime swaps module factory and re-executes affected components. [Vite](concept:vite) updates only changed modules via WebSocket.\r\n\r\n## Common confusion\r\n\r\nHMR ≠ full refresh — some state survives; misconfigured HMR may need manual reload.\r\n\r\n## In practice\r\n\r\nDev experience staple; production builds do not use HMR.",
+  "bodyLinked": "## Definition\r\n\r\n**[HMR](concept:hmr)** updates modules in the running app when source files change, preserving application state where possible.\r\n\r\n## Why it exists\r\n\r\nFast feedback loop during development without full page reload.\r\n\r\n## How it works\r\n\r\nBundler sends patch events; runtime swaps module factory and re-executes affected components. [Vite](concept:vite) updates only changed modules via WebSocket.\r\n\r\n## Common confusion\r\n\r\n[HMR](concept:hmr) ≠ full refresh — [some](concept:array-some-every) state survives; misconfigured [HMR](concept:hmr) may need manual reload.\r\n\r\n## In practice\r\n\r\nDev experience staple; production builds do not use [HMR](concept:hmr).",
+  "conceptIds": [
+    "hmr",
+    "vite",
+    "array-some-every"
+  ]
+}

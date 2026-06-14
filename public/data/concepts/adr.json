@@ -1,0 +1,24 @@
+{
+  "id": "adr",
+  "title": "Architecture Decision Record (ADR)",
+  "aliases": [
+    "ADR",
+    "architecture decision record"
+  ],
+  "depth": "foundation",
+  "related": [
+    "technical-debt",
+    "feature-based-architecture"
+  ],
+  "usedInFlashcards": [
+    317,
+    328
+  ],
+  "body": "## Definition\r\n\r\nAn **ADR** documents a significant technical decision — context, options, decision, and consequences — in the repo.\r\n\r\n## Why it exists\r\n\r\nFuture teams understand *why* not just *what*; reduces repeated debates.\r\n\r\n## How it works\r\n\r\nShort markdown: `docs/adr/001-use-tanstack-query.md`. Status: proposed, accepted, deprecated.\r\n\r\n## In practice\r\n\r\nLightweight alternative to heavy design docs; pair with README for onboarding.",
+  "bodyLinked": "## Definition\r\n\r\nAn **[ADR](concept:adr)** documents a significant technical decision — [context](concept:use-context), options, decision, and consequences — in the repo.\r\n\r\n## Why it exists\r\n\r\nFuture teams understand *why* not just *what*; [reduces](concept:array-map-filter-reduce) repeated debates.\r\n\r\n## How it works\r\n\r\nShort markdown: `docs/adr/001-use-tanstack-query.md`. Status: proposed, accepted, deprecated.\r\n\r\n## In practice\r\n\r\nLightweight alternative to heavy design docs; pair with README for onboarding.",
+  "conceptIds": [
+    "adr",
+    "use-context",
+    "array-map-filter-reduce"
+  ]
+}

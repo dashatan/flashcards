@@ -1,0 +1,42 @@
+{
+  "id": "try-catch-finally",
+  "title": "try/catch/finally",
+  "aliases": [
+    "try catch finally",
+    "try-catch",
+    "try",
+    "catch",
+    "finally",
+    "try...catch...finally"
+  ],
+  "depth": "foundation",
+  "related": [
+    "type-error",
+    "reference-error",
+    "promise"
+  ],
+  "usedInFlashcards": [
+    6,
+    41,
+    43,
+    44,
+    80,
+    109,
+    110,
+    111,
+    112,
+    118,
+    120,
+    205,
+    212,
+    213
+  ],
+  "body": "## Definition\r\n\r\n**try/catch/finally** runs code in `try`, handles thrown errors in `catch`, and always runs cleanup in `finally`.\r\n\r\n## Why it exists\r\n\r\nStructured error handling without crashing the whole script.\r\n\r\n## How it works\r\n\r\n```js\r\ntry {\r\n  await risky();\r\n} catch (e) {\r\n  if (e instanceof TypeError) { /* ... */ }\r\n} finally {\r\n  cleanup();\r\n}\r\n```\r\n\r\nOnly catches synchronous throws in `try` and awaited errors inside async `try`.\r\n\r\n## Common confusion\r\n\r\nEvent handler throws, un-awaited [Promise](concept:promise) rejections, and parse-time errors are not caught here.\r\n\r\n## In practice\r\n\r\nWrap awaited async code; use `.catch()` on fire-and-forget promises; global handlers for monitoring.",
+  "bodyLinked": "## Definition\r\n\r\n**[try/catch/finally](concept:try-catch-finally)** runs code in [try](concept:try-catch-finally), handles thrown errors in [catch](concept:try-catch-finally), and always runs cleanup in [finally](concept:try-catch-finally).\r\n\r\n## Why it exists\r\n\r\nStructured error handling without crashing the whole script.\r\n\r\n## How it works\r\n\r\n```js\r\ntry {\r\n  await risky();\r\n} catch (e) {\r\n  if (e instanceof TypeError) { /* ... */ }\r\n} finally {\r\n  cleanup();\r\n}\r\n```\r\n\r\nOnly catches synchronous throws in [try](concept:try-catch-finally) and awaited errors inside [async](concept:async-await) [try](concept:try-catch-finally).\r\n\r\n## Common confusion\r\n\r\nEvent handler throws, un-awaited [Promise](concept:promise) rejections, and parse-time errors are not caught here.\r\n\r\n## In practice\r\n\r\nWrap awaited [async](concept:async-await) code; use [.catch()](concept:promise) on fire-and-forget [promises](concept:promise); global handlers for [monitoring](concept:observability).",
+  "conceptIds": [
+    "try-catch-finally",
+    "async-await",
+    "promise",
+    "observability"
+  ]
+}

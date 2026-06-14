@@ -1,0 +1,31 @@
+{
+  "id": "es-modules",
+  "title": "ES Modules (ESM)",
+  "aliases": [
+    "ESM",
+    "ES modules",
+    "import export"
+  ],
+  "depth": "foundation",
+  "related": [
+    "tree-shaking",
+    "vite"
+  ],
+  "usedInFlashcards": [
+    18,
+    42,
+    198,
+    247,
+    250
+  ],
+  "body": "## Definition\r\n\r\n**ES modules** are the standard `import`/`export` syntax for JavaScript modules — statically analyzable and natively supported in browsers and Node.\r\n\r\n## Why it exists\r\n\r\nReplace ad-hoc script tags and CommonJS for tree-shakeable, async-loadable modules.\r\n\r\n## How it works\r\n\r\n```js\r\nimport { fn } from \"./utils.js\";\r\nexport const x = 1;\r\n```\r\n\r\n`import` is hoisted; live bindings for exports. CJS `require` is synchronous legacy in Node.\r\n\r\n## In practice\r\n\r\nAll modern bundlers and [Vite](concept:vite) dev server rely on ESM. `\"type\": \"module\"` in package.json.",
+  "bodyLinked": "## Definition\r\n\r\n**[ES modules](concept:es-modules)** are the standard `import`/`export` syntax for JavaScript modules — statically analyzable and natively supported in browsers and Node.\r\n\r\n## Why it exists\r\n\r\nReplace ad-[hoc](concept:higher-order-component) script tags and CommonJS for tree-shakeable, async-loadable modules.\r\n\r\n## How it works\r\n\r\n```js\r\nimport { fn } from \"./utils.js\";\r\nexport const x = 1;\r\n```\r\n\r\n`import` is [hoisted](concept:hoisting); live [bindings](concept:binding) for exports. CJS `require` is synchronous legacy in Node.\r\n\r\n## In practice\r\n\r\nAll modern [bundlers](concept:module-bundlers) and [Vite](concept:vite) dev server rely on [ESM](concept:es-modules). `\"type\": \"module\"` in package.json.",
+  "conceptIds": [
+    "es-modules",
+    "higher-order-component",
+    "hoisting",
+    "binding",
+    "module-bundlers",
+    "vite"
+  ]
+}

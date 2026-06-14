@@ -1,0 +1,32 @@
+{
+  "id": "react-suspense",
+  "title": "React Suspense",
+  "aliases": [
+    "Suspense",
+    "Suspense boundaries"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "concurrent-rendering",
+    "streaming-ssr",
+    "tanstack-query"
+  ],
+  "usedInFlashcards": [
+    133,
+    204,
+    205,
+    206,
+    208,
+    209
+  ],
+  "body": "## Definition\r\n\r\n**Suspense** is a React component that shows **fallback** UI while children are loading (lazy components, async data in supported setups).\r\n\r\n## Why it exists\r\n\r\nDeclarative loading states and coordination with streaming/concurrent rendering.\r\n\r\n## How it works\r\n\r\n```jsx\r\n<Suspense fallback={<Spinner />}>\r\n  <SlowComponent />\r\n</Suspense>\r\n```\r\n\r\nFrameworks integrate data loaders that “throw” promises during render. Multiple boundaries allow granular fallbacks.\r\n\r\n## Common confusion\r\n\r\nData fetching Suspense needs framework support (Next.js, Relay, TanStack Query suspense mode) — not automatic for raw `fetch` in client components.\r\n\r\n## In practice\r\n\r\nRoute-level loading UI, code-split pages, streaming SSR chunk boundaries.",
+  "bodyLinked": "## Definition\r\n\r\n**[Suspense](concept:react-suspense)** is a React component that shows **fallback** UI while children are loading (lazy components, [async](concept:async-await) data in supported setups).\r\n\r\n## Why it exists\r\n\r\nDeclarative loading states and coordination with streaming/concurrent rendering.\r\n\r\n## How it works\r\n\r\n```jsx\r\n<Suspense fallback={<Spinner />}>\r\n  <SlowComponent />\r\n</Suspense>\r\n```\r\n\r\nFrameworks integrate data loaders that “throw” [promises](concept:promise) during render. Multiple boundaries allow granular fallbacks.\r\n\r\n## Common confusion\r\n\r\nData fetching [Suspense](concept:react-suspense) needs framework support (Next.js, Relay, [TanStack Query](concept:tanstack-query) [suspense](concept:react-suspense) mode) — not automatic for raw [fetch](concept:fetch) in client components.\r\n\r\n## In practice\r\n\r\nRoute-level loading UI, code-split pages, [streaming SSR](concept:streaming-ssr) chunk boundaries.",
+  "conceptIds": [
+    "react-suspense",
+    "async-await",
+    "promise",
+    "tanstack-query",
+    "fetch",
+    "streaming-ssr"
+  ]
+}

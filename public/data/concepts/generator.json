@@ -1,0 +1,26 @@
+{
+  "id": "generator",
+  "title": "Generator functions",
+  "aliases": [
+    "generator",
+    "function*",
+    "yield"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "iterator",
+    "async-await",
+    "closure"
+  ],
+  "usedInFlashcards": [
+    89
+  ],
+  "body": "## Definition\r\n\r\n**Generator functions** (`function*`) return iterators that pause with `yield` and resume on `next()` — implementing the [iterator](concept:iterator) protocol.\r\n\r\n## Why it exists\r\n\r\nLazy sequences, custom iteration, and coroutine-style control flow before [async/await](concept:async-await).\r\n\r\n## How it works\r\n\r\n```js\r\nfunction* ids() {\r\n  let i = 0;\r\n  while (true) yield ++i;\r\n}\r\nconst gen = ids();\r\ngen.next(); // { value: 1, done: false }\r\n```\r\n\r\n`yield*` delegates to another iterable.\r\n\r\n## Common confusion\r\n\r\nGenerators are lazy — code after `yield` runs only on next `next()` call. Not the same as async functions.\r\n\r\n## In practice\r\n\r\nIterator utilities, infinite streams, and redux-saga-style orchestration; less common in everyday UI code now.",
+  "bodyLinked": "## Definition\r\n\r\n**[Generator functions](concept:generator)** ([function*](concept:generator)) return [iterators](concept:iterator) that pause with [yield](concept:generator) and resume on `next()` — implementing the [iterator](concept:iterator) protocol.\r\n\r\n## Why it exists\r\n\r\nLazy sequences, custom [iteration](concept:iterator), and coroutine-style control flow before [async/await](concept:async-await).\r\n\r\n## How it works\r\n\r\n```js\r\nfunction* ids() {\r\n  let i = 0;\r\n  while (true) yield ++i;\r\n}\r\nconst gen = ids();\r\ngen.next(); // { value: 1, done: false }\r\n```\r\n\r\n`yield*` delegates to another [iterable](concept:iterator).\r\n\r\n## Common confusion\r\n\r\n[Generators](concept:generator) are lazy — code after [yield](concept:generator) runs only on next `next()` [call](concept:call-apply-bind). Not the same as [async](concept:async-await) functions.\r\n\r\n## In practice\r\n\r\n[Iterator](concept:iterator) utilities, infinite streams, and redux-saga-style orchestration; less common in everyday UI code now.",
+  "conceptIds": [
+    "generator",
+    "iterator",
+    "async-await",
+    "call-apply-bind"
+  ]
+}

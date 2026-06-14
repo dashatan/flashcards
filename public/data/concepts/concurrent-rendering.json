@@ -1,0 +1,28 @@
+{
+  "id": "concurrent-rendering",
+  "title": "Concurrent Rendering",
+  "aliases": [
+    "concurrent mode",
+    "concurrent React"
+  ],
+  "depth": "advanced",
+  "related": [
+    "react-fiber",
+    "react-suspense"
+  ],
+  "usedInFlashcards": [
+    121,
+    129,
+    161,
+    204
+  ],
+  "body": "## Definition\r\n\r\n**Concurrent rendering** lets React interrupt, pause, and resume rendering work instead of one blocking synchronous pass.\r\n\r\n## Why it exists\r\n\r\nKeep UI responsive during large updates; prioritize urgent user input over background rendering.\r\n\r\n## How it works\r\n\r\nBuilt on [React Fiber](concept:react-fiber). `startTransition` marks low-priority updates. [Suspense](concept:react-suspense) coordinates async UI.\r\n\r\n## Common confusion\r\n\r\nConcurrent features are opt-in via transitions/Suspense — not all renders are automatically concurrent in all cases.\r\n\r\n## In practice\r\n\r\nReact 18 default architecture; ties to INP improvements and streaming.",
+  "bodyLinked": "## Definition\r\n\r\n**[Concurrent rendering](concept:concurrent-rendering)** lets React interrupt, pause, and resume rendering work instead of one blocking synchronous pass.\r\n\r\n## Why it exists\r\n\r\nKeep UI responsive during large updates; prioritize urgent user input over background rendering.\r\n\r\n## How it works\r\n\r\nBuilt on [React Fiber](concept:react-fiber). `startTransition` marks low-priority updates. [Suspense](concept:react-suspense) coordinates [async](concept:async-await) UI.\r\n\r\n## Common confusion\r\n\r\nConcurrent features are opt-in via transitions/Suspense — not all renders are automatically concurrent in all cases.\r\n\r\n## In practice\r\n\r\nReact 18 default architecture; ties to [INP](concept:inp) improvements and streaming.",
+  "conceptIds": [
+    "concurrent-rendering",
+    "react-fiber",
+    "react-suspense",
+    "async-await",
+    "inp"
+  ]
+}

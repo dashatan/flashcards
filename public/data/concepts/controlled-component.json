@@ -1,0 +1,22 @@
+{
+  "id": "controlled-component",
+  "title": "Controlled Component",
+  "aliases": [
+    "controlled components",
+    "controlled input"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "use-state",
+    "props-vs-state"
+  ],
+  "usedInFlashcards": [],
+  "body": "## Definition\r\n\r\nA **controlled component** is an input whose value is driven by React [state](concept:props-vs-state) — `value` + `onChange` from parent or self.\r\n\r\n## Why it exists\r\n\r\nSingle source of truth for form data, validation, and submission.\r\n\r\n## How it works\r\n\r\n```jsx\r\n<input value={name} onChange={e => setName(e.target.value)} />\r\n```\r\n\r\nUncontrolled: DOM holds value (`ref` or `defaultValue`).\r\n\r\n## Common confusion\r\n\r\nControlled inputs need string state for text fields (`\"\"` not `undefined`). File inputs are typically uncontrolled.\r\n\r\n## In practice\r\n\r\nDefault pattern in React forms; React Hook Form can bridge controlled/uncontrolled.",
+  "bodyLinked": "## Definition\r\n\r\nA **[controlled component](concept:controlled-component)** is an input whose value is driven by React [state](concept:props-vs-state) — `value` + `onChange` from parent or self.\r\n\r\n## Why it exists\r\n\r\nSingle source of truth for form data, validation, and submission.\r\n\r\n## How it works\r\n\r\n```jsx\r\n<input value={name} onChange={e => setName(e.target.value)} />\r\n```\r\n\r\nUncontrolled: [DOM](concept:dom) holds value (`ref` or `defaultValue`).\r\n\r\n## Common confusion\r\n\r\n[Controlled inputs](concept:controlled-component) need string state for text fields (`\"\"` not [undefined](concept:undefined)). File inputs are typically uncontrolled.\r\n\r\n## In practice\r\n\r\nDefault pattern in React forms; React Hook Form can bridge controlled/uncontrolled.",
+  "conceptIds": [
+    "controlled-component",
+    "props-vs-state",
+    "dom",
+    "undefined"
+  ]
+}

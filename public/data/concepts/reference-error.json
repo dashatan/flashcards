@@ -1,0 +1,30 @@
+{
+  "id": "reference-error",
+  "title": "ReferenceError",
+  "aliases": [
+    "ReferenceError"
+  ],
+  "depth": "foundation",
+  "related": [
+    "temporal-dead-zone",
+    "identifier"
+  ],
+  "usedInFlashcards": [
+    5,
+    106
+  ],
+  "body": "## Definition\r\n\r\n**ReferenceError** is thrown when code references an [identifier](concept:identifier) that cannot be resolved — undeclared variable, or variable in the [temporal dead zone](concept:temporal-dead-zone).\r\n\r\n## Why it exists\r\n\r\nFails fast instead of silently producing wrong results (unlike `var` before declare returning [undefined](concept:undefined)).\r\n\r\n## How it works\r\n\r\n```js\r\nconsole.log(notDeclared); // ReferenceError\r\n\r\nlet x = 1;\r\n{\r\n  console.log(x); // TDZ ReferenceError\r\n  let x = 2;\r\n}\r\n```\r\n\r\n## Common confusion\r\n\r\n`typeof undeclaredName` returns `\"undefined\"` without throwing. Accessing a TDZ binding throws even with `typeof` in some cases. Strict mode does not change ReferenceError for TDZ.\r\n\r\n## In practice\r\n\r\nDebugging: check spelling, import paths, block scope leaks, and hoisting order.",
+  "bodyLinked": "## Definition\r\n\r\n**[ReferenceError](concept:reference-error)** is thrown when code references an [identifier](concept:identifier) that cannot be resolved — undeclared variable, or variable in the [temporal dead zone](concept:temporal-dead-zone).\r\n\r\n## Why it exists\r\n\r\nFails fast instead of silently producing wrong results (unlike [var](concept:var) before declare returning [undefined](concept:undefined)).\r\n\r\n## How it works\r\n\r\n```js\r\nconsole.log(notDeclared); // ReferenceError\r\n\r\nlet x = 1;\r\n{\r\n  console.log(x); // TDZ ReferenceError\r\n  let x = 2;\r\n}\r\n```\r\n\r\n## Common confusion\r\n\r\n`typeof undeclaredName` returns `\"undefined\"` without throwing. Accessing a [TDZ](concept:temporal-dead-zone) [binding](concept:binding) throws even with `typeof` in [some](concept:array-some-every) cases. [Strict mode](concept:strict-mode) does not change [ReferenceError](concept:reference-error) for [TDZ](concept:temporal-dead-zone).\r\n\r\n## In practice\r\n\r\nDebugging: check spelling, import paths, [block scope](concept:block-scope) leaks, and [hoisting](concept:hoisting) order.",
+  "conceptIds": [
+    "reference-error",
+    "identifier",
+    "temporal-dead-zone",
+    "var",
+    "undefined",
+    "binding",
+    "array-some-every",
+    "strict-mode",
+    "block-scope",
+    "hoisting"
+  ]
+}

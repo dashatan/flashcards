@@ -1,0 +1,30 @@
+{
+  "id": "react-composition",
+  "title": "React Composition",
+  "aliases": [
+    "composition",
+    "component composition",
+    "children prop"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "prop-drilling",
+    "custom-hooks"
+  ],
+  "usedInFlashcards": [
+    28,
+    169,
+    174,
+    219,
+    305
+  ],
+  "body": "## Definition\r\n\r\n**Composition** builds UI by nesting components and slots (`children`, render props, compound components) instead of giant prop lists or inheritance.\r\n\r\n## Why it exists\r\n\r\nFlexible layouts without prop drilling every variant through wrappers.\r\n\r\n## How it works\r\n\r\n```jsx\r\n<Card>\r\n  <Card.Header title=\"Stats\" />\r\n  <Card.Body>{content}</Card.Body>\r\n</Card>\r\n```\r\n\r\nShare behavior via [custom hooks](concept:custom-hooks), share structure via composition.\r\n\r\n## Common confusion\r\n\r\n“Composition over inheritance” — React rarely uses class inheritance for UI variants.\r\n\r\n## In practice\r\n\r\nDesign systems, layout shells, flexible modals and menus.",
+  "bodyLinked": "## Definition\r\n\r\n**[Composition](concept:react-composition)** builds UI by nesting components and slots (`children`, render props, compound components) instead of giant prop lists or inheritance.\r\n\r\n## Why it exists\r\n\r\nFlexible layouts without [prop drilling](concept:prop-drilling) [every](concept:array-some-every) variant through wrappers.\r\n\r\n## How it works\r\n\r\n```jsx\r\n<Card>\r\n  <Card.Header title=\"Stats\" />\r\n  <Card.Body>{content}</Card.Body>\r\n</Card>\r\n```\r\n\r\nShare behavior via [custom hooks](concept:custom-hooks), share structure via [composition](concept:react-composition).\r\n\r\n## Common confusion\r\n\r\n“[Composition](concept:react-composition) over inheritance” — React rarely uses [class](concept:es6-class) inheritance for UI variants.\r\n\r\n## In practice\r\n\r\nDesign systems, layout shells, flexible modals and menus.",
+  "conceptIds": [
+    "react-composition",
+    "prop-drilling",
+    "array-some-every",
+    "custom-hooks",
+    "es6-class"
+  ]
+}

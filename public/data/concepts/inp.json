@@ -1,0 +1,32 @@
+{
+  "id": "inp",
+  "title": "INP (Interaction to Next Paint)",
+  "aliases": [
+    "INP",
+    "Interaction to Next Paint",
+    "First Input Delay"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "core-web-vitals",
+    "event-loop",
+    "web-workers"
+  ],
+  "usedInFlashcards": [
+    145,
+    207,
+    282,
+    285,
+    296
+  ],
+  "body": "## Definition\r\n\r\n**INP** measures responsiveness — latency from user interaction to the next frame paint (replaced FID in Core Web Vitals).\r\n\r\n## Why it exists\r\n\r\nCaptures overall interaction lag, not just first input.\r\n\r\n## How it works\r\n\r\nReduce long tasks on main thread: break up JS, [Web Workers](concept:web-workers), defer work, optimize handlers, [React batching](concept:react-batching).\r\n\r\n## Good threshold\r\n\r\n≤ 200ms at 75th percentile.\r\n\r\n## In practice\r\n\r\nProfile long tasks in Chrome Performance; watch [useLayoutEffect](concept:use-layout-effect) overuse.",
+  "bodyLinked": "## Definition\r\n\r\n**[INP](concept:inp)** measures responsiveness — latency from user interaction to the next frame paint (replaced FID in [Core Web Vitals](concept:core-web-vitals)).\r\n\r\n## Why it exists\r\n\r\nCaptures overall interaction lag, not just first input.\r\n\r\n## How it works\r\n\r\n[Reduce](concept:array-map-filter-reduce) long tasks on main thread: break up JS, [Web Workers](concept:web-workers), defer work, optimize handlers, [React batching](concept:react-batching).\r\n\r\n## Good threshold\r\n\r\n≤ 200ms at 75th percentile.\r\n\r\n## In practice\r\n\r\nProfile long tasks in Chrome Performance; watch [useLayoutEffect](concept:use-layout-effect) overuse.",
+  "conceptIds": [
+    "inp",
+    "core-web-vitals",
+    "array-map-filter-reduce",
+    "web-workers",
+    "react-batching",
+    "use-layout-effect"
+  ]
+}

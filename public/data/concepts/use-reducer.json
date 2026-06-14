@@ -1,0 +1,28 @@
+{
+  "id": "use-reducer",
+  "title": "useReducer",
+  "aliases": [
+    "useReducer hook",
+    "React useReducer"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "use-state",
+    "react-batching"
+  ],
+  "usedInFlashcards": [
+    123,
+    154,
+    155,
+    166
+  ],
+  "body": "## Definition\r\n\r\n**useReducer** manages complex state with a reducer function `(state, action) => newState` and a `dispatch` function.\r\n\r\n## Why it exists\r\n\r\nPredictable state transitions, easier testing, and patterns similar to Redux without external library.\r\n\r\n## How it works\r\n\r\n```js\r\nconst [state, dispatch] = useReducer(reducer, initialState);\r\ndispatch({ type: \"increment\" });\r\n```\r\n\r\nUpdates batch like [useState](concept:use-state). Reducer must be pure.\r\n\r\n## Common confusion\r\n\r\nNot always better than multiple `useState` — use when state logic is intertwined or action-driven.\r\n\r\n## In practice\r\n\r\nForm wizards, complex UI state, combining with Context for lightweight global state.",
+  "bodyLinked": "## Definition\r\n\r\n**[useReducer](concept:use-reducer)** manages complex state with a reducer function `(state, action) => newState` and a `dispatch` function.\r\n\r\n## Why it exists\r\n\r\nPredictable state transitions, easier testing, and patterns similar to Redux without external library.\r\n\r\n## How it works\r\n\r\n```js\r\nconst [state, dispatch] = useReducer(reducer, initialState);\r\ndispatch({ type: \"increment\" });\r\n```\r\n\r\nUpdates batch like [useState](concept:use-state). Reducer must be pure.\r\n\r\n## Common confusion\r\n\r\nNot always better than multiple [useState](concept:use-state) — use when state logic is intertwined or action-driven.\r\n\r\n## In practice\r\n\r\nForm wizards, complex [UI state](concept:server-state-vs-client-state), combining with [Context](concept:use-context) for lightweight [global state](concept:react-context-api).",
+  "conceptIds": [
+    "use-reducer",
+    "use-state",
+    "server-state-vs-client-state",
+    "use-context",
+    "react-context-api"
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "id": "deep-copy",
+  "title": "Deep Copy",
+  "aliases": [
+    "deep clone",
+    "deep copy"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "shallow-copy",
+    "structured-clone",
+    "value-vs-reference"
+  ],
+  "usedInFlashcards": [
+    57,
+    58
+  ],
+  "body": "## Definition\r\n\r\nA **deep copy** recursively clones all nested structures so mutations in the copy never affect the original.\r\n\r\n## Why it exists\r\n\r\nSafe duplication of nested config, state snapshots, and undo stacks.\r\n\r\n## How it works\r\n\r\n- Modern: [structuredClone](concept:structured-clone)(obj)\r\n- JSON hack: `JSON.parse(JSON.stringify(obj))` — loses `Date`, `Map`, functions, `undefined`\r\n- Libraries: lodash `cloneDeep`\r\n\r\n## Example\r\n\r\n```js\r\nconst deep = structuredClone({ a: { b: 1 } });\r\ndeep.a.b = 2;\r\n// original.a.b unchanged\r\n```\r\n\r\n## Common confusion\r\n\r\n`structuredClone` does not clone functions or DOM nodes. Circular references need specialized handling.\r\n\r\n## In practice\r\n\r\nPrefer `structuredClone` in modern browsers/Node; understand limits before cloning API payloads.",
+  "bodyLinked": "## Definition\r\n\r\nA **[deep copy](concept:deep-copy)** recursively clones all nested structures so mutations in the copy never affect the original.\r\n\r\n## Why it exists\r\n\r\nSafe duplication of nested config, state snapshots, and undo stacks.\r\n\r\n## How it works\r\n\r\n- Modern: [structuredClone](concept:structured-clone)(obj)\r\n- JSON hack: `JSON.parse(JSON.stringify(obj))` — loses `Date`, [Map](concept:map-data-structure), functions, [undefined](concept:undefined)\r\n- Libraries: lodash `cloneDeep`\r\n\r\n## Example\r\n\r\n```js\r\nconst deep = structuredClone({ a: { b: 1 } });\r\ndeep.a.b = 2;\r\n// original.a.b unchanged\r\n```\r\n\r\n## Common confusion\r\n\r\n[structuredClone](concept:structured-clone) does not clone functions or [DOM](concept:dom) nodes. Circular references need specialized handling.\r\n\r\n## In practice\r\n\r\nPrefer [structuredClone](concept:structured-clone) in modern browsers/Node; understand limits before cloning API payloads.",
+  "conceptIds": [
+    "deep-copy",
+    "structured-clone",
+    "map-data-structure",
+    "undefined",
+    "dom"
+  ]
+}

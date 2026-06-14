@@ -1,0 +1,23 @@
+{
+  "id": "fisher-yates-shuffle",
+  "title": "Fisher-Yates shuffle",
+  "aliases": [
+    "shuffle array",
+    "array shuffle",
+    "Fisher-Yates"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "array-map-filter-reduce",
+    "big-o-complexity"
+  ],
+  "usedInFlashcards": [
+    98
+  ],
+  "body": "## Definition\r\n\r\nThe **Fisher-Yates shuffle** randomly permutes an array in O(n) time with uniform distribution — the standard unbiased shuffle algorithm.\r\n\r\n## Why it exists\r\n\r\nRandomize decks, quiz order, and A/B splits without bias from naive `sort(() => Math.random() - 0.5)`.\r\n\r\n## How it works\r\n\r\n```js\r\nfor (let i = arr.length - 1; i > 0; i--) {\r\n  const j = Math.floor(Math.random() * (i + 1));\r\n  [arr[i], arr[j]] = [arr[j], arr[i]];\r\n}\r\n```\r\n\r\nIterate backward, swap each index with random earlier index.\r\n\r\n## Common confusion\r\n\r\n`sort` with random comparator is not uniformly random and is slower.\r\n\r\n## In practice\r\n\r\nFlashcard shuffle modes, games, and sampling without replacement.",
+  "bodyLinked": "## Definition\r\n\r\nThe **[Fisher-Yates shuffle](concept:fisher-yates-shuffle)** randomly permutes an array in O(n) time with uniform distribution — the standard unbiased [shuffle](concept:fisher-yates-shuffle) algorithm.\r\n\r\n## Why it exists\r\n\r\nRandomize decks, quiz order, and A/B splits without bias from naive `sort(() => Math.random() - 0.5)`.\r\n\r\n## How it works\r\n\r\n```js\r\nfor (let i = arr.length - 1; i > 0; i--) {\r\n  const j = Math.floor(Math.random() * (i + 1));\r\n  [arr[i], arr[j]] = [arr[j], arr[i]];\r\n}\r\n```\r\n\r\nIterate backward, swap each index with random earlier index.\r\n\r\n## Common confusion\r\n\r\n[sort](concept:array-sort) with random [comparator](concept:array-sort) is not uniformly random and is slower.\r\n\r\n## In practice\r\n\r\nFlashcard [shuffle](concept:fisher-yates-shuffle) modes, games, and sampling without replacement.",
+  "conceptIds": [
+    "fisher-yates-shuffle",
+    "array-sort"
+  ]
+}

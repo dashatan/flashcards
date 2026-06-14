@@ -1,0 +1,31 @@
+{
+  "id": "for-loops",
+  "title": "for loops",
+  "aliases": [
+    "for...of",
+    "for...in",
+    "for-of",
+    "for-in",
+    "for loop",
+    "for loops"
+  ],
+  "depth": "foundation",
+  "related": [
+    "block-scope",
+    "closure",
+    "iterator"
+  ],
+  "usedInFlashcards": [
+    13
+  ],
+  "body": "## Definition\r\n\r\n**`for` loops** iterate with C-style `for (init; test; step)`, **`for...of`** over iterables, and **`for...in`** over enumerable property keys (usually avoid on arrays).\r\n\r\n## Why it exists\r\n\r\nControl flow for repeated work — the classic loop forms before array methods dominated collection processing.\r\n\r\n## How it works\r\n\r\n```js\r\nfor (let i = 0; i < arr.length; i++) { /* index */ }\r\nfor (const item of arr) { /* values */ }\r\nfor (const key in obj) { /* keys — includes inherited enumerable */ }\r\n```\r\n\r\n`let` in C-style loops creates per-iteration [bindings](concept:binding) in modern JS.\r\n\r\n## Common confusion\r\n\r\n`for...in` on arrays iterates indices as strings and may include inherited keys — prefer `for...of` or `.map`. `for...of` needs iterables ([arrays](concept:array-map-filter-reduce), strings, Maps).\r\n\r\n## In practice\r\n\r\nPrefer array methods for transforms; use `for...of` for async-unfriendly simple iteration; `for...in` for plain object keys with `hasOwnProperty` checks.",
+  "bodyLinked": "## Definition\r\n\r\n**`for` loops** iterate with C-style `for (init; test; step)`, **[for...of](concept:for-loops)** over [iterables](concept:iterator), and **[for...in](concept:for-loops)** over [enumerable](concept:property-descriptors) property keys (usually avoid on arrays).\r\n\r\n## Why it exists\r\n\r\nControl flow for repeated work — the classic loop forms before array methods dominated collection processing.\r\n\r\n## How it works\r\n\r\n```js\r\nfor (let i = 0; i < arr.length; i++) { /* index */ }\r\nfor (const item of arr) { /* values */ }\r\nfor (const key in obj) { /* keys — includes inherited enumerable */ }\r\n```\r\n\r\n[let](concept:let) in C-style loops creates per-[iteration](concept:iterator) [bindings](concept:binding) in modern JS.\r\n\r\n## Common confusion\r\n\r\n[for...in](concept:for-loops) on arrays iterates indices as strings and may include inherited keys — prefer [for...of](concept:for-loops) or `.map`. [for...of](concept:for-loops) needs [iterables](concept:iterator) ([arrays](concept:array-map-filter-reduce), strings, Maps).\r\n\r\n## In practice\r\n\r\nPrefer array methods for transforms; use [for...of](concept:for-loops) for async-unfriendly simple [iteration](concept:iterator); [for...in](concept:for-loops) for plain object keys with `hasOwnProperty` checks.",
+  "conceptIds": [
+    "for-loops",
+    "iterator",
+    "property-descriptors",
+    "let",
+    "binding",
+    "array-map-filter-reduce"
+  ]
+}

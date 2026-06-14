@@ -1,0 +1,28 @@
+{
+  "id": "custom-error-types",
+  "title": "Custom error types",
+  "aliases": [
+    "custom errors",
+    "extend Error",
+    "ValidationError"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "try-catch-finally",
+    "type-error",
+    "syntax-error"
+  ],
+  "usedInFlashcards": [
+    106,
+    107
+  ],
+  "body": "## Definition\r\n\r\n**Custom error types** extend `Error` (or built-in subclasses) to add domain-specific `name`, fields, and instanceof checks while preserving stack traces.\r\n\r\n## Why it exists\r\n\r\nDistinguish validation failures from network errors in [try/catch](concept:try-catch-finally) without string matching.\r\n\r\n## How it works\r\n\r\n```js\r\nclass ValidationError extends Error {\r\n  constructor(message, field) {\r\n    super(message);\r\n    this.name = \"ValidationError\";\r\n    this.field = field;\r\n  }\r\n}\r\nthrow new ValidationError(\"Invalid email\", \"email\");\r\n```\r\n\r\nUse `instanceof` or error `name` in handlers.\r\n\r\n## Common confusion\r\n\r\nMust call `super(message)` in subclass constructors. Some environments need `Error.captureStackTrace` for clean stacks.\r\n\r\n## In practice\r\n\r\nAPI layers throw typed errors; UI maps them to user-friendly messages.",
+  "bodyLinked": "## Definition\r\n\r\n**[Custom error types](concept:custom-error-types)** extend `Error` (or built-in subclasses) to add domain-specific `name`, fields, and instanceof checks while preserving stack traces.\r\n\r\n## Why it exists\r\n\r\nDistinguish validation failures from network errors in [try/catch](concept:try-catch-finally) without string matching.\r\n\r\n## How it works\r\n\r\n```js\r\nclass ValidationError extends Error {\r\n  constructor(message, field) {\r\n    super(message);\r\n    this.name = \"ValidationError\";\r\n    this.field = field;\r\n  }\r\n}\r\nthrow new ValidationError(\"Invalid email\", \"email\");\r\n```\r\n\r\nUse `instanceof` or error `name` in handlers.\r\n\r\n## Common confusion\r\n\r\nMust [call](concept:call-apply-bind) `super(message)` in subclass constructors. [Some](concept:array-some-every) environments need `Error.captureStackTrace` for clean stacks.\r\n\r\n## In practice\r\n\r\n[API layers](concept:api-layer) throw typed errors; UI maps them to user-friendly messages.",
+  "conceptIds": [
+    "custom-error-types",
+    "try-catch-finally",
+    "call-apply-bind",
+    "array-some-every",
+    "api-layer"
+  ]
+}

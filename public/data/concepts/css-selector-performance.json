@@ -1,0 +1,24 @@
+{
+  "id": "css-selector-performance",
+  "title": "CSS selector performance",
+  "aliases": [
+    "CSS selectors performance",
+    "expensive selectors"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "reflow-repaint",
+    "critical-rendering-path",
+    "dom"
+  ],
+  "usedInFlashcards": [
+    291
+  ],
+  "body": "## Definition\r\n\r\n**CSS selector performance** matters when engines match rules against large [DOM](concept:dom) trees — overly universal or deep selectors increase style recalc cost.\r\n\r\n## Why it exists\r\n\r\nHeavy selectors contribute to [reflow/repaint](concept:reflow-repaint) and slow dynamic pages with frequent DOM changes.\r\n\r\n## How it works\r\n\r\nPrefer classes over `*` and long descendant chains (`div div div`). ID/class matching is fast; `:not()` complexity varies by engine.\r\n\r\n## Common confusion\r\n\r\nMicro-optimizing selectors rarely beats fixing layout thrashing — profile first.\r\n\r\n## In practice\r\n\r\nBEM/utility classes; scope styles in components; avoid `querySelector` on unindexed selectors in hot loops.",
+  "bodyLinked": "## Definition\r\n\r\n**[CSS selector performance](concept:css-selector-performance)** matters when engines match rules against large [DOM](concept:dom) trees — overly universal or deep selectors increase style recalc cost.\r\n\r\n## Why it exists\r\n\r\nHeavy selectors contribute to [reflow/repaint](concept:reflow-repaint) and slow dynamic pages with frequent [DOM](concept:dom) changes.\r\n\r\n## How it works\r\n\r\nPrefer classes over `*` and long descendant chains (`div div div`). ID/class matching is fast; `:not()` complexity varies by engine.\r\n\r\n## Common confusion\r\n\r\nMicro-optimizing selectors rarely beats fixing [layout thrashing](concept:reflow-repaint) — profile first.\r\n\r\n## In practice\r\n\r\nBEM/utility classes; scope styles in components; avoid `querySelector` on unindexed selectors in hot loops.",
+  "conceptIds": [
+    "css-selector-performance",
+    "dom",
+    "reflow-repaint"
+  ]
+}

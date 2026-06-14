@@ -1,0 +1,33 @@
+{
+  "id": "react-act",
+  "title": "React act()",
+  "aliases": [
+    "act()",
+    "act utility"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "react-testing-library",
+    "use-effect",
+    "react-batching"
+  ],
+  "usedInFlashcards": [
+    158,
+    233,
+    235
+  ],
+  "body": "## Definition\r\n\r\n**`act()`** from `react-dom/test-utils` (or testing-library re-exports) wraps updates and flushes [React batching](concept:react-batching) so tests see the final UI state after state updates and effects.\r\n\r\n## Why it exists\r\n\r\nTests must await asynchronous [re-renders](concept:react-re-render) and [useEffect](concept:use-effect) runs before asserting DOM output.\r\n\r\n## How it works\r\n\r\n```js\r\nawait act(async () => {\r\n  fireEvent.click(button);\r\n});\r\nexpect(screen.getByText(\"Done\")).toBeInTheDocument();\r\n```\r\n\r\nReact Testing Library often wraps `act` automatically; manual `act` needed for some edge cases.\r\n\r\n## Common confusion\r\n\r\nWarnings “not wrapped in act” mean state updated outside a test flush boundary — not always a test failure but signals async updates.\r\n\r\n## In practice\r\n\r\nUse [React Testing Library](concept:react-testing-library) patterns; call `act` when driving raw `ReactDOM` test renders.",
+  "bodyLinked": "## Definition\r\n\r\n**[act()](concept:react-act)** from `react-dom/test-utils` (or [testing-library](concept:react-testing-library) re-exports) wraps updates and flushes [React batching](concept:react-batching) so tests see the final [UI state](concept:server-state-vs-client-state) after state updates and effects.\r\n\r\n## Why it exists\r\n\r\nTests must [await](concept:async-await) asynchronous [re-renders](concept:react-re-render) and [useEffect](concept:use-effect) runs before asserting [DOM](concept:dom) output.\r\n\r\n## How it works\r\n\r\n```js\r\nawait act(async () => {\r\n  fireEvent.click(button);\r\n});\r\nexpect(screen.getByText(\"Done\")).toBeInTheDocument();\r\n```\r\n\r\n[React Testing Library](concept:react-testing-library) often wraps `act` automatically; manual `act` needed for [some](concept:array-some-every) edge cases.\r\n\r\n## Common confusion\r\n\r\nWarnings “not wrapped in act” mean state updated outside a test flush boundary — not always a test failure but signals [async](concept:async-await) updates.\r\n\r\n## In practice\r\n\r\nUse [React Testing Library](concept:react-testing-library) patterns; [call](concept:call-apply-bind) `act` when driving raw `ReactDOM` test renders.",
+  "conceptIds": [
+    "react-act",
+    "react-testing-library",
+    "react-batching",
+    "server-state-vs-client-state",
+    "async-await",
+    "react-re-render",
+    "use-effect",
+    "dom",
+    "array-some-every",
+    "call-apply-bind"
+  ]
+}

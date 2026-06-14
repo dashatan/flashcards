@@ -1,0 +1,27 @@
+{
+  "id": "streaming-ssr",
+  "title": "Streaming SSR",
+  "aliases": [
+    "streaming server rendering",
+    "progressive HTML"
+  ],
+  "depth": "advanced",
+  "related": [
+    "server-side-rendering",
+    "react-suspense"
+  ],
+  "usedInFlashcards": [
+    209
+  ],
+  "body": "## Definition\r\n\r\n**Streaming SSR** sends HTML in chunks as server components resolve, so the browser can paint early content before slow parts finish.\r\n\r\n## Why it exists\r\n\r\nReduce time to first byte of meaningful content vs waiting for entire page render.\r\n\r\n## How it works\r\n\r\nServer flushes HTML at [Suspense](concept:react-suspense) boundaries. Slow data streams in later; client may [hydrate](concept:hydration) progressively ([selective hydration](concept:selective-hydration)).\r\n\r\n## Common confusion\r\n\r\nRequires server and framework support (React 18+, Next.js App Router).\r\n\r\n## In practice\r\n\r\nImprove LCP for pages with mixed fast/slow sections.",
+  "bodyLinked": "## Definition\r\n\r\n**[Streaming SSR](concept:streaming-ssr)** sends HTML in chunks as [server components](concept:react-server-components) resolve, so the browser can paint early content before slow parts finish.\r\n\r\n## Why it exists\r\n\r\n[Reduce](concept:array-map-filter-reduce) time to first byte of meaningful content vs waiting for entire page render.\r\n\r\n## How it works\r\n\r\nServer flushes HTML at [Suspense](concept:react-suspense) boundaries. Slow data streams in later; client may [hydrate](concept:hydration) progressively ([selective hydration](concept:selective-hydration)).\r\n\r\n## Common confusion\r\n\r\nRequires server and framework support (React 18+, Next.js App Router).\r\n\r\n## In practice\r\n\r\nImprove [LCP](concept:lcp) for pages with mixed fast/slow sections.",
+  "conceptIds": [
+    "streaming-ssr",
+    "react-server-components",
+    "array-map-filter-reduce",
+    "react-suspense",
+    "hydration",
+    "selective-hydration",
+    "lcp"
+  ]
+}

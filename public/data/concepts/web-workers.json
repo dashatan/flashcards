@@ -1,0 +1,27 @@
+{
+  "id": "web-workers",
+  "title": "Web Workers",
+  "aliases": [
+    "Web Worker",
+    "web workers"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "event-loop",
+    "inp"
+  ],
+  "usedInFlashcards": [
+    89,
+    272,
+    275,
+    285
+  ],
+  "body": "## Definition\r\n\r\n**Web Workers** run JavaScript on background threads with no DOM access — message-passing only.\r\n\r\n## Why it exists\r\n\r\nCPU-heavy work (parse large JSON, crypto, image processing) without blocking the main thread and hurting [INP](concept:inp).\r\n\r\n## How it works\r\n\r\n```js\r\nconst worker = new Worker(\"worker.js\");\r\nworker.postMessage(data);\r\nworker.onmessage = e => console.log(e.data);\r\n```\r\n\r\nSeparate [event loop](concept:event-loop) per worker.\r\n\r\n## In practice\r\n\r\nOffload parsing; consider Worker pools; not for tiny tasks (overhead).",
+  "bodyLinked": "## Definition\r\n\r\n**[Web Workers](concept:web-workers)** run JavaScript on background threads with no [DOM](concept:dom) access — message-passing only.\r\n\r\n## Why it exists\r\n\r\nCPU-heavy work (parse large JSON, crypto, image processing) without blocking the main thread and hurting [INP](concept:inp).\r\n\r\n## How it works\r\n\r\n```js\r\nconst worker = new Worker(\"worker.js\");\r\nworker.postMessage(data);\r\nworker.onmessage = e => console.log(e.data);\r\n```\r\n\r\nSeparate [event loop](concept:event-loop) per worker.\r\n\r\n## In practice\r\n\r\nOffload parsing; consider Worker pools; not for tiny tasks (overhead).",
+  "conceptIds": [
+    "web-workers",
+    "dom",
+    "inp",
+    "event-loop"
+  ]
+}

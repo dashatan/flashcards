@@ -1,0 +1,22 @@
+{
+  "id": "history-api",
+  "title": "History API",
+  "aliases": [
+    "History API",
+    "pushState",
+    "SPA routing"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "code-splitting"
+  ],
+  "usedInFlashcards": [
+    278
+  ],
+  "body": "## Definition\r\n\r\nThe **History API** (`pushState`, `replaceState`, `popstate`) changes the URL without full page reload.\r\n\r\n## Why it exists\r\n\r\nClient-side routing for SPAs (React Router, TanStack Router, Next.js client nav).\r\n\r\n## How it works\r\n\r\n```js\r\nhistory.pushState({}, \"\", \"/dashboard\");\r\nwindow.addEventListener(\"popstate\", onBack);\r\n```\r\n\r\nServer must still handle deep links (SSR or static fallback).\r\n\r\n## In practice\r\n\r\nFoundation of modern frontend routing; pair with code-split route chunks.",
+  "bodyLinked": "## Definition\r\n\r\nThe **[History API](concept:history-api)** ([pushState](concept:history-api), `replaceState`, `popstate`) changes the URL without full page reload.\r\n\r\n## Why it exists\r\n\r\nClient-side routing for SPAs (React Router, TanStack Router, Next.js client nav).\r\n\r\n## How it works\r\n\r\n```js\r\nhistory.pushState({}, \"\", \"/dashboard\");\r\nwindow.addEventListener(\"popstate\", onBack);\r\n```\r\n\r\nServer must still handle deep links ([SSR](concept:server-side-rendering) or static fallback).\r\n\r\n## In practice\r\n\r\nFoundation of modern frontend routing; pair with code-split route chunks.",
+  "conceptIds": [
+    "history-api",
+    "server-side-rendering"
+  ]
+}

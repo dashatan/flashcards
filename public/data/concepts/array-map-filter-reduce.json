@@ -1,0 +1,45 @@
+{
+  "id": "array-map-filter-reduce",
+  "title": "map, filter, and reduce",
+  "aliases": [
+    "Array.map",
+    "Array.filter",
+    "Array.reduce"
+  ],
+  "depth": "foundation",
+  "related": [
+    "higher-order-function",
+    "big-o-complexity"
+  ],
+  "usedInFlashcards": [
+    27,
+    51,
+    86,
+    87,
+    90,
+    91,
+    92,
+    93,
+    95,
+    96,
+    100,
+    117,
+    121,
+    131,
+    199,
+    246,
+    257,
+    283,
+    285,
+    296,
+    301
+  ],
+  "body": "## Definition\r\n\r\n**map**, **filter**, and **reduce** are [higher-order](concept:higher-order-function) array methods for transforming, selecting, and aggregating data.\r\n\r\n## Why it exists\r\n\r\nDeclarative data pipelines instead of manual `for` loops.\r\n\r\n## How it works\r\n\r\n- **map**: each element → new value; same length array.\r\n- **filter**: keep elements where predicate is true.\r\n- **reduce**: accumulate to one value (or any type) with an accumulator.\r\n\r\n```js\r\nitems.filter(i => i.active).map(i => i.price).reduce((s, p) => s + p, 0);\r\n```\r\n\r\n## Common confusion\r\n\r\nMissing `return` in `map` callback → `undefined` entries. Chaining three passes is O(n) but allocates intermediate arrays.\r\n\r\n## In practice\r\n\r\nDefault for collection transforms; combine into one loop for huge datasets.",
+  "bodyLinked": "## Definition\r\n\r\n**[map](concept:array-map-filter-reduce)**, **[filter](concept:array-map-filter-reduce)**, and **[reduce](concept:array-map-filter-reduce)** are [higher-order](concept:higher-order-function) array methods for transforming, selecting, and aggregating data.\r\n\r\n## Why it exists\r\n\r\nDeclarative data pipelines instead of manual `for` loops.\r\n\r\n## How it works\r\n\r\n- **[map](concept:array-map-filter-reduce)**: each element → [new](concept:new-operator) value; same length array.\r\n- **[filter](concept:array-map-filter-reduce)**: keep elements where predicate is true.\r\n- **[reduce](concept:array-map-filter-reduce)**: accumulate to one value (or any type) with an accumulator.\r\n\r\n```js\r\nitems.filter(i => i.active).map(i => i.price).reduce((s, p) => s + p, 0);\r\n```\r\n\r\n## Common confusion\r\n\r\nMissing `return` in [map](concept:array-map-filter-reduce) callback → [undefined](concept:undefined) entries. Chaining three passes is O(n) but allocates intermediate arrays.\r\n\r\n## In practice\r\n\r\nDefault for collection transforms; combine into one loop for huge datasets.",
+  "conceptIds": [
+    "array-map-filter-reduce",
+    "higher-order-function",
+    "new-operator",
+    "undefined"
+  ]
+}

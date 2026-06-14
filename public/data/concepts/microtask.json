@@ -1,0 +1,34 @@
+{
+  "id": "microtask",
+  "title": "Microtask",
+  "aliases": [
+    "microtasks",
+    "microtask queue"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "event-loop",
+    "macrotask",
+    "promise"
+  ],
+  "usedInFlashcards": [
+    31,
+    32,
+    33,
+    34,
+    35,
+    38
+  ],
+  "body": "## Definition\r\n\r\nA **microtask** is a short async job queued after the current script and before the next render/macrotask — Promise reactions, `queueMicrotask`, `MutationObserver`.\r\n\r\n## Why it exists\r\n\r\nPromises need predictable “run soon” ordering that beats timers and I/O, so `.then` runs before `setTimeout(0)`.\r\n\r\n## How it works\r\n\r\nWhen a Promise settles, handlers are queued as microtasks. After synchronous code finishes, the engine drains **all** microtasks in the queue before taking the next [macrotask](concept:macrotask) from the [event loop](concept:event-loop).\r\n\r\n## Example\r\n\r\n```js\r\nPromise.resolve().then(() => console.log(\"micro\"));\r\nsetTimeout(() => console.log(\"macro\"), 0);\r\n```\r\n\r\n## Common confusion\r\n\r\nMicrotasks can starve macrotasks if you chain infinite `then` — the loop never reaches timers. Avoid recursive Promise chains without yielding.\r\n\r\n## In practice\r\n\r\nExplains `Promise.resolve().then` vs `setTimeout` ordering in interviews and React 18 batching interactions with microtasks.",
+  "bodyLinked": "## Definition\r\n\r\nA **[microtask](concept:microtask)** is a short [async](concept:async-await) job queued after the current script and before the next render/macrotask — [Promise](concept:promise) reactions, `queueMicrotask`, [MutationObserver](concept:mutation-observer).\r\n\r\n## Why it exists\r\n\r\n[Promises](concept:promise) need predictable “run soon” ordering that beats [timers](concept:timers) and I/O, so `.then` runs before [setTimeout(0)](concept:timers).\r\n\r\n## How it works\r\n\r\nWhen a [Promise](concept:promise) settles, handlers are queued as [microtasks](concept:microtask). After synchronous code finishes, the engine drains **all** [microtasks](concept:microtask) in the queue before taking the next [macrotask](concept:macrotask) from the [event loop](concept:event-loop).\r\n\r\n## Example\r\n\r\n```js\r\nPromise.resolve().then(() => console.log(\"micro\"));\r\nsetTimeout(() => console.log(\"macro\"), 0);\r\n```\r\n\r\n## Common confusion\r\n\r\n[Microtasks](concept:microtask) can starve [macrotasks](concept:macrotask) if you chain infinite `then` — the loop never reaches [timers](concept:timers). Avoid recursive [Promise](concept:promise) chains without yielding.\r\n\r\n## In practice\r\n\r\nExplains `Promise.resolve().then` vs [setTimeout](concept:timers) ordering in interviews and [React 18 batching](concept:react-batching) interactions with [microtasks](concept:microtask).",
+  "conceptIds": [
+    "microtask",
+    "async-await",
+    "promise",
+    "mutation-observer",
+    "timers",
+    "macrotask",
+    "event-loop",
+    "react-batching"
+  ]
+}

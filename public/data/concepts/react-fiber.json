@@ -1,0 +1,25 @@
+{
+  "id": "react-fiber",
+  "title": "React Fiber",
+  "aliases": [
+    "Fiber",
+    "React Fiber architecture"
+  ],
+  "depth": "advanced",
+  "related": [
+    "reconciliation",
+    "concurrent-rendering"
+  ],
+  "usedInFlashcards": [
+    133,
+    134
+  ],
+  "body": "## Definition\r\n\r\n**React Fiber** is React’s reconciliation engine — a linked list of work units representing components and their work to do.\r\n\r\n## Why it exists\r\n\r\nEnables pausable/resumable rendering, priorities, and [concurrent rendering](concept:concurrent-rendering) features (Suspense, transitions).\r\n\r\n## How it works\r\n\r\nEach fiber node tracks component type, props, state, and child/sibling links. The scheduler can interrupt low-priority fiber work for urgent updates (input).\r\n\r\n## Common confusion\r\n\r\nFiber is internal — you don’t use it directly, but it explains why React 18 can keep UI responsive during heavy renders.\r\n\r\n## In practice\r\n\r\nSenior interview topic linking reconciliation, lanes, and time-slicing.",
+  "bodyLinked": "## Definition\r\n\r\n**[React Fiber](concept:react-fiber)** is React’s [reconciliation](concept:reconciliation) engine — a linked list of work units representing components and their work to do.\r\n\r\n## Why it exists\r\n\r\nEnables pausable/resumable rendering, priorities, and [concurrent rendering](concept:concurrent-rendering) features ([Suspense](concept:react-suspense), transitions).\r\n\r\n## How it works\r\n\r\nEach [fiber](concept:react-fiber) node tracks component type, props, state, and child/sibling links. The scheduler can interrupt low-priority [fiber](concept:react-fiber) work for urgent updates (input).\r\n\r\n## Common confusion\r\n\r\n[Fiber](concept:react-fiber) is internal — you don’t use it directly, but it explains why React 18 can keep UI responsive during heavy renders.\r\n\r\n## In practice\r\n\r\nSenior interview topic linking [reconciliation](concept:reconciliation), lanes, and time-slicing.",
+  "conceptIds": [
+    "react-fiber",
+    "reconciliation",
+    "concurrent-rendering",
+    "react-suspense"
+  ]
+}

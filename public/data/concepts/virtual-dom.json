@@ -1,0 +1,29 @@
+{
+  "id": "virtual-dom",
+  "title": "Virtual DOM",
+  "aliases": [
+    "virtual DOM",
+    "VDOM"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "reconciliation",
+    "dom",
+    "react-re-render"
+  ],
+  "usedInFlashcards": [
+    125,
+    126,
+    262
+  ],
+  "body": "## Definition\r\n\r\nThe **virtual DOM** is a lightweight JavaScript tree describing UI structure that React compares on each update before touching the real [DOM](concept:dom).\r\n\r\n## Why it exists\r\n\r\nEnables declarative UI, batched updates, and [reconciliation](concept:reconciliation) without manual DOM diffing.\r\n\r\n## How it works\r\n\r\nRender produces a tree of React elements (descriptions, not live DOM nodes). On state change, React builds a new tree and diffs against the previous one to compute minimal real DOM operations.\r\n\r\n## Common confusion\r\n\r\nVirtual DOM is not always faster than careful manual DOM — it trades developer ergonomics and predictable batching for some overhead.\r\n\r\n## In practice\r\n\r\nFoundation for understanding React updates, React Native, and why keys matter in lists.",
+  "bodyLinked": "## Definition\r\n\r\nThe **[virtual DOM](concept:virtual-dom)** is a lightweight JavaScript tree describing UI structure that React compares on each update before touching the real [DOM](concept:dom).\r\n\r\n## Why it exists\r\n\r\nEnables declarative UI, [batched](concept:react-batching) updates, and [reconciliation](concept:reconciliation) without manual [DOM](concept:dom) [diffing](concept:reconciliation).\r\n\r\n## How it works\r\n\r\nRender produces a tree of React elements (descriptions, not live [DOM](concept:dom) nodes). On state change, React builds a [new](concept:new-operator) tree and diffs against the previous one to compute minimal real [DOM](concept:dom) operations.\r\n\r\n## Common confusion\r\n\r\n[Virtual DOM](concept:virtual-dom) is not always faster than careful manual [DOM](concept:dom) — it trades developer ergonomics and predictable [batching](concept:react-batching) for [some](concept:array-some-every) overhead.\r\n\r\n## In practice\r\n\r\nFoundation for understanding React updates, React Native, and why keys matter in lists.",
+  "conceptIds": [
+    "virtual-dom",
+    "dom",
+    "react-batching",
+    "reconciliation",
+    "new-operator",
+    "array-some-every"
+  ]
+}

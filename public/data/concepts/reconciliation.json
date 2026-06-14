@@ -1,0 +1,29 @@
+{
+  "id": "reconciliation",
+  "title": "Reconciliation",
+  "aliases": [
+    "React reconciliation",
+    "diffing algorithm"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "virtual-dom",
+    "react-key-prop",
+    "react-fiber"
+  ],
+  "usedInFlashcards": [
+    122,
+    124,
+    126,
+    133
+  ],
+  "body": "## Definition\r\n\r\n**Reconciliation** is React’s process of comparing the new element tree with the previous one to determine minimal DOM updates.\r\n\r\n## Why it exists\r\n\r\nAvoid full page rewrites when only part of the UI changed.\r\n\r\n## How it works\r\n\r\nHeuristics: same component type → update props; different type → replace subtree; list items matched by [key](concept:react-key-prop). Implemented by [React Fiber](concept:react-fiber) as incremental work.\r\n\r\n## Common confusion\r\n\r\nReconciliation is not full tree diff O(n³) — React assumes level-wise comparison with keys for lists.\r\n\r\n## In practice\r\n\r\nExplain list reorder bugs, why unstable keys break state, and performance of large trees.",
+  "bodyLinked": "## Definition\r\n\r\n**[Reconciliation](concept:reconciliation)** is React’s process of comparing the [new](concept:new-operator) element tree with the previous one to determine minimal [DOM](concept:dom) updates.\r\n\r\n## Why it exists\r\n\r\nAvoid full page rewrites when only part of the UI changed.\r\n\r\n## How it works\r\n\r\nHeuristics: same component type → update props; different type → replace subtree; list items matched by [key](concept:react-key-prop). Implemented by [React Fiber](concept:react-fiber) as incremental work.\r\n\r\n## Common confusion\r\n\r\n[Reconciliation](concept:reconciliation) is not full tree diff O(n³) — React assumes level-wise comparison with keys for lists.\r\n\r\n## In practice\r\n\r\nExplain list reorder bugs, why unstable keys break state, and performance of large trees.",
+  "conceptIds": [
+    "reconciliation",
+    "new-operator",
+    "dom",
+    "react-key-prop",
+    "react-fiber"
+  ]
+}

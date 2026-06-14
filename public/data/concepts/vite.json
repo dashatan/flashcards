@@ -1,0 +1,29 @@
+{
+  "id": "vite",
+  "title": "Vite",
+  "aliases": [
+    "Vite bundler"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "hmr",
+    "es-modules",
+    "tree-shaking"
+  ],
+  "usedInFlashcards": [
+    247,
+    248,
+    249,
+    258
+  ],
+  "body": "## Definition\r\n\r\n**Vite** is a dev server and build tool using native [ES modules](concept:es-modules) in dev and Rollup for production bundles.\r\n\r\n## Why it exists\r\n\r\nNear-instant dev startup and [HMR](concept:hmr) vs traditional bundler-first dev ([webpack](concept:webpack)).\r\n\r\n## How it works\r\n\r\nDev: serve modules directly; pre-bundle deps with esbuild. Prod: Rollup tree-shake and chunk.\r\n\r\n## In practice\r\n\r\nDefault for new React/Vue apps; this flashcard app uses Vite + TanStack Router.",
+  "bodyLinked": "## Definition\r\n\r\n**[Vite](concept:vite)** is a dev server and build tool using native [ES modules](concept:es-modules) in dev and Rollup for production bundles.\r\n\r\n## Why it exists\r\n\r\nNear-instant dev startup and [HMR](concept:hmr) vs traditional bundler-first dev ([webpack](concept:webpack)).\r\n\r\n## How it works\r\n\r\nDev: serve modules directly; pre-bundle deps with esbuild. Prod: Rollup tree-shake and chunk.\r\n\r\n## In practice\r\n\r\nDefault for [new](concept:new-operator) React/Vue apps; [this](concept:this-binding) flashcard app uses [Vite](concept:vite) + TanStack Router.",
+  "conceptIds": [
+    "vite",
+    "es-modules",
+    "hmr",
+    "webpack",
+    "new-operator",
+    "this-binding"
+  ]
+}

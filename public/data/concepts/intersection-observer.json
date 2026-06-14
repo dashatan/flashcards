@@ -1,0 +1,25 @@
+{
+  "id": "intersection-observer",
+  "title": "Intersection Observer API",
+  "aliases": [
+    "Intersection Observer",
+    "IntersectionObserver"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "lazy-loading",
+    "debounce-throttle"
+  ],
+  "usedInFlashcards": [
+    192,
+    268,
+    269,
+    292
+  ],
+  "body": "## Definition\r\n\r\n**Intersection Observer** asynchronously reports when target elements enter or leave a viewport (or root) — without scroll event listeners.\r\n\r\n## Why it exists\r\n\r\nEfficient infinite scroll, lazy load, visibility analytics, sticky animations.\r\n\r\n## How it works\r\n\r\n```js\r\nconst obs = new IntersectionObserver(entries => {\r\n  if (entries[0].isIntersecting) loadMore();\r\n});\r\nobs.observe(sentinel);\r\n```\r\n\r\nRuns off main scroll polling path; better than raw scroll handlers for visibility.\r\n\r\n## In practice\r\n\r\nInfinite lists, `loading=\"lazy\"` alternative for custom behavior, ad viewability.",
+  "bodyLinked": "## Definition\r\n\r\n**[Intersection Observer](concept:intersection-observer)** asynchronously reports when target elements enter or leave a viewport (or root) — without scroll event listeners.\r\n\r\n## Why it exists\r\n\r\nEfficient infinite scroll, [lazy load](concept:lazy-loading), visibility analytics, sticky animations.\r\n\r\n## How it works\r\n\r\n```js\r\nconst obs = new IntersectionObserver(entries => {\r\n  if (entries[0].isIntersecting) loadMore();\r\n});\r\nobs.observe(sentinel);\r\n```\r\n\r\nRuns off main scroll polling path; better than raw scroll handlers for visibility.\r\n\r\n## In practice\r\n\r\nInfinite lists, `loading=\"lazy\"` alternative for custom behavior, ad viewability.",
+  "conceptIds": [
+    "intersection-observer",
+    "lazy-loading"
+  ]
+}

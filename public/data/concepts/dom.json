@@ -1,0 +1,49 @@
+{
+  "id": "dom",
+  "title": "DOM (Document Object Model)",
+  "aliases": [
+    "DOM",
+    "Document Object Model"
+  ],
+  "depth": "foundation",
+  "related": [
+    "virtual-dom",
+    "reflow-repaint"
+  ],
+  "usedInFlashcards": [
+    70,
+    90,
+    102,
+    114,
+    122,
+    124,
+    125,
+    126,
+    127,
+    128,
+    129,
+    143,
+    144,
+    151,
+    152,
+    191,
+    239,
+    262,
+    270,
+    271,
+    272,
+    286,
+    287,
+    288,
+    290
+  ],
+  "body": "## Definition\r\n\r\nThe **DOM** is the browser’s tree representation of HTML — nodes for elements, text, attributes — that JavaScript can read and modify.\r\n\r\n## Why it exists\r\n\r\nPrograms need a live API to update pages; bridges markup and scripts.\r\n\r\n## How it works\r\n\r\n`document.querySelector`, `createElement`, `appendChild`. Changes can trigger [reflow/repaint](concept:reflow-repaint). React’s [virtual DOM](concept:virtual-dom) batches updates to the real DOM.\r\n\r\n## Common confusion\r\n\r\nDOM is not the same as HTML source string — it’s the in-memory live tree after parse.\r\n\r\n## In practice\r\n\r\nEvent listeners, `innerHTML` XSS risks, integration with React refs.",
+  "bodyLinked": "## Definition\r\n\r\nThe **[DOM](concept:dom)** is the browser’s tree representation of HTML — nodes for elements, text, attributes — that JavaScript can read and modify.\r\n\r\n## Why it exists\r\n\r\nPrograms need a live API to update pages; bridges markup and scripts.\r\n\r\n## How it works\r\n\r\n`document.querySelector`, `createElement`, `appendChild`. Changes can trigger [reflow/repaint](concept:reflow-repaint). React’s [virtual DOM](concept:virtual-dom) batches updates to the real [DOM](concept:dom).\r\n\r\n## Common confusion\r\n\r\n[DOM](concept:dom) is not the same as HTML source string — it’s the in-memory live tree after parse.\r\n\r\n## In practice\r\n\r\nEvent listeners, [innerHTML](concept:inner-html) [XSS](concept:xss) risks, integration with React refs.",
+  "conceptIds": [
+    "dom",
+    "reflow-repaint",
+    "virtual-dom",
+    "inner-html",
+    "xss"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "prevent-default",
+  "title": "preventDefault vs stopPropagation",
+  "aliases": [
+    "preventDefault",
+    "stopPropagation"
+  ],
+  "depth": "foundation",
+  "related": [
+    "event-bubbling-capturing"
+  ],
+  "usedInFlashcards": [
+    267
+  ],
+  "body": "## Definition\r\n\r\n**preventDefault()** cancels the browser’s default action for an event. **stopPropagation()** stops the event from reaching other elements in the propagation chain.\r\n\r\n## Why it exists\r\n\r\nForms, links, and drag operations have defaults you may want to override or isolate.\r\n\r\n## How it works\r\n\r\n```js\r\nform.addEventListener(\"submit\", e => {\r\n  e.preventDefault(); // don't navigate\r\n  submitViaAjax();\r\n});\r\n```\r\n\r\nClick link: `preventDefault` stops navigation; `stopPropagation` stops parent handlers but link may still navigate if default not prevented.\r\n\r\n## In practice\r\n\r\nReact: `e.preventDefault()` in onSubmit; know both for interview DOM questions.",
+  "bodyLinked": "## Definition\r\n\r\n**[preventDefault](concept:prevent-default)()** cancels the browser’s default action for an event. **[stopPropagation](concept:prevent-default)()** stops the event from reaching other elements in the [propagation](concept:event-bubbling-capturing) chain.\r\n\r\n## Why it exists\r\n\r\nForms, links, and drag operations have defaults you may want to override or isolate.\r\n\r\n## How it works\r\n\r\n```js\r\nform.addEventListener(\"submit\", e => {\r\n  e.preventDefault(); // don't navigate\r\n  submitViaAjax();\r\n});\r\n```\r\n\r\nClick link: [preventDefault](concept:prevent-default) stops navigation; [stopPropagation](concept:prevent-default) stops parent handlers but link may still navigate if default not prevented.\r\n\r\n## In practice\r\n\r\nReact: `e.preventDefault()` in onSubmit; know both for interview [DOM](concept:dom) questions.",
+  "conceptIds": [
+    "prevent-default",
+    "event-bubbling-capturing",
+    "dom"
+  ]
+}

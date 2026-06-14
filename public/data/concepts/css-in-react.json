@@ -1,0 +1,27 @@
+{
+  "id": "css-in-react",
+  "title": "CSS in React",
+  "aliases": [
+    "CSS modules",
+    "CSS-in-JS",
+    "Tailwind",
+    "styled components"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "vite",
+    "webpack",
+    "postcss"
+  ],
+  "usedInFlashcards": [
+    260,
+    261
+  ],
+  "body": "## Definition\r\n\r\n**CSS in React** covers styling approaches: global CSS, **CSS Modules** (scoped class names), utility-first (Tailwind), and CSS-in-JS libraries.\r\n\r\n## Why it exists\r\n\r\nComponent colocation, scope isolation, and design tokens without global cascade collisions.\r\n\r\n## How it works\r\n\r\nCSS Modules: `import styles from \"./Button.module.css\"`. Tailwind: utility classes in JSX. Build tools hash/scoped classes via [PostCSS](concept:postcss).\r\n\r\n## Common confusion\r\n\r\nCSS-in-JS runtime cost vs zero-runtime (Linaria, vanilla extract). Tailwind is build-time, not inline styles.\r\n\r\n## In practice\r\n\r\nTailwind + CSS modules common in 2020s stacks; avoid inline styles except dynamic values.",
+  "bodyLinked": "## Definition\r\n\r\n**[CSS in React](concept:css-in-react)** covers styling approaches: global CSS, **[CSS Modules](concept:css-in-react)** (scoped [class](concept:es6-class) names), utility-first ([Tailwind](concept:css-in-react)), and [CSS-in-JS](concept:css-in-react) libraries.\r\n\r\n## Why it exists\r\n\r\nComponent colocation, scope isolation, and design tokens without global cascade collisions.\r\n\r\n## How it works\r\n\r\n[CSS Modules](concept:css-in-react): `import styles from \"./Button.module.css\"`. [Tailwind](concept:css-in-react): utility classes in JSX. Build tools hash/scoped classes via [PostCSS](concept:postcss).\r\n\r\n## Common confusion\r\n\r\n[CSS-in-JS](concept:css-in-react) runtime cost vs zero-runtime (Linaria, vanilla extract). [Tailwind](concept:css-in-react) is build-time, not inline styles.\r\n\r\n## In practice\r\n\r\n[Tailwind](concept:css-in-react) + [CSS modules](concept:css-in-react) common in 2020s stacks; avoid inline styles except dynamic values.",
+  "conceptIds": [
+    "css-in-react",
+    "es6-class",
+    "postcss"
+  ]
+}

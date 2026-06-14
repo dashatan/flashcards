@@ -1,0 +1,34 @@
+{
+  "id": "observability",
+  "title": "Observability",
+  "aliases": [
+    "observability",
+    "monitoring",
+    "RUM"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "cross-cutting-concerns",
+    "core-web-vitals"
+  ],
+  "usedInFlashcards": [
+    90,
+    112,
+    113,
+    118,
+    163,
+    176,
+    185,
+    241,
+    297,
+    304,
+    326,
+    327
+  ],
+  "body": "## Definition\r\n\r\n**Observability** is measuring and understanding system behavior in production — errors, performance, logs, and user experience metrics.\r\n\r\n## Why it exists\r\n\r\nYou cannot fix what you cannot see; ties code to real user impact.\r\n\r\n## How it works\r\n\r\n- Errors: Sentry, Datadog\r\n- RUM: Web Vitals, session replay\r\n- Logs: structured JSON, correlation IDs\r\n- Alerts on SLO breaches\r\n\r\n## In practice\r\n\r\nFrontend owns client errors and [Core Web Vitals](concept:core-web-vitals) reporting; pair with backend traces.",
+  "bodyLinked": "## Definition\r\n\r\n**[Observability](concept:observability)** is measuring and understanding system behavior in production — errors, performance, logs, and user experience metrics.\r\n\r\n## Why it exists\r\n\r\nYou cannot fix what you cannot see; ties code to real user impact.\r\n\r\n## How it works\r\n\r\n- Errors: Sentry, Datadog\r\n- [RUM](concept:observability): Web Vitals, session replay\r\n- Logs: structured JSON, correlation IDs\r\n- Alerts on SLO breaches\r\n\r\n## In practice\r\n\r\nFrontend owns client errors and [Core Web Vitals](concept:core-web-vitals) reporting; pair with backend traces.",
+  "conceptIds": [
+    "observability",
+    "core-web-vitals"
+  ]
+}

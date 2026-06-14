@@ -1,0 +1,22 @@
+{
+  "id": "session-storage",
+  "title": "sessionStorage",
+  "aliases": [
+    "sessionStorage",
+    "session storage"
+  ],
+  "depth": "foundation",
+  "related": [
+    "local-storage"
+  ],
+  "usedInFlashcards": [
+    181,
+    273
+  ],
+  "body": "## Definition\r\n\r\n**sessionStorage** is like [localStorage](concept:local-storage) but scoped to the browser tab — cleared when tab closes.\r\n\r\n## Why it exists\r\n\r\nTemporary per-tab state (multi-step form, wizard) without polluting global persistence.\r\n\r\n## How it works\r\n\r\nSame API as localStorage. Not shared across tabs of same origin.\r\n\r\n## In practice\r\n\r\nTab-scoped UI; not for cross-tab sync — use localStorage or server session.",
+  "bodyLinked": "## Definition\r\n\r\n**[sessionStorage](concept:session-storage)** is like [localStorage](concept:local-storage) but scoped to the browser tab — cleared when tab closes.\r\n\r\n## Why it exists\r\n\r\nTemporary per-tab state (multi-step form, wizard) without polluting global persistence.\r\n\r\n## How it works\r\n\r\nSame API as [localStorage](concept:local-storage). Not shared across tabs of same origin.\r\n\r\n## In practice\r\n\r\nTab-scoped UI; not for cross-tab sync — use [localStorage](concept:local-storage) or server session.",
+  "conceptIds": [
+    "session-storage",
+    "local-storage"
+  ]
+}

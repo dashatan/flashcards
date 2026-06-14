@@ -1,0 +1,5938 @@
+{
+  "generatedAt": "2026-06-14T23:39:56.185Z",
+  "concepts": [
+    {
+      "id": "abort-controller",
+      "title": "AbortController",
+      "aliases": [
+        "AbortController",
+        "AbortSignal",
+        "abort signal"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "fetch",
+        "promise",
+        "async-await"
+      ],
+      "usedInFlashcards": [
+        47,
+        139
+      ]
+    },
+    {
+      "id": "abstract-operations",
+      "title": "Abstract operations (ToNumber, ToString)",
+      "aliases": [
+        "ToNumber",
+        "ToString",
+        "type conversion",
+        "Number()",
+        "parseInt()"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "type-coercion",
+        "loose-equality",
+        "truthy-falsy"
+      ],
+      "usedInFlashcards": [
+        72,
+        75,
+        85
+      ]
+    },
+    {
+      "id": "accessibility-a11y",
+      "title": "Accessibility (a11y)",
+      "aliases": [
+        "accessibility",
+        "a11y",
+        "accessible",
+        "WCAG"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "react-testing-library",
+        "dom",
+        "inp"
+      ],
+      "usedInFlashcards": [
+        159,
+        243,
+        275,
+        281,
+        294,
+        298
+      ]
+    },
+    {
+      "id": "adr",
+      "title": "Architecture Decision Record (ADR)",
+      "aliases": [
+        "ADR",
+        "architecture decision record"
+      ],
+      "depth": "foundation",
+      "related": [
+        "technical-debt",
+        "feature-based-architecture"
+      ],
+      "usedInFlashcards": [
+        317,
+        328
+      ]
+    },
+    {
+      "id": "api-layer",
+      "title": "API Layer",
+      "aliases": [
+        "API layer",
+        "data access layer",
+        "fetch wrapper"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "tanstack-query",
+        "cors"
+      ],
+      "usedInFlashcards": [
+        315,
+        316
+      ]
+    },
+    {
+      "id": "arguments-object",
+      "title": "arguments Object",
+      "aliases": [
+        "arguments",
+        "arguments object"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "arrow-function",
+        "function-expression"
+      ],
+      "usedInFlashcards": [
+        20,
+        22,
+        25,
+        27,
+        101
+      ]
+    },
+    {
+      "id": "array-map-filter-reduce",
+      "title": "map, filter, and reduce",
+      "aliases": [
+        "Array.map",
+        "Array.filter",
+        "Array.reduce"
+      ],
+      "depth": "foundation",
+      "related": [
+        "higher-order-function",
+        "big-o-complexity"
+      ],
+      "usedInFlashcards": [
+        27,
+        51,
+        86,
+        87,
+        90,
+        91,
+        92,
+        93,
+        95,
+        96,
+        100,
+        117,
+        121,
+        131,
+        199,
+        246,
+        257,
+        283,
+        285,
+        296,
+        301
+      ]
+    },
+    {
+      "id": "array-some-every",
+      "title": "Array.some and Array.every",
+      "aliases": [
+        "Array.some",
+        "Array.every",
+        "some",
+        "every"
+      ],
+      "depth": "foundation",
+      "related": [
+        "array-map-filter-reduce",
+        "higher-order-function"
+      ],
+      "usedInFlashcards": [
+        7,
+        25,
+        39,
+        42,
+        52,
+        76,
+        77,
+        94,
+        111,
+        128,
+        138,
+        140,
+        141,
+        142,
+        149,
+        174,
+        183,
+        186,
+        216,
+        274
+      ]
+    },
+    {
+      "id": "array-sort",
+      "title": "Array.sort",
+      "aliases": [
+        "sort",
+        "Array.sort",
+        "comparator"
+      ],
+      "depth": "foundation",
+      "related": [
+        "array-map-filter-reduce",
+        "big-o-complexity"
+      ],
+      "usedInFlashcards": [
+        103,
+        104,
+        105
+      ]
+    },
+    {
+      "id": "arrow-function",
+      "title": "Arrow Function",
+      "aliases": [
+        "arrow functions",
+        "arrow function"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "function-expression",
+        "this-binding",
+        "lexical-scope"
+      ],
+      "usedInFlashcards": [
+        10,
+        19,
+        20,
+        21,
+        22,
+        23,
+        201
+      ]
+    },
+    {
+      "id": "async-await",
+      "title": "async/await",
+      "aliases": [
+        "async",
+        "await",
+        "async await"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "promise",
+        "microtask"
+      ],
+      "usedInFlashcards": [
+        31,
+        37,
+        41,
+        42,
+        43,
+        44,
+        48,
+        50,
+        111,
+        112,
+        118,
+        128,
+        163,
+        176,
+        205,
+        206,
+        211,
+        212,
+        213,
+        215,
+        235,
+        250
+      ]
+    },
+    {
+      "id": "babel",
+      "title": "Babel",
+      "aliases": [
+        "Babel transpiler",
+        "@babel/preset-env"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "webpack",
+        "vite",
+        "es-modules",
+        "tree-shaking"
+      ],
+      "usedInFlashcards": [
+        251,
+        252,
+        258
+      ]
+    },
+    {
+      "id": "big-o-complexity",
+      "title": "Big O Complexity",
+      "aliases": [
+        "Big O",
+        "time complexity",
+        "algorithmic complexity"
+      ],
+      "depth": "foundation",
+      "related": [
+        "set-data-structure"
+      ],
+      "usedInFlashcards": [
+        88
+      ]
+    },
+    {
+      "id": "binding",
+      "title": "Binding",
+      "aliases": [
+        "bindings",
+        "variable binding"
+      ],
+      "depth": "foundation",
+      "related": [
+        "identifier",
+        "value-vs-reference",
+        "temporal-dead-zone"
+      ],
+      "usedInFlashcards": [
+        1,
+        2,
+        6,
+        8,
+        11,
+        13,
+        21,
+        136
+      ]
+    },
+    {
+      "id": "block-scope",
+      "title": "Block Scope",
+      "aliases": [
+        "block-scoped"
+      ],
+      "depth": "foundation",
+      "related": [
+        "function-scope",
+        "lexical-scope",
+        "temporal-dead-zone"
+      ],
+      "usedInFlashcards": [
+        1,
+        2,
+        3,
+        4,
+        9,
+        11,
+        13,
+        18
+      ]
+    },
+    {
+      "id": "blue-green-deployment",
+      "title": "Blue-Green Deployment",
+      "aliases": [
+        "blue-green deployment",
+        "blue green deploy"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "ci-cd",
+        "feature-flags"
+      ],
+      "usedInFlashcards": [
+        325
+      ]
+    },
+    {
+      "id": "boolean-conversion",
+      "title": "Boolean conversion",
+      "aliases": [
+        "Boolean()",
+        "double negation",
+        "!!",
+        "ToBoolean"
+      ],
+      "depth": "foundation",
+      "related": [
+        "truthy-falsy",
+        "type-coercion",
+        "loose-equality"
+      ],
+      "usedInFlashcards": [
+        72,
+        74,
+        77
+      ]
+    },
+    {
+      "id": "browserslist",
+      "title": "Browserslist",
+      "aliases": [
+        "browserslist config",
+        ".browserslistrc"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "babel",
+        "vite",
+        "core-web-vitals"
+      ],
+      "usedInFlashcards": [
+        251,
+        276
+      ]
+    },
+    {
+      "id": "call-apply-bind",
+      "title": "call, apply, and bind",
+      "aliases": [
+        "call",
+        "apply",
+        "bind",
+        "Function.prototype.call"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "this-binding",
+        "partial-application"
+      ],
+      "usedInFlashcards": [
+        10,
+        20,
+        29,
+        30,
+        43,
+        44,
+        64,
+        67,
+        77,
+        129,
+        130,
+        137,
+        138,
+        315
+      ]
+    },
+    {
+      "id": "call-stack",
+      "title": "Call Stack",
+      "aliases": [
+        "call stack",
+        "stack frame"
+      ],
+      "depth": "foundation",
+      "related": [
+        "execution-context",
+        "event-loop"
+      ],
+      "usedInFlashcards": [
+        31
+      ]
+    },
+    {
+      "id": "ci-cd",
+      "title": "CI/CD",
+      "aliases": [
+        "CI/CD",
+        "continuous integration",
+        "continuous deployment"
+      ],
+      "depth": "foundation",
+      "related": [
+        "feature-flags",
+        "blue-green-deployment"
+      ],
+      "usedInFlashcards": [
+        324
+      ]
+    },
+    {
+      "id": "closure",
+      "title": "Closure",
+      "aliases": [
+        "closures"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "lexical-scope",
+        "lexical-environment",
+        "higher-order-function"
+      ],
+      "usedInFlashcards": [
+        11,
+        14,
+        16,
+        17,
+        26,
+        114,
+        151
+      ]
+    },
+    {
+      "id": "cls",
+      "title": "CLS (Cumulative Layout Shift)",
+      "aliases": [
+        "CLS",
+        "Cumulative Layout Shift",
+        "layout shift"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "core-web-vitals",
+        "reflow-repaint"
+      ],
+      "usedInFlashcards": [
+        195,
+        282,
+        284
+      ]
+    },
+    {
+      "id": "code-splitting",
+      "title": "Code Splitting",
+      "aliases": [
+        "code splitting",
+        "dynamic import"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "lazy-loading",
+        "vite",
+        "webpack"
+      ],
+      "usedInFlashcards": [
+        187,
+        188,
+        199,
+        254,
+        292,
+        313
+      ]
+    },
+    {
+      "id": "coding-standards",
+      "title": "Coding standards",
+      "aliases": [
+        "coding conventions",
+        "style guide",
+        "lint rules",
+        "readable code",
+        "code readable",
+        "clear naming"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "technical-debt",
+        "ci-cd",
+        "monorepo"
+      ],
+      "usedInFlashcards": [
+        37,
+        306,
+        318,
+        330
+      ]
+    },
+    {
+      "id": "component-lifecycle",
+      "title": "React class lifecycle",
+      "aliases": [
+        "componentDidMount",
+        "componentWillUnmount",
+        "componentDidUpdate",
+        "lifecycle methods"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "use-effect",
+        "react-re-render"
+      ],
+      "usedInFlashcards": [
+        121,
+        128,
+        129,
+        136
+      ]
+    },
+    {
+      "id": "concurrent-rendering",
+      "title": "Concurrent Rendering",
+      "aliases": [
+        "concurrent mode",
+        "concurrent React"
+      ],
+      "depth": "advanced",
+      "related": [
+        "react-fiber",
+        "react-suspense"
+      ],
+      "usedInFlashcards": [
+        121,
+        129,
+        161,
+        204
+      ]
+    },
+    {
+      "id": "const",
+      "title": "const",
+      "aliases": [
+        "const keyword"
+      ],
+      "depth": "foundation",
+      "related": [
+        "let",
+        "binding",
+        "value-vs-reference",
+        "block-scope"
+      ],
+      "usedInFlashcards": [
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        9,
+        10,
+        13,
+        18
+      ]
+    },
+    {
+      "id": "container-presenter-pattern",
+      "title": "Container/Presenter Pattern",
+      "aliases": [
+        "container presenter",
+        "smart dumb components"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "custom-hooks",
+        "feature-based-architecture"
+      ],
+      "usedInFlashcards": [
+        308
+      ]
+    },
+    {
+      "id": "content-security-policy",
+      "title": "Content Security Policy (CSP)",
+      "aliases": [
+        "CSP",
+        "Content Security Policy"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "xss"
+      ],
+      "usedInFlashcards": [
+        280
+      ]
+    },
+    {
+      "id": "controlled-component",
+      "title": "Controlled Component",
+      "aliases": [
+        "controlled components",
+        "controlled input"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "use-state",
+        "props-vs-state"
+      ],
+      "usedInFlashcards": []
+    },
+    {
+      "id": "cookies",
+      "title": "Cookies",
+      "aliases": [
+        "HTTP cookies",
+        "browser cookies"
+      ],
+      "depth": "foundation",
+      "related": [
+        "local-storage",
+        "cors",
+        "xss"
+      ],
+      "usedInFlashcards": [
+        274
+      ]
+    },
+    {
+      "id": "core-web-vitals",
+      "title": "Core Web Vitals",
+      "aliases": [
+        "Core Web Vitals",
+        "CWV"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "lcp",
+        "inp",
+        "cls"
+      ],
+      "usedInFlashcards": [
+        282,
+        285
+      ]
+    },
+    {
+      "id": "cors",
+      "title": "CORS",
+      "aliases": [
+        "Cross-Origin Resource Sharing",
+        "CORS"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "cookies",
+        "api-layer"
+      ],
+      "usedInFlashcards": [
+        279
+      ]
+    },
+    {
+      "id": "critical-rendering-path",
+      "title": "Critical Rendering Path",
+      "aliases": [
+        "critical rendering path",
+        "CRP"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "reflow-repaint",
+        "core-web-vitals"
+      ],
+      "usedInFlashcards": [
+        286
+      ]
+    },
+    {
+      "id": "cross-cutting-concerns",
+      "title": "Cross-Cutting Concerns",
+      "aliases": [
+        "cross-cutting concerns"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "dependency-injection",
+        "observability",
+        "error-boundary"
+      ],
+      "usedInFlashcards": [
+        304
+      ]
+    },
+    {
+      "id": "css-in-react",
+      "title": "CSS in React",
+      "aliases": [
+        "CSS modules",
+        "CSS-in-JS",
+        "Tailwind",
+        "styled components"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "vite",
+        "webpack",
+        "postcss"
+      ],
+      "usedInFlashcards": [
+        260,
+        261
+      ]
+    },
+    {
+      "id": "css-selector-performance",
+      "title": "CSS selector performance",
+      "aliases": [
+        "CSS selectors performance",
+        "expensive selectors"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "reflow-repaint",
+        "critical-rendering-path",
+        "dom"
+      ],
+      "usedInFlashcards": [
+        291
+      ]
+    },
+    {
+      "id": "currying",
+      "title": "Currying",
+      "aliases": [
+        "curry",
+        "curried function"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "partial-application",
+        "higher-order-function",
+        "closure"
+      ],
+      "usedInFlashcards": [
+        24,
+        25
+      ]
+    },
+    {
+      "id": "custom-error-types",
+      "title": "Custom error types",
+      "aliases": [
+        "custom errors",
+        "extend Error",
+        "ValidationError"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "try-catch-finally",
+        "type-error",
+        "syntax-error"
+      ],
+      "usedInFlashcards": [
+        106,
+        107
+      ]
+    },
+    {
+      "id": "custom-hooks",
+      "title": "Custom Hooks",
+      "aliases": [
+        "custom hooks",
+        "custom React hooks"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "rules-of-hooks",
+        "use-effect",
+        "use-state"
+      ],
+      "usedInFlashcards": [
+        137,
+        156,
+        157,
+        158,
+        224,
+        303,
+        308
+      ]
+    },
+    {
+      "id": "database-migrations",
+      "title": "Database migrations",
+      "aliases": [
+        "DB migrations",
+        "schema migrations",
+        "migration scripts"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "ci-cd",
+        "api-layer",
+        "technical-debt"
+      ],
+      "usedInFlashcards": [
+        323
+      ]
+    },
+    {
+      "id": "debounce-throttle",
+      "title": "Debounce and Throttle",
+      "aliases": [
+        "debounce",
+        "throttle",
+        "debouncing",
+        "throttling"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "closure",
+        "higher-order-function"
+      ],
+      "usedInFlashcards": [
+        17,
+        36,
+        197,
+        235,
+        268,
+        301
+      ]
+    },
+    {
+      "id": "deep-copy",
+      "title": "Deep Copy",
+      "aliases": [
+        "deep clone",
+        "deep copy"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "shallow-copy",
+        "structured-clone",
+        "value-vs-reference"
+      ],
+      "usedInFlashcards": [
+        57,
+        58
+      ]
+    },
+    {
+      "id": "dependency-array",
+      "title": "Dependency Array",
+      "aliases": [
+        "dependency array",
+        "effect dependencies",
+        "exhaustive deps"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "use-effect",
+        "use-memo",
+        "use-callback"
+      ],
+      "usedInFlashcards": [
+        140,
+        141,
+        142
+      ]
+    },
+    {
+      "id": "dependency-injection",
+      "title": "Dependency Injection (DI)",
+      "aliases": [
+        "dependency injection",
+        "DI in React"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "react-context-api",
+        "api-layer"
+      ],
+      "usedInFlashcards": [
+        309
+      ]
+    },
+    {
+      "id": "discriminated-unions",
+      "title": "Discriminated Unions",
+      "aliases": [
+        "discriminated union",
+        "tagged union"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "type-guards"
+      ],
+      "usedInFlashcards": [
+        221,
+        230
+      ]
+    },
+    {
+      "id": "dom",
+      "title": "DOM (Document Object Model)",
+      "aliases": [
+        "DOM",
+        "Document Object Model"
+      ],
+      "depth": "foundation",
+      "related": [
+        "virtual-dom",
+        "reflow-repaint"
+      ],
+      "usedInFlashcards": [
+        70,
+        90,
+        102,
+        114,
+        122,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        143,
+        144,
+        151,
+        152,
+        191,
+        239,
+        262,
+        270,
+        271,
+        272,
+        286,
+        287,
+        288,
+        290
+      ]
+    },
+    {
+      "id": "e2e-testing",
+      "title": "End-to-end testing",
+      "aliases": [
+        "e2e testing",
+        "e2e tests",
+        "Playwright",
+        "Cypress"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "testing-pyramid",
+        "react-testing-library"
+      ],
+      "usedInFlashcards": [
+        232,
+        244
+      ]
+    },
+    {
+      "id": "environment-variables",
+      "title": "Environment variables",
+      "aliases": [
+        "env variables",
+        "process.env",
+        "import.meta.env"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "vite",
+        "webpack",
+        "ci-cd"
+      ],
+      "usedInFlashcards": [
+        254,
+        255
+      ]
+    },
+    {
+      "id": "error-boundary",
+      "title": "Error Boundary",
+      "aliases": [
+        "error boundaries",
+        "React error boundary"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "try-catch-finally",
+        "react-re-render"
+      ],
+      "usedInFlashcards": [
+        118,
+        120,
+        212,
+        213,
+        240,
+        304,
+        314
+      ]
+    },
+    {
+      "id": "es-modules",
+      "title": "ES Modules (ESM)",
+      "aliases": [
+        "ESM",
+        "ES modules",
+        "import export"
+      ],
+      "depth": "foundation",
+      "related": [
+        "tree-shaking",
+        "vite"
+      ],
+      "usedInFlashcards": [
+        18,
+        42,
+        198,
+        247,
+        250
+      ]
+    },
+    {
+      "id": "es6-class",
+      "title": "ES6 class",
+      "aliases": [
+        "class",
+        "class syntax",
+        "JavaScript class"
+      ],
+      "depth": "foundation",
+      "related": [
+        "prototype-chain",
+        "new-operator",
+        "static-methods",
+        "super-keyword"
+      ],
+      "usedInFlashcards": [
+        21,
+        67,
+        121,
+        132,
+        212
+      ]
+    },
+    {
+      "id": "event-bubbling-capturing",
+      "title": "Event Bubbling and Capturing",
+      "aliases": [
+        "event bubbling",
+        "event capturing",
+        "propagation phases"
+      ],
+      "depth": "foundation",
+      "related": [
+        "event-delegation",
+        "prevent-default"
+      ],
+      "usedInFlashcards": [
+        265,
+        266
+      ]
+    },
+    {
+      "id": "event-delegation",
+      "title": "Event Delegation",
+      "aliases": [
+        "event delegation"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "dom",
+        "event-bubbling-capturing"
+      ],
+      "usedInFlashcards": [
+        264
+      ]
+    },
+    {
+      "id": "event-loop",
+      "title": "Event Loop",
+      "aliases": [
+        "event loop",
+        "javascript event loop"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "call-stack",
+        "microtask",
+        "macrotask"
+      ],
+      "usedInFlashcards": [
+        31,
+        34,
+        35,
+        36
+      ]
+    },
+    {
+      "id": "execution-context",
+      "title": "Execution Context",
+      "aliases": [
+        "execution context",
+        "EC"
+      ],
+      "depth": "foundation",
+      "related": [
+        "call-stack",
+        "lexical-environment",
+        "hoisting"
+      ],
+      "usedInFlashcards": []
+    },
+    {
+      "id": "feature-based-architecture",
+      "title": "Feature-Based Architecture",
+      "aliases": [
+        "feature folders",
+        "feature-based structure"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "api-layer",
+        "cross-cutting-concerns"
+      ],
+      "usedInFlashcards": [
+        302
+      ]
+    },
+    {
+      "id": "feature-flags",
+      "title": "Feature Flags",
+      "aliases": [
+        "feature flags",
+        "feature toggles"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "ci-cd",
+        "strangler-fig-pattern"
+      ],
+      "usedInFlashcards": [
+        320,
+        321
+      ]
+    },
+    {
+      "id": "fetch",
+      "title": "fetch API",
+      "aliases": [
+        "fetch",
+        "Fetch API",
+        "window.fetch"
+      ],
+      "depth": "foundation",
+      "related": [
+        "promise",
+        "abort-controller",
+        "cors",
+        "async-await"
+      ],
+      "usedInFlashcards": [
+        47,
+        139,
+        192,
+        277
+      ]
+    },
+    {
+      "id": "fisher-yates-shuffle",
+      "title": "Fisher-Yates shuffle",
+      "aliases": [
+        "shuffle array",
+        "array shuffle",
+        "Fisher-Yates"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "array-map-filter-reduce",
+        "big-o-complexity"
+      ],
+      "usedInFlashcards": [
+        98
+      ]
+    },
+    {
+      "id": "for-loops",
+      "title": "for loops",
+      "aliases": [
+        "for...of",
+        "for...in",
+        "for-of",
+        "for-in",
+        "for loop",
+        "for loops"
+      ],
+      "depth": "foundation",
+      "related": [
+        "block-scope",
+        "closure",
+        "iterator"
+      ],
+      "usedInFlashcards": [
+        13
+      ]
+    },
+    {
+      "id": "forward-ref",
+      "title": "forwardRef",
+      "aliases": [
+        "React.forwardRef",
+        "forward ref"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "use-ref",
+        "use-imperative-handle",
+        "controlled-component"
+      ],
+      "usedInFlashcards": [
+        153,
+        208
+      ]
+    },
+    {
+      "id": "function-declaration",
+      "title": "Function Declaration",
+      "aliases": [
+        "function declaration",
+        "function declarations"
+      ],
+      "depth": "foundation",
+      "related": [
+        "hoisting",
+        "function-expression"
+      ],
+      "usedInFlashcards": [
+        10,
+        19
+      ]
+    },
+    {
+      "id": "function-expression",
+      "title": "Function Expression",
+      "aliases": [
+        "function expression",
+        "function expressions"
+      ],
+      "depth": "foundation",
+      "related": [
+        "function-declaration",
+        "arrow-function",
+        "closure"
+      ],
+      "usedInFlashcards": [
+        10
+      ]
+    },
+    {
+      "id": "function-scope",
+      "title": "Function Scope",
+      "aliases": [
+        "function-scoped"
+      ],
+      "depth": "foundation",
+      "related": [
+        "block-scope",
+        "hoisting",
+        "var"
+      ],
+      "usedInFlashcards": [
+        1,
+        3,
+        9,
+        11,
+        26
+      ]
+    },
+    {
+      "id": "generator",
+      "title": "Generator functions",
+      "aliases": [
+        "generator",
+        "function*",
+        "yield"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "iterator",
+        "async-await",
+        "closure"
+      ],
+      "usedInFlashcards": [
+        89
+      ]
+    },
+    {
+      "id": "getters-setters",
+      "title": "Getters and setters",
+      "aliases": [
+        "accessor properties",
+        "get",
+        "set",
+        "getters",
+        "setters"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "es6-class",
+        "object-define-property",
+        "getters-setters"
+      ],
+      "usedInFlashcards": [
+        30,
+        56,
+        59,
+        60,
+        61,
+        68,
+        87,
+        135,
+        274
+      ]
+    },
+    {
+      "id": "git-branching",
+      "title": "Git branching strategy",
+      "aliases": [
+        "branching strategy",
+        "trunk-based development",
+        "GitFlow"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "ci-cd",
+        "monorepo",
+        "feature-flags"
+      ],
+      "usedInFlashcards": [
+        322
+      ]
+    },
+    {
+      "id": "higher-order-component",
+      "title": "Higher-Order Component (HOC)",
+      "aliases": [
+        "HOC",
+        "Higher-Order Components",
+        "withRouter"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "higher-order-function",
+        "custom-hooks",
+        "react-composition"
+      ],
+      "usedInFlashcards": [
+        186,
+        227
+      ]
+    },
+    {
+      "id": "higher-order-function",
+      "title": "Higher-Order Function",
+      "aliases": [
+        "higher-order functions",
+        "HOF"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "closure",
+        "function-expression"
+      ],
+      "usedInFlashcards": [
+        27
+      ]
+    },
+    {
+      "id": "history-api",
+      "title": "History API",
+      "aliases": [
+        "History API",
+        "pushState",
+        "SPA routing"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "code-splitting"
+      ],
+      "usedInFlashcards": [
+        278
+      ]
+    },
+    {
+      "id": "hmr",
+      "title": "Hot Module Replacement (HMR)",
+      "aliases": [
+        "HMR",
+        "hot reload",
+        "hot module replacement"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "vite",
+        "webpack"
+      ],
+      "usedInFlashcards": [
+        247,
+        248,
+        249,
+        254
+      ]
+    },
+    {
+      "id": "hoisting",
+      "title": "Hoisting",
+      "aliases": [
+        "hoisted"
+      ],
+      "depth": "foundation",
+      "related": [
+        "temporal-dead-zone",
+        "function-declaration",
+        "function-expression",
+        "var"
+      ],
+      "usedInFlashcards": [
+        1,
+        3,
+        4,
+        10,
+        19
+      ]
+    },
+    {
+      "id": "hydration",
+      "title": "Hydration",
+      "aliases": [
+        "React hydration",
+        "hydrate"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "server-side-rendering",
+        "react-server-components"
+      ],
+      "usedInFlashcards": [
+        159,
+        181,
+        203,
+        245
+      ]
+    },
+    {
+      "id": "identifier",
+      "title": "Identifier",
+      "aliases": [
+        "identifiers"
+      ],
+      "depth": "foundation",
+      "related": [
+        "binding",
+        "lexical-scope"
+      ],
+      "usedInFlashcards": [
+        15
+      ]
+    },
+    {
+      "id": "iife",
+      "title": "IIFE",
+      "aliases": [
+        "IIFE",
+        "immediately invoked function expression"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "function-expression",
+        "closure",
+        "lexical-scope"
+      ],
+      "usedInFlashcards": [
+        18
+      ]
+    },
+    {
+      "id": "inner-html",
+      "title": "innerHTML",
+      "aliases": [
+        "innerHTML property"
+      ],
+      "depth": "foundation",
+      "related": [
+        "dom",
+        "text-content",
+        "xss"
+      ],
+      "usedInFlashcards": [
+        263
+      ]
+    },
+    {
+      "id": "inp",
+      "title": "INP (Interaction to Next Paint)",
+      "aliases": [
+        "INP",
+        "Interaction to Next Paint",
+        "First Input Delay"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "core-web-vitals",
+        "event-loop",
+        "web-workers"
+      ],
+      "usedInFlashcards": [
+        145,
+        207,
+        282,
+        285,
+        296
+      ]
+    },
+    {
+      "id": "intersection-observer",
+      "title": "Intersection Observer API",
+      "aliases": [
+        "Intersection Observer",
+        "IntersectionObserver"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "lazy-loading",
+        "debounce-throttle"
+      ],
+      "usedInFlashcards": [
+        192,
+        268,
+        269,
+        292
+      ]
+    },
+    {
+      "id": "island-architecture",
+      "title": "Island Architecture",
+      "aliases": [
+        "islands architecture",
+        "Astro islands"
+      ],
+      "depth": "advanced",
+      "related": [
+        "hydration",
+        "progressive-enhancement"
+      ],
+      "usedInFlashcards": [
+        312
+      ]
+    },
+    {
+      "id": "iterator",
+      "title": "Iterator protocol",
+      "aliases": [
+        "iterable",
+        "Symbol.iterator",
+        "iteration"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "symbol",
+        "for-loops",
+        "generator"
+      ],
+      "usedInFlashcards": [
+        11,
+        13,
+        48,
+        69,
+        100,
+        102
+      ]
+    },
+    {
+      "id": "js-debugging-tools",
+      "title": "JavaScript debugging tools",
+      "aliases": [
+        "debugging tools",
+        "Chrome DevTools",
+        "Firefox DevTools",
+        "DevTools",
+        "React DevTools",
+        "VS Code debugger",
+        "console methods"
+      ],
+      "depth": "foundation",
+      "related": [
+        "js-profiling",
+        "source-map",
+        "call-stack"
+      ],
+      "usedInFlashcards": [
+        114,
+        115,
+        117,
+        156,
+        162,
+        163,
+        184,
+        185,
+        243,
+        254,
+        298
+      ]
+    },
+    {
+      "id": "js-profiling",
+      "title": "JavaScript profiling",
+      "aliases": [
+        "performance profiling",
+        "DevTools Performance",
+        "profile JavaScript"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "call-stack",
+        "reflow-repaint",
+        "memory-leak"
+      ],
+      "usedInFlashcards": [
+        116,
+        146,
+        184,
+        185,
+        189,
+        297
+      ]
+    },
+    {
+      "id": "lazy-loading",
+      "title": "Lazy Loading",
+      "aliases": [
+        "lazy load",
+        "lazy loading"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "code-splitting",
+        "intersection-observer"
+      ],
+      "usedInFlashcards": [
+        195,
+        205,
+        269,
+        292
+      ]
+    },
+    {
+      "id": "lcp",
+      "title": "LCP (Largest Contentful Paint)",
+      "aliases": [
+        "LCP",
+        "Largest Contentful Paint"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "core-web-vitals",
+        "lazy-loading"
+      ],
+      "usedInFlashcards": [
+        282,
+        283
+      ]
+    },
+    {
+      "id": "let",
+      "title": "let",
+      "aliases": [
+        "let keyword"
+      ],
+      "depth": "foundation",
+      "related": [
+        "block-scope",
+        "binding",
+        "temporal-dead-zone",
+        "var"
+      ],
+      "usedInFlashcards": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        9,
+        10,
+        11,
+        12,
+        18,
+        224
+      ]
+    },
+    {
+      "id": "lexical-environment",
+      "title": "Lexical Environment",
+      "aliases": [
+        "lexical environment",
+        "environment record"
+      ],
+      "depth": "foundation",
+      "related": [
+        "lexical-scope",
+        "scope-chain",
+        "closure",
+        "execution-context"
+      ],
+      "usedInFlashcards": [
+        15
+      ]
+    },
+    {
+      "id": "lexical-scope",
+      "title": "Lexical Scope",
+      "aliases": [
+        "static scope"
+      ],
+      "depth": "foundation",
+      "related": [
+        "scope-chain",
+        "closure",
+        "lexical-environment"
+      ],
+      "usedInFlashcards": [
+        16,
+        21
+      ]
+    },
+    {
+      "id": "lifting-state-up",
+      "title": "Lifting State Up",
+      "aliases": [
+        "lift state up",
+        "lifted state",
+        "lifted up",
+        "lifting state up",
+        "state be lifted up"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "props-vs-state",
+        "one-way-data-flow"
+      ],
+      "usedInFlashcards": [
+        172
+      ]
+    },
+    {
+      "id": "local-storage",
+      "title": "localStorage",
+      "aliases": [
+        "localStorage",
+        "local storage"
+      ],
+      "depth": "foundation",
+      "related": [
+        "session-storage",
+        "cookies",
+        "xss"
+      ],
+      "usedInFlashcards": [
+        181,
+        273,
+        275
+      ]
+    },
+    {
+      "id": "loose-equality",
+      "title": "Loose equality (==)",
+      "aliases": [
+        "==",
+        "abstract equality",
+        "double equals"
+      ],
+      "depth": "foundation",
+      "related": [
+        "strict-equality",
+        "type-coercion",
+        "truthy-falsy",
+        "null-value"
+      ],
+      "usedInFlashcards": [
+        71,
+        72,
+        77
+      ]
+    },
+    {
+      "id": "macrotask",
+      "title": "Macrotask",
+      "aliases": [
+        "macrotasks",
+        "task queue",
+        "macrotask queue"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "event-loop",
+        "microtask"
+      ],
+      "usedInFlashcards": [
+        31,
+        32,
+        33
+      ]
+    },
+    {
+      "id": "map-data-structure",
+      "title": "Map (Data Structure)",
+      "aliases": [
+        "ES6 Map",
+        "JavaScript Map",
+        "Map object"
+      ],
+      "depth": "foundation",
+      "related": [
+        "set-data-structure",
+        "value-vs-reference"
+      ],
+      "usedInFlashcards": [
+        58,
+        96
+      ]
+    },
+    {
+      "id": "memory-leak",
+      "title": "Memory Leak",
+      "aliases": [
+        "memory leaks",
+        "retained memory"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "closure",
+        "event-delegation"
+      ],
+      "usedInFlashcards": [
+        70,
+        114,
+        139,
+        197
+      ]
+    },
+    {
+      "id": "micro-frontends",
+      "title": "Micro-Frontends",
+      "aliases": [
+        "micro frontends",
+        "MFE"
+      ],
+      "depth": "advanced",
+      "related": [
+        "monorepo",
+        "island-architecture"
+      ],
+      "usedInFlashcards": [
+        311
+      ]
+    },
+    {
+      "id": "microtask",
+      "title": "Microtask",
+      "aliases": [
+        "microtasks",
+        "microtask queue"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "event-loop",
+        "macrotask",
+        "promise"
+      ],
+      "usedInFlashcards": [
+        31,
+        32,
+        33,
+        34,
+        35,
+        38
+      ]
+    },
+    {
+      "id": "module-bundlers",
+      "title": "Module bundlers",
+      "aliases": [
+        "module bundler",
+        "bundlers",
+        "bundling"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "webpack",
+        "vite",
+        "es-modules",
+        "code-splitting"
+      ],
+      "usedInFlashcards": [
+        42,
+        117,
+        198,
+        247,
+        248,
+        250,
+        252,
+        253,
+        259
+      ]
+    },
+    {
+      "id": "monorepo",
+      "title": "Monorepo",
+      "aliases": [
+        "monorepo",
+        "monolithic repository"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "feature-based-architecture",
+        "micro-frontends"
+      ],
+      "usedInFlashcards": [
+        310
+      ]
+    },
+    {
+      "id": "msw",
+      "title": "MSW (Mock Service Worker)",
+      "aliases": [
+        "Mock Service Worker",
+        "MSW"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "react-testing-library",
+        "tanstack-query"
+      ],
+      "usedInFlashcards": [
+        235,
+        236
+      ]
+    },
+    {
+      "id": "mutation-observer",
+      "title": "MutationObserver",
+      "aliases": [
+        "MutationObserver API"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "dom",
+        "intersection-observer",
+        "event-loop"
+      ],
+      "usedInFlashcards": [
+        32,
+        270
+      ]
+    },
+    {
+      "id": "nan",
+      "title": "NaN",
+      "aliases": [
+        "Not a Number",
+        "NaN value"
+      ],
+      "depth": "foundation",
+      "related": [
+        "type-coercion",
+        "type-error"
+      ],
+      "usedInFlashcards": [
+        73,
+        83,
+        85
+      ]
+    },
+    {
+      "id": "new-operator",
+      "title": "new operator",
+      "aliases": [
+        "new",
+        "new keyword"
+      ],
+      "depth": "foundation",
+      "related": [
+        "prototype-chain",
+        "this-binding",
+        "es6-class"
+      ],
+      "usedInFlashcards": [
+        7,
+        13,
+        20,
+        23,
+        25,
+        30,
+        45,
+        53,
+        64,
+        86,
+        91,
+        105,
+        124,
+        125,
+        183,
+        189,
+        200,
+        208,
+        216,
+        249,
+        319,
+        329
+      ]
+    },
+    {
+      "id": "normalized-state",
+      "title": "Normalized State",
+      "aliases": [
+        "normalized state",
+        "state normalization"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "server-state-vs-client-state",
+        "map-data-structure"
+      ],
+      "usedInFlashcards": []
+    },
+    {
+      "id": "null-value",
+      "title": "null",
+      "aliases": [
+        "null",
+        "null value"
+      ],
+      "depth": "foundation",
+      "related": [
+        "undefined",
+        "truthy-falsy",
+        "nullish-coalescing",
+        "strict-equality"
+      ],
+      "usedInFlashcards": [
+        29,
+        52,
+        71,
+        73,
+        78,
+        79,
+        80,
+        84,
+        225
+      ]
+    },
+    {
+      "id": "nullish-coalescing",
+      "title": "Nullish Coalescing (??)",
+      "aliases": [
+        "nullish coalescing",
+        "?? operator"
+      ],
+      "depth": "foundation",
+      "related": [
+        "optional-chaining",
+        "undefined",
+        "truthy-falsy"
+      ],
+      "usedInFlashcards": [
+        79,
+        225
+      ]
+    },
+    {
+      "id": "object-assign",
+      "title": "Object.assign",
+      "aliases": [
+        "assign"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "shallow-copy",
+        "property-descriptors",
+        "object-freeze-seal"
+      ],
+      "usedInFlashcards": [
+        13,
+        56,
+        57,
+        135,
+        293,
+        329
+      ]
+    },
+    {
+      "id": "object-create",
+      "title": "Object.create",
+      "aliases": [
+        "Object.create(null)"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "prototype-chain",
+        "object-assign",
+        "null-value"
+      ],
+      "usedInFlashcards": [
+        54,
+        55
+      ]
+    },
+    {
+      "id": "object-define-property",
+      "title": "Object.defineProperty",
+      "aliases": [
+        "defineProperty"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "property-descriptors",
+        "getters-setters",
+        "object-freeze-seal"
+      ],
+      "usedInFlashcards": [
+        59,
+        60
+      ]
+    },
+    {
+      "id": "object-freeze-seal",
+      "title": "Object.freeze and Object.seal",
+      "aliases": [
+        "Object.freeze",
+        "Object.seal",
+        "freeze",
+        "seal"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "property-descriptors",
+        "object-assign",
+        "deep-copy"
+      ],
+      "usedInFlashcards": [
+        8,
+        62,
+        63
+      ]
+    },
+    {
+      "id": "observability",
+      "title": "Observability",
+      "aliases": [
+        "observability",
+        "monitoring",
+        "RUM"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "cross-cutting-concerns",
+        "core-web-vitals"
+      ],
+      "usedInFlashcards": [
+        90,
+        112,
+        113,
+        118,
+        163,
+        176,
+        185,
+        241,
+        297,
+        304,
+        326,
+        327
+      ]
+    },
+    {
+      "id": "one-way-data-flow",
+      "title": "One-Way Data Flow",
+      "aliases": [
+        "unidirectional data flow",
+        "data flows down"
+      ],
+      "depth": "foundation",
+      "related": [
+        "props-vs-state",
+        "lifting-state-up"
+      ],
+      "usedInFlashcards": [
+        162,
+        178
+      ]
+    },
+    {
+      "id": "optional-chaining",
+      "title": "Optional Chaining (?.)",
+      "aliases": [
+        "optional chaining",
+        "?. operator"
+      ],
+      "depth": "foundation",
+      "related": [
+        "nullish-coalescing",
+        "undefined",
+        "type-error"
+      ],
+      "usedInFlashcards": [
+        78,
+        80,
+        225,
+        252
+      ]
+    },
+    {
+      "id": "partial-application",
+      "title": "Partial Application",
+      "aliases": [
+        "partial application",
+        "partial apply"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "currying",
+        "call-apply-bind",
+        "closure"
+      ],
+      "usedInFlashcards": [
+        24,
+        25
+      ]
+    },
+    {
+      "id": "postcss",
+      "title": "PostCSS",
+      "aliases": [
+        "PostCSS plugins",
+        "autoprefixer"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "css-in-react",
+        "browserslist",
+        "vite"
+      ],
+      "usedInFlashcards": [
+        261,
+        276
+      ]
+    },
+    {
+      "id": "prevent-default",
+      "title": "preventDefault vs stopPropagation",
+      "aliases": [
+        "preventDefault",
+        "stopPropagation"
+      ],
+      "depth": "foundation",
+      "related": [
+        "event-bubbling-capturing"
+      ],
+      "usedInFlashcards": [
+        267
+      ]
+    },
+    {
+      "id": "progressive-enhancement",
+      "title": "Progressive Enhancement",
+      "aliases": [
+        "progressive enhancement",
+        "graceful degradation"
+      ],
+      "depth": "foundation",
+      "related": [
+        "pwa",
+        "dom"
+      ],
+      "usedInFlashcards": [
+        276,
+        294
+      ]
+    },
+    {
+      "id": "promise",
+      "title": "Promise",
+      "aliases": [
+        "Promises",
+        "promise"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "microtask",
+        "event-loop",
+        "async-await"
+      ],
+      "usedInFlashcards": [
+        31,
+        32,
+        33,
+        37,
+        38,
+        39,
+        40,
+        41,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        111,
+        112,
+        118,
+        130,
+        131,
+        205,
+        206,
+        277
+      ]
+    },
+    {
+      "id": "prop-drilling",
+      "title": "Prop Drilling",
+      "aliases": [
+        "prop drilling"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "react-context-api",
+        "react-composition"
+      ],
+      "usedInFlashcards": [
+        162,
+        169,
+        174,
+        214
+      ]
+    },
+    {
+      "id": "property-descriptors",
+      "title": "Property descriptors",
+      "aliases": [
+        "property attributes",
+        "data property descriptor"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "object-define-property",
+        "getters-setters"
+      ],
+      "usedInFlashcards": [
+        56,
+        60,
+        61,
+        63,
+        69
+      ]
+    },
+    {
+      "id": "props-vs-state",
+      "title": "Props vs State",
+      "aliases": [
+        "props and state",
+        "React props",
+        "component state"
+      ],
+      "depth": "foundation",
+      "related": [
+        "use-state",
+        "one-way-data-flow"
+      ],
+      "usedInFlashcards": [
+        17,
+        171,
+        193,
+        194,
+        223
+      ]
+    },
+    {
+      "id": "prototype-chain",
+      "title": "Prototype Chain",
+      "aliases": [
+        "prototype chain",
+        "prototypal inheritance"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "value-vs-reference"
+      ],
+      "usedInFlashcards": [
+        23,
+        51,
+        52,
+        53,
+        54,
+        55,
+        64,
+        65,
+        67
+      ]
+    },
+    {
+      "id": "pwa",
+      "title": "Progressive Web App (PWA)",
+      "aliases": [
+        "PWA",
+        "progressive web app"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "service-worker",
+        "lazy-loading"
+      ],
+      "usedInFlashcards": []
+    },
+    {
+      "id": "rail-performance-model",
+      "title": "RAIL performance model",
+      "aliases": [
+        "RAIL model",
+        "RAIL",
+        "Response Animation Idle Load"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "inp",
+        "lcp",
+        "core-web-vitals",
+        "js-profiling"
+      ],
+      "usedInFlashcards": [
+        295
+      ]
+    },
+    {
+      "id": "react-act",
+      "title": "React act()",
+      "aliases": [
+        "act()",
+        "act utility"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "react-testing-library",
+        "use-effect",
+        "react-batching"
+      ],
+      "usedInFlashcards": [
+        158,
+        233,
+        235
+      ]
+    },
+    {
+      "id": "react-batching",
+      "title": "React State Batching",
+      "aliases": [
+        "batching",
+        "automatic batching",
+        "React 18 batching"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "react-re-render",
+        "use-state"
+      ],
+      "usedInFlashcards": [
+        126,
+        130,
+        131
+      ]
+    },
+    {
+      "id": "react-compiler",
+      "title": "React Compiler",
+      "aliases": [
+        "React Compiler",
+        "React Forget",
+        "auto-memoization"
+      ],
+      "depth": "advanced",
+      "related": [
+        "use-memo",
+        "use-callback",
+        "react-memo"
+      ],
+      "usedInFlashcards": [
+        208,
+        210
+      ]
+    },
+    {
+      "id": "react-composition",
+      "title": "React Composition",
+      "aliases": [
+        "composition",
+        "component composition",
+        "children prop"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "prop-drilling",
+        "custom-hooks"
+      ],
+      "usedInFlashcards": [
+        28,
+        169,
+        174,
+        219,
+        305
+      ]
+    },
+    {
+      "id": "react-context-api",
+      "title": "React Context API",
+      "aliases": [
+        "React Context",
+        "Context API",
+        "createContext"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "use-context",
+        "prop-drilling"
+      ],
+      "usedInFlashcards": [
+        162,
+        164,
+        170,
+        171,
+        183,
+        304,
+        307
+      ]
+    },
+    {
+      "id": "react-fiber",
+      "title": "React Fiber",
+      "aliases": [
+        "Fiber",
+        "React Fiber architecture"
+      ],
+      "depth": "advanced",
+      "related": [
+        "reconciliation",
+        "concurrent-rendering"
+      ],
+      "usedInFlashcards": [
+        133,
+        134
+      ]
+    },
+    {
+      "id": "react-key-prop",
+      "title": "React key Prop",
+      "aliases": [
+        "key prop",
+        "React keys",
+        "list keys"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "reconciliation",
+        "react-re-render"
+      ],
+      "usedInFlashcards": [
+        194
+      ]
+    },
+    {
+      "id": "react-list-virtualization",
+      "title": "Virtualizing large lists",
+      "aliases": [
+        "large lists",
+        "list virtualization",
+        "virtualized list"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "react-key-prop",
+        "react-memo",
+        "tanstack-virtual"
+      ],
+      "usedInFlashcards": [
+        147,
+        190
+      ]
+    },
+    {
+      "id": "react-memo",
+      "title": "React.memo",
+      "aliases": [
+        "memo",
+        "React.memo"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "use-memo",
+        "use-callback",
+        "react-re-render"
+      ],
+      "usedInFlashcards": [
+        146,
+        148,
+        150,
+        182,
+        186,
+        189,
+        210
+      ]
+    },
+    {
+      "id": "react-re-render",
+      "title": "React Re-render",
+      "aliases": [
+        "re-render",
+        "React rendering",
+        "component re-render"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "virtual-dom",
+        "react-batching",
+        "use-state"
+      ],
+      "usedInFlashcards": [
+        122,
+        123,
+        127,
+        130,
+        131,
+        132,
+        146,
+        148,
+        150,
+        151,
+        152,
+        160,
+        164,
+        165,
+        167,
+        168,
+        182,
+        183,
+        186,
+        196,
+        200,
+        210,
+        306
+      ]
+    },
+    {
+      "id": "react-server-actions",
+      "title": "React Server Actions",
+      "aliases": [
+        "Server Actions",
+        "use server"
+      ],
+      "depth": "advanced",
+      "related": [
+        "react-server-components",
+        "use-optimistic"
+      ],
+      "usedInFlashcards": [
+        211
+      ]
+    },
+    {
+      "id": "react-server-components",
+      "title": "React Server Components (RSC)",
+      "aliases": [
+        "Server Components",
+        "RSC",
+        "React Server Components"
+      ],
+      "depth": "advanced",
+      "related": [
+        "server-side-rendering",
+        "hydration",
+        "react-server-actions"
+      ],
+      "usedInFlashcards": [
+        202,
+        203
+      ]
+    },
+    {
+      "id": "react-suspense",
+      "title": "React Suspense",
+      "aliases": [
+        "Suspense",
+        "Suspense boundaries"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "concurrent-rendering",
+        "streaming-ssr",
+        "tanstack-query"
+      ],
+      "usedInFlashcards": [
+        133,
+        204,
+        205,
+        206,
+        208,
+        209
+      ]
+    },
+    {
+      "id": "react-testing-library",
+      "title": "React Testing Library",
+      "aliases": [
+        "RTL",
+        "Testing Library",
+        "testing-library/react"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "testing-pyramid",
+        "msw"
+      ],
+      "usedInFlashcards": [
+        232,
+        238,
+        239
+      ]
+    },
+    {
+      "id": "reconciliation",
+      "title": "Reconciliation",
+      "aliases": [
+        "React reconciliation",
+        "diffing algorithm"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "virtual-dom",
+        "react-key-prop",
+        "react-fiber"
+      ],
+      "usedInFlashcards": [
+        122,
+        124,
+        126,
+        133
+      ]
+    },
+    {
+      "id": "redux-toolkit",
+      "title": "Redux Toolkit",
+      "aliases": [
+        "RTK",
+        "Redux Toolkit",
+        "createSlice"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "normalized-state",
+        "zustand",
+        "one-way-data-flow"
+      ],
+      "usedInFlashcards": [
+        166,
+        175
+      ]
+    },
+    {
+      "id": "reference-error",
+      "title": "ReferenceError",
+      "aliases": [
+        "ReferenceError"
+      ],
+      "depth": "foundation",
+      "related": [
+        "temporal-dead-zone",
+        "identifier"
+      ],
+      "usedInFlashcards": [
+        5,
+        106
+      ]
+    },
+    {
+      "id": "reflow-repaint",
+      "title": "Reflow, Repaint, and Composite",
+      "aliases": [
+        "reflow",
+        "repaint",
+        "layout thrashing",
+        "composite layer"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "critical-rendering-path",
+        "dom"
+      ],
+      "usedInFlashcards": [
+        262,
+        271,
+        287,
+        289,
+        290
+      ]
+    },
+    {
+      "id": "request-animation-frame",
+      "title": "requestAnimationFrame",
+      "aliases": [
+        "requestAnimationFrame",
+        "rAF"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "reflow-repaint",
+        "inp"
+      ],
+      "usedInFlashcards": [
+        271
+      ]
+    },
+    {
+      "id": "rules-of-hooks",
+      "title": "Rules of Hooks",
+      "aliases": [
+        "rules of hooks",
+        "hook rules"
+      ],
+      "depth": "foundation",
+      "related": [
+        "use-state",
+        "custom-hooks"
+      ],
+      "usedInFlashcards": [
+        137
+      ]
+    },
+    {
+      "id": "scope-chain",
+      "title": "Scope Chain",
+      "aliases": [
+        "scope chain"
+      ],
+      "depth": "foundation",
+      "related": [
+        "lexical-scope",
+        "lexical-environment"
+      ],
+      "usedInFlashcards": [
+        15
+      ]
+    },
+    {
+      "id": "selective-hydration",
+      "title": "Selective Hydration",
+      "aliases": [
+        "selective hydration"
+      ],
+      "depth": "advanced",
+      "related": [
+        "hydration",
+        "streaming-ssr"
+      ],
+      "usedInFlashcards": [
+        207
+      ]
+    },
+    {
+      "id": "server-side-rendering",
+      "title": "Server-Side Rendering (SSR)",
+      "aliases": [
+        "SSR",
+        "server-side rendering"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "hydration",
+        "streaming-ssr",
+        "react-server-components"
+      ],
+      "usedInFlashcards": [
+        181,
+        203,
+        213,
+        245,
+        283
+      ]
+    },
+    {
+      "id": "server-state-vs-client-state",
+      "title": "Server State vs Client State",
+      "aliases": [
+        "server state",
+        "client state",
+        "UI state"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "tanstack-query",
+        "use-state"
+      ],
+      "usedInFlashcards": [
+        166,
+        170,
+        179
+      ]
+    },
+    {
+      "id": "service-worker",
+      "title": "Service Worker",
+      "aliases": [
+        "service workers",
+        "Service Worker API"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "pwa",
+        "lazy-loading"
+      ],
+      "usedInFlashcards": [
+        299,
+        300
+      ]
+    },
+    {
+      "id": "session-storage",
+      "title": "sessionStorage",
+      "aliases": [
+        "sessionStorage",
+        "session storage"
+      ],
+      "depth": "foundation",
+      "related": [
+        "local-storage"
+      ],
+      "usedInFlashcards": [
+        181,
+        273
+      ]
+    },
+    {
+      "id": "set-data-structure",
+      "title": "Set (Data Structure)",
+      "aliases": [
+        "ES6 Set",
+        "JavaScript Set",
+        "Set object"
+      ],
+      "depth": "foundation",
+      "related": [
+        "big-o-complexity",
+        "map-data-structure"
+      ],
+      "usedInFlashcards": [
+        58,
+        97
+      ]
+    },
+    {
+      "id": "shallow-copy",
+      "title": "Shallow Copy",
+      "aliases": [
+        "shallow copy"
+      ],
+      "depth": "foundation",
+      "related": [
+        "deep-copy",
+        "value-vs-reference"
+      ],
+      "usedInFlashcards": [
+        57,
+        99
+      ]
+    },
+    {
+      "id": "snapshot-testing",
+      "title": "Snapshot testing",
+      "aliases": [
+        "snapshot tests",
+        "toMatchSnapshot"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "react-testing-library",
+        "testing-pyramid"
+      ],
+      "usedInFlashcards": [
+        242
+      ]
+    },
+    {
+      "id": "source-map",
+      "title": "Source Map",
+      "aliases": [
+        "source maps",
+        "sourcemap"
+      ],
+      "depth": "intermediate",
+      "related": [],
+      "usedInFlashcards": [
+        117,
+        254,
+        256
+      ]
+    },
+    {
+      "id": "static-methods",
+      "title": "Static methods",
+      "aliases": [
+        "static keyword",
+        "class static methods"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "es6-class",
+        "prototype-chain",
+        "new-operator"
+      ],
+      "usedInFlashcards": [
+        66
+      ]
+    },
+    {
+      "id": "strangler-fig-pattern",
+      "title": "Strangler Fig Pattern",
+      "aliases": [
+        "strangler fig",
+        "strangler pattern"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "technical-debt",
+        "micro-frontends"
+      ],
+      "usedInFlashcards": [
+        320
+      ]
+    },
+    {
+      "id": "streaming-ssr",
+      "title": "Streaming SSR",
+      "aliases": [
+        "streaming server rendering",
+        "progressive HTML"
+      ],
+      "depth": "advanced",
+      "related": [
+        "server-side-rendering",
+        "react-suspense"
+      ],
+      "usedInFlashcards": [
+        209
+      ]
+    },
+    {
+      "id": "strict-equality",
+      "title": "Strict Equality (===)",
+      "aliases": [
+        "strict equality",
+        "triple equals"
+      ],
+      "depth": "foundation",
+      "related": [
+        "type-coercion",
+        "value-vs-reference"
+      ],
+      "usedInFlashcards": [
+        71,
+        77
+      ]
+    },
+    {
+      "id": "strict-mode",
+      "title": "Strict Mode",
+      "aliases": [
+        "strict mode",
+        "use strict"
+      ],
+      "depth": "foundation",
+      "related": [
+        "type-error"
+      ],
+      "usedInFlashcards": [
+        6,
+        77,
+        231,
+        317
+      ]
+    },
+    {
+      "id": "structured-clone",
+      "title": "structuredClone",
+      "aliases": [
+        "structured clone API"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "deep-copy"
+      ],
+      "usedInFlashcards": [
+        82
+      ]
+    },
+    {
+      "id": "super-keyword",
+      "title": "super keyword",
+      "aliases": [
+        "super()",
+        "super keyword"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "es6-class",
+        "prototype-chain",
+        "this-binding"
+      ],
+      "usedInFlashcards": [
+        67
+      ]
+    },
+    {
+      "id": "symbol",
+      "title": "Symbol",
+      "aliases": [
+        "Symbols",
+        "Symbol.iterator",
+        "well-known symbols"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "prototype-chain",
+        "property-descriptors"
+      ],
+      "usedInFlashcards": [
+        56,
+        58,
+        69
+      ]
+    },
+    {
+      "id": "syntax-error",
+      "title": "SyntaxError",
+      "aliases": [
+        "SyntaxError"
+      ],
+      "depth": "foundation",
+      "related": [
+        "strict-mode"
+      ],
+      "usedInFlashcards": [
+        12,
+        106
+      ]
+    },
+    {
+      "id": "tanstack-query",
+      "title": "TanStack Query",
+      "aliases": [
+        "TanStack Query",
+        "React Query",
+        "useQuery"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "server-state-vs-client-state",
+        "promise"
+      ],
+      "usedInFlashcards": [
+        166,
+        170,
+        179,
+        180,
+        206,
+        299,
+        315
+      ]
+    },
+    {
+      "id": "tanstack-virtual",
+      "title": "TanStack Virtual",
+      "aliases": [
+        "@tanstack/react-virtual",
+        "useVirtualizer",
+        "TanStack Virtual"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "react-list-virtualization",
+        "tanstack-query"
+      ],
+      "usedInFlashcards": [
+        190,
+        192
+      ]
+    },
+    {
+      "id": "technical-debt",
+      "title": "Technical Debt",
+      "aliases": [
+        "technical debt",
+        "tech debt"
+      ],
+      "depth": "foundation",
+      "related": [
+        "adr",
+        "strangler-fig-pattern"
+      ],
+      "usedInFlashcards": [
+        319
+      ]
+    },
+    {
+      "id": "temporal-dead-zone",
+      "title": "Temporal Dead Zone (TDZ)",
+      "aliases": [
+        "TDZ",
+        "temporal dead zone"
+      ],
+      "depth": "foundation",
+      "related": [
+        "hoisting",
+        "block-scope",
+        "lexical-environment",
+        "reference-error"
+      ],
+      "usedInFlashcards": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        29
+      ]
+    },
+    {
+      "id": "testing-pyramid",
+      "title": "Testing Pyramid",
+      "aliases": [
+        "test pyramid",
+        "testing strategy",
+        "unit tests",
+        "integration tests",
+        "e2e tests",
+        "unit integration e2e"
+      ],
+      "depth": "foundation",
+      "related": [
+        "react-testing-library",
+        "msw"
+      ],
+      "usedInFlashcards": [
+        232,
+        234
+      ]
+    },
+    {
+      "id": "text-content",
+      "title": "textContent",
+      "aliases": [
+        "textContent property",
+        "innerText"
+      ],
+      "depth": "foundation",
+      "related": [
+        "dom",
+        "inner-html",
+        "xss"
+      ],
+      "usedInFlashcards": [
+        263
+      ]
+    },
+    {
+      "id": "this-binding",
+      "title": "this Binding",
+      "aliases": [
+        "this",
+        "this binding",
+        "context binding"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "arrow-function",
+        "function-expression",
+        "call-apply-bind"
+      ],
+      "usedInFlashcards": [
+        5,
+        15,
+        16,
+        20,
+        21,
+        30,
+        31,
+        34,
+        64,
+        67,
+        108,
+        129,
+        130,
+        136,
+        140,
+        180,
+        240
+      ]
+    },
+    {
+      "id": "timers",
+      "title": "Timers (setTimeout / setInterval)",
+      "aliases": [
+        "setTimeout",
+        "setInterval",
+        "setImmediate",
+        "timer APIs"
+      ],
+      "depth": "foundation",
+      "related": [
+        "event-loop",
+        "macrotask",
+        "debounce-throttle"
+      ],
+      "usedInFlashcards": [
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        131,
+        151,
+        235,
+        236,
+        271
+      ]
+    },
+    {
+      "id": "tree-shaking",
+      "title": "Tree Shaking",
+      "aliases": [
+        "tree shaking",
+        "dead code elimination"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "es-modules",
+        "vite",
+        "webpack"
+      ],
+      "usedInFlashcards": [
+        198,
+        199,
+        248,
+        250,
+        253,
+        254
+      ]
+    },
+    {
+      "id": "truthy-falsy",
+      "title": "Truthy and Falsy Values",
+      "aliases": [
+        "truthy",
+        "falsy",
+        "boolean coercion"
+      ],
+      "depth": "foundation",
+      "related": [
+        "type-coercion",
+        "undefined"
+      ],
+      "usedInFlashcards": [
+        73,
+        79
+      ]
+    },
+    {
+      "id": "try-catch-finally",
+      "title": "try/catch/finally",
+      "aliases": [
+        "try catch finally",
+        "try-catch",
+        "try",
+        "catch",
+        "finally",
+        "try...catch...finally"
+      ],
+      "depth": "foundation",
+      "related": [
+        "type-error",
+        "reference-error",
+        "promise"
+      ],
+      "usedInFlashcards": [
+        6,
+        41,
+        43,
+        44,
+        80,
+        109,
+        110,
+        111,
+        112,
+        118,
+        120,
+        205,
+        212,
+        213
+      ]
+    },
+    {
+      "id": "type-coercion",
+      "title": "Type Coercion",
+      "aliases": [
+        "type conversion",
+        "implicit conversion",
+        "explicit conversion"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "strict-equality",
+        "truthy-falsy",
+        "nan"
+      ],
+      "usedInFlashcards": [
+        71,
+        72,
+        77
+      ]
+    },
+    {
+      "id": "type-error",
+      "title": "TypeError",
+      "aliases": [
+        "TypeError"
+      ],
+      "depth": "foundation",
+      "related": [
+        "strict-mode",
+        "binding"
+      ],
+      "usedInFlashcards": [
+        6,
+        23,
+        106,
+        119
+      ]
+    },
+    {
+      "id": "type-guards",
+      "title": "Type Guards",
+      "aliases": [
+        "type guard",
+        "TypeScript narrowing"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "discriminated-unions",
+        "optional-chaining"
+      ],
+      "usedInFlashcards": [
+        225,
+        226
+      ]
+    },
+    {
+      "id": "typescript-conditional-types",
+      "title": "TypeScript conditional types",
+      "aliases": [
+        "conditional types",
+        {
+          "extends ?": null
+        },
+        {
+          "T extends U ? X": "Y"
+        }
+      ],
+      "depth": "advanced",
+      "related": [
+        "typescript-generics",
+        "discriminated-unions",
+        "type-guards"
+      ],
+      "usedInFlashcards": [
+        228
+      ]
+    },
+    {
+      "id": "typescript-generics",
+      "title": "TypeScript generics",
+      "aliases": [
+        "generics",
+        "generic types",
+        "generic components"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "type-guards",
+        "discriminated-unions",
+        "es6-class"
+      ],
+      "usedInFlashcards": [
+        220
+      ]
+    },
+    {
+      "id": "typescript-mapped-types",
+      "title": "TypeScript mapped types",
+      "aliases": [
+        "mapped types",
+        "keyof mapped types"
+      ],
+      "depth": "advanced",
+      "related": [
+        "typescript-generics",
+        "typescript-conditional-types"
+      ],
+      "usedInFlashcards": [
+        223,
+        229
+      ]
+    },
+    {
+      "id": "typescript-react-components",
+      "title": "Typing React components",
+      "aliases": [
+        "type React components",
+        "React.FC",
+        "FC",
+        "function components TypeScript"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "typescript-generics",
+        "props-vs-state",
+        "controlled-component"
+      ],
+      "usedInFlashcards": [
+        217,
+        218
+      ]
+    },
+    {
+      "id": "typescript-react-events",
+      "title": "Typing React event handlers",
+      "aliases": [
+        "event handlers",
+        "React.ChangeEvent",
+        "React.MouseEvent"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "typescript-generics",
+        "controlled-component",
+        "es6-class"
+      ],
+      "usedInFlashcards": [
+        17,
+        111,
+        118,
+        130,
+        131,
+        213,
+        222,
+        285
+      ]
+    },
+    {
+      "id": "undefined",
+      "title": "undefined",
+      "aliases": [
+        "undefined value"
+      ],
+      "depth": "foundation",
+      "related": [
+        "hoisting",
+        "var"
+      ],
+      "usedInFlashcards": [
+        1,
+        4,
+        5,
+        29,
+        51,
+        71,
+        73,
+        78,
+        79,
+        80,
+        91,
+        93
+      ]
+    },
+    {
+      "id": "unhandled-promise-rejection",
+      "title": "Unhandled Promise Rejection",
+      "aliases": [
+        "unhandled rejection",
+        "unhandled promise rejection"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "promise",
+        "async-await",
+        "try-catch-finally"
+      ],
+      "usedInFlashcards": [
+        43,
+        44,
+        106,
+        314
+      ]
+    },
+    {
+      "id": "use-callback",
+      "title": "useCallback",
+      "aliases": [
+        "useCallback hook",
+        "React useCallback"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "use-memo",
+        "react-memo",
+        "closure"
+      ],
+      "usedInFlashcards": [
+        140,
+        141,
+        146,
+        148,
+        182,
+        189,
+        201,
+        210
+      ]
+    },
+    {
+      "id": "use-context",
+      "title": "useContext",
+      "aliases": [
+        "useContext hook",
+        "React Context"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "react-context-api",
+        "prop-drilling",
+        "react-re-render"
+      ],
+      "usedInFlashcards": [
+        76,
+        77,
+        122,
+        123,
+        132,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168,
+        169,
+        173,
+        182,
+        183,
+        196,
+        237,
+        307,
+        309,
+        314
+      ]
+    },
+    {
+      "id": "use-effect",
+      "title": "useEffect",
+      "aliases": [
+        "useEffect hook",
+        "React useEffect"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "dependency-array",
+        "use-layout-effect",
+        "memory-leak"
+      ],
+      "usedInFlashcards": [
+        121,
+        128,
+        129,
+        139,
+        140,
+        141,
+        144,
+        145
+      ]
+    },
+    {
+      "id": "use-imperative-handle",
+      "title": "useImperativeHandle",
+      "aliases": [
+        "useImperativeHandle hook"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "use-ref",
+        "forward-ref",
+        "controlled-component"
+      ],
+      "usedInFlashcards": [
+        153
+      ]
+    },
+    {
+      "id": "use-layout-effect",
+      "title": "useLayoutEffect",
+      "aliases": [
+        "useLayoutEffect hook"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "use-effect",
+        "reflow-repaint"
+      ],
+      "usedInFlashcards": [
+        121,
+        128,
+        129,
+        143,
+        144,
+        145
+      ]
+    },
+    {
+      "id": "use-memo",
+      "title": "useMemo",
+      "aliases": [
+        "useMemo hook",
+        "React useMemo"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "use-callback",
+        "react-memo",
+        "dependency-array"
+      ],
+      "usedInFlashcards": [
+        141,
+        147,
+        149,
+        150,
+        167,
+        182,
+        200,
+        210
+      ]
+    },
+    {
+      "id": "use-optimistic",
+      "title": "useOptimistic",
+      "aliases": [
+        "useOptimistic",
+        "optimistic UI"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "react-server-actions",
+        "tanstack-query"
+      ],
+      "usedInFlashcards": [
+        180,
+        208,
+        215
+      ]
+    },
+    {
+      "id": "use-reducer",
+      "title": "useReducer",
+      "aliases": [
+        "useReducer hook",
+        "React useReducer"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "use-state",
+        "react-batching"
+      ],
+      "usedInFlashcards": [
+        123,
+        154,
+        155,
+        166
+      ]
+    },
+    {
+      "id": "use-ref",
+      "title": "useRef",
+      "aliases": [
+        "useRef hook",
+        "React useRef"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "use-state",
+        "closure",
+        "dom"
+      ],
+      "usedInFlashcards": [
+        151,
+        152
+      ]
+    },
+    {
+      "id": "use-state",
+      "title": "useState",
+      "aliases": [
+        "useState hook",
+        "React useState"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "react-re-render",
+        "react-batching"
+      ],
+      "usedInFlashcards": [
+        123,
+        154,
+        155,
+        167
+      ]
+    },
+    {
+      "id": "value-vs-reference",
+      "title": "Value vs Reference",
+      "aliases": [
+        "reference type",
+        "primitive vs object",
+        "by value",
+        "by reference"
+      ],
+      "depth": "foundation",
+      "related": [
+        "binding"
+      ],
+      "usedInFlashcards": [
+        81
+      ]
+    },
+    {
+      "id": "var",
+      "title": "var",
+      "aliases": [],
+      "depth": "foundation",
+      "related": [
+        "function-scope",
+        "hoisting",
+        "undefined",
+        "temporal-dead-zone"
+      ],
+      "usedInFlashcards": [
+        1,
+        3,
+        4,
+        5,
+        7,
+        9,
+        10,
+        11,
+        12
+      ]
+    },
+    {
+      "id": "virtual-dom",
+      "title": "Virtual DOM",
+      "aliases": [
+        "virtual DOM",
+        "VDOM"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "reconciliation",
+        "dom",
+        "react-re-render"
+      ],
+      "usedInFlashcards": [
+        125,
+        126,
+        262
+      ]
+    },
+    {
+      "id": "vite",
+      "title": "Vite",
+      "aliases": [
+        "Vite bundler"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "hmr",
+        "es-modules",
+        "tree-shaking"
+      ],
+      "usedInFlashcards": [
+        247,
+        248,
+        249,
+        258
+      ]
+    },
+    {
+      "id": "web-workers",
+      "title": "Web Workers",
+      "aliases": [
+        "Web Worker",
+        "web workers"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "event-loop",
+        "inp"
+      ],
+      "usedInFlashcards": [
+        89,
+        272,
+        275,
+        285
+      ]
+    },
+    {
+      "id": "webpack",
+      "title": "Webpack",
+      "aliases": [
+        "Webpack bundler"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "vite",
+        "code-splitting",
+        "tree-shaking"
+      ],
+      "usedInFlashcards": [
+        247,
+        248
+      ]
+    },
+    {
+      "id": "xss",
+      "title": "XSS (Cross-Site Scripting)",
+      "aliases": [
+        "XSS",
+        "cross-site scripting"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "content-security-policy",
+        "dom"
+      ],
+      "usedInFlashcards": [
+        263,
+        274,
+        275,
+        280
+      ]
+    },
+    {
+      "id": "zustand",
+      "title": "Zustand",
+      "aliases": [
+        "Zustand state library"
+      ],
+      "depth": "intermediate",
+      "related": [
+        "server-state-vs-client-state",
+        "react-context-api"
+      ],
+      "usedInFlashcards": [
+        123,
+        161,
+        166,
+        167,
+        173,
+        177,
+        179,
+        181
+      ]
+    }
+  ],
+  "aliasMap": {
+    "abortcontroller": "abort-controller",
+    "abortcontrollers": "abort-controller",
+    "abort-controller": "abort-controller",
+    "abort controller": "abort-controller",
+    "abort-controllers": "abort-controller",
+    "abortsignal": "abort-controller",
+    "abortsignals": "abort-controller",
+    "abort signal": "abort-controller",
+    "abort-signal": "abort-controller",
+    "abort signals": "abort-controller",
+    "abstract operations (tonumber, tostring)": "abstract-operations",
+    "abstract-operations-(tonumber,-tostring)": "abstract-operations",
+    "abstract operations (tonumber, tostring)s": "abstract-operations",
+    "abstract-operations": "abstract-operations",
+    "abstract operations": "abstract-operations",
+    "tonumber": "abstract-operations",
+    "tonumbers": "abstract-operations",
+    "tostring": "abstract-operations",
+    "tostred": "abstract-operations",
+    "tostrings": "abstract-operations",
+    "type conversion": "abstract-operations",
+    "type-conversion": "abstract-operations",
+    "type conversions": "abstract-operations",
+    "number()": "abstract-operations",
+    "number()s": "abstract-operations",
+    "parseint()": "abstract-operations",
+    "parseint()s": "abstract-operations",
+    "accessibility (a11y)": "accessibility-a11y",
+    "accessibility-(a11y)": "accessibility-a11y",
+    "accessibility (a11y)s": "accessibility-a11y",
+    "accessibility-a11y": "accessibility-a11y",
+    "accessibility a11y": "accessibility-a11y",
+    "accessibility-a11ys": "accessibility-a11y",
+    "accessibility": "accessibility-a11y",
+    "accessibilitys": "accessibility-a11y",
+    "a11y": "accessibility-a11y",
+    "a11ys": "accessibility-a11y",
+    "accessible": "accessibility-a11y",
+    "accessibles": "accessibility-a11y",
+    "wcag": "accessibility-a11y",
+    "wcags": "accessibility-a11y",
+    "architecture decision record (adr)": "adr",
+    "architecture-decision-record-(adr)": "adr",
+    "architecture decision record (adr)s": "adr",
+    "adr": "adr",
+    "architecture decision record": "adr",
+    "architecture-decision-record": "adr",
+    "architecture decision records": "adr",
+    "api layer": "api-layer",
+    "api-layer": "api-layer",
+    "api layers": "api-layer",
+    "api-layers": "api-layer",
+    "data access layer": "api-layer",
+    "data-access-layer": "api-layer",
+    "data access layers": "api-layer",
+    "fetch wrapper": "api-layer",
+    "fetch-wrapper": "api-layer",
+    "fetch wrappers": "api-layer",
+    "arguments object": "arguments-object",
+    "arguments-object": "arguments-object",
+    "arguments objects": "arguments-object",
+    "arguments-objects": "arguments-object",
+    "arguments": "arguments-object",
+    "map, filter, and reduce": "array-map-filter-reduce",
+    "map,-filter,-and-reduce": "array-map-filter-reduce",
+    "map, filter, and reduces": "array-map-filter-reduce",
+    "array-map-filter-reduce": "array-map-filter-reduce",
+    "array map filter reduce": "array-map-filter-reduce",
+    "array-map-filter-reduces": "array-map-filter-reduce",
+    "array.map": "array-map-filter-reduce",
+    "array.maps": "array-map-filter-reduce",
+    "array.filter": "array-map-filter-reduce",
+    "array.filters": "array-map-filter-reduce",
+    "array.reduce": "array-map-filter-reduce",
+    "array.reduces": "array-map-filter-reduce",
+    "array.some and array.every": "array-some-every",
+    "array.some-and-array.every": "array-some-every",
+    "array.some and array.everys": "array-some-every",
+    "array-some-every": "array-some-every",
+    "array some every": "array-some-every",
+    "array-some-everys": "array-some-every",
+    "array.some": "array-some-every",
+    "array.somes": "array-some-every",
+    "array.every": "array-some-every",
+    "array.everys": "array-some-every",
+    "some": "array-some-every",
+    "somes": "array-some-every",
+    "every": "array-some-every",
+    "everys": "array-some-every",
+    "array.sort": "array-sort",
+    "array.sorts": "array-sort",
+    "array-sort": "array-sort",
+    "array sort": "array-sort",
+    "array-sorts": "array-sort",
+    "sort": "array-sort",
+    "sorts": "array-sort",
+    "comparator": "array-sort",
+    "comparators": "array-sort",
+    "arrow function": "arrow-function",
+    "arrow-function": "arrow-function",
+    "arrow functions": "arrow-function",
+    "arrow-functions": "arrow-function",
+    "async/await": "async-await",
+    "async/awaits": "async-await",
+    "async-await": "async-await",
+    "async await": "async-await",
+    "async-awaits": "async-await",
+    "async": "async-await",
+    "asyncs": "async-await",
+    "await": "async-await",
+    "awaits": "async-await",
+    "async awaits": "async-await",
+    "babel": "babel",
+    "babels": "babel",
+    "babel transpiler": "babel",
+    "babel-transpiler": "babel",
+    "babel transpilers": "babel",
+    "@babel/preset-env": "babel",
+    "@babel/preset env": "babel",
+    "@babel/preset-envs": "babel",
+    "big o complexity": "big-o-complexity",
+    "big-o-complexity": "big-o-complexity",
+    "big o complexitys": "big-o-complexity",
+    "big-o-complexitys": "big-o-complexity",
+    "big o": "big-o-complexity",
+    "big-o": "big-o-complexity",
+    "big os": "big-o-complexity",
+    "time complexity": "big-o-complexity",
+    "time-complexity": "big-o-complexity",
+    "time complexitys": "big-o-complexity",
+    "algorithmic complexity": "big-o-complexity",
+    "algorithmic-complexity": "big-o-complexity",
+    "algorithmic complexitys": "big-o-complexity",
+    "binding": "binding",
+    "binded": "binding",
+    "bindings": "binding",
+    "variable binding": "binding",
+    "variable-binding": "binding",
+    "variable binded": "binding",
+    "variable bindings": "binding",
+    "block scope": "block-scope",
+    "block-scope": "block-scope",
+    "block-scoped": "block-scope",
+    "block scopes": "block-scope",
+    "block-scopes": "block-scope",
+    "block scoped": "block-scope",
+    "block-scopeds": "block-scope",
+    "blue-green deployment": "blue-green-deployment",
+    "blue green deployment": "blue-green-deployment",
+    "blue-green-deployment": "blue-green-deployment",
+    "blue-green deployments": "blue-green-deployment",
+    "blue-green-deployments": "blue-green-deployment",
+    "blue green deploy": "blue-green-deployment",
+    "blue-green-deploy": "blue-green-deployment",
+    "blue green deploys": "blue-green-deployment",
+    "boolean conversion": "boolean-conversion",
+    "boolean-conversion": "boolean-conversion",
+    "boolean conversions": "boolean-conversion",
+    "boolean-conversions": "boolean-conversion",
+    "boolean()": "boolean-conversion",
+    "boolean()s": "boolean-conversion",
+    "double negation": "boolean-conversion",
+    "double-negation": "boolean-conversion",
+    "double negations": "boolean-conversion",
+    "!!": "boolean-conversion",
+    "toboolean": "boolean-conversion",
+    "tobooleans": "boolean-conversion",
+    "browserslist": "browserslist",
+    "browserslists": "browserslist",
+    "browserslist config": "browserslist",
+    "browserslist-config": "browserslist",
+    "browserslist configs": "browserslist",
+    ".browserslistrc": "browserslist",
+    ".browserslistrcs": "browserslist",
+    "call, apply, and bind": "call-apply-bind",
+    "call,-apply,-and-bind": "call-apply-bind",
+    "call, apply, and binds": "call-apply-bind",
+    "call-apply-bind": "call-apply-bind",
+    "call apply bind": "call-apply-bind",
+    "call-apply-binds": "call-apply-bind",
+    "call": "call-apply-bind",
+    "calls": "call-apply-bind",
+    "apply": "call-apply-bind",
+    "applys": "call-apply-bind",
+    "bind": "call-apply-bind",
+    "binds": "call-apply-bind",
+    "function.prototype.call": "call-apply-bind",
+    "function.prototype.calls": "call-apply-bind",
+    "call stack": "call-stack",
+    "call-stack": "call-stack",
+    "call stacks": "call-stack",
+    "call-stacks": "call-stack",
+    "stack frame": "call-stack",
+    "stack-frame": "call-stack",
+    "stack frames": "call-stack",
+    "ci/cd": "ci-cd",
+    "ci/cds": "ci-cd",
+    "ci-cd": "ci-cd",
+    "ci cd": "ci-cd",
+    "ci-cds": "ci-cd",
+    "continuous integration": "ci-cd",
+    "continuous-integration": "ci-cd",
+    "continuous integrations": "ci-cd",
+    "continuous deployment": "ci-cd",
+    "continuous-deployment": "ci-cd",
+    "continuous deployments": "ci-cd",
+    "closure": "closure",
+    "closures": "closure",
+    "cls (cumulative layout shift)": "cls",
+    "cls-(cumulative-layout-shift)": "cls",
+    "cls (cumulative layout shift)s": "cls",
+    "cls": "cls",
+    "cumulative layout shift": "cls",
+    "cumulative-layout-shift": "cls",
+    "cumulative layout shifts": "cls",
+    "layout shift": "cls",
+    "layout-shift": "cls",
+    "layout shifts": "cls",
+    "code splitting": "code-splitting",
+    "code-splitting": "code-splitting",
+    "code splitted": "code-splitting",
+    "code splittings": "code-splitting",
+    "code-splitted": "code-splitting",
+    "code-splittings": "code-splitting",
+    "dynamic import": "code-splitting",
+    "dynamic-import": "code-splitting",
+    "dynamic imports": "code-splitting",
+    "coding standards": "coding-standards",
+    "coding-standards": "coding-standards",
+    "coding conventions": "coding-standards",
+    "coding-conventions": "coding-standards",
+    "style guide": "coding-standards",
+    "style-guide": "coding-standards",
+    "style guides": "coding-standards",
+    "lint rules": "coding-standards",
+    "lint-rules": "coding-standards",
+    "readable code": "coding-standards",
+    "readable-code": "coding-standards",
+    "readable codes": "coding-standards",
+    "code readable": "coding-standards",
+    "code-readable": "coding-standards",
+    "code readables": "coding-standards",
+    "clear naming": "coding-standards",
+    "clear-naming": "coding-standards",
+    "clear named": "coding-standards",
+    "clear namings": "coding-standards",
+    "react class lifecycle": "component-lifecycle",
+    "react-class-lifecycle": "component-lifecycle",
+    "react class lifecycles": "component-lifecycle",
+    "component-lifecycle": "component-lifecycle",
+    "component lifecycle": "component-lifecycle",
+    "component-lifecycles": "component-lifecycle",
+    "componentdidmount": "component-lifecycle",
+    "componentdidmounts": "component-lifecycle",
+    "componentwillunmount": "component-lifecycle",
+    "componentwillunmounts": "component-lifecycle",
+    "componentdidupdate": "component-lifecycle",
+    "componentdidupdates": "component-lifecycle",
+    "lifecycle methods": "component-lifecycle",
+    "lifecycle-methods": "component-lifecycle",
+    "concurrent rendering": "concurrent-rendering",
+    "concurrent-rendering": "concurrent-rendering",
+    "concurrent rendered": "concurrent-rendering",
+    "concurrent renderings": "concurrent-rendering",
+    "concurrent-rendered": "concurrent-rendering",
+    "concurrent-renderings": "concurrent-rendering",
+    "concurrent mode": "concurrent-rendering",
+    "concurrent-mode": "concurrent-rendering",
+    "concurrent modes": "concurrent-rendering",
+    "concurrent react": "concurrent-rendering",
+    "concurrent-react": "concurrent-rendering",
+    "concurrent reacts": "concurrent-rendering",
+    "const": "const",
+    "consts": "const",
+    "const keyword": "const",
+    "const-keyword": "const",
+    "const keywords": "const",
+    "container/presenter pattern": "container-presenter-pattern",
+    "container/presenter-pattern": "container-presenter-pattern",
+    "container/presenter patterns": "container-presenter-pattern",
+    "container-presenter-pattern": "container-presenter-pattern",
+    "container presenter pattern": "container-presenter-pattern",
+    "container-presenter-patterns": "container-presenter-pattern",
+    "container presenter": "container-presenter-pattern",
+    "container-presenter": "container-presenter-pattern",
+    "container presenters": "container-presenter-pattern",
+    "smart dumb components": "container-presenter-pattern",
+    "smart-dumb-components": "container-presenter-pattern",
+    "content security policy (csp)": "content-security-policy",
+    "content-security-policy-(csp)": "content-security-policy",
+    "content security policy (csp)s": "content-security-policy",
+    "content-security-policy": "content-security-policy",
+    "content security policy": "content-security-policy",
+    "content-security-policys": "content-security-policy",
+    "csp": "content-security-policy",
+    "content security policys": "content-security-policy",
+    "controlled component": "controlled-component",
+    "controlled-component": "controlled-component",
+    "controlled components": "controlled-component",
+    "controlled-components": "controlled-component",
+    "controlled input": "controlled-component",
+    "controlled-input": "controlled-component",
+    "controlled inputs": "controlled-component",
+    "cookies": "cookies",
+    "http cookies": "cookies",
+    "http-cookies": "cookies",
+    "browser cookies": "cookies",
+    "browser-cookies": "cookies",
+    "core web vitals": "core-web-vitals",
+    "core-web-vitals": "core-web-vitals",
+    "cwv": "core-web-vitals",
+    "cors": "cors",
+    "cross-origin resource sharing": "cors",
+    "cross origin resource sharing": "cors",
+    "cross-origin-resource-sharing": "cors",
+    "cross-origin resource shared": "cors",
+    "cross-origin resource sharings": "cors",
+    "critical rendering path": "critical-rendering-path",
+    "critical-rendering-path": "critical-rendering-path",
+    "critical rendering paths": "critical-rendering-path",
+    "critical-rendering-paths": "critical-rendering-path",
+    "crp": "critical-rendering-path",
+    "cross-cutting concerns": "cross-cutting-concerns",
+    "cross cutting concerns": "cross-cutting-concerns",
+    "cross-cutting-concerns": "cross-cutting-concerns",
+    "css in react": "css-in-react",
+    "css-in-react": "css-in-react",
+    "css in reacts": "css-in-react",
+    "css-in-reacts": "css-in-react",
+    "css modules": "css-in-react",
+    "css-modules": "css-in-react",
+    "css-in-js": "css-in-react",
+    "css in js": "css-in-react",
+    "tailwind": "css-in-react",
+    "tailwinds": "css-in-react",
+    "styled components": "css-in-react",
+    "styled-components": "css-in-react",
+    "css selector performance": "css-selector-performance",
+    "css-selector-performance": "css-selector-performance",
+    "css selector performances": "css-selector-performance",
+    "css-selector-performances": "css-selector-performance",
+    "css selectors performance": "css-selector-performance",
+    "css-selectors-performance": "css-selector-performance",
+    "css selectors performances": "css-selector-performance",
+    "expensive selectors": "css-selector-performance",
+    "expensive-selectors": "css-selector-performance",
+    "currying": "currying",
+    "curryed": "currying",
+    "curryings": "currying",
+    "curry": "currying",
+    "currys": "currying",
+    "curried function": "currying",
+    "curried-function": "currying",
+    "curried functions": "currying",
+    "custom error types": "custom-error-types",
+    "custom-error-types": "custom-error-types",
+    "custom errors": "custom-error-types",
+    "custom-errors": "custom-error-types",
+    "extend error": "custom-error-types",
+    "extend-error": "custom-error-types",
+    "extend errors": "custom-error-types",
+    "validationerror": "custom-error-types",
+    "validationerrors": "custom-error-types",
+    "custom hooks": "custom-hooks",
+    "custom-hooks": "custom-hooks",
+    "custom react hooks": "custom-hooks",
+    "custom-react-hooks": "custom-hooks",
+    "database migrations": "database-migrations",
+    "database-migrations": "database-migrations",
+    "db migrations": "database-migrations",
+    "db-migrations": "database-migrations",
+    "schema migrations": "database-migrations",
+    "schema-migrations": "database-migrations",
+    "migration scripts": "database-migrations",
+    "migration-scripts": "database-migrations",
+    "debounce and throttle": "debounce-throttle",
+    "debounce-and-throttle": "debounce-throttle",
+    "debounce and throttles": "debounce-throttle",
+    "debounce-throttle": "debounce-throttle",
+    "debounce throttle": "debounce-throttle",
+    "debounce-throttles": "debounce-throttle",
+    "debounce": "debounce-throttle",
+    "debounces": "debounce-throttle",
+    "throttle": "debounce-throttle",
+    "throttles": "debounce-throttle",
+    "debouncing": "debounce-throttle",
+    "debounced": "debounce-throttle",
+    "debouncings": "debounce-throttle",
+    "throttling": "debounce-throttle",
+    "throttled": "debounce-throttle",
+    "throttlings": "debounce-throttle",
+    "deep copy": "deep-copy",
+    "deep-copy": "deep-copy",
+    "deep copys": "deep-copy",
+    "deep-copys": "deep-copy",
+    "deep clone": "deep-copy",
+    "deep-clone": "deep-copy",
+    "deep clones": "deep-copy",
+    "dependency array": "dependency-array",
+    "dependency-array": "dependency-array",
+    "dependency arrays": "dependency-array",
+    "dependency-arrays": "dependency-array",
+    "effect dependencies": "dependency-array",
+    "effect-dependencies": "dependency-array",
+    "exhaustive deps": "dependency-array",
+    "exhaustive-deps": "dependency-array",
+    "dependency injection (di)": "dependency-injection",
+    "dependency-injection-(di)": "dependency-injection",
+    "dependency injection (di)s": "dependency-injection",
+    "dependency-injection": "dependency-injection",
+    "dependency injection": "dependency-injection",
+    "dependency-injections": "dependency-injection",
+    "dependency injections": "dependency-injection",
+    "di in react": "dependency-injection",
+    "di-in-react": "dependency-injection",
+    "di in reacts": "dependency-injection",
+    "discriminated unions": "discriminated-unions",
+    "discriminated-unions": "discriminated-unions",
+    "discriminated union": "discriminated-unions",
+    "discriminated-union": "discriminated-unions",
+    "tagged union": "discriminated-unions",
+    "tagged-union": "discriminated-unions",
+    "tagged unions": "discriminated-unions",
+    "dom (document object model)": "dom",
+    "dom-(document-object-model)": "dom",
+    "dom (document object model)s": "dom",
+    "dom": "dom",
+    "document object model": "dom",
+    "document-object-model": "dom",
+    "document object models": "dom",
+    "end-to-end testing": "e2e-testing",
+    "end to end testing": "e2e-testing",
+    "end-to-end-testing": "e2e-testing",
+    "end-to-end tested": "e2e-testing",
+    "end-to-end testings": "e2e-testing",
+    "e2e-testing": "e2e-testing",
+    "e2e testing": "e2e-testing",
+    "e2e-tested": "e2e-testing",
+    "e2e-testings": "e2e-testing",
+    "e2e tested": "e2e-testing",
+    "e2e testings": "e2e-testing",
+    "e2e tests": "e2e-testing",
+    "e2e-tests": "e2e-testing",
+    "playwright": "e2e-testing",
+    "playwrights": "e2e-testing",
+    "cypress": "e2e-testing",
+    "environment variables": "environment-variables",
+    "environment-variables": "environment-variables",
+    "env variables": "environment-variables",
+    "env-variables": "environment-variables",
+    "process.env": "environment-variables",
+    "process.envs": "environment-variables",
+    "import.meta.env": "environment-variables",
+    "import.meta.envs": "environment-variables",
+    "error boundary": "error-boundary",
+    "error-boundary": "error-boundary",
+    "error boundarys": "error-boundary",
+    "error-boundarys": "error-boundary",
+    "error boundaries": "error-boundary",
+    "error-boundaries": "error-boundary",
+    "react error boundary": "error-boundary",
+    "react-error-boundary": "error-boundary",
+    "react error boundarys": "error-boundary",
+    "es modules (esm)": "es-modules",
+    "es-modules-(esm)": "es-modules",
+    "es modules (esm)s": "es-modules",
+    "es-modules": "es-modules",
+    "es modules": "es-modules",
+    "esm": "es-modules",
+    "import export": "es-modules",
+    "import-export": "es-modules",
+    "import exports": "es-modules",
+    "es6 class": "es6-class",
+    "es6-class": "es6-class",
+    "class": "es6-class",
+    "class syntax": "es6-class",
+    "class-syntax": "es6-class",
+    "class syntaxs": "es6-class",
+    "javascript class": "es6-class",
+    "javascript-class": "es6-class",
+    "event bubbling and capturing": "event-bubbling-capturing",
+    "event-bubbling-and-capturing": "event-bubbling-capturing",
+    "event bubbling and captured": "event-bubbling-capturing",
+    "event bubbling and capturings": "event-bubbling-capturing",
+    "event-bubbling-capturing": "event-bubbling-capturing",
+    "event bubbling capturing": "event-bubbling-capturing",
+    "event-bubbling-captured": "event-bubbling-capturing",
+    "event-bubbling-capturings": "event-bubbling-capturing",
+    "event bubbling": "event-bubbling-capturing",
+    "event-bubbling": "event-bubbling-capturing",
+    "event bubbled": "event-bubbling-capturing",
+    "event bubblings": "event-bubbling-capturing",
+    "event capturing": "event-bubbling-capturing",
+    "event-capturing": "event-bubbling-capturing",
+    "event captured": "event-bubbling-capturing",
+    "event capturings": "event-bubbling-capturing",
+    "propagation phases": "event-bubbling-capturing",
+    "propagation-phases": "event-bubbling-capturing",
+    "event delegation": "event-delegation",
+    "event-delegation": "event-delegation",
+    "event delegations": "event-delegation",
+    "event-delegations": "event-delegation",
+    "event loop": "event-loop",
+    "event-loop": "event-loop",
+    "event loops": "event-loop",
+    "event-loops": "event-loop",
+    "javascript event loop": "event-loop",
+    "javascript-event-loop": "event-loop",
+    "javascript event loops": "event-loop",
+    "execution context": "execution-context",
+    "execution-context": "execution-context",
+    "execution contexts": "execution-context",
+    "execution-contexts": "execution-context",
+    "ec": "execution-context",
+    "feature-based architecture": "feature-based-architecture",
+    "feature based architecture": "feature-based-architecture",
+    "feature-based-architecture": "feature-based-architecture",
+    "feature-based architectures": "feature-based-architecture",
+    "feature-based-architectures": "feature-based-architecture",
+    "feature folders": "feature-based-architecture",
+    "feature-folders": "feature-based-architecture",
+    "feature-based structure": "feature-based-architecture",
+    "feature based structure": "feature-based-architecture",
+    "feature-based-structure": "feature-based-architecture",
+    "feature-based structures": "feature-based-architecture",
+    "feature flags": "feature-flags",
+    "feature-flags": "feature-flags",
+    "feature toggles": "feature-flags",
+    "feature-toggles": "feature-flags",
+    "fetch api": "fetch",
+    "fetch-api": "fetch",
+    "fetch apis": "fetch",
+    "fetch": "fetch",
+    "fetchs": "fetch",
+    "window.fetch": "fetch",
+    "window.fetchs": "fetch",
+    "fisher-yates shuffle": "fisher-yates-shuffle",
+    "fisher yates shuffle": "fisher-yates-shuffle",
+    "fisher-yates-shuffle": "fisher-yates-shuffle",
+    "fisher-yates shuffles": "fisher-yates-shuffle",
+    "fisher-yates-shuffles": "fisher-yates-shuffle",
+    "shuffle array": "fisher-yates-shuffle",
+    "shuffle-array": "fisher-yates-shuffle",
+    "shuffle arrays": "fisher-yates-shuffle",
+    "array shuffle": "fisher-yates-shuffle",
+    "array-shuffle": "fisher-yates-shuffle",
+    "array shuffles": "fisher-yates-shuffle",
+    "fisher-yates": "fisher-yates-shuffle",
+    "fisher yates": "fisher-yates-shuffle",
+    "for loops": "for-loops",
+    "for-loops": "for-loops",
+    "for...of": "for-loops",
+    "for...ofs": "for-loops",
+    "for...in": "for-loops",
+    "for...ins": "for-loops",
+    "for-of": "for-loops",
+    "for of": "for-loops",
+    "for-ofs": "for-loops",
+    "for-in": "for-loops",
+    "for in": "for-loops",
+    "for-ins": "for-loops",
+    "for loop": "for-loops",
+    "for-loop": "for-loops",
+    "forwardref": "forward-ref",
+    "forwardrefs": "forward-ref",
+    "forward-ref": "forward-ref",
+    "forward ref": "forward-ref",
+    "forward-refs": "forward-ref",
+    "react.forwardref": "forward-ref",
+    "react.forwardrefs": "forward-ref",
+    "forward refs": "forward-ref",
+    "function declaration": "function-declaration",
+    "function-declaration": "function-declaration",
+    "function declarations": "function-declaration",
+    "function-declarations": "function-declaration",
+    "function expression": "function-expression",
+    "function-expression": "function-expression",
+    "function expressions": "function-expression",
+    "function-expressions": "function-expression",
+    "function scope": "function-scope",
+    "function-scope": "function-scope",
+    "function-scoped": "function-scope",
+    "function scopes": "function-scope",
+    "function-scopes": "function-scope",
+    "function scoped": "function-scope",
+    "function-scopeds": "function-scope",
+    "generator functions": "generator",
+    "generator-functions": "generator",
+    "generator": "generator",
+    "generators": "generator",
+    "function*": "generator",
+    "function*s": "generator",
+    "yield": "generator",
+    "yields": "generator",
+    "getters and setters": "getters-setters",
+    "getters-and-setters": "getters-setters",
+    "getters-setters": "getters-setters",
+    "getters setters": "getters-setters",
+    "accessor properties": "getters-setters",
+    "accessor-properties": "getters-setters",
+    "get": "getters-setters",
+    "set": "getters-setters",
+    "getters": "getters-setters",
+    "setters": "getters-setters",
+    "git branching strategy": "git-branching",
+    "git-branching-strategy": "git-branching",
+    "git branching strategys": "git-branching",
+    "git-branching": "git-branching",
+    "git branching": "git-branching",
+    "git-branched": "git-branching",
+    "git-branchings": "git-branching",
+    "branching strategy": "git-branching",
+    "branching-strategy": "git-branching",
+    "branching strategys": "git-branching",
+    "trunk-based development": "git-branching",
+    "trunk based development": "git-branching",
+    "trunk-based-development": "git-branching",
+    "trunk-based developments": "git-branching",
+    "gitflow": "git-branching",
+    "gitflows": "git-branching",
+    "higher-order component (hoc)": "higher-order-component",
+    "higher order component (hoc)": "higher-order-component",
+    "higher-order-component-(hoc)": "higher-order-component",
+    "higher-order component (hoc)s": "higher-order-component",
+    "higher-order-component": "higher-order-component",
+    "higher order component": "higher-order-component",
+    "higher-order-components": "higher-order-component",
+    "hoc": "higher-order-component",
+    "higher-order components": "higher-order-component",
+    "higher order components": "higher-order-component",
+    "withrouter": "higher-order-component",
+    "withrouters": "higher-order-component",
+    "higher-order function": "higher-order-function",
+    "higher order function": "higher-order-function",
+    "higher-order-function": "higher-order-function",
+    "higher-order functions": "higher-order-function",
+    "higher-order-functions": "higher-order-function",
+    "higher order functions": "higher-order-function",
+    "hof": "higher-order-function",
+    "history api": "history-api",
+    "history-api": "history-api",
+    "history apis": "history-api",
+    "history-apis": "history-api",
+    "pushstate": "history-api",
+    "pushstates": "history-api",
+    "spa routing": "history-api",
+    "spa-routing": "history-api",
+    "spa routed": "history-api",
+    "spa routings": "history-api",
+    "hot module replacement (hmr)": "hmr",
+    "hot-module-replacement-(hmr)": "hmr",
+    "hot module replacement (hmr)s": "hmr",
+    "hmr": "hmr",
+    "hot reload": "hmr",
+    "hot-reload": "hmr",
+    "hot reloads": "hmr",
+    "hot module replacement": "hmr",
+    "hot-module-replacement": "hmr",
+    "hot module replacements": "hmr",
+    "hoisting": "hoisting",
+    "hoisted": "hoisting",
+    "hoistings": "hoisting",
+    "hoisteds": "hoisting",
+    "hydration": "hydration",
+    "hydrations": "hydration",
+    "react hydration": "hydration",
+    "react-hydration": "hydration",
+    "react hydrations": "hydration",
+    "hydrate": "hydration",
+    "hydrates": "hydration",
+    "identifier": "identifier",
+    "identifiers": "identifier",
+    "iife": "iife",
+    "iifes": "iife",
+    "immediately invoked function expression": "iife",
+    "immediately-invoked-function-expression": "iife",
+    "immediately invoked function expressions": "iife",
+    "innerhtml": "inner-html",
+    "innerhtmls": "inner-html",
+    "inner-html": "inner-html",
+    "inner html": "inner-html",
+    "inner-htmls": "inner-html",
+    "innerhtml property": "inner-html",
+    "innerhtml-property": "inner-html",
+    "innerhtml propertys": "inner-html",
+    "inp (interaction to next paint)": "inp",
+    "inp-(interaction-to-next-paint)": "inp",
+    "inp (interaction to next paint)s": "inp",
+    "inp": "inp",
+    "interaction to next paint": "inp",
+    "interaction-to-next-paint": "inp",
+    "interaction to next paints": "inp",
+    "first input delay": "inp",
+    "first-input-delay": "inp",
+    "first input delays": "inp",
+    "intersection observer api": "intersection-observer",
+    "intersection-observer-api": "intersection-observer",
+    "intersection observer apis": "intersection-observer",
+    "intersection-observer": "intersection-observer",
+    "intersection observer": "intersection-observer",
+    "intersection-observers": "intersection-observer",
+    "intersection observers": "intersection-observer",
+    "intersectionobserver": "intersection-observer",
+    "intersectionobservers": "intersection-observer",
+    "island architecture": "island-architecture",
+    "island-architecture": "island-architecture",
+    "island architectures": "island-architecture",
+    "island-architectures": "island-architecture",
+    "islands architecture": "island-architecture",
+    "islands-architecture": "island-architecture",
+    "islands architectures": "island-architecture",
+    "astro islands": "island-architecture",
+    "astro-islands": "island-architecture",
+    "iterator protocol": "iterator",
+    "iterator-protocol": "iterator",
+    "iterator protocols": "iterator",
+    "iterator": "iterator",
+    "iterators": "iterator",
+    "iterable": "iterator",
+    "iterables": "iterator",
+    "symbol.iterator": "iterator",
+    "symbol.iterators": "iterator",
+    "iteration": "iterator",
+    "iterations": "iterator",
+    "javascript debugging tools": "js-debugging-tools",
+    "javascript-debugging-tools": "js-debugging-tools",
+    "js-debugging-tools": "js-debugging-tools",
+    "js debugging tools": "js-debugging-tools",
+    "debugging tools": "js-debugging-tools",
+    "debugging-tools": "js-debugging-tools",
+    "chrome devtools": "js-debugging-tools",
+    "chrome-devtools": "js-debugging-tools",
+    "firefox devtools": "js-debugging-tools",
+    "firefox-devtools": "js-debugging-tools",
+    "devtools": "js-debugging-tools",
+    "react devtools": "js-debugging-tools",
+    "react-devtools": "js-debugging-tools",
+    "vs code debugger": "js-debugging-tools",
+    "vs-code-debugger": "js-debugging-tools",
+    "vs code debuggers": "js-debugging-tools",
+    "console methods": "js-debugging-tools",
+    "console-methods": "js-debugging-tools",
+    "javascript profiling": "js-profiling",
+    "javascript-profiling": "js-profiling",
+    "javascript profiled": "js-profiling",
+    "javascript profilings": "js-profiling",
+    "js-profiling": "js-profiling",
+    "js profiling": "js-profiling",
+    "js-profiled": "js-profiling",
+    "js-profilings": "js-profiling",
+    "performance profiling": "js-profiling",
+    "performance-profiling": "js-profiling",
+    "performance profiled": "js-profiling",
+    "performance profilings": "js-profiling",
+    "devtools performance": "js-profiling",
+    "devtools-performance": "js-profiling",
+    "devtools performances": "js-profiling",
+    "profile javascript": "js-profiling",
+    "profile-javascript": "js-profiling",
+    "profile javascripts": "js-profiling",
+    "lazy loading": "lazy-loading",
+    "lazy-loading": "lazy-loading",
+    "lazy loaded": "lazy-loading",
+    "lazy loadings": "lazy-loading",
+    "lazy-loaded": "lazy-loading",
+    "lazy-loadings": "lazy-loading",
+    "lazy load": "lazy-loading",
+    "lazy-load": "lazy-loading",
+    "lazy loads": "lazy-loading",
+    "lcp (largest contentful paint)": "lcp",
+    "lcp-(largest-contentful-paint)": "lcp",
+    "lcp (largest contentful paint)s": "lcp",
+    "lcp": "lcp",
+    "largest contentful paint": "lcp",
+    "largest-contentful-paint": "lcp",
+    "largest contentful paints": "lcp",
+    "let": "let",
+    "let keyword": "let",
+    "let-keyword": "let",
+    "let keywords": "let",
+    "lexical environment": "lexical-environment",
+    "lexical-environment": "lexical-environment",
+    "lexical environments": "lexical-environment",
+    "lexical-environments": "lexical-environment",
+    "environment record": "lexical-environment",
+    "environment-record": "lexical-environment",
+    "environment records": "lexical-environment",
+    "lexical scope": "lexical-scope",
+    "lexical-scope": "lexical-scope",
+    "lexical-scoped": "lexical-scope",
+    "lexical scopes": "lexical-scope",
+    "lexical-scopes": "lexical-scope",
+    "static scope": "lexical-scope",
+    "static-scope": "lexical-scope",
+    "static-scoped": "lexical-scope",
+    "static scopes": "lexical-scope",
+    "lifting state up": "lifting-state-up",
+    "lifting-state-up": "lifting-state-up",
+    "lifting state ups": "lifting-state-up",
+    "lifting-state-ups": "lifting-state-up",
+    "lift state up": "lifting-state-up",
+    "lift-state-up": "lifting-state-up",
+    "lift state ups": "lifting-state-up",
+    "lifted state": "lifting-state-up",
+    "lifted-state": "lifting-state-up",
+    "lifted states": "lifting-state-up",
+    "lifted up": "lifting-state-up",
+    "lifted-up": "lifting-state-up",
+    "lifted ups": "lifting-state-up",
+    "state be lifted up": "lifting-state-up",
+    "state-be-lifted-up": "lifting-state-up",
+    "state be lifted ups": "lifting-state-up",
+    "localstorage": "local-storage",
+    "localstorages": "local-storage",
+    "local-storage": "local-storage",
+    "local storage": "local-storage",
+    "local-storages": "local-storage",
+    "local storages": "local-storage",
+    "loose equality (==)": "loose-equality",
+    "loose-equality-(==)": "loose-equality",
+    "loose equality (==)s": "loose-equality",
+    "loose-equality": "loose-equality",
+    "loose equality": "loose-equality",
+    "loose-equalitys": "loose-equality",
+    "==": "loose-equality",
+    "abstract equality": "loose-equality",
+    "abstract-equality": "loose-equality",
+    "abstract equalitys": "loose-equality",
+    "double equals": "loose-equality",
+    "double-equals": "loose-equality",
+    "macrotask": "macrotask",
+    "macrotasks": "macrotask",
+    "task queue": "macrotask",
+    "task-queue": "macrotask",
+    "task queues": "macrotask",
+    "macrotask queue": "macrotask",
+    "macrotask-queue": "macrotask",
+    "macrotask queues": "macrotask",
+    "map (data structure)": "map-data-structure",
+    "map-(data-structure)": "map-data-structure",
+    "map (data structure)s": "map-data-structure",
+    "map-data-structure": "map-data-structure",
+    "map data structure": "map-data-structure",
+    "map-data-structures": "map-data-structure",
+    "es6 map": "map-data-structure",
+    "es6-map": "map-data-structure",
+    "es6 maps": "map-data-structure",
+    "javascript map": "map-data-structure",
+    "javascript-map": "map-data-structure",
+    "javascript maps": "map-data-structure",
+    "map object": "map-data-structure",
+    "map-object": "map-data-structure",
+    "map objects": "map-data-structure",
+    "memory leak": "memory-leak",
+    "memory-leak": "memory-leak",
+    "memory leaks": "memory-leak",
+    "memory-leaks": "memory-leak",
+    "retained memory": "memory-leak",
+    "retained-memory": "memory-leak",
+    "retained memorys": "memory-leak",
+    "micro-frontends": "micro-frontends",
+    "micro frontends": "micro-frontends",
+    "mfe": "micro-frontends",
+    "microtask": "microtask",
+    "microtasks": "microtask",
+    "microtask queue": "microtask",
+    "microtask-queue": "microtask",
+    "microtask queues": "microtask",
+    "module bundlers": "module-bundlers",
+    "module-bundlers": "module-bundlers",
+    "module bundler": "module-bundlers",
+    "module-bundler": "module-bundlers",
+    "bundlers": "module-bundlers",
+    "bundling": "module-bundlers",
+    "bundled": "module-bundlers",
+    "bundlings": "module-bundlers",
+    "monorepo": "monorepo",
+    "monorepos": "monorepo",
+    "monolithic repository": "monorepo",
+    "monolithic-repository": "monorepo",
+    "monolithic repositorys": "monorepo",
+    "msw (mock service worker)": "msw",
+    "msw-(mock-service-worker)": "msw",
+    "msw (mock service worker)s": "msw",
+    "msw": "msw",
+    "mock service worker": "msw",
+    "mock-service-worker": "msw",
+    "mock service workers": "msw",
+    "mutationobserver": "mutation-observer",
+    "mutationobservers": "mutation-observer",
+    "mutation-observer": "mutation-observer",
+    "mutation observer": "mutation-observer",
+    "mutation-observers": "mutation-observer",
+    "mutationobserver api": "mutation-observer",
+    "mutationobserver-api": "mutation-observer",
+    "mutationobserver apis": "mutation-observer",
+    "nan": "nan",
+    "not a number": "nan",
+    "not-a-number": "nan",
+    "not a numbers": "nan",
+    "nan value": "nan",
+    "nan-value": "nan",
+    "nan values": "nan",
+    "new operator": "new-operator",
+    "new-operator": "new-operator",
+    "new operators": "new-operator",
+    "new-operators": "new-operator",
+    "new": "new-operator",
+    "new keyword": "new-operator",
+    "new-keyword": "new-operator",
+    "new keywords": "new-operator",
+    "normalized state": "normalized-state",
+    "normalized-state": "normalized-state",
+    "normalized states": "normalized-state",
+    "normalized-states": "normalized-state",
+    "state normalization": "normalized-state",
+    "state-normalization": "normalized-state",
+    "state normalizations": "normalized-state",
+    "null": "null-value",
+    "nulls": "null-value",
+    "null-value": "null-value",
+    "null value": "null-value",
+    "null-values": "null-value",
+    "null values": "null-value",
+    "nullish coalescing (??)": "nullish-coalescing",
+    "nullish-coalescing-(??)": "nullish-coalescing",
+    "nullish coalescing (??)s": "nullish-coalescing",
+    "nullish-coalescing": "nullish-coalescing",
+    "nullish coalescing": "nullish-coalescing",
+    "nullish-coalesced": "nullish-coalescing",
+    "nullish-coalescings": "nullish-coalescing",
+    "nullish coalesced": "nullish-coalescing",
+    "nullish coalescings": "nullish-coalescing",
+    "?? operator": "nullish-coalescing",
+    "??-operator": "nullish-coalescing",
+    "?? operators": "nullish-coalescing",
+    "object.assign": "object-assign",
+    "object.assigns": "object-assign",
+    "object-assign": "object-assign",
+    "object assign": "object-assign",
+    "object-assigns": "object-assign",
+    "assign": "object-assign",
+    "assigns": "object-assign",
+    "object.create": "object-create",
+    "object.creates": "object-create",
+    "object-create": "object-create",
+    "object create": "object-create",
+    "object-creates": "object-create",
+    "object.create(null)": "object-create",
+    "object.create(null)s": "object-create",
+    "object.defineproperty": "object-define-property",
+    "object.definepropertys": "object-define-property",
+    "object-define-property": "object-define-property",
+    "object define property": "object-define-property",
+    "object-define-propertys": "object-define-property",
+    "defineproperty": "object-define-property",
+    "definepropertys": "object-define-property",
+    "object.freeze and object.seal": "object-freeze-seal",
+    "object.freeze-and-object.seal": "object-freeze-seal",
+    "object.freeze and object.seals": "object-freeze-seal",
+    "object-freeze-seal": "object-freeze-seal",
+    "object freeze seal": "object-freeze-seal",
+    "object-freeze-seals": "object-freeze-seal",
+    "object.freeze": "object-freeze-seal",
+    "object.freezes": "object-freeze-seal",
+    "object.seal": "object-freeze-seal",
+    "object.seals": "object-freeze-seal",
+    "freeze": "object-freeze-seal",
+    "freezes": "object-freeze-seal",
+    "seal": "object-freeze-seal",
+    "seals": "object-freeze-seal",
+    "observability": "observability",
+    "observabilitys": "observability",
+    "monitoring": "observability",
+    "monitored": "observability",
+    "monitorings": "observability",
+    "rum": "observability",
+    "one-way data flow": "one-way-data-flow",
+    "one way data flow": "one-way-data-flow",
+    "one-way-data-flow": "one-way-data-flow",
+    "one-way data flows": "one-way-data-flow",
+    "one-way-data-flows": "one-way-data-flow",
+    "unidirectional data flow": "one-way-data-flow",
+    "unidirectional-data-flow": "one-way-data-flow",
+    "unidirectional data flows": "one-way-data-flow",
+    "data flows down": "one-way-data-flow",
+    "data-flows-down": "one-way-data-flow",
+    "data flows downs": "one-way-data-flow",
+    "optional chaining (?.)": "optional-chaining",
+    "optional-chaining-(?.)": "optional-chaining",
+    "optional chaining (?.)s": "optional-chaining",
+    "optional-chaining": "optional-chaining",
+    "optional chaining": "optional-chaining",
+    "optional-chained": "optional-chaining",
+    "optional-chainings": "optional-chaining",
+    "optional chained": "optional-chaining",
+    "optional chainings": "optional-chaining",
+    "?. operator": "optional-chaining",
+    "?.-operator": "optional-chaining",
+    "?. operators": "optional-chaining",
+    "partial application": "partial-application",
+    "partial-application": "partial-application",
+    "partial applications": "partial-application",
+    "partial-applications": "partial-application",
+    "partial apply": "partial-application",
+    "partial-apply": "partial-application",
+    "partial applys": "partial-application",
+    "postcss": "postcss",
+    "postcss plugins": "postcss",
+    "postcss-plugins": "postcss",
+    "autoprefixer": "postcss",
+    "autoprefixers": "postcss",
+    "preventdefault vs stoppropagation": "prevent-default",
+    "preventdefault-vs-stoppropagation": "prevent-default",
+    "preventdefault vs stoppropagations": "prevent-default",
+    "prevent-default": "prevent-default",
+    "prevent default": "prevent-default",
+    "prevent-defaults": "prevent-default",
+    "preventdefault": "prevent-default",
+    "preventdefaults": "prevent-default",
+    "stoppropagation": "prevent-default",
+    "stoppropagations": "prevent-default",
+    "progressive enhancement": "progressive-enhancement",
+    "progressive-enhancement": "progressive-enhancement",
+    "progressive enhancements": "progressive-enhancement",
+    "progressive-enhancements": "progressive-enhancement",
+    "graceful degradation": "progressive-enhancement",
+    "graceful-degradation": "progressive-enhancement",
+    "graceful degradations": "progressive-enhancement",
+    "promise": "promise",
+    "promises": "promise",
+    "prop drilling": "prop-drilling",
+    "prop-drilling": "prop-drilling",
+    "prop drilled": "prop-drilling",
+    "prop drillings": "prop-drilling",
+    "prop-drilled": "prop-drilling",
+    "prop-drillings": "prop-drilling",
+    "property descriptors": "property-descriptors",
+    "property-descriptors": "property-descriptors",
+    "property attributes": "property-descriptors",
+    "property-attributes": "property-descriptors",
+    "data property descriptor": "property-descriptors",
+    "data-property-descriptor": "property-descriptors",
+    "data property descriptors": "property-descriptors",
+    "props vs state": "props-vs-state",
+    "props-vs-state": "props-vs-state",
+    "props vs states": "props-vs-state",
+    "props-vs-states": "props-vs-state",
+    "props and state": "props-vs-state",
+    "props-and-state": "props-vs-state",
+    "props and states": "props-vs-state",
+    "react props": "props-vs-state",
+    "react-props": "props-vs-state",
+    "component state": "props-vs-state",
+    "component-state": "props-vs-state",
+    "component states": "props-vs-state",
+    "prototype chain": "prototype-chain",
+    "prototype-chain": "prototype-chain",
+    "prototype chains": "prototype-chain",
+    "prototype-chains": "prototype-chain",
+    "prototypal inheritance": "prototype-chain",
+    "prototypal-inheritance": "prototype-chain",
+    "prototypal inheritances": "prototype-chain",
+    "progressive web app (pwa)": "pwa",
+    "progressive-web-app-(pwa)": "pwa",
+    "progressive web app (pwa)s": "pwa",
+    "pwa": "pwa",
+    "progressive web app": "pwa",
+    "progressive-web-app": "pwa",
+    "progressive web apps": "pwa",
+    "rail performance model": "rail-performance-model",
+    "rail-performance-model": "rail-performance-model",
+    "rail performance models": "rail-performance-model",
+    "rail-performance-models": "rail-performance-model",
+    "rail model": "rail-performance-model",
+    "rail-model": "rail-performance-model",
+    "rail models": "rail-performance-model",
+    "rail": "rail-performance-model",
+    "rails": "rail-performance-model",
+    "response animation idle load": "rail-performance-model",
+    "response-animation-idle-load": "rail-performance-model",
+    "response animation idle loads": "rail-performance-model",
+    "react act()": "react-act",
+    "react-act()": "react-act",
+    "react act()s": "react-act",
+    "react-act": "react-act",
+    "react act": "react-act",
+    "react-acts": "react-act",
+    "act()": "react-act",
+    "act()s": "react-act",
+    "act utility": "react-act",
+    "act-utility": "react-act",
+    "act utilitys": "react-act",
+    "react state batching": "react-batching",
+    "react-state-batching": "react-batching",
+    "react state batched": "react-batching",
+    "react state batchings": "react-batching",
+    "react-batching": "react-batching",
+    "react batching": "react-batching",
+    "react-batched": "react-batching",
+    "react-batchings": "react-batching",
+    "batching": "react-batching",
+    "batched": "react-batching",
+    "batchings": "react-batching",
+    "automatic batching": "react-batching",
+    "automatic-batching": "react-batching",
+    "automatic batched": "react-batching",
+    "automatic batchings": "react-batching",
+    "react 18 batching": "react-batching",
+    "react-18-batching": "react-batching",
+    "react 18 batched": "react-batching",
+    "react 18 batchings": "react-batching",
+    "react compiler": "react-compiler",
+    "react-compiler": "react-compiler",
+    "react compilers": "react-compiler",
+    "react-compilers": "react-compiler",
+    "react forget": "react-compiler",
+    "react-forget": "react-compiler",
+    "react forgets": "react-compiler",
+    "auto-memoization": "react-compiler",
+    "auto memoization": "react-compiler",
+    "auto-memoizations": "react-compiler",
+    "react composition": "react-composition",
+    "react-composition": "react-composition",
+    "react compositions": "react-composition",
+    "react-compositions": "react-composition",
+    "composition": "react-composition",
+    "compositions": "react-composition",
+    "component composition": "react-composition",
+    "component-composition": "react-composition",
+    "component compositions": "react-composition",
+    "children prop": "react-composition",
+    "children-prop": "react-composition",
+    "children props": "react-composition",
+    "react context api": "react-context-api",
+    "react-context-api": "react-context-api",
+    "react context apis": "react-context-api",
+    "react-context-apis": "react-context-api",
+    "react context": "react-context-api",
+    "react-context": "react-context-api",
+    "react contexts": "react-context-api",
+    "context api": "react-context-api",
+    "context-api": "react-context-api",
+    "context apis": "react-context-api",
+    "createcontext": "react-context-api",
+    "createcontexts": "react-context-api",
+    "react fiber": "react-fiber",
+    "react-fiber": "react-fiber",
+    "react fibers": "react-fiber",
+    "react-fibers": "react-fiber",
+    "fiber": "react-fiber",
+    "fibers": "react-fiber",
+    "react fiber architecture": "react-fiber",
+    "react-fiber-architecture": "react-fiber",
+    "react fiber architectures": "react-fiber",
+    "react key prop": "react-key-prop",
+    "react-key-prop": "react-key-prop",
+    "react key props": "react-key-prop",
+    "react-key-props": "react-key-prop",
+    "key prop": "react-key-prop",
+    "key-prop": "react-key-prop",
+    "key props": "react-key-prop",
+    "react keys": "react-key-prop",
+    "react-keys": "react-key-prop",
+    "list keys": "react-key-prop",
+    "list-keys": "react-key-prop",
+    "virtualizing large lists": "react-list-virtualization",
+    "virtualizing-large-lists": "react-list-virtualization",
+    "react-list-virtualization": "react-list-virtualization",
+    "react list virtualization": "react-list-virtualization",
+    "react-list-virtualizations": "react-list-virtualization",
+    "large lists": "react-list-virtualization",
+    "large-lists": "react-list-virtualization",
+    "list virtualization": "react-list-virtualization",
+    "list-virtualization": "react-list-virtualization",
+    "list virtualizations": "react-list-virtualization",
+    "virtualized list": "react-list-virtualization",
+    "virtualized-list": "react-list-virtualization",
+    "virtualized lists": "react-list-virtualization",
+    "react.memo": "react-memo",
+    "react.memos": "react-memo",
+    "react-memo": "react-memo",
+    "react memo": "react-memo",
+    "react-memos": "react-memo",
+    "memo": "react-memo",
+    "memos": "react-memo",
+    "react re-render": "react-re-render",
+    "react re render": "react-re-render",
+    "react-re-render": "react-re-render",
+    "react re-renders": "react-re-render",
+    "react-re-renders": "react-re-render",
+    "re-render": "react-re-render",
+    "re render": "react-re-render",
+    "re-renders": "react-re-render",
+    "react rendering": "react-re-render",
+    "react-rendering": "react-re-render",
+    "react rendered": "react-re-render",
+    "react renderings": "react-re-render",
+    "component re-render": "react-re-render",
+    "component re render": "react-re-render",
+    "component-re-render": "react-re-render",
+    "component re-renders": "react-re-render",
+    "react server actions": "react-server-actions",
+    "react-server-actions": "react-server-actions",
+    "server actions": "react-server-actions",
+    "server-actions": "react-server-actions",
+    "use server": "react-server-actions",
+    "use-server": "react-server-actions",
+    "use servers": "react-server-actions",
+    "react server components (rsc)": "react-server-components",
+    "react-server-components-(rsc)": "react-server-components",
+    "react server components (rsc)s": "react-server-components",
+    "react-server-components": "react-server-components",
+    "react server components": "react-server-components",
+    "server components": "react-server-components",
+    "server-components": "react-server-components",
+    "rsc": "react-server-components",
+    "react suspense": "react-suspense",
+    "react-suspense": "react-suspense",
+    "react suspenses": "react-suspense",
+    "react-suspenses": "react-suspense",
+    "suspense": "react-suspense",
+    "suspenses": "react-suspense",
+    "suspense boundaries": "react-suspense",
+    "suspense-boundaries": "react-suspense",
+    "react testing library": "react-testing-library",
+    "react-testing-library": "react-testing-library",
+    "react testing librarys": "react-testing-library",
+    "react-testing-librarys": "react-testing-library",
+    "rtl": "react-testing-library",
+    "testing library": "react-testing-library",
+    "testing-library": "react-testing-library",
+    "testing librarys": "react-testing-library",
+    "testing-library/react": "react-testing-library",
+    "testing library/react": "react-testing-library",
+    "testing-library/reacts": "react-testing-library",
+    "reconciliation": "reconciliation",
+    "reconciliations": "reconciliation",
+    "react reconciliation": "reconciliation",
+    "react-reconciliation": "reconciliation",
+    "react reconciliations": "reconciliation",
+    "diffing algorithm": "reconciliation",
+    "diffing-algorithm": "reconciliation",
+    "diffing algorithms": "reconciliation",
+    "redux toolkit": "redux-toolkit",
+    "redux-toolkit": "redux-toolkit",
+    "redux toolkits": "redux-toolkit",
+    "redux-toolkits": "redux-toolkit",
+    "rtk": "redux-toolkit",
+    "createslice": "redux-toolkit",
+    "createslices": "redux-toolkit",
+    "referenceerror": "reference-error",
+    "referenceerrors": "reference-error",
+    "reference-error": "reference-error",
+    "reference error": "reference-error",
+    "reference-errors": "reference-error",
+    "reflow, repaint, and composite": "reflow-repaint",
+    "reflow,-repaint,-and-composite": "reflow-repaint",
+    "reflow, repaint, and composites": "reflow-repaint",
+    "reflow-repaint": "reflow-repaint",
+    "reflow repaint": "reflow-repaint",
+    "reflow-repaints": "reflow-repaint",
+    "reflow": "reflow-repaint",
+    "reflows": "reflow-repaint",
+    "repaint": "reflow-repaint",
+    "repaints": "reflow-repaint",
+    "layout thrashing": "reflow-repaint",
+    "layout-thrashing": "reflow-repaint",
+    "layout thrashed": "reflow-repaint",
+    "layout thrashings": "reflow-repaint",
+    "composite layer": "reflow-repaint",
+    "composite-layer": "reflow-repaint",
+    "composite layers": "reflow-repaint",
+    "requestanimationframe": "request-animation-frame",
+    "requestanimationframes": "request-animation-frame",
+    "request-animation-frame": "request-animation-frame",
+    "request animation frame": "request-animation-frame",
+    "request-animation-frames": "request-animation-frame",
+    "raf": "request-animation-frame",
+    "rules of hooks": "rules-of-hooks",
+    "rules-of-hooks": "rules-of-hooks",
+    "hook rules": "rules-of-hooks",
+    "hook-rules": "rules-of-hooks",
+    "scope chain": "scope-chain",
+    "scope-chain": "scope-chain",
+    "scope chains": "scope-chain",
+    "scope-chains": "scope-chain",
+    "selective hydration": "selective-hydration",
+    "selective-hydration": "selective-hydration",
+    "selective hydrations": "selective-hydration",
+    "selective-hydrations": "selective-hydration",
+    "server-side rendering (ssr)": "server-side-rendering",
+    "server side rendering (ssr)": "server-side-rendering",
+    "server-side-rendering-(ssr)": "server-side-rendering",
+    "server-side rendering (ssr)s": "server-side-rendering",
+    "server-side-rendering": "server-side-rendering",
+    "server side rendering": "server-side-rendering",
+    "server-side-rendered": "server-side-rendering",
+    "server-side-renderings": "server-side-rendering",
+    "ssr": "server-side-rendering",
+    "server-side rendering": "server-side-rendering",
+    "server-side rendered": "server-side-rendering",
+    "server-side renderings": "server-side-rendering",
+    "server state vs client state": "server-state-vs-client-state",
+    "server-state-vs-client-state": "server-state-vs-client-state",
+    "server state vs client states": "server-state-vs-client-state",
+    "server-state-vs-client-states": "server-state-vs-client-state",
+    "server state": "server-state-vs-client-state",
+    "server-state": "server-state-vs-client-state",
+    "server states": "server-state-vs-client-state",
+    "client state": "server-state-vs-client-state",
+    "client-state": "server-state-vs-client-state",
+    "client states": "server-state-vs-client-state",
+    "ui state": "server-state-vs-client-state",
+    "ui-state": "server-state-vs-client-state",
+    "ui states": "server-state-vs-client-state",
+    "service worker": "service-worker",
+    "service-worker": "service-worker",
+    "service workers": "service-worker",
+    "service-workers": "service-worker",
+    "service worker api": "service-worker",
+    "service-worker-api": "service-worker",
+    "service worker apis": "service-worker",
+    "sessionstorage": "session-storage",
+    "sessionstorages": "session-storage",
+    "session-storage": "session-storage",
+    "session storage": "session-storage",
+    "session-storages": "session-storage",
+    "session storages": "session-storage",
+    "set (data structure)": "set-data-structure",
+    "set-(data-structure)": "set-data-structure",
+    "set (data structure)s": "set-data-structure",
+    "set-data-structure": "set-data-structure",
+    "set data structure": "set-data-structure",
+    "set-data-structures": "set-data-structure",
+    "es6 set": "set-data-structure",
+    "es6-set": "set-data-structure",
+    "es6 sets": "set-data-structure",
+    "javascript set": "set-data-structure",
+    "javascript-set": "set-data-structure",
+    "javascript sets": "set-data-structure",
+    "set object": "set-data-structure",
+    "set-object": "set-data-structure",
+    "set objects": "set-data-structure",
+    "shallow copy": "shallow-copy",
+    "shallow-copy": "shallow-copy",
+    "shallow copys": "shallow-copy",
+    "shallow-copys": "shallow-copy",
+    "snapshot testing": "snapshot-testing",
+    "snapshot-testing": "snapshot-testing",
+    "snapshot tested": "snapshot-testing",
+    "snapshot testings": "snapshot-testing",
+    "snapshot-tested": "snapshot-testing",
+    "snapshot-testings": "snapshot-testing",
+    "snapshot tests": "snapshot-testing",
+    "snapshot-tests": "snapshot-testing",
+    "tomatchsnapshot": "snapshot-testing",
+    "tomatchsnapshots": "snapshot-testing",
+    "source map": "source-map",
+    "source-map": "source-map",
+    "source maps": "source-map",
+    "source-maps": "source-map",
+    "sourcemap": "source-map",
+    "sourcemaps": "source-map",
+    "static methods": "static-methods",
+    "static-methods": "static-methods",
+    "static keyword": "static-methods",
+    "static-keyword": "static-methods",
+    "static keywords": "static-methods",
+    "class static methods": "static-methods",
+    "class-static-methods": "static-methods",
+    "strangler fig pattern": "strangler-fig-pattern",
+    "strangler-fig-pattern": "strangler-fig-pattern",
+    "strangler fig patterns": "strangler-fig-pattern",
+    "strangler-fig-patterns": "strangler-fig-pattern",
+    "strangler fig": "strangler-fig-pattern",
+    "strangler-fig": "strangler-fig-pattern",
+    "strangler figs": "strangler-fig-pattern",
+    "strangler pattern": "strangler-fig-pattern",
+    "strangler-pattern": "strangler-fig-pattern",
+    "strangler patterns": "strangler-fig-pattern",
+    "streaming ssr": "streaming-ssr",
+    "streaming-ssr": "streaming-ssr",
+    "streaming ssrs": "streaming-ssr",
+    "streaming-ssrs": "streaming-ssr",
+    "streaming server rendering": "streaming-ssr",
+    "streaming-server-rendering": "streaming-ssr",
+    "streaming server rendered": "streaming-ssr",
+    "streaming server renderings": "streaming-ssr",
+    "progressive html": "streaming-ssr",
+    "progressive-html": "streaming-ssr",
+    "progressive htmls": "streaming-ssr",
+    "strict equality (===)": "strict-equality",
+    "strict-equality-(===)": "strict-equality",
+    "strict equality (===)s": "strict-equality",
+    "strict-equality": "strict-equality",
+    "strict equality": "strict-equality",
+    "strict-equalitys": "strict-equality",
+    "strict equalitys": "strict-equality",
+    "triple equals": "strict-equality",
+    "triple-equals": "strict-equality",
+    "strict mode": "strict-mode",
+    "strict-mode": "strict-mode",
+    "strict modes": "strict-mode",
+    "strict-modes": "strict-mode",
+    "use strict": "strict-mode",
+    "use-strict": "strict-mode",
+    "use stricts": "strict-mode",
+    "structuredclone": "structured-clone",
+    "structuredclones": "structured-clone",
+    "structured-clone": "structured-clone",
+    "structured clone": "structured-clone",
+    "structured-clones": "structured-clone",
+    "structured clone api": "structured-clone",
+    "structured-clone-api": "structured-clone",
+    "structured clone apis": "structured-clone",
+    "super keyword": "super-keyword",
+    "super-keyword": "super-keyword",
+    "super keywords": "super-keyword",
+    "super-keywords": "super-keyword",
+    "super()": "super-keyword",
+    "super()s": "super-keyword",
+    "symbol": "symbol",
+    "symbols": "symbol",
+    "well-known symbols": "symbol",
+    "well known symbols": "symbol",
+    "well-known-symbols": "symbol",
+    "syntaxerror": "syntax-error",
+    "syntaxerrors": "syntax-error",
+    "syntax-error": "syntax-error",
+    "syntax error": "syntax-error",
+    "syntax-errors": "syntax-error",
+    "tanstack query": "tanstack-query",
+    "tanstack-query": "tanstack-query",
+    "tanstack querys": "tanstack-query",
+    "tanstack-querys": "tanstack-query",
+    "react query": "tanstack-query",
+    "react-query": "tanstack-query",
+    "react querys": "tanstack-query",
+    "usequery": "tanstack-query",
+    "usequerys": "tanstack-query",
+    "tanstack virtual": "tanstack-virtual",
+    "tanstack-virtual": "tanstack-virtual",
+    "tanstack virtuals": "tanstack-virtual",
+    "tanstack-virtuals": "tanstack-virtual",
+    "@tanstack/react-virtual": "tanstack-virtual",
+    "@tanstack/react virtual": "tanstack-virtual",
+    "@tanstack/react-virtuals": "tanstack-virtual",
+    "usevirtualizer": "tanstack-virtual",
+    "usevirtualizers": "tanstack-virtual",
+    "technical debt": "technical-debt",
+    "technical-debt": "technical-debt",
+    "technical debts": "technical-debt",
+    "technical-debts": "technical-debt",
+    "tech debt": "technical-debt",
+    "tech-debt": "technical-debt",
+    "tech debts": "technical-debt",
+    "temporal dead zone (tdz)": "temporal-dead-zone",
+    "temporal-dead-zone-(tdz)": "temporal-dead-zone",
+    "temporal dead zone (tdz)s": "temporal-dead-zone",
+    "temporal-dead-zone": "temporal-dead-zone",
+    "temporal dead zone": "temporal-dead-zone",
+    "temporal-dead-zones": "temporal-dead-zone",
+    "tdz": "temporal-dead-zone",
+    "temporal dead zones": "temporal-dead-zone",
+    "testing pyramid": "testing-pyramid",
+    "testing-pyramid": "testing-pyramid",
+    "testing pyramids": "testing-pyramid",
+    "testing-pyramids": "testing-pyramid",
+    "test pyramid": "testing-pyramid",
+    "test-pyramid": "testing-pyramid",
+    "test pyramids": "testing-pyramid",
+    "testing strategy": "testing-pyramid",
+    "testing-strategy": "testing-pyramid",
+    "testing strategys": "testing-pyramid",
+    "unit tests": "testing-pyramid",
+    "unit-tests": "testing-pyramid",
+    "integration tests": "testing-pyramid",
+    "integration-tests": "testing-pyramid",
+    "unit integration e2e": "testing-pyramid",
+    "unit-integration-e2e": "testing-pyramid",
+    "unit integration e2es": "testing-pyramid",
+    "textcontent": "text-content",
+    "textcontents": "text-content",
+    "text-content": "text-content",
+    "text content": "text-content",
+    "text-contents": "text-content",
+    "textcontent property": "text-content",
+    "textcontent-property": "text-content",
+    "textcontent propertys": "text-content",
+    "innertext": "text-content",
+    "innertexts": "text-content",
+    "this binding": "this-binding",
+    "this-binding": "this-binding",
+    "this binded": "this-binding",
+    "this bindings": "this-binding",
+    "this-binded": "this-binding",
+    "this-bindings": "this-binding",
+    "this": "this-binding",
+    "context binding": "this-binding",
+    "context-binding": "this-binding",
+    "context binded": "this-binding",
+    "context bindings": "this-binding",
+    "timers (settimeout / setinterval)": "timers",
+    "timers-(settimeout-/-setinterval)": "timers",
+    "timers (settimeout / setinterval)s": "timers",
+    "timers": "timers",
+    "settimeout": "timers",
+    "settimeouts": "timers",
+    "setinterval": "timers",
+    "setintervals": "timers",
+    "setimmediate": "timers",
+    "setimmediates": "timers",
+    "timer apis": "timers",
+    "timer-apis": "timers",
+    "tree shaking": "tree-shaking",
+    "tree-shaking": "tree-shaking",
+    "tree shaked": "tree-shaking",
+    "tree shakings": "tree-shaking",
+    "tree-shaked": "tree-shaking",
+    "tree-shakings": "tree-shaking",
+    "dead code elimination": "tree-shaking",
+    "dead-code-elimination": "tree-shaking",
+    "dead code eliminations": "tree-shaking",
+    "truthy and falsy values": "truthy-falsy",
+    "truthy-and-falsy-values": "truthy-falsy",
+    "truthy-falsy": "truthy-falsy",
+    "truthy falsy": "truthy-falsy",
+    "truthy-falsys": "truthy-falsy",
+    "truthy": "truthy-falsy",
+    "truthys": "truthy-falsy",
+    "falsy": "truthy-falsy",
+    "falsys": "truthy-falsy",
+    "boolean coercion": "truthy-falsy",
+    "boolean-coercion": "truthy-falsy",
+    "boolean coercions": "truthy-falsy",
+    "try/catch/finally": "try-catch-finally",
+    "try/catch/finallys": "try-catch-finally",
+    "try-catch-finally": "try-catch-finally",
+    "try catch finally": "try-catch-finally",
+    "try-catch-finallys": "try-catch-finally",
+    "try catch finallys": "try-catch-finally",
+    "try-catch": "try-catch-finally",
+    "try catch": "try-catch-finally",
+    "try-catchs": "try-catch-finally",
+    "try": "try-catch-finally",
+    "catch": "try-catch-finally",
+    "catchs": "try-catch-finally",
+    "finally": "try-catch-finally",
+    "finallys": "try-catch-finally",
+    "try...catch...finally": "try-catch-finally",
+    "try...catch...finallys": "try-catch-finally",
+    "type coercion": "type-coercion",
+    "type-coercion": "type-coercion",
+    "type coercions": "type-coercion",
+    "type-coercions": "type-coercion",
+    "implicit conversion": "type-coercion",
+    "implicit-conversion": "type-coercion",
+    "implicit conversions": "type-coercion",
+    "explicit conversion": "type-coercion",
+    "explicit-conversion": "type-coercion",
+    "explicit conversions": "type-coercion",
+    "typeerror": "type-error",
+    "typeerrors": "type-error",
+    "type-error": "type-error",
+    "type error": "type-error",
+    "type-errors": "type-error",
+    "type guards": "type-guards",
+    "type-guards": "type-guards",
+    "type guard": "type-guards",
+    "type-guard": "type-guards",
+    "typescript narrowing": "type-guards",
+    "typescript-narrowing": "type-guards",
+    "typescript narrowed": "type-guards",
+    "typescript narrowings": "type-guards",
+    "typescript conditional types": "typescript-conditional-types",
+    "typescript-conditional-types": "typescript-conditional-types",
+    "conditional types": "typescript-conditional-types",
+    "conditional-types": "typescript-conditional-types",
+    "typescript generics": "typescript-generics",
+    "typescript-generics": "typescript-generics",
+    "generics": "typescript-generics",
+    "generic types": "typescript-generics",
+    "generic-types": "typescript-generics",
+    "generic components": "typescript-generics",
+    "generic-components": "typescript-generics",
+    "typescript mapped types": "typescript-mapped-types",
+    "typescript-mapped-types": "typescript-mapped-types",
+    "mapped types": "typescript-mapped-types",
+    "mapped-types": "typescript-mapped-types",
+    "keyof mapped types": "typescript-mapped-types",
+    "keyof-mapped-types": "typescript-mapped-types",
+    "typing react components": "typescript-react-components",
+    "typing-react-components": "typescript-react-components",
+    "typescript-react-components": "typescript-react-components",
+    "typescript react components": "typescript-react-components",
+    "type react components": "typescript-react-components",
+    "type-react-components": "typescript-react-components",
+    "react.fc": "typescript-react-components",
+    "react.fcs": "typescript-react-components",
+    "fc": "typescript-react-components",
+    "function components typescript": "typescript-react-components",
+    "function-components-typescript": "typescript-react-components",
+    "function components typescripts": "typescript-react-components",
+    "typing react event handlers": "typescript-react-events",
+    "typing-react-event-handlers": "typescript-react-events",
+    "typescript-react-events": "typescript-react-events",
+    "typescript react events": "typescript-react-events",
+    "event handlers": "typescript-react-events",
+    "event-handlers": "typescript-react-events",
+    "react.changeevent": "typescript-react-events",
+    "react.changeevents": "typescript-react-events",
+    "react.mouseevent": "typescript-react-events",
+    "react.mouseevents": "typescript-react-events",
+    "undefined": "undefined",
+    "undefineds": "undefined",
+    "undefined value": "undefined",
+    "undefined-value": "undefined",
+    "undefined values": "undefined",
+    "unhandled promise rejection": "unhandled-promise-rejection",
+    "unhandled-promise-rejection": "unhandled-promise-rejection",
+    "unhandled promise rejections": "unhandled-promise-rejection",
+    "unhandled-promise-rejections": "unhandled-promise-rejection",
+    "unhandled rejection": "unhandled-promise-rejection",
+    "unhandled-rejection": "unhandled-promise-rejection",
+    "unhandled rejections": "unhandled-promise-rejection",
+    "usecallback": "use-callback",
+    "usecallbacks": "use-callback",
+    "use-callback": "use-callback",
+    "use callback": "use-callback",
+    "use-callbacks": "use-callback",
+    "usecallback hook": "use-callback",
+    "usecallback-hook": "use-callback",
+    "usecallback hooks": "use-callback",
+    "react usecallback": "use-callback",
+    "react-usecallback": "use-callback",
+    "react usecallbacks": "use-callback",
+    "usecontext": "use-context",
+    "usecontexts": "use-context",
+    "use-context": "use-context",
+    "use context": "use-context",
+    "use-contexts": "use-context",
+    "usecontext hook": "use-context",
+    "usecontext-hook": "use-context",
+    "usecontext hooks": "use-context",
+    "useeffect": "use-effect",
+    "useeffects": "use-effect",
+    "use-effect": "use-effect",
+    "use effect": "use-effect",
+    "use-effects": "use-effect",
+    "useeffect hook": "use-effect",
+    "useeffect-hook": "use-effect",
+    "useeffect hooks": "use-effect",
+    "react useeffect": "use-effect",
+    "react-useeffect": "use-effect",
+    "react useeffects": "use-effect",
+    "useimperativehandle": "use-imperative-handle",
+    "useimperativehandles": "use-imperative-handle",
+    "use-imperative-handle": "use-imperative-handle",
+    "use imperative handle": "use-imperative-handle",
+    "use-imperative-handles": "use-imperative-handle",
+    "useimperativehandle hook": "use-imperative-handle",
+    "useimperativehandle-hook": "use-imperative-handle",
+    "useimperativehandle hooks": "use-imperative-handle",
+    "uselayouteffect": "use-layout-effect",
+    "uselayouteffects": "use-layout-effect",
+    "use-layout-effect": "use-layout-effect",
+    "use layout effect": "use-layout-effect",
+    "use-layout-effects": "use-layout-effect",
+    "uselayouteffect hook": "use-layout-effect",
+    "uselayouteffect-hook": "use-layout-effect",
+    "uselayouteffect hooks": "use-layout-effect",
+    "usememo": "use-memo",
+    "usememos": "use-memo",
+    "use-memo": "use-memo",
+    "use memo": "use-memo",
+    "use-memos": "use-memo",
+    "usememo hook": "use-memo",
+    "usememo-hook": "use-memo",
+    "usememo hooks": "use-memo",
+    "react usememo": "use-memo",
+    "react-usememo": "use-memo",
+    "react usememos": "use-memo",
+    "useoptimistic": "use-optimistic",
+    "useoptimistics": "use-optimistic",
+    "use-optimistic": "use-optimistic",
+    "use optimistic": "use-optimistic",
+    "use-optimistics": "use-optimistic",
+    "optimistic ui": "use-optimistic",
+    "optimistic-ui": "use-optimistic",
+    "optimistic uis": "use-optimistic",
+    "usereducer": "use-reducer",
+    "usereducers": "use-reducer",
+    "use-reducer": "use-reducer",
+    "use reducer": "use-reducer",
+    "use-reducers": "use-reducer",
+    "usereducer hook": "use-reducer",
+    "usereducer-hook": "use-reducer",
+    "usereducer hooks": "use-reducer",
+    "react usereducer": "use-reducer",
+    "react-usereducer": "use-reducer",
+    "react usereducers": "use-reducer",
+    "useref": "use-ref",
+    "userefs": "use-ref",
+    "use-ref": "use-ref",
+    "use ref": "use-ref",
+    "use-refs": "use-ref",
+    "useref hook": "use-ref",
+    "useref-hook": "use-ref",
+    "useref hooks": "use-ref",
+    "react useref": "use-ref",
+    "react-useref": "use-ref",
+    "react userefs": "use-ref",
+    "usestate": "use-state",
+    "usestates": "use-state",
+    "use-state": "use-state",
+    "use state": "use-state",
+    "use-states": "use-state",
+    "usestate hook": "use-state",
+    "usestate-hook": "use-state",
+    "usestate hooks": "use-state",
+    "react usestate": "use-state",
+    "react-usestate": "use-state",
+    "react usestates": "use-state",
+    "value vs reference": "value-vs-reference",
+    "value-vs-reference": "value-vs-reference",
+    "value vs references": "value-vs-reference",
+    "value-vs-references": "value-vs-reference",
+    "reference type": "value-vs-reference",
+    "reference-type": "value-vs-reference",
+    "reference types": "value-vs-reference",
+    "primitive vs object": "value-vs-reference",
+    "primitive-vs-object": "value-vs-reference",
+    "primitive vs objects": "value-vs-reference",
+    "by value": "value-vs-reference",
+    "by-value": "value-vs-reference",
+    "by values": "value-vs-reference",
+    "by reference": "value-vs-reference",
+    "by-reference": "value-vs-reference",
+    "by references": "value-vs-reference",
+    "var": "var",
+    "virtual dom": "virtual-dom",
+    "virtual-dom": "virtual-dom",
+    "virtual doms": "virtual-dom",
+    "virtual-doms": "virtual-dom",
+    "vdom": "virtual-dom",
+    "vdoms": "virtual-dom",
+    "vite": "vite",
+    "vites": "vite",
+    "vite bundler": "vite",
+    "vite-bundler": "vite",
+    "vite bundlers": "vite",
+    "web workers": "web-workers",
+    "web-workers": "web-workers",
+    "web worker": "web-workers",
+    "web-worker": "web-workers",
+    "webpack": "webpack",
+    "webpacks": "webpack",
+    "webpack bundler": "webpack",
+    "webpack-bundler": "webpack",
+    "webpack bundlers": "webpack",
+    "xss (cross-site scripting)": "xss",
+    "xss (cross site scripting)": "xss",
+    "xss-(cross-site-scripting)": "xss",
+    "xss (cross-site scripting)s": "xss",
+    "xss": "xss",
+    "cross-site scripting": "xss",
+    "cross site scripting": "xss",
+    "cross-site-scripting": "xss",
+    "cross-site scripted": "xss",
+    "cross-site scriptings": "xss",
+    "zustand": "zustand",
+    "zustands": "zustand",
+    "zustand state library": "zustand",
+    "zustand-state-library": "zustand",
+    "zustand state librarys": "zustand",
+    "map": "array-map-filter-reduce",
+    "filter": "array-map-filter-reduce",
+    "filters": "array-map-filter-reduce",
+    "reduce": "array-map-filter-reduce",
+    "reduces": "array-map-filter-reduce",
+    "foreach": "array-map-filter-reduce",
+    "foreachs": "array-map-filter-reduce",
+    "findindex": "array-map-filter-reduce",
+    "findindexs": "array-map-filter-reduce",
+    "find": "array-map-filter-reduce",
+    "finds": "array-map-filter-reduce",
+    "flatmap": "array-map-filter-reduce",
+    "flatmaps": "array-map-filter-reduce",
+    "promise.all": "promise",
+    "promise.alls": "promise",
+    "promise.race": "promise",
+    "promise.races": "promise",
+    "promise.any": "promise",
+    "promise.anys": "promise",
+    "promise.allsettled": "promise",
+    "promise.allsettleds": "promise",
+    "promise.resolve": "promise",
+    "promise.resolves": "promise",
+    ".then()": "promise",
+    ".then()s": "promise",
+    ".catch()": "promise",
+    ".catch()s": "promise",
+    "prototype": "prototype-chain",
+    "prototypes": "prototype-chain",
+    "[[prototype]]": "prototype-chain",
+    "[[prototype]]s": "prototype-chain",
+    "object.prototype": "prototype-chain",
+    "object.prototypes": "prototype-chain",
+    "settimeout(0)": "timers",
+    "settimeout(0)s": "timers",
+    "===": "strict-equality",
+    "enumerable": "property-descriptors",
+    "enumerables": "property-descriptors",
+    "configurable": "property-descriptors",
+    "configurables": "property-descriptors",
+    "writable": "property-descriptors",
+    "writables": "property-descriptors",
+    "rerender": "react-re-render",
+    "rerenders": "react-re-render",
+    "diffing": "reconciliation",
+    "diffed": "reconciliation",
+    "diffings": "reconciliation",
+    "prototypal": "prototype-chain",
+    "prototypals": "prototype-chain",
+    "local state": "props-vs-state",
+    "local-state": "props-vs-state",
+    "local states": "props-vs-state",
+    "global state": "react-context-api",
+    "global-state": "react-context-api",
+    "global states": "react-context-api",
+    "propagation": "event-bubbling-capturing",
+    "propagations": "event-bubbling-capturing",
+    "logging": "observability",
+    "logged": "observability",
+    "loggings": "observability",
+    "env": "environment-variables",
+    "boolean": "boolean-conversion",
+    "booleans": "boolean-conversion",
+    "shuffle": "fisher-yates-shuffle",
+    "shuffles": "fisher-yates-shuffle",
+    "custom error": "custom-error-types",
+    "custom-error": "custom-error-types",
+    "unit, integration, and e2e": "testing-pyramid",
+    "unit,-integration,-and-e2e": "testing-pyramid",
+    "unit, integration, and e2es": "testing-pyramid",
+    "profiling": "js-profiling",
+    "profiled": "js-profiling",
+    "profilings": "js-profiling",
+    "index as key": "react-key-prop",
+    "index-as-key": "react-key-prop",
+    "index as keys": "react-key-prop",
+    "structure a large react application": "feature-based-architecture",
+    "structure-a-large-react-application": "feature-based-architecture",
+    "structure a large react applications": "feature-based-architecture",
+    "large react application": "feature-based-architecture",
+    "large-react-application": "feature-based-architecture",
+    "large react applications": "feature-based-architecture",
+    "local and global state": "props-vs-state",
+    "local-and-global-state": "props-vs-state",
+    "local and global states": "props-vs-state",
+    "performance bottlenecks": "js-profiling",
+    "performance-bottlenecks": "js-profiling",
+    "deployment process": "ci-cd",
+    "deployment-process": "ci-cd",
+    "documentation": "adr",
+    "documentations": "adr",
+    "readability": "coding-standards",
+    "readabilitys": "coding-standards",
+    "css selectors": "css-selector-performance",
+    "css-selectors": "css-selector-performance",
+    "context": "use-context",
+    "contexts": "use-context"
+  }
+}

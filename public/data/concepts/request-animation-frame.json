@@ -1,0 +1,24 @@
+{
+  "id": "request-animation-frame",
+  "title": "requestAnimationFrame",
+  "aliases": [
+    "requestAnimationFrame",
+    "rAF"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "reflow-repaint",
+    "inp"
+  ],
+  "usedInFlashcards": [
+    271
+  ],
+  "body": "## Definition\r\n\r\n**requestAnimationFrame** schedules a callback before the next browser repaint (~60fps).\r\n\r\n## Why it exists\r\n\r\nSmooth animations synced with display refresh; better than `setInterval` for DOM visual updates.\r\n\r\n## How it works\r\n\r\n```js\r\nfunction tick() {\r\n  update();\r\n  requestAnimationFrame(tick);\r\n}\r\nrequestAnimationFrame(tick);\r\n```\r\n\r\nPauses in background tabs. Chains with [composite](concept:reflow-repaint)-friendly `transform` animations.\r\n\r\n## In practice\r\n\r\nCustom animations, scroll-linked effects; prefer CSS animations when possible.",
+  "bodyLinked": "## Definition\r\n\r\n**[requestAnimationFrame](concept:request-animation-frame)** schedules a callback before the next browser [repaint](concept:reflow-repaint) (~60fps).\r\n\r\n## Why it exists\r\n\r\nSmooth animations synced with display refresh; better than [setInterval](concept:timers) for [DOM](concept:dom) visual updates.\r\n\r\n## How it works\r\n\r\n```js\r\nfunction tick() {\r\n  update();\r\n  requestAnimationFrame(tick);\r\n}\r\nrequestAnimationFrame(tick);\r\n```\r\n\r\nPauses in background tabs. Chains with [composite](concept:reflow-repaint)-friendly `transform` animations.\r\n\r\n## In practice\r\n\r\nCustom animations, scroll-linked effects; prefer CSS animations when possible.",
+  "conceptIds": [
+    "request-animation-frame",
+    "reflow-repaint",
+    "timers",
+    "dom"
+  ]
+}

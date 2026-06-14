@@ -1,0 +1,35 @@
+{
+  "id": "use-memo",
+  "title": "useMemo",
+  "aliases": [
+    "useMemo hook",
+    "React useMemo"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "use-callback",
+    "react-memo",
+    "dependency-array"
+  ],
+  "usedInFlashcards": [
+    141,
+    147,
+    149,
+    150,
+    167,
+    182,
+    200,
+    210
+  ],
+  "body": "## Definition\r\n\r\n**useMemo** memoizes a **computed value** between renders, recalculating only when [dependencies](concept:dependency-array) change.\r\n\r\n## Why it exists\r\n\r\nAvoid expensive recomputation (filter/sort large lists) and stabilize object references for deps.\r\n\r\n## How it works\r\n\r\n```js\r\nconst visible = useMemo(\r\n  () => items.filter(i => i.active),\r\n  [items]\r\n);\r\n```\r\n\r\nUses `Object.is` on deps. Returns cached value if deps unchanged.\r\n\r\n## Common confusion\r\n\r\nNot free — overhead for cheap math. Does not prevent child [re-renders](concept:react-re-render) unless combined with [React.memo](concept:react-memo) and stable props.\r\n\r\n## In practice\r\n\r\nProfile first; React Compiler may auto-memoize in future ([react-compiler](concept:react-compiler)).",
+  "bodyLinked": "## Definition\r\n\r\n**[useMemo](concept:use-memo)** memoizes a **computed value** between renders, recalculating only when [dependencies](concept:dependency-array) change.\r\n\r\n## Why it exists\r\n\r\nAvoid expensive recomputation ([filter](concept:array-map-filter-reduce)/sort [large lists](concept:react-list-virtualization)) and stabilize object references for deps.\r\n\r\n## How it works\r\n\r\n```js\r\nconst visible = useMemo(\r\n  () => items.filter(i => i.active),\r\n  [items]\r\n);\r\n```\r\n\r\nUses `Object.is` on deps. Returns cached value if deps unchanged.\r\n\r\n## Common confusion\r\n\r\nNot free — overhead for cheap math. Does not prevent child [re-renders](concept:react-re-render) unless combined with [React.memo](concept:react-memo) and stable props.\r\n\r\n## In practice\r\n\r\nProfile first; [React Compiler](concept:react-compiler) may auto-memoize in future ([react-compiler](concept:react-compiler)).",
+  "conceptIds": [
+    "use-memo",
+    "dependency-array",
+    "array-map-filter-reduce",
+    "react-list-virtualization",
+    "react-re-render",
+    "react-memo",
+    "react-compiler"
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "id": "this-binding",
+  "title": "this Binding",
+  "aliases": [
+    "this",
+    "this binding",
+    "context binding"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "arrow-function",
+    "function-expression",
+    "call-apply-bind"
+  ],
+  "usedInFlashcards": [
+    5,
+    15,
+    16,
+    20,
+    21,
+    30,
+    31,
+    34,
+    64,
+    67,
+    108,
+    129,
+    130,
+    136,
+    140,
+    180,
+    240
+  ],
+  "body": "## Definition\r\n\r\n**this binding** is how JavaScript determines the value of `this` for a function call — it depends on **how** the function is invoked, not where it is written (unlike [lexical scope](concept:lexical-scope)).\r\n\r\n## Why it exists\r\n\r\nObject-oriented patterns need methods to reference their owner. Callbacks lose that unless bound.\r\n\r\n## How it works\r\n\r\nRules (simplified):\r\n\r\n1. `obj.method()` → `this` is `obj`\r\n2. Plain call `fn()` → `this` is `undefined` in strict/modules, or global in sloppy\r\n3. `new fn()` → `this` is new object\r\n4. `call`/`apply`/`bind` → explicit `this`\r\n5. [Arrow functions](concept:arrow-function) → lexical `this` from outer scope\r\n\r\n## Example\r\n\r\n```js\r\nconst counter = {\r\n  n: 0,\r\n  inc() { this.n++; },\r\n};\r\nconst loose = counter.inc;\r\nloose(); // not incrementing counter.n — wrong `this`\r\n```\r\n\r\n## Common confusion\r\n\r\n`this` is not the [lexical environment](concept:lexical-environment). React class components used `bind` or arrows for this reason.\r\n\r\n## In practice\r\n\r\nUse arrows in callbacks, `bind` for legacy, or class fields. Know [call, apply, bind](concept:call-apply-bind) for interviews.",
+  "bodyLinked": "## Definition\r\n\r\n**[this binding](concept:this-binding)** is how JavaScript determines the value of [this](concept:this-binding) for a function [call](concept:call-apply-bind) — it depends on **how** the function is invoked, not where it is written (unlike [lexical scope](concept:lexical-scope)).\r\n\r\n## Why it exists\r\n\r\nObject-oriented patterns need methods to reference their owner. Callbacks lose that unless bound.\r\n\r\n## How it works\r\n\r\nRules (simplified):\r\n\r\n1. `obj.method()` → [this](concept:this-binding) is `obj`\r\n2. Plain [call](concept:call-apply-bind) `fn()` → [this](concept:this-binding) is [undefined](concept:undefined) in strict/modules, or global in sloppy\r\n3. `new fn()` → [this](concept:this-binding) is [new](concept:new-operator) object\r\n4. [call](concept:call-apply-bind)/[apply](concept:call-apply-bind)/[bind](concept:call-apply-bind) → explicit [this](concept:this-binding)\r\n5. [Arrow functions](concept:arrow-function) → lexical [this](concept:this-binding) from outer scope\r\n\r\n## Example\r\n\r\n```js\r\nconst counter = {\r\n  n: 0,\r\n  inc() { this.n++; },\r\n};\r\nconst loose = counter.inc;\r\nloose(); // not incrementing counter.n — wrong `this`\r\n```\r\n\r\n## Common confusion\r\n\r\n[this](concept:this-binding) is not the [lexical environment](concept:lexical-environment). React [class](concept:es6-class) components used [bind](concept:call-apply-bind) or arrows for [this](concept:this-binding) reason.\r\n\r\n## In practice\r\n\r\nUse arrows in callbacks, [bind](concept:call-apply-bind) for legacy, or [class](concept:es6-class) fields. Know [call, apply, bind](concept:call-apply-bind) for interviews.",
+  "conceptIds": [
+    "this-binding",
+    "call-apply-bind",
+    "lexical-scope",
+    "undefined",
+    "new-operator",
+    "arrow-function",
+    "lexical-environment",
+    "es6-class"
+  ]
+}

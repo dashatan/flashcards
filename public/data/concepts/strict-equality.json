@@ -1,0 +1,29 @@
+{
+  "id": "strict-equality",
+  "title": "Strict Equality (===)",
+  "aliases": [
+    "strict equality",
+    "triple equals"
+  ],
+  "depth": "foundation",
+  "related": [
+    "type-coercion",
+    "value-vs-reference"
+  ],
+  "usedInFlashcards": [
+    71,
+    77
+  ],
+  "body": "## Definition\r\n\r\n**Strict equality** (`===`) compares two values without [type coercion](concept:type-coercion) — types and values must match.\r\n\r\n## Why it exists\r\n\r\nAvoids surprising `==` results like `0 == false` being true.\r\n\r\n## How it works\r\n\r\n- Primitives compared by value (except `NaN` — `NaN === NaN` is false).\r\n- Objects compared by [reference](concept:value-vs-reference), not deep structure.\r\n\r\n## Example\r\n\r\n```js\r\n5 === \"5\";      // false\r\nnull == undefined; // true with ==\r\nnull === undefined; // false\r\n{} === {};      // false (different references)\r\n```\r\n\r\n## Common confusion\r\n\r\nException: `value == null` checks both `null` and [undefined](concept:undefined) — intentional shorthand some teams allow.\r\n\r\n## In practice\r\n\r\nDefault to `===` everywhere except documented `== null` pattern.",
+  "bodyLinked": "## Definition\r\n\r\n**[Strict equality](concept:strict-equality)** ([===](concept:strict-equality)) compares two values without [type coercion](concept:type-coercion) — types and values must match.\r\n\r\n## Why it exists\r\n\r\nAvoids surprising [==](concept:loose-equality) results like `0 == false` being true.\r\n\r\n## How it works\r\n\r\n- Primitives compared [by value](concept:value-vs-reference) (except [NaN](concept:nan) — `NaN === NaN` is false).\r\n- Objects compared by [reference](concept:value-vs-reference), not deep structure.\r\n\r\n## Example\r\n\r\n```js\r\n5 === \"5\";      // false\r\nnull == undefined; // true with ==\r\nnull === undefined; // false\r\n{} === {};      // false (different references)\r\n```\r\n\r\n## Common confusion\r\n\r\nException: `value == null` checks both [null](concept:null-value) and [undefined](concept:undefined) — intentional shorthand [some](concept:array-some-every) teams allow.\r\n\r\n## In practice\r\n\r\nDefault to [===](concept:strict-equality) everywhere except documented `== null` pattern.",
+  "conceptIds": [
+    "strict-equality",
+    "type-coercion",
+    "loose-equality",
+    "value-vs-reference",
+    "nan",
+    "null-value",
+    "undefined",
+    "array-some-every"
+  ]
+}

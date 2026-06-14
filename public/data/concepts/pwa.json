@@ -1,0 +1,22 @@
+{
+  "id": "pwa",
+  "title": "Progressive Web App (PWA)",
+  "aliases": [
+    "PWA",
+    "progressive web app"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "service-worker",
+    "lazy-loading"
+  ],
+  "usedInFlashcards": [],
+  "body": "## Definition\r\n\r\nA **PWA** is a web app with installability, offline support, and app-like UX via manifest + [service worker](concept:service-worker).\r\n\r\n## Why it exists\r\n\r\nReach users without app store; reuse web stack; offline study apps like this flashcard project.\r\n\r\n## How it works\r\n\r\n`manifest.webmanifest` defines icons, theme, `display: standalone`. Service worker caches shell and assets. `beforeinstallprompt` for install UI.\r\n\r\n## In practice\r\n\r\nSerwist, Workbox; test offline in DevTools Application tab.",
+  "bodyLinked": "## Definition\r\n\r\nA **[PWA](concept:pwa)** is a web app with installability, offline support, and app-like UX via manifest + [service worker](concept:service-worker).\r\n\r\n## Why it exists\r\n\r\nReach users without app store; reuse web stack; offline study apps like [this](concept:this-binding) flashcard project.\r\n\r\n## How it works\r\n\r\n`manifest.webmanifest` defines icons, theme, `display: standalone`. [Service worker](concept:service-worker) caches shell and assets. `beforeinstallprompt` for install UI.\r\n\r\n## In practice\r\n\r\nSerwist, Workbox; test offline in [DevTools](concept:js-debugging-tools) Application tab.",
+  "conceptIds": [
+    "pwa",
+    "service-worker",
+    "this-binding",
+    "js-debugging-tools"
+  ]
+}

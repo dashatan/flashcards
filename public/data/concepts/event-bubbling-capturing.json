@@ -1,0 +1,25 @@
+{
+  "id": "event-bubbling-capturing",
+  "title": "Event Bubbling and Capturing",
+  "aliases": [
+    "event bubbling",
+    "event capturing",
+    "propagation phases"
+  ],
+  "depth": "foundation",
+  "related": [
+    "event-delegation",
+    "prevent-default"
+  ],
+  "usedInFlashcards": [
+    265,
+    266
+  ],
+  "body": "## Definition\r\n\r\nDOM events flow in three phases: **capturing** (window → target), **target**, then **bubbling** (target → window).\r\n\r\n## Why it exists\r\n\r\nPredictable order for nested handlers and delegation.\r\n\r\n## How it works\r\n\r\nDefault listeners run in bubbling phase. `{ capture: true }` runs in capturing phase first.\r\n\r\n`stopPropagation()` stops further propagation; `stopImmediatePropagation()` also blocks other listeners on same element.\r\n\r\n## In practice\r\n\r\nModal overlays, nested buttons, understanding React synthetic event delegation to root.",
+  "bodyLinked": "## Definition\r\n\r\n[DOM](concept:dom) events flow in three phases: **capturing** (window → target), **target**, then **bubbling** (target → window).\r\n\r\n## Why it exists\r\n\r\nPredictable order for nested handlers and delegation.\r\n\r\n## How it works\r\n\r\nDefault listeners run in bubbling phase. `{ capture: true }` runs in capturing phase first.\r\n\r\n`stopPropagation()` stops further [propagation](concept:event-bubbling-capturing); `stopImmediatePropagation()` also blocks other listeners on same element.\r\n\r\n## In practice\r\n\r\nModal overlays, nested buttons, understanding React synthetic [event delegation](concept:event-delegation) to root.",
+  "conceptIds": [
+    "dom",
+    "event-bubbling-capturing",
+    "event-delegation"
+  ]
+}

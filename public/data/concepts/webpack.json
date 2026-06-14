@@ -1,0 +1,24 @@
+{
+  "id": "webpack",
+  "title": "Webpack",
+  "aliases": [
+    "Webpack bundler"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "vite",
+    "code-splitting",
+    "tree-shaking"
+  ],
+  "usedInFlashcards": [
+    247,
+    248
+  ],
+  "body": "## Definition\r\n\r\n**Webpack** is a module bundler that builds a dependency graph and emits optimized asset bundles.\r\n\r\n## Why it exists\r\n\r\nLegacy standard for complex apps — loaders, plugins, Module Federation.\r\n\r\n## How it works\r\n\r\nEntry → resolve imports → loaders transform (TS, CSS) → plugins optimize → output chunks.\r\n\r\nSlower cold dev start than [Vite](concept:vite) because it bundles before serving.\r\n\r\n## In practice\r\n\r\nStill common in enterprise; know concepts even if daily driver is Vite.",
+  "bodyLinked": "## Definition\r\n\r\n**[Webpack](concept:webpack)** is a [module bundler](concept:module-bundlers) that builds a dependency graph and emits optimized asset bundles.\r\n\r\n## Why it exists\r\n\r\nLegacy standard for complex apps — loaders, plugins, Module Federation.\r\n\r\n## How it works\r\n\r\nEntry → resolve imports → loaders transform (TS, CSS) → plugins optimize → output chunks.\r\n\r\nSlower cold dev start than [Vite](concept:vite) because it bundles before serving.\r\n\r\n## In practice\r\n\r\nStill common in enterprise; know concepts even if daily driver is [Vite](concept:vite).",
+  "conceptIds": [
+    "webpack",
+    "module-bundlers",
+    "vite"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "git-branching",
+  "title": "Git branching strategy",
+  "aliases": [
+    "branching strategy",
+    "trunk-based development",
+    "GitFlow"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "ci-cd",
+    "monorepo",
+    "feature-flags"
+  ],
+  "usedInFlashcards": [
+    322
+  ],
+  "body": "## Definition\r\n\r\nA **branching strategy** defines how teams use branches — trunk-based (short-lived feature branches to main) vs GitFlow (develop/release branches).\r\n\r\n## Why it exists\r\n\r\nBalance integration frequency, release cadence, and [CI/CD](concept:ci-cd) automation.\r\n\r\n## How it works\r\n\r\nFeature branch → PR → CI checks → merge to main → deploy. Protect main; require reviews and green pipelines.\r\n\r\n## Common confusion\r\n\r\nHeavy GitFlow slows small teams; trunk-based needs strong CI and feature flags for incomplete work.\r\n\r\n## In practice\r\n\r\nMost frontend teams: short-lived branches + main always deployable + [feature flags](concept:feature-flags).",
+  "bodyLinked": "## Definition\r\n\r\nA **[branching strategy](concept:git-branching)** defines how teams use branches — trunk-based (short-lived feature branches to main) vs [GitFlow](concept:git-branching) (develop/release branches).\r\n\r\n## Why it exists\r\n\r\nBalance integration frequency, release cadence, and [CI/CD](concept:ci-cd) automation.\r\n\r\n## How it works\r\n\r\nFeature branch → PR → CI checks → merge to main → deploy. Protect main; require reviews and green pipelines.\r\n\r\n## Common confusion\r\n\r\nHeavy [GitFlow](concept:git-branching) slows small teams; trunk-based needs strong CI and [feature flags](concept:feature-flags) for incomplete work.\r\n\r\n## In practice\r\n\r\nMost frontend teams: short-lived branches + main always deployable + [feature flags](concept:feature-flags).",
+  "conceptIds": [
+    "git-branching",
+    "ci-cd",
+    "feature-flags"
+  ]
+}

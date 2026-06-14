@@ -1,0 +1,29 @@
+{
+  "id": "currying",
+  "title": "Currying",
+  "aliases": [
+    "curry",
+    "curried function"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "partial-application",
+    "higher-order-function",
+    "closure"
+  ],
+  "usedInFlashcards": [
+    24,
+    25
+  ],
+  "body": "## Definition\r\n\r\n**Currying** transforms a function of multiple arguments into a chain of unary functions: `f(a, b, c)` → `f(a)(b)(c)`.\r\n\r\n## Why it exists\r\n\r\nEnables reusable specialized functions and point-free style in functional libraries.\r\n\r\n## How it works\r\n\r\nEach call takes one argument and returns a new function closing over previous args via [closure](concept:closure).\r\n\r\n## Example\r\n\r\n```js\r\nconst add = (a) => (b) => a + b;\r\nconst add5 = add(5);\r\nadd5(3); // 8\r\n```\r\n\r\n## Common confusion\r\n\r\n[Partial application](concept:partial-application) fixes some args at once — not necessarily one-at-a-time. Lodash `curry` vs manual `bind` differ in arity handling.\r\n\r\n## In practice\r\n\r\nRare in everyday React code; common in FP utilities and interview “implement curry” questions.",
+  "bodyLinked": "## Definition\r\n\r\n**[Currying](concept:currying)** transforms a function of multiple [arguments](concept:arguments-object) into a chain of unary functions: `f(a, b, c)` → `f(a)(b)(c)`.\r\n\r\n## Why it exists\r\n\r\nEnables reusable specialized functions and point-free style in functional libraries.\r\n\r\n## How it works\r\n\r\nEach [call](concept:call-apply-bind) takes one argument and returns a [new](concept:new-operator) function closing over previous args via [closure](concept:closure).\r\n\r\n## Example\r\n\r\n```js\r\nconst add = (a) => (b) => a + b;\r\nconst add5 = add(5);\r\nadd5(3); // 8\r\n```\r\n\r\n## Common confusion\r\n\r\n[Partial application](concept:partial-application) fixes [some](concept:array-some-every) args at once — not necessarily one-at-a-time. Lodash [curry](concept:currying) vs manual [bind](concept:call-apply-bind) differ in arity handling.\r\n\r\n## In practice\r\n\r\nRare in everyday React code; common in FP utilities and interview “implement [curry](concept:currying)” questions.",
+  "conceptIds": [
+    "currying",
+    "arguments-object",
+    "call-apply-bind",
+    "new-operator",
+    "closure",
+    "partial-application",
+    "array-some-every"
+  ]
+}

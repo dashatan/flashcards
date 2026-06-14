@@ -1,0 +1,41 @@
+{
+  "id": "temporal-dead-zone",
+  "title": "Temporal Dead Zone (TDZ)",
+  "aliases": [
+    "TDZ",
+    "temporal dead zone"
+  ],
+  "depth": "foundation",
+  "related": [
+    "hoisting",
+    "block-scope",
+    "lexical-environment",
+    "reference-error"
+  ],
+  "usedInFlashcards": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    29
+  ],
+  "body": "## Definition\r\n\r\nThe **temporal dead zone (TDZ)** is the period between entering a scope and executing the `let` or `const` declaration line, during which the binding exists but cannot be accessed.\r\n\r\n## Why it exists\r\n\r\nBefore ES6, `var` was hoisted as [undefined](concept:undefined), which hid “use before declare” bugs. TDZ makes illegal access throw [ReferenceError](concept:reference-error), aligning runtime behavior with [block scope](concept:block-scope) and “declare before use.”\r\n\r\n## How it works\r\n\r\n1. Scope is created ([lexical environment](concept:lexical-environment)).\r\n2. `let`/`const` [bindings](concept:binding) are registered via [hoisting](concept:hoisting) but marked uninitialized.\r\n3. Any read of the name before the declaration line → ReferenceError (TDZ).\r\n4. Declaration line runs → binding initialized → name is usable.\r\n\r\n## Example\r\n\r\n```js\r\nconsole.log(x); // ReferenceError — TDZ\r\nlet x = 10;\r\nconsole.log(x); // 10\r\n\r\n// contrast with var:\r\nconsole.log(y); // undefined (no TDZ for var)\r\nvar y = 10;\r\n```\r\n\r\n## Common confusion\r\n\r\nTDZ applies to `let`, `const`, and `class` bindings. `typeof undeclaredVar` returns `\"undefined\"`, but `typeof` on a TDZ name still throws. Default parameters have their own scope — inner `let` with the same name as a parameter does not hit the outer TDZ oddly.\r\n\r\n## In practice\r\n\r\nCore to every `let` vs `var` interview answer. TDZ + per-iteration `let` in loops fixes classic closure bugs that `var` caused.",
+  "bodyLinked": "## Definition\r\n\r\nThe **[temporal dead zone (TDZ)](concept:temporal-dead-zone)** is the period between entering a scope and executing the [let](concept:let) or [const](concept:const) declaration line, during which the [binding](concept:binding) exists but cannot be accessed.\r\n\r\n## Why it exists\r\n\r\nBefore ES6, [var](concept:var) was [hoisted](concept:hoisting) as [undefined](concept:undefined), which hid “use before declare” bugs. [TDZ](concept:temporal-dead-zone) makes illegal access throw [ReferenceError](concept:reference-error), aligning runtime behavior with [block scope](concept:block-scope) and “declare before use.”\r\n\r\n## How it works\r\n\r\n1. Scope is created ([lexical environment](concept:lexical-environment)).\r\n2. [let](concept:let)/[const](concept:const) [bindings](concept:binding) are registered via [hoisting](concept:hoisting) but marked uninitialized.\r\n3. Any read of the name before the declaration line → [ReferenceError](concept:reference-error) ([TDZ](concept:temporal-dead-zone)).\r\n4. Declaration line runs → [binding](concept:binding) initialized → name is usable.\r\n\r\n## Example\r\n\r\n```js\r\nconsole.log(x); // ReferenceError — TDZ\r\nlet x = 10;\r\nconsole.log(x); // 10\r\n\r\n// contrast with var:\r\nconsole.log(y); // undefined (no TDZ for var)\r\nvar y = 10;\r\n```\r\n\r\n## Common confusion\r\n\r\n[TDZ](concept:temporal-dead-zone) applies to [let](concept:let), [const](concept:const), and [class](concept:es6-class) [bindings](concept:binding). `typeof undeclaredVar` returns `\"undefined\"`, but `typeof` on a [TDZ](concept:temporal-dead-zone) name still throws. Default parameters have their own scope — inner [let](concept:let) with the same name as a parameter does not hit the outer [TDZ](concept:temporal-dead-zone) oddly.\r\n\r\n## In practice\r\n\r\nCore to [every](concept:array-some-every) [let](concept:let) vs [var](concept:var) interview answer. [TDZ](concept:temporal-dead-zone) + per-[iteration](concept:iterator) [let](concept:let) in loops fixes classic [closure](concept:closure) bugs that [var](concept:var) caused.",
+  "conceptIds": [
+    "temporal-dead-zone",
+    "let",
+    "const",
+    "binding",
+    "var",
+    "hoisting",
+    "undefined",
+    "reference-error",
+    "block-scope",
+    "lexical-environment",
+    "es6-class",
+    "array-some-every",
+    "iterator",
+    "closure"
+  ]
+}

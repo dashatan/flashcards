@@ -1,0 +1,46 @@
+{
+  "id": "async-await",
+  "title": "async/await",
+  "aliases": [
+    "async",
+    "await",
+    "async await"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "promise",
+    "microtask"
+  ],
+  "usedInFlashcards": [
+    31,
+    37,
+    41,
+    42,
+    43,
+    44,
+    48,
+    50,
+    111,
+    112,
+    118,
+    128,
+    163,
+    176,
+    205,
+    206,
+    211,
+    212,
+    213,
+    215,
+    235,
+    250
+  ],
+  "body": "## Definition\r\n\r\n**async/await** is syntactic sugar over [Promises](concept:promise) — `async` functions always return a Promise; `await` pauses within the async function until a Promise settles.\r\n\r\n## Why it exists\r\n\r\nLinear readable async code with `try/catch` instead of `.then` chains.\r\n\r\n## How it works\r\n\r\n`await` does not block the main thread — it suspends the async function and resumes via [microtasks](concept:microtask) when the Promise resolves. Non-Promise values are wrapped with `Promise.resolve`.\r\n\r\n## Example\r\n\r\n```js\r\nasync function loadUser(id) {\r\n  try {\r\n    const res = await fetch(`/api/users/${id}`);\r\n    return await res.json();\r\n  } catch (error) {\r\n    console.error(error);\r\n    throw error;\r\n  }\r\n}\r\n```\r\n\r\n## Common confusion\r\n\r\nForgotten `await` returns a pending Promise. Parallel work needs `Promise.all`, not sequential awaits.\r\n\r\n## In practice\r\n\r\nDefault for async in TS/React. Top-level await in ES modules.",
+  "bodyLinked": "## Definition\r\n\r\n**[async/await](concept:async-await)** is syntactic sugar over [Promises](concept:promise) — [async](concept:async-await) functions always return a [Promise](concept:promise); [await](concept:async-await) pauses within the [async](concept:async-await) function until a [Promise](concept:promise) settles.\r\n\r\n## Why it exists\r\n\r\nLinear readable [async](concept:async-await) code with `try/catch` instead of `.then` chains.\r\n\r\n## How it works\r\n\r\n[await](concept:async-await) does not block the main thread — it suspends the [async](concept:async-await) function and resumes via [microtasks](concept:microtask) when the [Promise](concept:promise) resolves. Non-[Promise](concept:promise) values are wrapped with [Promise.resolve](concept:promise).\r\n\r\n## Example\r\n\r\n```js\r\nasync function loadUser(id) {\r\n  try {\r\n    const res = await fetch(`/api/users/${id}`);\r\n    return await res.json();\r\n  } catch (error) {\r\n    console.error(error);\r\n    throw error;\r\n  }\r\n}\r\n```\r\n\r\n## Common confusion\r\n\r\nForgotten [await](concept:async-await) returns a pending [Promise](concept:promise). Parallel work needs [Promise.all](concept:promise), not sequential [awaits](concept:async-await).\r\n\r\n## In practice\r\n\r\nDefault for [async](concept:async-await) in TS/React. Top-level [await](concept:async-await) in [ES modules](concept:es-modules).",
+  "conceptIds": [
+    "async-await",
+    "promise",
+    "microtask",
+    "es-modules"
+  ]
+}

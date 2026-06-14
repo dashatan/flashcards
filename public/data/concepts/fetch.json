@@ -1,0 +1,35 @@
+{
+  "id": "fetch",
+  "title": "fetch API",
+  "aliases": [
+    "fetch",
+    "Fetch API",
+    "window.fetch"
+  ],
+  "depth": "foundation",
+  "related": [
+    "promise",
+    "abort-controller",
+    "cors",
+    "async-await"
+  ],
+  "usedInFlashcards": [
+    47,
+    139,
+    192,
+    277
+  ],
+  "body": "## Definition\r\n\r\nThe **`fetch`** API performs network requests and returns a [Promise](concept:promise) resolving to a `Response` — modern replacement for `XMLHttpRequest`.\r\n\r\n## Why it exists\r\n\r\nPromise-based HTTP with streaming, headers, and integration with [async/await](concept:async-await) and cancellation via [AbortController](concept:abort-controller).\r\n\r\n## How it works\r\n\r\n```js\r\nconst res = await fetch(\"/api/users\", {\r\n  method: \"POST\",\r\n  headers: { \"Content-Type\": \"application/json\" },\r\n  body: JSON.stringify({ name: \"Ada\" }),\r\n});\r\nconst data = await res.json();\r\n```\r\n\r\nDoes not reject on HTTP 4xx/5xx — check `res.ok`.\r\n\r\n## Common confusion\r\n\r\nNo request timeout by default — combine with `AbortController` and `setTimeout`. Cookies and [CORS](concept:cors) follow browser rules.\r\n\r\n## In practice\r\n\r\nDefault in browsers and many SSR data loaders; pair with [TanStack Query](concept:tanstack-query) for caching and retries.",
+  "bodyLinked": "## Definition\r\n\r\nThe **[fetch](concept:fetch)** API performs network requests and returns a [Promise](concept:promise) resolving to a `Response` — modern replacement for `XMLHttpRequest`.\r\n\r\n## Why it exists\r\n\r\nPromise-based HTTP with streaming, headers, and integration with [async/await](concept:async-await) and cancellation via [AbortController](concept:abort-controller).\r\n\r\n## How it works\r\n\r\n```js\r\nconst res = await fetch(\"/api/users\", {\r\n  method: \"POST\",\r\n  headers: { \"Content-Type\": \"application/json\" },\r\n  body: JSON.stringify({ name: \"Ada\" }),\r\n});\r\nconst data = await res.json();\r\n```\r\n\r\nDoes not reject on HTTP 4xx/5xx — check `res.ok`.\r\n\r\n## Common confusion\r\n\r\nNo request timeout by default — combine with [AbortController](concept:abort-controller) and [setTimeout](concept:timers). [Cookies](concept:cookies) and [CORS](concept:cors) follow browser rules.\r\n\r\n## In practice\r\n\r\nDefault in browsers and many [SSR](concept:server-side-rendering) data loaders; pair with [TanStack Query](concept:tanstack-query) for caching and retries.",
+  "conceptIds": [
+    "fetch",
+    "promise",
+    "async-await",
+    "abort-controller",
+    "timers",
+    "cookies",
+    "cors",
+    "server-side-rendering",
+    "tanstack-query"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "react-key-prop",
+  "title": "React key Prop",
+  "aliases": [
+    "key prop",
+    "React keys",
+    "list keys"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "reconciliation",
+    "react-re-render"
+  ],
+  "usedInFlashcards": [
+    194
+  ],
+  "body": "## Definition\r\n\r\nThe **key** prop helps React identify list items across [reconciliation](concept:reconciliation) so it can match identity when order changes.\r\n\r\n## Why it exists\r\n\r\nWithout stable keys, React may reuse wrong component state when lists reorder, filter, or insert items.\r\n\r\n## How it works\r\n\r\nKeys should be stable, unique among siblings, and **not** random per render. Prefer database ids over array index (except static lists).\r\n\r\n## Example\r\n\r\n```jsx\r\n{users.map(u => <Row key={u.id} user={u} />)}\r\n```\r\n\r\n## Common confusion\r\n\r\n`key` is not passed as a prop to the component — React consumes it. Changing key **remounts** component (resets state).\r\n\r\n## In practice\r\n\r\nFix duplicated state bugs in dynamic lists; use key to force remount when switching major modes.",
+  "bodyLinked": "## Definition\r\n\r\nThe **key** prop helps React identify list items across [reconciliation](concept:reconciliation) so it can match identity when order changes.\r\n\r\n## Why it exists\r\n\r\nWithout stable keys, React may reuse wrong [component state](concept:props-vs-state) when lists reorder, [filter](concept:array-map-filter-reduce), or insert items.\r\n\r\n## How it works\r\n\r\nKeys should be stable, unique among siblings, and **not** random per render. Prefer database ids over array index (except static lists).\r\n\r\n## Example\r\n\r\n```jsx\r\n{users.map(u => <Row key={u.id} user={u} />)}\r\n```\r\n\r\n## Common confusion\r\n\r\n`key` is not passed as a prop to the component — React consumes it. Changing key **remounts** component (resets state).\r\n\r\n## In practice\r\n\r\nFix duplicated state bugs in dynamic lists; use key to force remount when switching major modes.",
+  "conceptIds": [
+    "reconciliation",
+    "props-vs-state",
+    "array-map-filter-reduce"
+  ]
+}

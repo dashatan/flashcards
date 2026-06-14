@@ -1,0 +1,55 @@
+{
+  "id": "react-re-render",
+  "title": "React Re-render",
+  "aliases": [
+    "re-render",
+    "React rendering",
+    "component re-render"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "virtual-dom",
+    "react-batching",
+    "use-state"
+  ],
+  "usedInFlashcards": [
+    122,
+    123,
+    127,
+    130,
+    131,
+    132,
+    146,
+    148,
+    150,
+    151,
+    152,
+    160,
+    164,
+    165,
+    167,
+    168,
+    182,
+    183,
+    186,
+    196,
+    200,
+    210,
+    306
+  ],
+  "body": "## Definition\r\n\r\nA **re-render** is when React calls a component function again to produce a new element tree because inputs changed or a parent re-rendered.\r\n\r\n## Why it exists\r\n\r\nUI must reflect current props, state, and context.\r\n\r\n## How it works\r\n\r\nTriggers: [useState](concept:use-state)/[useReducer](concept:use-reducer) dispatch, parent re-render, [context](concept:use-context) value change, store subscription. Re-render ≠ DOM update — [reconciliation](concept:reconciliation) may skip DOM changes.\r\n\r\n## Common confusion\r\n\r\nChild re-renders when parent renders even if props unchanged — unless memoized. Context updates re-render all consumers.\r\n\r\n## In practice\r\n\r\nProfile with React DevTools; optimize with composition, memo, stable props — not premature everywhere.",
+  "bodyLinked": "## Definition\r\n\r\nA **[re-render](concept:react-re-render)** is when React [calls](concept:call-apply-bind) a component function again to produce a [new](concept:new-operator) element tree because inputs changed or a parent re-rendered.\r\n\r\n## Why it exists\r\n\r\nUI must reflect current props, state, and [context](concept:use-context).\r\n\r\n## How it works\r\n\r\nTriggers: [useState](concept:use-state)/[useReducer](concept:use-reducer) dispatch, parent [re-render](concept:react-re-render), [context](concept:use-context) value change, store subscription. [Re-render](concept:react-re-render) ≠ [DOM](concept:dom) update — [reconciliation](concept:reconciliation) may skip [DOM](concept:dom) changes.\r\n\r\n## Common confusion\r\n\r\nChild [re-renders](concept:react-re-render) when parent renders even if props unchanged — unless memoized. [Context](concept:use-context) updates [re-render](concept:react-re-render) all consumers.\r\n\r\n## In practice\r\n\r\nProfile with [React DevTools](concept:js-debugging-tools); optimize with [composition](concept:react-composition), [memo](concept:react-memo), stable props — not premature everywhere.",
+  "conceptIds": [
+    "react-re-render",
+    "call-apply-bind",
+    "new-operator",
+    "use-context",
+    "use-state",
+    "use-reducer",
+    "dom",
+    "reconciliation",
+    "js-debugging-tools",
+    "react-composition",
+    "react-memo"
+  ]
+}

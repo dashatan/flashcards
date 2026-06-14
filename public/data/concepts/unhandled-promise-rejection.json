@@ -1,0 +1,30 @@
+{
+  "id": "unhandled-promise-rejection",
+  "title": "Unhandled Promise Rejection",
+  "aliases": [
+    "unhandled rejection",
+    "unhandled promise rejection"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "promise",
+    "async-await",
+    "try-catch-finally"
+  ],
+  "usedInFlashcards": [
+    43,
+    44,
+    106,
+    314
+  ],
+  "body": "## Definition\r\n\r\nAn **unhandled promise rejection** occurs when a [Promise](concept:promise) rejects and no `.catch()` or `await` in try/catch handles it.\r\n\r\n## Why it exists\r\n\r\nPrevents silent async failures in production.\r\n\r\n## How it works\r\n\r\n```js\r\nPromise.reject(\"oops\"); // unhandled in Node may crash process\r\n```\r\n\r\nBrowsers: `window.addEventListener(\"unhandledrejection\")`. Always end chains with `.catch()` or try/catch around `await`.\r\n\r\n## Common confusion\r\n\r\nForgotten `await` still runs the async function but errors surface as unhandled rejections, not sync throws.\r\n\r\n## In practice\r\n\r\nGlobal handlers for logging (Sentry); never empty async event handlers without error handling.",
+  "bodyLinked": "## Definition\r\n\r\nAn **[unhandled promise rejection](concept:unhandled-promise-rejection)** occurs when a [Promise](concept:promise) rejects and no [.catch()](concept:promise) or [await](concept:async-await) in [try](concept:try-catch-finally)/catch handles it.\r\n\r\n## Why it exists\r\n\r\nPrevents silent [async](concept:async-await) failures in production.\r\n\r\n## How it works\r\n\r\n```js\r\nPromise.reject(\"oops\"); // unhandled in Node may crash process\r\n```\r\n\r\nBrowsers: `window.addEventListener(\"unhandledrejection\")`. Always end chains with [.catch()](concept:promise) or [try](concept:try-catch-finally)/catch around [await](concept:async-await).\r\n\r\n## Common confusion\r\n\r\nForgotten [await](concept:async-await) still runs the [async](concept:async-await) function but errors surface as [unhandled rejections](concept:unhandled-promise-rejection), not sync throws.\r\n\r\n## In practice\r\n\r\nGlobal handlers for [logging](concept:observability) (Sentry); never empty [async](concept:async-await) [event handlers](concept:typescript-react-events) without error handling.",
+  "conceptIds": [
+    "unhandled-promise-rejection",
+    "promise",
+    "async-await",
+    "try-catch-finally",
+    "observability",
+    "typescript-react-events"
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "id": "structured-clone",
+  "title": "structuredClone",
+  "aliases": [
+    "structured clone API"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "deep-copy"
+  ],
+  "usedInFlashcards": [
+    82
+  ],
+  "body": "## Definition\r\n\r\n**structuredClone** is a built-in API that performs a [deep copy](concept:deep-copy) of most structured data types supported by the structured clone algorithm.\r\n\r\n## Why it exists\r\n\r\nStandard, faster alternative to JSON hacks and lodash for cloning plain objects, arrays, Dates, Maps, Sets, and more.\r\n\r\n## How it works\r\n\r\n```js\r\nconst clone = structuredClone(original);\r\n```\r\n\r\nThrows on functions, symbols in some cases, and DOM nodes. Handles circular references (unlike JSON).\r\n\r\n## Common confusion\r\n\r\nNot a universal clone — cannot clone class instances with methods you need preserved, or `Error` objects in all environments.\r\n\r\n## In practice\r\n\r\nUse for cloning API state, form defaults, and immutable snapshots in modern apps.",
+  "bodyLinked": "## Definition\r\n\r\n**[structuredClone](concept:structured-clone)** is a built-in API that performs a [deep copy](concept:deep-copy) of most structured data types supported by the [structured clone](concept:structured-clone) algorithm.\r\n\r\n## Why it exists\r\n\r\nStandard, faster alternative to JSON hacks and lodash for cloning plain objects, arrays, Dates, Maps, Sets, and more.\r\n\r\n## How it works\r\n\r\n```js\r\nconst clone = structuredClone(original);\r\n```\r\n\r\nThrows on functions, [symbols](concept:symbol) in [some](concept:array-some-every) cases, and [DOM](concept:dom) nodes. Handles circular references (unlike JSON).\r\n\r\n## Common confusion\r\n\r\nNot a universal clone — cannot clone [class](concept:es6-class) instances with methods you need preserved, or `Error` objects in all environments.\r\n\r\n## In practice\r\n\r\nUse for cloning API state, form defaults, and immutable snapshots in modern apps.",
+  "conceptIds": [
+    "structured-clone",
+    "deep-copy",
+    "symbol",
+    "array-some-every",
+    "dom",
+    "es6-class"
+  ]
+}

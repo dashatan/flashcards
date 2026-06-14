@@ -1,0 +1,30 @@
+{
+  "id": "dependency-array",
+  "title": "Dependency Array",
+  "aliases": [
+    "dependency array",
+    "effect dependencies",
+    "exhaustive deps"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "use-effect",
+    "use-memo",
+    "use-callback"
+  ],
+  "usedInFlashcards": [
+    140,
+    141,
+    142
+  ],
+  "body": "## Definition\r\n\r\nThe **dependency array** is the second argument to [useEffect](concept:use-effect), [useMemo](concept:use-memo), and [useCallback](concept:use-callback) listing values that determine when to re-run.\r\n\r\n## Why it exists\r\n\r\nEffects must re-sync when props/state used inside them change; memoization must invalidate when inputs change.\r\n\r\n## How it works\r\n\r\nReact compares deps with `Object.is` each render.\r\n\r\n- `[]` — run once on mount (effects) or never recalculate until unmount.\r\n- Omitted (effects only) — run after every render.\r\n\r\n## Common confusion\r\n\r\nStale closures when deps are incomplete — ESLint `exhaustive-deps` warns. Including unstable inline objects defeats memoization.\r\n\r\n## In practice\r\n\r\nInclude all reactive values from component scope; wrap functions in useCallback when needed as deps.",
+  "bodyLinked": "## Definition\r\n\r\nThe **[dependency array](concept:dependency-array)** is the second argument to [useEffect](concept:use-effect), [useMemo](concept:use-memo), and [useCallback](concept:use-callback) listing values that determine when to re-run.\r\n\r\n## Why it exists\r\n\r\nEffects must re-sync when props/state used inside them change; memoization must invalidate when inputs change.\r\n\r\n## How it works\r\n\r\nReact compares deps with `Object.is` each render.\r\n\r\n- `[]` — run once on mount (effects) or never recalculate until unmount.\r\n- Omitted (effects only) — run after [every](concept:array-some-every) render.\r\n\r\n## Common confusion\r\n\r\nStale [closures](concept:closure) when deps are incomplete — ESLint [exhaustive-deps](concept:dependency-array) warns. Including unstable inline objects defeats memoization.\r\n\r\n## In practice\r\n\r\nInclude all reactive values from component scope; wrap functions in [useCallback](concept:use-callback) when needed as deps.",
+  "conceptIds": [
+    "dependency-array",
+    "use-effect",
+    "use-memo",
+    "use-callback",
+    "array-some-every",
+    "closure"
+  ]
+}

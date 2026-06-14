@@ -1,0 +1,23 @@
+{
+  "id": "discriminated-unions",
+  "title": "Discriminated Unions",
+  "aliases": [
+    "discriminated union",
+    "tagged union"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "type-guards"
+  ],
+  "usedInFlashcards": [
+    221,
+    230
+  ],
+  "body": "## Definition\r\n\r\nA **discriminated union** is a TypeScript union type with a common literal field (discriminator) so narrowing works in `switch`/`if`.\r\n\r\n## Why it exists\r\n\r\nType-safe API results, reducer actions, and UI state machines.\r\n\r\n## How it works\r\n\r\n```ts\r\ntype Result =\r\n  | { type: \"ok\"; data: User }\r\n  | { type: \"err\"; message: string };\r\n\r\nif (result.type === \"ok\") result.data; // narrowed\r\n```\r\n\r\nOften combined with `as const` on action types.\r\n\r\n## In practice\r\n\r\nRedux actions, fetch states, form wizard steps — essential senior TS pattern in React.",
+  "bodyLinked": "## Definition\r\n\r\nA **[discriminated union](concept:discriminated-unions)** is a TypeScript union type with a common literal field (discriminator) so narrowing works in `switch`/`if`.\r\n\r\n## Why it exists\r\n\r\nType-safe API results, reducer actions, and [UI state](concept:server-state-vs-client-state) machines.\r\n\r\n## How it works\r\n\r\n```ts\r\ntype Result =\r\n  | { type: \"ok\"; data: User }\r\n  | { type: \"err\"; message: string };\r\n\r\nif (result.type === \"ok\") result.data; // narrowed\r\n```\r\n\r\nOften combined with `as const` on action types.\r\n\r\n## In practice\r\n\r\nRedux actions, [fetch](concept:fetch) states, form wizard steps — essential senior TS pattern in React.",
+  "conceptIds": [
+    "discriminated-unions",
+    "server-state-vs-client-state",
+    "fetch"
+  ]
+}

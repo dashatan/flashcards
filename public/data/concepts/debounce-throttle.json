@@ -1,0 +1,33 @@
+{
+  "id": "debounce-throttle",
+  "title": "Debounce and Throttle",
+  "aliases": [
+    "debounce",
+    "throttle",
+    "debouncing",
+    "throttling"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "closure",
+    "higher-order-function"
+  ],
+  "usedInFlashcards": [
+    17,
+    36,
+    197,
+    235,
+    268,
+    301
+  ],
+  "body": "## Definition\r\n\r\n**Debounce** delays execution until events stop for a wait period. **Throttle** limits execution to once per interval.\r\n\r\n## Why it exists\r\n\r\nScroll, resize, and search input fire too often — protect [call stack](concept:call-stack) and network.\r\n\r\n## How it works\r\n\r\n- Debounce search: wait 300ms after last keystroke before API call.\r\n- Throttle scroll: run handler max once per 100ms.\r\n\r\nBoth implemented with [closures](concept:closure) storing timers or last-run time.\r\n\r\n## Common confusion\r\n\r\nDebounce = “after pause”; throttle = “at most every N ms”. Pick based on UX (search vs scroll).\r\n\r\n## In practice\r\n\r\nLodash `debounce`/`throttle`, `useDeferredValue` for search, passive scroll listeners.",
+  "bodyLinked": "## Definition\r\n\r\n**[Debounce](concept:debounce-throttle)** delays execution until events stop for a wait period. **[Throttle](concept:debounce-throttle)** limits execution to once per interval.\r\n\r\n## Why it exists\r\n\r\nScroll, resize, and search input fire too often — protect [call stack](concept:call-stack) and network.\r\n\r\n## How it works\r\n\r\n- [Debounce](concept:debounce-throttle) search: wait 300ms after last keystroke before API [call](concept:call-apply-bind).\r\n- [Throttle](concept:debounce-throttle) scroll: run handler max once per 100ms.\r\n\r\nBoth implemented with [closures](concept:closure) storing [timers](concept:timers) or last-run time.\r\n\r\n## Common confusion\r\n\r\n[Debounce](concept:debounce-throttle) = “after pause”; [throttle](concept:debounce-throttle) = “at most [every](concept:array-some-every) N ms”. Pick based on UX (search vs scroll).\r\n\r\n## In practice\r\n\r\nLodash [debounce](concept:debounce-throttle)/[throttle](concept:debounce-throttle), `useDeferredValue` for search, passive scroll listeners.",
+  "conceptIds": [
+    "debounce-throttle",
+    "call-stack",
+    "call-apply-bind",
+    "closure",
+    "timers",
+    "array-some-every"
+  ]
+}

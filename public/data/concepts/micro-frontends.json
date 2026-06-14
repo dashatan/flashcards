@@ -1,0 +1,22 @@
+{
+  "id": "micro-frontends",
+  "title": "Micro-Frontends",
+  "aliases": [
+    "micro frontends",
+    "MFE"
+  ],
+  "depth": "advanced",
+  "related": [
+    "monorepo",
+    "island-architecture"
+  ],
+  "usedInFlashcards": [
+    311
+  ],
+  "body": "## Definition\r\n\r\n**Micro-frontends** split a frontend into independently deployable apps by domain, composed at runtime in one shell.\r\n\r\n## Why it exists\r\n\r\nTeam autonomy, independent release cycles for large orgs.\r\n\r\n## How it works\r\n\r\nIntegration: Module Federation, single-spa, iframes. Challenges: shared dependencies, consistent UX, routing, performance overhead.\r\n\r\n## In practice\r\n\r\nSenior architecture interview topic — compare to [monorepo](concept:monorepo) with single deploy vs true MFE.",
+  "bodyLinked": "## Definition\r\n\r\n**[Micro-frontends](concept:micro-frontends)** split a frontend into independently deployable apps by domain, composed at runtime in one shell.\r\n\r\n## Why it exists\r\n\r\nTeam autonomy, independent release cycles for large orgs.\r\n\r\n## How it works\r\n\r\nIntegration: Module Federation, single-spa, iframes. Challenges: shared dependencies, consistent UX, routing, performance overhead.\r\n\r\n## In practice\r\n\r\nSenior architecture interview topic — compare to [monorepo](concept:monorepo) with single deploy vs true [MFE](concept:micro-frontends).",
+  "conceptIds": [
+    "micro-frontends",
+    "monorepo"
+  ]
+}

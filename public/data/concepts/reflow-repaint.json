@@ -1,0 +1,29 @@
+{
+  "id": "reflow-repaint",
+  "title": "Reflow, Repaint, and Composite",
+  "aliases": [
+    "reflow",
+    "repaint",
+    "layout thrashing",
+    "composite layer"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "critical-rendering-path",
+    "dom"
+  ],
+  "usedInFlashcards": [
+    262,
+    271,
+    287,
+    289,
+    290
+  ],
+  "body": "## Definition\r\n\r\n**Reflow** (layout) recalculates element geometry. **Repaint** redraws pixels without layout change. **Composite** updates GPU layers — cheapest for animation.\r\n\r\n## Why it exists\r\n\r\nBrowser must know positions before painting; unnecessary layout is expensive.\r\n\r\n## How it works\r\n\r\nReading `offsetWidth` then writing `style.width` in a loop causes **layout thrashing**. Animating `transform` and `opacity` often compositor-only.\r\n\r\n## In practice\r\n\r\nBatch DOM reads/writes; use `will-change` sparingly; DevTools Performance panel shows Layout vs Paint.",
+  "bodyLinked": "## Definition\r\n\r\n**[Reflow](concept:reflow-repaint)** (layout) recalculates element geometry. **[Repaint](concept:reflow-repaint)** redraws pixels without layout change. **Composite** updates GPU layers — cheapest for animation.\r\n\r\n## Why it exists\r\n\r\nBrowser must know positions before painting; unnecessary layout is expensive.\r\n\r\n## How it works\r\n\r\nReading `offsetWidth` then writing `style.width` in a loop causes **[layout thrashing](concept:reflow-repaint)**. Animating `transform` and `opacity` often compositor-only.\r\n\r\n## In practice\r\n\r\nBatch [DOM](concept:dom) reads/writes; use `will-change` sparingly; [DevTools Performance](concept:js-profiling) panel shows Layout vs Paint.",
+  "conceptIds": [
+    "reflow-repaint",
+    "dom",
+    "js-profiling"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "id": "react-server-actions",
+  "title": "React Server Actions",
+  "aliases": [
+    "Server Actions",
+    "use server"
+  ],
+  "depth": "advanced",
+  "related": [
+    "react-server-components",
+    "use-optimistic"
+  ],
+  "usedInFlashcards": [
+    211
+  ],
+  "body": "## Definition\r\n\r\n**Server Actions** are async functions marked `\"use server\"` that run on the server but can be invoked from Client Components — typically for form mutations.\r\n\r\n## Why it exists\r\n\r\nColocate mutation logic with UI without hand-written API routes for every form.\r\n\r\n## How it works\r\n\r\n```js\r\nasync function createPost(formData) {\r\n  \"use server\";\r\n  await db.post.create(...);\r\n}\r\n```\r\n\r\nCalled from `<form action={createPost}>` or `startTransition`. Progressive enhancement possible.\r\n\r\n## Common confusion\r\n\r\nStill need validation, auth, and error handling on server — not a security bypass.\r\n\r\n## In practice\r\n\r\nNext.js App Router forms; pair with [useOptimistic](concept:use-optimistic) for UX.",
+  "bodyLinked": "## Definition\r\n\r\n**[Server Actions](concept:react-server-actions)** are [async](concept:async-await) functions marked `\"use server\"` that run on the server but can be invoked from Client Components — typically for form mutations.\r\n\r\n## Why it exists\r\n\r\nColocate mutation logic with UI without hand-written API routes for [every](concept:array-some-every) form.\r\n\r\n## How it works\r\n\r\n```js\r\nasync function createPost(formData) {\r\n  \"use server\";\r\n  await db.post.create(...);\r\n}\r\n```\r\n\r\nCalled from `<form action={createPost}>` or `startTransition`. [Progressive enhancement](concept:progressive-enhancement) possible.\r\n\r\n## Common confusion\r\n\r\nStill need validation, auth, and error handling on server — not a security bypass.\r\n\r\n## In practice\r\n\r\nNext.js App Router forms; pair with [useOptimistic](concept:use-optimistic) for UX.",
+  "conceptIds": [
+    "react-server-actions",
+    "async-await",
+    "array-some-every",
+    "progressive-enhancement",
+    "use-optimistic"
+  ]
+}

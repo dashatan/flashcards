@@ -1,0 +1,29 @@
+{
+  "id": "redux-toolkit",
+  "title": "Redux Toolkit",
+  "aliases": [
+    "RTK",
+    "Redux Toolkit",
+    "createSlice"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "normalized-state",
+    "zustand",
+    "one-way-data-flow"
+  ],
+  "usedInFlashcards": [
+    166,
+    175
+  ],
+  "body": "## Definition\r\n\r\n**Redux Toolkit (RTK)** is the official Redux approach with `createSlice`, Immer-powered reducers, built-in thunk, and simplified store setup.\r\n\r\n## Why it exists\r\n\r\nReduce Redux boilerplate, enforce best practices, and provide batteries-included async patterns.\r\n\r\n## How it works\r\n\r\n```js\r\nconst counterSlice = createSlice({\r\n  name: \"counter\",\r\n  initialState: { value: 0 },\r\n  reducers: { increment: state => { state.value += 1; } },\r\n});\r\n```\r\n\r\nIncludes RTK Query for server cache in many apps.\r\n\r\n## Common confusion\r\n\r\nStill global store complexity — [Zustand](concept:zustand) or [TanStack Query](concept:tanstack-query) may fit simpler needs.\r\n\r\n## In practice\r\n\r\nLarge apps with predictable global state; pair server cache with RTK Query or TanStack Query deliberately.",
+  "bodyLinked": "## Definition\r\n\r\n**[Redux Toolkit](concept:redux-toolkit) ([RTK](concept:redux-toolkit))** is the official Redux approach with [createSlice](concept:redux-toolkit), Immer-powered reducers, built-in thunk, and simplified store setup.\r\n\r\n## Why it exists\r\n\r\n[Reduce](concept:array-map-filter-reduce) Redux boilerplate, enforce best practices, and provide batteries-included [async](concept:async-await) patterns.\r\n\r\n## How it works\r\n\r\n```js\r\nconst counterSlice = createSlice({\r\n  name: \"counter\",\r\n  initialState: { value: 0 },\r\n  reducers: { increment: state => { state.value += 1; } },\r\n});\r\n```\r\n\r\nIncludes [RTK](concept:redux-toolkit) Query for server cache in many apps.\r\n\r\n## Common confusion\r\n\r\nStill global store complexity — [Zustand](concept:zustand) or [TanStack Query](concept:tanstack-query) may fit simpler needs.\r\n\r\n## In practice\r\n\r\nLarge apps with predictable [global state](concept:react-context-api); pair server cache with [RTK](concept:redux-toolkit) Query or [TanStack Query](concept:tanstack-query) deliberately.",
+  "conceptIds": [
+    "redux-toolkit",
+    "array-map-filter-reduce",
+    "async-await",
+    "zustand",
+    "tanstack-query",
+    "react-context-api"
+  ]
+}

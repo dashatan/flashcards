@@ -1,0 +1,29 @@
+{
+  "id": "lazy-loading",
+  "title": "Lazy Loading",
+  "aliases": [
+    "lazy load",
+    "lazy loading"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "code-splitting",
+    "intersection-observer"
+  ],
+  "usedInFlashcards": [
+    195,
+    205,
+    269,
+    292
+  ],
+  "body": "## Definition\r\n\r\n**Lazy loading** defers loading resources (images, JS, data) until they are needed — usually when near viewport.\r\n\r\n## Why it exists\r\n\r\nReduce initial payload and improve [LCP](concept:lcp) for content below the fold.\r\n\r\n## How it works\r\n\r\n- Images: `loading=\"lazy\"` or [Intersection Observer](concept:intersection-observer)\r\n- JS: dynamic `import()` + [code splitting](concept:code-splitting)\r\n- Routes: React `lazy()` + Suspense\r\n\r\n## In practice\r\n\r\nDefault for images in content sites; route-based splitting in SPAs.",
+  "bodyLinked": "## Definition\r\n\r\n**[Lazy loading](concept:lazy-loading)** defers loading resources (images, JS, data) until they are needed — usually when near viewport.\r\n\r\n## Why it exists\r\n\r\n[Reduce](concept:array-map-filter-reduce) initial payload and improve [LCP](concept:lcp) for content below the fold.\r\n\r\n## How it works\r\n\r\n- Images: `loading=\"lazy\"` or [Intersection Observer](concept:intersection-observer)\r\n- JS: dynamic `import()` + [code splitting](concept:code-splitting)\r\n- Routes: React `lazy()` + [Suspense](concept:react-suspense)\r\n\r\n## In practice\r\n\r\nDefault for images in content sites; route-based splitting in SPAs.",
+  "conceptIds": [
+    "lazy-loading",
+    "array-map-filter-reduce",
+    "lcp",
+    "intersection-observer",
+    "code-splitting",
+    "react-suspense"
+  ]
+}

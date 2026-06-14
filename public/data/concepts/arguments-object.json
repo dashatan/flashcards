@@ -1,0 +1,27 @@
+{
+  "id": "arguments-object",
+  "title": "arguments Object",
+  "aliases": [
+    "arguments",
+    "arguments object"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "arrow-function",
+    "function-expression"
+  ],
+  "usedInFlashcards": [
+    20,
+    22,
+    25,
+    27,
+    101
+  ],
+  "body": "## Definition\r\n\r\nThe **arguments object** is an array-like object available inside non-arrow functions listing all passed parameters — legacy before rest parameters.\r\n\r\n## Why it exists\r\n\r\nPre-ES6 way to handle variadic functions without naming every parameter.\r\n\r\n## How it works\r\n\r\n```js\r\nfunction sum() {\r\n  let total = 0;\r\n  for (let i = 0; i < arguments.length; i++) {\r\n    total += arguments[i];\r\n  }\r\n  return total;\r\n}\r\n```\r\n\r\nModern replacement: `function sum(...nums) { return nums.reduce(...) }`.\r\n\r\n[Arrow functions](concept:arrow-function) do not have `arguments` — they inherit nothing; use rest params.\r\n\r\n## Common confusion\r\n\r\n`arguments` is not a real array — use `Array.from(arguments)` or spread. Arrow functions cannot access outer `arguments` of non-arrow parent unless that parent is non-arrow.\r\n\r\n## In practice\r\n\r\nRead legacy code; write modern code with rest parameters.",
+  "bodyLinked": "## Definition\r\n\r\nThe **[arguments object](concept:arguments-object)** is an array-like object available inside non-[arrow functions](concept:arrow-function) listing all passed parameters — legacy before rest parameters.\r\n\r\n## Why it exists\r\n\r\nPre-ES6 way to handle variadic functions without naming [every](concept:array-some-every) parameter.\r\n\r\n## How it works\r\n\r\n```js\r\nfunction sum() {\r\n  let total = 0;\r\n  for (let i = 0; i < arguments.length; i++) {\r\n    total += arguments[i];\r\n  }\r\n  return total;\r\n}\r\n```\r\n\r\nModern replacement: `function sum(...nums) { return nums.reduce(...) }`.\r\n\r\n[Arrow functions](concept:arrow-function) do not have [arguments](concept:arguments-object) — they inherit nothing; use rest params.\r\n\r\n## Common confusion\r\n\r\n[arguments](concept:arguments-object) is not a real array — use `Array.from(arguments)` or spread. [Arrow functions](concept:arrow-function) cannot access outer [arguments](concept:arguments-object) of non-arrow parent unless that parent is non-arrow.\r\n\r\n## In practice\r\n\r\nRead legacy code; write modern code with rest parameters.",
+  "conceptIds": [
+    "arguments-object",
+    "arrow-function",
+    "array-some-every"
+  ]
+}

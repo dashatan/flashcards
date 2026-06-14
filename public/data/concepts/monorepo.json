@@ -1,0 +1,21 @@
+{
+  "id": "monorepo",
+  "title": "Monorepo",
+  "aliases": [
+    "monorepo",
+    "monolithic repository"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "feature-based-architecture",
+    "micro-frontends"
+  ],
+  "usedInFlashcards": [
+    310
+  ],
+  "body": "## Definition\r\n\r\nA **monorepo** stores multiple packages/apps in one repository with shared tooling and atomic commits.\r\n\r\n## Why it exists\r\n\r\nShare UI library, types, and utils across apps without version sync hell.\r\n\r\n## How it works\r\n\r\nTools: pnpm workspaces, Turborepo, Nx. Packages `packages/ui`, apps `apps/web`. Single CI pipeline with affected detection.\r\n\r\n## Tradeoffs\r\n\r\nTooling complexity vs code reuse and coordinated releases.\r\n\r\n## In practice\r\n\r\nCommon in design systems and multi-app product companies.",
+  "bodyLinked": "## Definition\r\n\r\nA **[monorepo](concept:monorepo)** stores multiple packages/apps in one repository with shared tooling and atomic commits.\r\n\r\n## Why it exists\r\n\r\nShare UI library, types, and utils across apps without version sync hell.\r\n\r\n## How it works\r\n\r\nTools: pnpm workspaces, Turborepo, Nx. Packages `packages/ui`, apps `apps/web`. Single CI pipeline with affected detection.\r\n\r\n## Tradeoffs\r\n\r\nTooling complexity vs code reuse and coordinated releases.\r\n\r\n## In practice\r\n\r\nCommon in design systems and multi-app product companies.",
+  "conceptIds": [
+    "monorepo"
+  ]
+}

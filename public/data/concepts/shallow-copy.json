@@ -1,0 +1,23 @@
+{
+  "id": "shallow-copy",
+  "title": "Shallow Copy",
+  "aliases": [
+    "shallow copy"
+  ],
+  "depth": "foundation",
+  "related": [
+    "deep-copy",
+    "value-vs-reference"
+  ],
+  "usedInFlashcards": [
+    57,
+    99
+  ],
+  "body": "## Definition\r\n\r\nA **shallow copy** duplicates the top level of an object or array; nested objects still share references with the original.\r\n\r\n## Why it exists\r\n\r\nFast duplication for flat structures and immutable update patterns (`{ ...obj, field: newValue }`).\r\n\r\n## How it works\r\n\r\n```js\r\nconst copy = { ...original };\r\nconst arrCopy = [...arr];\r\nObject.assign({}, original);\r\n```\r\n\r\nNested `user.address` in copy and original point to the same object.\r\n\r\n## Common confusion\r\n\r\nShallow copy is not [deep copy](concept:deep-copy). React state updates need new top-level references; nested mutation can still cause bugs.\r\n\r\n## In practice\r\n\r\nSpread for flat state updates; use deep clone when nesting matters.",
+  "bodyLinked": "## Definition\r\n\r\nA **[shallow copy](concept:shallow-copy)** duplicates the top level of an object or array; nested objects still share references with the original.\r\n\r\n## Why it exists\r\n\r\nFast duplication for flat structures and immutable update patterns (`{ ...obj, field: newValue }`).\r\n\r\n## How it works\r\n\r\n```js\r\nconst copy = { ...original };\r\nconst arrCopy = [...arr];\r\nObject.assign({}, original);\r\n```\r\n\r\nNested `user.address` in copy and original point to the same object.\r\n\r\n## Common confusion\r\n\r\n[Shallow copy](concept:shallow-copy) is not [deep copy](concept:deep-copy). React state updates need [new](concept:new-operator) top-level references; nested mutation can still cause bugs.\r\n\r\n## In practice\r\n\r\nSpread for flat state updates; use [deep clone](concept:deep-copy) when nesting matters.",
+  "conceptIds": [
+    "shallow-copy",
+    "deep-copy",
+    "new-operator"
+  ]
+}

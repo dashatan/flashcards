@@ -1,0 +1,29 @@
+{
+  "id": "code-splitting",
+  "title": "Code Splitting",
+  "aliases": [
+    "code splitting",
+    "dynamic import"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "lazy-loading",
+    "vite",
+    "webpack"
+  ],
+  "usedInFlashcards": [
+    187,
+    188,
+    199,
+    254,
+    292,
+    313
+  ],
+  "body": "## Definition\r\n\r\n**Code splitting** divides the app into separate JS chunks loaded on demand instead of one giant bundle.\r\n\r\n## Why it exists\r\n\r\nFaster initial load — users download only code for current route/feature.\r\n\r\n## How it works\r\n\r\n```js\r\nconst Admin = lazy(() => import(\"./Admin\"));\r\n```\r\n\r\nRoute-based splitting in frameworks; dynamic `import()` creates async chunks. Pair with [React Suspense](concept:react-suspense).\r\n\r\n## In practice\r\n\r\nNext.js automatic per-route splitting; manual splits for heavy editors/charts.",
+  "bodyLinked": "## Definition\r\n\r\n**[Code splitting](concept:code-splitting)** divides the app into separate JS chunks loaded on demand instead of one giant bundle.\r\n\r\n## Why it exists\r\n\r\nFaster initial load — users download only code for current route/feature.\r\n\r\n## How it works\r\n\r\n```js\r\nconst Admin = lazy(() => import(\"./Admin\"));\r\n```\r\n\r\nRoute-based splitting in frameworks; dynamic `import()` creates [async](concept:async-await) chunks. Pair with [React Suspense](concept:react-suspense).\r\n\r\n## In practice\r\n\r\nNext.js automatic per-route splitting; manual splits for heavy editors/charts.",
+  "conceptIds": [
+    "code-splitting",
+    "async-await",
+    "react-suspense"
+  ]
+}

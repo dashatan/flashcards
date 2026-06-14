@@ -1,0 +1,2325 @@
+{
+  "generatedAt": "2026-06-13T18:36:25.003Z",
+  "source": "senior-frontend-interview-qa.md",
+  "total": 330,
+  "parts": [
+    "Part 1: JavaScript Core Concepts",
+    "Part 2: Advanced JavaScript",
+    "Part 3: React Fundamentals and Hooks",
+    "Part 4: Modern React and Ecosystem",
+    "Part 5: Web Fundamentals and Browser APIs",
+    "Part 6: System Design and Architecture"
+  ],
+  "cards": [
+    {
+      "id": 1,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Variable Declarations and Scope",
+      "question": "What is the difference between `let` and `var`?",
+      "answer": "`var` is function-scoped and hoisted with an initial value of `undefined`. `let` is block-scoped, hoisted into the temporal dead zone (TDZ), and cannot be redeclared in the same scope. In modern code I default to `let` for reassignable bindings and avoid `var` unless maintaining legacy code."
+    },
+    {
+      "id": 2,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Variable Declarations and Scope",
+      "question": "What is the difference between `const` and `let`?",
+      "answer": "Both are block-scoped and subject to the TDZ. `const` must be initialized at declaration and the binding cannot be reassigned, but the value itself can still be mutated if it's an object or array. I use `const` by default and `let` only when reassignment is required."
+    },
+    {
+      "id": 3,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Variable Declarations and Scope",
+      "question": "What is the difference between `var`, `let`, and `const`?",
+      "answer": "Scope: `var` is function-scoped; `let` and `const` are block-scoped. Hoisting: all are hoisted, but `let`/`const` live in the TDZ until initialized. Reassignment: only `var` and `let` allow it; `const` does not. Redeclaration: `var` allows it in the same scope; `let` and `const` do not."
+    },
+    {
+      "id": 4,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Variable Declarations and Scope",
+      "question": "Why would JavaScript designers create the temporal dead zone?",
+      "answer": "The TDZ prevents accessing `let`/`const` before initialization, which catches bugs that `var`'s silent `undefined` hoisting hid. It makes the \"declare before use\" rule enforceable at runtime and aligns behavior with block scope semantics."
+    },
+    {
+      "id": 5,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Variable Declarations and Scope",
+      "question": "Can you access a `let` variable before it's declared?",
+      "answer": "No. Accessing it before the declaration throws a `ReferenceError` because it's in the temporal dead zone. This is different from `var`, which would return `undefined`."
+    },
+    {
+      "id": 6,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Variable Declarations and Scope",
+      "question": "What happens when you try to reassign a `const` variable?",
+      "answer": "Reassigning the binding throws a `TypeError` in strict mode (and in modules, which are always strict). Mutating properties of a `const` object or array is still allowed because the reference itself isn't changing."
+    },
+    {
+      "id": 7,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Variable Declarations and Scope",
+      "question": "In what scenarios would you still use `var` in modern JavaScript?",
+      "answer": "Almost never in new code. The only practical cases are maintaining legacy codebases, some build-tool/generated output, or rare compatibility constraints. In interviews I'd say I use `const`/`let` exclusively in modern projects."
+    },
+    {
+      "id": 8,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Variable Declarations and Scope",
+      "question": "Can `const` objects be mutated? Why?",
+      "answer": "Yes. `const` only freezes the **binding** (the variable name), not the **value's internals**. Object and array contents can still be modified because you're not reassigning the reference."
+    },
+    {
+      "id": 9,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Variable Declarations and Scope",
+      "question": "What is block scope vs function scope?",
+      "answer": "Function scope means a variable is visible throughout the entire function. Block scope limits visibility to the nearest `{}` block (e.g., `if`, `for`, `while`). `let` and `const` use block scope; `var` uses function scope."
+    },
+    {
+      "id": 10,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Variable Declarations and Scope",
+      "question": "How does hoisting work with function declarations vs expressions?",
+      "answer": "Function declarations are fully hoisted—you can call them before their line in the source. Function expressions (including arrow functions assigned to variables) are hoisted like `var`/`let`/`const`: the variable is hoisted but not initialized until the assignment runs."
+    },
+    {
+      "id": 11,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Variable Declarations and Scope",
+      "question": "What's the scope of variables declared in a `for` loop?",
+      "answer": "With `var`, the loop variable is function-scoped (one shared binding). With `let`, each iteration gets its own block-scoped binding, which matters for closures inside the loop."
+    },
+    {
+      "id": 12,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Variable Declarations and Scope",
+      "question": "Can you redeclare `let` variables in the same scope?",
+      "answer": "No. Redeclaring `let` in the same scope throws a `SyntaxError`. `var` allows redeclaration, which is one reason it's error-prone."
+    },
+    {
+      "id": 13,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Variable Declarations and Scope",
+      "question": "What happens with `const` in a `for...of` loop?",
+      "answer": "Each iteration assigns a new value to the same `const` binding, which is allowed because it's not reassignment—it's initialization in a new block scope per iteration. In a classic `for` loop header, `const i = ...` fails on the second iteration because you'd be reassigning."
+    },
+    {
+      "id": 14,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Variable Declarations and Scope",
+      "question": "How do nested scopes access parent variables?",
+      "answer": "Inner scopes can read variables from outer (enclosing) scopes via lexical scoping. The inner function \"closes over\" those variables, forming a closure."
+    },
+    {
+      "id": 15,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Variable Declarations and Scope",
+      "question": "What is the scope chain?",
+      "answer": "When JavaScript resolves an identifier, it searches the current scope, then each parent scope up to the global scope. This chain of nested lexical environments is the scope chain."
+    },
+    {
+      "id": 16,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Functions and Closures",
+      "question": "What is a closure and how does it work?",
+      "answer": "A closure is when a function retains access to variables from its outer lexical scope even after that outer function has returned. JavaScript achieves this by keeping the outer scope's environment alive as long as the inner function is reachable."
+    },
+    {
+      "id": 17,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Functions and Closures",
+      "question": "Can you give a practical example of closure usage?",
+      "answer": "Common examples: debounce/throttle wrappers, private state in modules, event handlers that reference component state, and factory functions like `createCounter()` that return functions with encapsulated count state."
+    },
+    {
+      "id": 18,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Functions and Closures",
+      "question": "What are IIFEs and why were they popular?",
+      "answer": "Immediately Invoked Function Expressions—`(function() { ... })()`—create a private scope instantly. Before ES modules and block scope, they avoided polluting the global namespace and simulated privacy before `let`/`const` and modules existed."
+    },
+    {
+      "id": 19,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Functions and Closures",
+      "question": "What's the difference between function declaration and expression?",
+      "answer": "Declarations: `function foo() {}`—hoisted entirely, has a name. Expressions: `const foo = function() {}` or arrow functions—variable hoisted but not the function value until assignment; can be anonymous."
+    },
+    {
+      "id": 20,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Functions and Closures",
+      "question": "What are arrow functions and how do they differ from regular functions?",
+      "answer": "Arrow functions have concise syntax, lexically bind `this` (no own `this`), no `arguments` object, cannot be used as constructors, and cannot be used with `new`. They're ideal for callbacks and when you want to preserve outer `this`."
+    },
+    {
+      "id": 21,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Functions and Closures",
+      "question": "How does `this` binding work in arrow functions?",
+      "answer": "Arrow functions don't have their own `this`. They inherit `this` from the enclosing lexical scope at definition time. That's why they're great in React class components' callbacks (legacy) and problematic when you need dynamic `this` (e.g., object methods)."
+    },
+    {
+      "id": 22,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Functions and Closures",
+      "question": "What is the `arguments` object and does it exist in arrow functions?",
+      "answer": "In regular functions, `arguments` is an array-like object of passed parameters. Arrow functions don't have `arguments`; use rest parameters (`...args`) instead."
+    },
+    {
+      "id": 23,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Functions and Closures",
+      "question": "Can arrow functions be used as constructors?",
+      "answer": "No. Calling an arrow function with `new` throws a `TypeError` because they lack a `[[Construct]]` internal method and no `prototype` property."
+    },
+    {
+      "id": 24,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Functions and Closures",
+      "question": "What is function currying?",
+      "answer": "Currying transforms a function `f(a, b, c)` into a series of unary functions `f(a)(b)(c)`. It enables partial application and reusable specialized functions. Example: `const add = a => b => a + b`."
+    },
+    {
+      "id": 25,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Functions and Closures",
+      "question": "What is partial application?",
+      "answer": "Fixing some arguments of a function to produce a new function with fewer parameters. Unlike currying, it doesn't require one argument at a time. Example: `const multiplyBy2 = multiply.bind(null, 2)`."
+    },
+    {
+      "id": 26,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Functions and Closures",
+      "question": "How do you create private variables using closures?",
+      "answer": "Define variables in an outer function scope and return an object or functions that reference them. External code can't access those variables directly—only through the exposed methods (module pattern)."
+    },
+    {
+      "id": 27,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Functions and Closures",
+      "question": "What are higher-order functions?",
+      "answer": "Functions that take other functions as arguments, return functions, or both. Examples: `map`, `filter`, `reduce`, middleware, and React HOCs."
+    },
+    {
+      "id": 28,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Functions and Closures",
+      "question": "What is function composition?",
+      "answer": "Combining functions so the output of one becomes the input of the next: `compose(f, g)(x) === f(g(x))`. It's useful for building pipelines of pure transformations (e.g., data formatting)."
+    },
+    {
+      "id": 29,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Functions and Closures",
+      "question": "How do default parameters work?",
+      "answer": "Default parameters apply when the argument is `undefined` (not when it's `null`). They're evaluated at call time, so later defaults can reference earlier parameters. They have their own scope (no TDZ issues with outer variables of the same name)."
+    },
+    {
+      "id": 30,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Functions and Closures",
+      "question": "What is the difference between `call`, `apply`, and `bind`?",
+      "answer": "All set `this`. `call(thisArg, arg1, arg2)` invokes immediately with individual args. `apply(thisArg, [args])` invokes immediately with an array of args. `bind(thisArg, ...args)` returns a new function with bound `this` (and optionally partial args) without invoking immediately."
+    },
+    {
+      "id": 31,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Asynchronous JavaScript",
+      "question": "Can you explain the event loop?",
+      "answer": "JavaScript is single-threaded. The event loop continuously checks: run synchronous code on the call stack → when empty, drain the microtask queue (Promises) → then take one macrotask (setTimeout, I/O, etc.) → repeat. This interleaves async work without true parallelism on the main thread."
+    },
+    {
+      "id": 32,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Asynchronous JavaScript",
+      "question": "What's the difference between microtasks and macrotasks?",
+      "answer": "Microtasks (Promise callbacks, `queueMicrotask`, `MutationObserver`) run after the current script and before the next render/paint. Macrotasks (`setTimeout`, `setInterval`, I/O, UI events) run one at a time after microtasks are exhausted. Microtasks have higher priority."
+    },
+    {
+      "id": 33,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Asynchronous JavaScript",
+      "question": "Why does `Promise.resolve()` execute before `setTimeout(0)`?",
+      "answer": "`Promise.resolve().then(...)` schedules a microtask. `setTimeout(fn, 0)` schedules a macrotask. After synchronous code finishes, all microtasks run before the next macrotask, so the Promise callback runs first."
+    },
+    {
+      "id": 34,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Asynchronous JavaScript",
+      "question": "How would this behavior change in a Node.js environment versus a browser?",
+      "answer": "The microtask/macrotask priority is similar, but Node has additional phases (timers, poll, check, close callbacks) in its libuv event loop. `setImmediate` vs `setTimeout(0)` ordering differs. Also, Node can offload CPU work to worker threads while the event loop pattern on the main thread remains analogous."
+    },
+    {
+      "id": 35,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Asynchronous JavaScript",
+      "question": "What are the different phases in Node.js event loop?",
+      "answer": "Main phases: **timers** (`setTimeout`/`setInterval`), **pending callbacks**, **idle/prepare**, **poll** (I/O), **check** (`setImmediate`), **close callbacks**. Between phases, Node processes `process.nextTick` (highest priority) and microtasks."
+    },
+    {
+      "id": 36,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Asynchronous JavaScript",
+      "question": "When would a `setTimeout` not execute at its specified time?",
+      "answer": "When the main thread is blocked by long synchronous work, when the tab is throttled in the background, when the delay is clamped (minimum ~4ms in nested timers), or when the event loop is saturated with higher-priority work."
+    },
+    {
+      "id": 37,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Asynchronous JavaScript",
+      "question": "What is callback hell and how do you avoid it?",
+      "answer": "Deeply nested callbacks that hurt readability and error handling. Avoid with Promises, async/await, modular functions, and patterns like `async` pipelines or libraries (e.g., `p-limit` for concurrency control)."
+    },
+    {
+      "id": 38,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Asynchronous JavaScript",
+      "question": "How do Promises work internally?",
+      "answer": "A Promise is an object with `pending`, `fulfilled`, or `rejected` state and a list of reaction handlers. When settled, handlers are queued as microtasks. Promises follow the Promises/A+ spec—thenables are assimilated and handlers always run asynchronously after the current stack."
+    },
+    {
+      "id": 39,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Asynchronous JavaScript",
+      "question": "What is `Promise.all` vs `Promise.allSettled`?",
+      "answer": "`Promise.all` fails fast—one rejection rejects the whole result. `Promise.allSettled` waits for all promises and returns `{ status, value/reason }` for each, regardless of success or failure. Use `allSettled` when you need every outcome."
+    },
+    {
+      "id": 40,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Asynchronous JavaScript",
+      "question": "When would you use `Promise.race`?",
+      "answer": "When you want the result of whichever promise settles first—timeouts (`Promise.race([fetch(url), timeout(5000)])`), racing cache vs network, or canceling slower requests."
+    },
+    {
+      "id": 41,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Asynchronous JavaScript",
+      "question": "What is async/await and how does it relate to Promises?",
+      "answer": "`async/await` is syntactic sugar over Promises. An `async` function always returns a Promise. `await` pauses within the async function until the Promise settles, without blocking the main thread. Error handling uses try/catch instead of `.catch()`."
+    },
+    {
+      "id": 42,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Asynchronous JavaScript",
+      "question": "Can you use `await` outside of async functions?",
+      "answer": "In modules (top-level await) and in some environments with experimental support, yes. In classic scripts, `await` must be inside an `async` function. Modern bundlers and ES modules support top-level await."
+    },
+    {
+      "id": 43,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Asynchronous JavaScript",
+      "question": "How do you handle errors in async/await?",
+      "answer": "Wrap `await` calls in `try/catch/finally`. For parallel work, use `Promise.allSettled` or handle individual `.catch()` on promises. Always handle rejection—unhandled promise rejections crash Node and trigger global handlers in browsers."
+    },
+    {
+      "id": 44,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Asynchronous JavaScript",
+      "question": "What happens if you don't await an async function?",
+      "answer": "It still runs and returns a Promise, but you won't wait for completion or catch errors synchronously. Fire-and-forget calls need explicit `.catch()` or you risk unhandled rejections."
+    },
+    {
+      "id": 45,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Asynchronous JavaScript",
+      "question": "Can you explain Promise chaining?",
+      "answer": "`.then()` returns a new Promise. Returning a value passes it to the next `.then()`. Returning a Promise flattens the chain (assimilates the thenable). Errors propagate down until a `.catch()` handles them."
+    },
+    {
+      "id": 46,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Asynchronous JavaScript",
+      "question": "What is the difference between returning a value vs a Promise in `.then()`?",
+      "answer": "Returning a plain value wraps it in `Promise.resolve(value)` for the next handler. Returning a Promise chains/adopts that Promise's eventual value—avoiding nested Promise structures (thenable assimilation)."
+    },
+    {
+      "id": 47,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Asynchronous JavaScript",
+      "question": "How do you cancel a Promise?",
+      "answer": "Promises aren't natively cancellable. Patterns: use `AbortController` with `fetch`, wrap in a cancellable helper that ignores results after abort, or use libraries like `AbortSignal` with `Promise.race` against an abort promise."
+    },
+    {
+      "id": 48,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Asynchronous JavaScript",
+      "question": "What are async iterators?",
+      "answer": "Objects that implement `[Symbol.asyncIterator]`, yielding Promises via `for await...of`. Useful for streaming data (reading files, paginated APIs, WebSocket message streams)."
+    },
+    {
+      "id": 49,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Asynchronous JavaScript",
+      "question": "How does `Promise.any` differ from `Promise.race`?",
+      "answer": "`Promise.race` settles with the first promise to fulfill **or** reject. `Promise.any` settles with the first **fulfillment**; it rejects only if **all** promises reject (AggregateError)."
+    },
+    {
+      "id": 50,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Asynchronous JavaScript",
+      "question": "What happens when you await a non-Promise value?",
+      "answer": "It's wrapped in `Promise.resolve(value)` and resolved immediately. `await 42` is equivalent to `await Promise.resolve(42)`."
+    },
+    {
+      "id": 51,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Objects and Prototypes",
+      "question": "What is prototypal inheritance?",
+      "answer": "Objects inherit properties from other objects via the prototype chain rather than classes copying behavior. When a property isn't found on the object, JavaScript walks up `[[Prototype]]` links until it finds it or returns `undefined`."
+    },
+    {
+      "id": 52,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Objects and Prototypes",
+      "question": "How does the prototype chain work?",
+      "answer": "Every object has an internal `[[Prototype]]` (accessed via `Object.getPrototypeOf` or `__proto__`). Lookup: own properties first, then prototype, then prototype's prototype, until `null`. Methods on `Object.prototype` are the end of the chain for most objects."
+    },
+    {
+      "id": 53,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Objects and Prototypes",
+      "question": "What's the difference between `__proto__` and `prototype`?",
+      "answer": "`prototype` is a property on **constructor functions**—the object that will become the `[[Prototype]]` of instances created with `new`. `__proto__` (legacy) is the instance's link to its prototype. Prefer `Object.getPrototypeOf()`."
+    },
+    {
+      "id": 54,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Objects and Prototypes",
+      "question": "How do you create an object without a prototype?",
+      "answer": "`Object.create(null)` creates a pure dictionary with no inherited properties—useful for map-like objects without pollution from `Object.prototype`."
+    },
+    {
+      "id": 55,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Objects and Prototypes",
+      "question": "What is `Object.create` and when would you use it?",
+      "answer": "`Object.create(proto)` creates an object with a specified prototype. Use it for prototypal inheritance patterns, creating objects with specific delegation chains, or null-prototype dictionaries."
+    },
+    {
+      "id": 56,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Objects and Prototypes",
+      "question": "How does `Object.assign` work and what are its limitations?",
+      "answer": "It shallow-copies enumerable own properties from source objects to the target. Limitations: shallow only, doesn't copy getters (invokes them), doesn't handle symbols unless explicitly included, mutates the target."
+    },
+    {
+      "id": 57,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Objects and Prototypes",
+      "question": "What's the difference between deep and shallow copying?",
+      "answer": "Shallow copy duplicates top-level references—nested objects are shared. Deep copy recursively clones all nested structures so mutations don't affect the original. `Object.assign` and spread are shallow."
+    },
+    {
+      "id": 58,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Objects and Prototypes",
+      "question": "How do you deep clone an object?",
+      "answer": "`structuredClone()` in modern environments, `JSON.parse(JSON.stringify(obj))` for JSON-safe data, or libraries like lodash `cloneDeep`. Be aware of functions, symbols, circular references, and `Date`/`Map`/`Set` handling."
+    },
+    {
+      "id": 59,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Objects and Prototypes",
+      "question": "What are getters and setters?",
+      "answer": "Accessor properties defined with `get`/`set` in object literals or `Object.defineProperty`. They intercept read/write operations—useful for computed properties, validation, and lazy initialization."
+    },
+    {
+      "id": 60,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Objects and Prototypes",
+      "question": "What is `Object.defineProperty` used for?",
+      "answer": "Defining or modifying property attributes: `value`, `writable`, `enumerable`, `configurable`, plus getters/setters. Used for fine-grained control (e.g., immutability, hidden properties, reactive systems)."
+    },
+    {
+      "id": 61,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Objects and Prototypes",
+      "question": "What are property descriptors?",
+      "answer": "Metadata about a property: `value`, `writable`, `enumerable`, `configurable` for data properties; `get`, `set`, `enumerable`, `configurable` for accessors. Retrieved with `Object.getOwnPropertyDescriptor`."
+    },
+    {
+      "id": 62,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Objects and Prototypes",
+      "question": "How do you make an object immutable?",
+      "answer": "`Object.freeze()` prevents adding/removing/changing properties (shallow). For deep immutability, recursively freeze or use immutable data libraries. `Object.seal()` allows mutation but not add/delete."
+    },
+    {
+      "id": 63,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Objects and Prototypes",
+      "question": "What's the difference between `Object.freeze` and `Object.seal`?",
+      "answer": "`seal` prevents adding/deleting properties but allows changing existing values. `freeze` additionally makes all properties non-writable. Both are shallow."
+    },
+    {
+      "id": 64,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Objects and Prototypes",
+      "question": "What is the `new` keyword doing behind the scenes?",
+      "answer": "Creates a new object, sets its `[[Prototype]]` to the constructor's `prototype`, binds `this` to that object, executes the constructor, and returns the object (unless the constructor returns an object explicitly)."
+    },
+    {
+      "id": 65,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Objects and Prototypes",
+      "question": "How do ES6 classes relate to prototypes?",
+      "answer": "Classes are syntactic sugar over constructor functions and prototypes. Methods are on `ClassName.prototype`. `extends` sets up the prototype chain. Under the hood, it's still prototypal inheritance."
+    },
+    {
+      "id": 66,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Objects and Prototypes",
+      "question": "What are static methods in classes?",
+      "answer": "Methods on the constructor itself (`class Foo { static bar() {} }`), not on instances. Used for utilities, factories, and namespaced helpers (e.g., `Array.from`)."
+    },
+    {
+      "id": 67,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Objects and Prototypes",
+      "question": "What is `super()` and when must you call it?",
+      "answer": "In a derived class constructor, `super()` calls the parent constructor and must be called before using `this`. In methods, `super.method()` calls the parent's prototype method."
+    },
+    {
+      "id": 68,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Objects and Prototypes",
+      "question": "Can you extend built-in objects? Should you?",
+      "answer": "Technically yes (`class MyArray extends Array`), but generally **avoid** extending built-ins—engine optimizations may break, instanceof checks get confusing, and it can conflict with future language additions."
+    },
+    {
+      "id": 69,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Objects and Prototypes",
+      "question": "What are Symbols and what are they used for?",
+      "answer": "Unique, immutable primitive values. Used for non-enumerable property keys, well-known symbols (`Symbol.iterator`, `Symbol.toStringTag`), avoiding name collisions, and meta-programming."
+    },
+    {
+      "id": 70,
+      "part": "Part 1: JavaScript Core Concepts",
+      "section": "Objects and Prototypes",
+      "question": "What are WeakMaps and WeakSets?",
+      "answer": "Collections that hold **weak** references to objects—keys must be objects, and entries are garbage-collected when the key is no longer reachable. Useful for private metadata, caching, and DOM node associations without memory leaks."
+    },
+    {
+      "id": 71,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Type Coercion and Equality",
+      "question": "What's the difference between `==` and `===`?",
+      "answer": "`===` is strict equality—no type coercion; compares type and value. `==` coerces types before comparing (e.g., `\"5\" == 5` is true). I always use `===` except rare cases like `value == null` (checks both null and undefined)."
+    },
+    {
+      "id": 72,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Type Coercion and Equality",
+      "question": "How does type coercion work in JavaScript?",
+      "answer": "When operands differ in type, JS applies abstract equality or operator-specific rules: convert to number (`ToNumber`), string (`ToString`), or boolean (`ToBoolean`). The `+` operator prefers string concatenation if either operand is a string."
+    },
+    {
+      "id": 73,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Type Coercion and Equality",
+      "question": "What are truthy and falsy values?",
+      "answer": "Falsy: `false`, `0`, `-0`, `0n`, `\"\"`, `null`, `undefined`, `NaN`. Everything else is truthy—including `[]`, `{}`, and `\"0\"`."
+    },
+    {
+      "id": 74,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Type Coercion and Equality",
+      "question": "What does `!!variable` do?",
+      "answer": "Double negation converts any value to its boolean equivalent: `!!value` is the same as `Boolean(value)`."
+    },
+    {
+      "id": 75,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Type Coercion and Equality",
+      "question": "How does the `+` operator behave with different types?",
+      "answer": "If either operand is a string, it concatenates (after `ToString`). Otherwise it adds numbers (after `ToNumber`). `\"5\" + 1` → `\"51\"`; `\"5\" - 1` → `4`."
+    },
+    {
+      "id": 76,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Type Coercion and Equality",
+      "question": "What is the result of `[] + {}` vs `{} + []`?",
+      "answer": "`[] + {}` → `\"[object Object]\"` (array to `\"\"`, object to string). `{} + []` → `0` in some contexts because `{}` is parsed as an empty block, leaving `+[]` which is `0`. With parentheses, `( {} + [] )` → `\"[object Object]\"`."
+    },
+    {
+      "id": 77,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Type Coercion and Equality",
+      "question": "When does JavaScript automatically convert types?",
+      "answer": "In loose equality, arithmetic operators, boolean contexts (`if`, `&&`, `||`), template literals, and some API calls. Strict mode and `===` avoid many implicit conversions."
+    },
+    {
+      "id": 78,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Type Coercion and Equality",
+      "question": "How do you safely check for null and undefined?",
+      "answer": "Use `value === null`, `value === undefined`, or `value == null` (checks both). Prefer `value === undefined` for optional parameters. Use optional chaining (`?.`) for nested access."
+    },
+    {
+      "id": 79,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Type Coercion and Equality",
+      "question": "What is the nullish coalescing operator?",
+      "answer": "`??` returns the right operand only when the left is `null` or `undefined`—not for other falsy values. `0 ?? 5` is `0`; `null ?? 5` is `5`."
+    },
+    {
+      "id": 80,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Type Coercion and Equality",
+      "question": "How does optional chaining work?",
+      "answer": "`obj?.prop`, `obj?.[key]`, `fn?.()` short-circuit to `undefined` if the base is nullish, avoiding `Cannot read property` errors. It doesn't catch all errors—only null/undefined bases."
+    },
+    {
+      "id": 81,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Type Coercion and Equality",
+      "question": "What happens when you compare objects?",
+      "answer": "Objects compare by reference, not value. `{} === {}` is false. Deep equality requires recursive comparison or serialization (with caveats)."
+    },
+    {
+      "id": 82,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Type Coercion and Equality",
+      "question": "How do you check if two objects are equal?",
+      "answer": "For deep equality: `structuredClone` + JSON compare (limited), lodash `isEqual`, or custom recursive comparison. For shallow: compare keys and values at one level."
+    },
+    {
+      "id": 83,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Type Coercion and Equality",
+      "question": "What is NaN and how do you check for it?",
+      "answer": "NaN (\"Not a Number\") is the result of invalid math operations. It's the only value not equal to itself. Check with `Number.isNaN(value)`—not `isNaN()` which coerces."
+    },
+    {
+      "id": 84,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Type Coercion and Equality",
+      "question": "Why does `typeof null` return `'object'`?",
+      "answer": "A long-standing bug from early JavaScript when values were tagged with type bits—null's tag matched objects. It persists for backward compatibility. Use `value === null` instead."
+    },
+    {
+      "id": 85,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Type Coercion and Equality",
+      "question": "How does `Number()` differ from `parseInt()`?",
+      "answer": "`Number()` converts the entire string to a number; invalid strings become `NaN`. `parseInt()` parses an integer prefix—`parseInt(\"42px\")` → `42`. `parseInt` also takes a radix; always pass radix 10."
+    },
+    {
+      "id": 86,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Array Methods and Manipulation",
+      "question": "How do `map`, `filter`, and `reduce` differ?",
+      "answer": "`map` transforms each element to a new array of the same length. `filter` keeps elements matching a predicate. `reduce` accumulates to a single value (or any type) by iterating with an accumulator."
+    },
+    {
+      "id": 87,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Array Methods and Manipulation",
+      "question": "Can you chain `map`, `filter`, and `reduce`? Show me a real example",
+      "answer": "Yes. Example: get total price of in-stock products:\n\n```javascript\nconst total = products\n  .filter(p => p.inStock)\n  .map(p => p.price * p.quantity)\n  .reduce((sum, price) => sum + price, 0);\n```"
+    },
+    {
+      "id": 88,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Array Methods and Manipulation",
+      "question": "What's the Big O complexity of chaining array methods?",
+      "answer": "Each pass is O(n), so three chained methods on n items is O(3n) → O(n) time but with multiple allocations. Space: each intermediate array is O(n)."
+    },
+    {
+      "id": 89,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Array Methods and Manipulation",
+      "question": "How would you optimize array operations for millions of items?",
+      "answer": "Combine passes into one loop, use generators/iterators, process in chunks with `requestIdleCallback`, move heavy work to Web Workers, or use typed arrays. Avoid creating intermediate arrays."
+    },
+    {
+      "id": 90,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Array Methods and Manipulation",
+      "question": "When would you use `forEach` vs `map`?",
+      "answer": "Use `map` when you need a transformed array. Use `forEach` for side effects only (logging, DOM updates) when you don't need a return value. `map` is more functional and composable."
+    },
+    {
+      "id": 91,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Array Methods and Manipulation",
+      "question": "What happens if you don't return anything from a map function?",
+      "answer": "Each element becomes `undefined` in the new array because the implicit return is `undefined`."
+    },
+    {
+      "id": 92,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Array Methods and Manipulation",
+      "question": "Can you implement your own version of reduce?",
+      "answer": "```javascript\nfunction myReduce(arr, fn, initial) {\n  let acc = initial;\n  let start = 0;\n  if (initial === undefined) {\n    if (arr.length === 0) throw new TypeError(\"Reduce of empty array with no initial value\");\n    acc = arr[0];\n    start = 1;\n  }\n  for (let i = start; i < arr.length; i++) acc = fn(acc, arr[i], i, arr);\n  return acc;\n}\n```"
+    },
+    {
+      "id": 93,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Array Methods and Manipulation",
+      "question": "What's the difference between `find` and `findIndex`?",
+      "answer": "`find` returns the first matching **element** (or `undefined`). `findIndex` returns the **index** (or `-1`)."
+    },
+    {
+      "id": 94,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Array Methods and Manipulation",
+      "question": "How does `Array.some` differ from `Array.every`?",
+      "answer": "`some` returns true if **at least one** element passes the test. `every` returns true only if **all** elements pass."
+    },
+    {
+      "id": 95,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Array Methods and Manipulation",
+      "question": "What are `flatMap` and `flat` methods?",
+      "answer": "`flat(depth)` flattens nested arrays. `flatMap` is `map` followed by flatten one level—useful when map produces arrays you want merged (e.g., parsing lines into tokens)."
+    },
+    {
+      "id": 96,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Array Methods and Manipulation",
+      "question": "How do you remove duplicates from an array?",
+      "answer": "`[...new Set(arr)]` for primitives. For objects, use `Map` keyed by id, or filter with `findIndex`. `Array.from(new Set(arr))` also works."
+    },
+    {
+      "id": 97,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Array Methods and Manipulation",
+      "question": "What's the most efficient way to check if an array contains a value?",
+      "answer": "For primitives: `arr.includes(value)`—O(n). For frequent lookups, convert to `Set` first—O(1) amortized. For sorted arrays, binary search."
+    },
+    {
+      "id": 98,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Array Methods and Manipulation",
+      "question": "How do you shuffle an array?",
+      "answer": "Fisher-Yates shuffle—O(n), unbiased:\n\n```javascript\nfor (let i = arr.length - 1; i > 0; i--) {\n  const j = Math.floor(Math.random() * (i + 1));\n  [arr[i], arr[j]] = [arr[j], arr[i]];\n}\n```"
+    },
+    {
+      "id": 99,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Array Methods and Manipulation",
+      "question": "What's the difference between `slice` and `splice`?",
+      "answer": "`slice(start, end)` returns a shallow copy of a portion—non-mutating. `splice(start, deleteCount, ...items)` mutates the array—removes/inserts elements in place."
+    },
+    {
+      "id": 100,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Array Methods and Manipulation",
+      "question": "How does `Array.from` work?",
+      "answer": "Creates an array from array-like or iterable objects. Optional map function: `Array.from({ length: 5 }, (_, i) => i)`."
+    },
+    {
+      "id": 101,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Array Methods and Manipulation",
+      "question": "When would you use `Array.of`?",
+      "answer": "Creates an array from arguments without the `new Array(3)` empty-slots quirk. `Array.of(7)` → `[7]` vs `Array(7)` → sparse array of length 7."
+    },
+    {
+      "id": 102,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Array Methods and Manipulation",
+      "question": "How do you convert array-like objects to arrays?",
+      "answer": "`Array.from(arrayLike)`, `[...arrayLike]` (if iterable), or `Array.prototype.slice.call(arrayLike)` for legacy DOM NodeLists."
+    },
+    {
+      "id": 103,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Array Methods and Manipulation",
+      "question": "What happens when you sort an array of numbers?",
+      "answer": "Default sort converts elements to strings—`[10, 2, 1].sort()` → `[1, 10, 2]`. Pass comparator: `(a, b) => a - b`."
+    },
+    {
+      "id": 104,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Array Methods and Manipulation",
+      "question": "How do you sort objects by a property?",
+      "answer": "`arr.sort((a, b) => a.name.localeCompare(b.name))` for strings, or `(a, b) => a.price - b.price` for numbers. Note: `sort` mutates—copy first if needed."
+    },
+    {
+      "id": 105,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Array Methods and Manipulation",
+      "question": "Can you sort an array in-place vs creating a new array?",
+      "answer": "`Array.sort()` sorts in-place. For immutability: `[...arr].sort(compareFn)` or `arr.toSorted(compareFn)` (ES2023)."
+    },
+    {
+      "id": 106,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Error Handling and Debugging",
+      "question": "What types of errors exist in JavaScript?",
+      "answer": "Built-in: `Error`, `TypeError`, `ReferenceError`, `SyntaxError`, `RangeError`, etc. Also custom errors, unhandled promise rejections, and logical errors that don't throw."
+    },
+    {
+      "id": 107,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Error Handling and Debugging",
+      "question": "How do you create custom error types?",
+      "answer": "Extend `Error`: `class ValidationError extends Error { constructor(msg) { super(msg); this.name = \"ValidationError\"; } }`. Preserves stack traces when `Error.captureStackTrace` is available (V8)."
+    },
+    {
+      "id": 108,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Error Handling and Debugging",
+      "question": "What's the difference between `throw` and `throw new Error()`?",
+      "answer": "`throw` can throw any value. `throw new Error(\"msg\")` throws an Error object with message and stack trace—always prefer this for debuggability."
+    },
+    {
+      "id": 109,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Error Handling and Debugging",
+      "question": "How does `try...catch...finally` work?",
+      "answer": "`try` runs code; `catch` handles thrown errors; `finally` always runs (cleanup). `finally` can override return values if it returns a value."
+    },
+    {
+      "id": 110,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Error Handling and Debugging",
+      "question": "Can you catch specific types of errors?",
+      "answer": "Yes—check `instanceof` in catch: `catch (e) { if (e instanceof TypeError) ... }`. Or use multiple try blocks / helper wrappers."
+    },
+    {
+      "id": 111,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Error Handling and Debugging",
+      "question": "What errors can't be caught by try-catch?",
+      "answer": "Asynchronous errors outside the try block (unless awaited), errors in event handlers not wrapped in try-catch, syntax errors at parse time, and some engine-level failures. Promise rejections need `.catch()` or await in try."
+    },
+    {
+      "id": 112,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Error Handling and Debugging",
+      "question": "How do you handle errors in Promise chains?",
+      "answer": "End chains with `.catch()`, use `.finally()` for cleanup, or async/await with try/catch. Re-throw after logging if upstream should handle it."
+    },
+    {
+      "id": 113,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Error Handling and Debugging",
+      "question": "What is the global error handler?",
+      "answer": "Browser: `window.onerror`, `window.addEventListener(\"unhandledrejection\")`. Node: `process.on(\"uncaughtException\")`, `process.on(\"unhandledRejection\")`. Use for logging/monitoring—not recovery."
+    },
+    {
+      "id": 114,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Error Handling and Debugging",
+      "question": "How do you debug memory leaks?",
+      "answer": "Chrome DevTools Memory tab (heap snapshots, comparison), Performance monitor, detach listeners, check retained DOM nodes, audit closures holding large references, and use WeakMap for caches."
+    },
+    {
+      "id": 115,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Error Handling and Debugging",
+      "question": "What tools do you use for JavaScript debugging?",
+      "answer": "Chrome/Firefox DevTools (breakpoints, conditional breakpoints, watch expressions), VS Code debugger, `console` methods (`table`, `trace`), React DevTools, and network tab for API issues."
+    },
+    {
+      "id": 116,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Error Handling and Debugging",
+      "question": "How do you profile JavaScript performance?",
+      "answer": "Chrome Performance tab (flame charts), `console.time`/`timeEnd`, `performance.mark/measure`, React Profiler, Lighthouse, and `console.profile` in Node."
+    },
+    {
+      "id": 117,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Error Handling and Debugging",
+      "question": "What are source maps and why are they important?",
+      "answer": "Source maps map minified/transpiled code back to original source for debugging. Essential in production error tracking (Sentry) and DevTools debugging of bundled code."
+    },
+    {
+      "id": 118,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Error Handling and Debugging",
+      "question": "How do you handle errors in event handlers?",
+      "answer": "Wrap handler logic in try/catch, use error boundaries in React, report to monitoring, and avoid silent failures. For async handlers, await in try/catch or `.catch()` on returned promises."
+    },
+    {
+      "id": 119,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Error Handling and Debugging",
+      "question": "What's the difference between compile-time and runtime errors?",
+      "answer": "Compile-time (parse/transpile): syntax errors, TypeScript type errors—caught before execution. Runtime: thrown during execution—TypeError, network failures, logic bugs."
+    },
+    {
+      "id": 120,
+      "part": "Part 2: Advanced JavaScript",
+      "section": "Error Handling and Debugging",
+      "question": "How do you implement error boundaries in vanilla JavaScript?",
+      "answer": "Wrap render/update logic in try/catch, use global error handlers, or implement a proxy component pattern that catches child errors via a wrapper with fallback UI—similar concept to React Error Boundaries but manual."
+    },
+    {
+      "id": 121,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Component Lifecycle and Rendering",
+      "question": "What are the phases of a React component lifecycle?",
+      "answer": "Class components: mount → update → unmount (with render/commit sub-phases). In hooks: mount/update/unmount map to `useEffect`/`useLayoutEffect` with empty/deps cleanup. React 18 adds concurrent rendering where render can be interrupted."
+    },
+    {
+      "id": 122,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Component Lifecycle and Rendering",
+      "question": "How does React decide what to re-render?",
+      "answer": "When state or props change (or parent re-renders, or context value changes), React schedules a re-render. During reconciliation, it diffs the virtual tree and commits DOM updates for changed subtrees."
+    },
+    {
+      "id": 123,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Component Lifecycle and Rendering",
+      "question": "What triggers a re-render in React?",
+      "answer": "`setState`/`useState` dispatch, `useReducer` dispatch, parent re-render, context consumer value change, `forceUpdate` (legacy), and store subscriptions (Redux, Zustand)."
+    },
+    {
+      "id": 124,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Component Lifecycle and Rendering",
+      "question": "What is reconciliation in React?",
+      "answer": "React's diffing algorithm comparing new and previous element trees. It identifies minimal DOM changes using heuristics (same type → update, different type → replace, keys for lists)."
+    },
+    {
+      "id": 125,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Component Lifecycle and Rendering",
+      "question": "How does the virtual DOM work?",
+      "answer": "React builds a lightweight JS representation of the UI. On updates, it diffs the new virtual tree against the previous one and applies only necessary changes to the real DOM."
+    },
+    {
+      "id": 126,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Component Lifecycle and Rendering",
+      "question": "Why does React use a virtual DOM?",
+      "answer": "Batching and diffing DOM updates in memory is often faster than manual DOM manipulation at scale, and it enables declarative UI, cross-platform rendering (React Native), and concurrent features."
+    },
+    {
+      "id": 127,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Component Lifecycle and Rendering",
+      "question": "What is the difference between mounting and updating?",
+      "answer": "Mounting creates and inserts a component into the DOM for the first time. Updating re-renders an existing mounted component when props/state change."
+    },
+    {
+      "id": 128,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Component Lifecycle and Rendering",
+      "question": "When does `componentDidMount` execute vs `useEffect`?",
+      "answer": "Both run after the component is painted to the screen. `componentDidMount` runs once after first render. `useEffect` with `[]` deps runs after every committed paint (async relative to layout). `useLayoutEffect` runs synchronously after DOM mutations, before paint."
+    },
+    {
+      "id": 129,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Component Lifecycle and Rendering",
+      "question": "What happens during the commit phase?",
+      "answer": "React applies DOM updates, runs `useLayoutEffect`, calls lifecycle methods (`componentDidMount`/`Update`), and schedules `useEffect`. This is synchronous and cannot be interrupted (unlike render phase in concurrent mode)."
+    },
+    {
+      "id": 130,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Component Lifecycle and Rendering",
+      "question": "How does React batch state updates?",
+      "answer": "Multiple `setState` calls in the same event handler are batched into one re-render. React 18 automatic batching extends this to promises, timeouts, and native event handlers."
+    },
+    {
+      "id": 131,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Component Lifecycle and Rendering",
+      "question": "What is automatic batching in React 18?",
+      "answer": "State updates inside setTimeout, promises, and native handlers are batched automatically—previously only React event handlers batched. Reduces unnecessary re-renders."
+    },
+    {
+      "id": 132,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Component Lifecycle and Rendering",
+      "question": "Can you force a component to re-render?",
+      "answer": "Change state/props, update context, or use `key` prop to remount. Avoid `forceUpdate` in class components. In function components, bump a state counter as last resort."
+    },
+    {
+      "id": 133,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Component Lifecycle and Rendering",
+      "question": "What is React Fiber and why was it introduced?",
+      "answer": "Fiber is React's reconciliation engine—a linked list of work units. It enables incremental rendering, pausing/resuming work, prioritization, and concurrent features (Suspense, transitions)."
+    },
+    {
+      "id": 134,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Component Lifecycle and Rendering",
+      "question": "How does Fiber improve performance?",
+      "answer": "By splitting work into units that can be paused, deprioritized, or discarded. High-priority updates (user input) can interrupt low-priority work (data fetching UI)."
+    },
+    {
+      "id": 135,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Component Lifecycle and Rendering",
+      "question": "What are React priorities and scheduling?",
+      "answer": "React assigns lanes/priorities to updates. User interactions get urgent priority; transitions (`startTransition`) get lower priority. The scheduler (`scheduler` package) coordinates when work runs."
+    },
+    {
+      "id": 136,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Hooks Deep Dive",
+      "question": "Why were hooks introduced in React?",
+      "answer": "To reuse stateful logic without HOCs/render props, colocate related logic (instead of splitting across lifecycle methods), and simplify components—no `this` binding issues."
+    },
+    {
+      "id": 137,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Hooks Deep Dive",
+      "question": "What are the rules of hooks?",
+      "answer": "Only call hooks at the top level (not in loops/conditions/nested functions). Only call hooks from React function components or custom hooks."
+    },
+    {
+      "id": 138,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Hooks Deep Dive",
+      "question": "Why can't hooks be called conditionally?",
+      "answer": "React relies on hook call order being identical every render to match state to the correct hook instance. Conditional calls would desynchronize the hook linked list."
+    },
+    {
+      "id": 139,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Hooks Deep Dive",
+      "question": "How can we avoid memory leaks when an event listener is attached inside a component?",
+      "answer": "Return a cleanup function from `useEffect` that removes the listener. Use `{ capture: true }` consistently. Abort fetch/subscriptions on unmount with `AbortController`."
+    },
+    {
+      "id": 140,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Hooks Deep Dive",
+      "question": "What would be the dependency array value in this useEffect?",
+      "answer": "(Context-dependent—general answer:) Include every reactive value from the component scope used inside the effect: props, state, functions unless wrapped in `useCallback`. ESLint `react-hooks/exhaustive-deps` helps."
+    },
+    {
+      "id": 141,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Hooks Deep Dive",
+      "question": "Do you know what a dependency array is?",
+      "answer": "The second argument to `useEffect`/`useMemo`/`useCallback`. React compares deps with `Object.is` each render. Changed deps → re-run effect. `[]` = mount only; omitted = every render."
+    },
+    {
+      "id": 142,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Hooks Deep Dive",
+      "question": "What happens if you omit the dependency array entirely?",
+      "answer": "The effect runs after **every** render—including the initial one. Usually a bug unless you intentionally need sync on every render (rare)."
+    },
+    {
+      "id": 143,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Hooks Deep Dive",
+      "question": "When have you actually used `useLayoutEffect`?",
+      "answer": "When I need DOM measurements or mutations before the browser paints—measuring element size for tooltips, synchronizing scroll position, or preventing visual flicker when DOM must be updated before paint."
+    },
+    {
+      "id": 144,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Hooks Deep Dive",
+      "question": "What is the difference between `useEffect` and `useLayoutEffect`?",
+      "answer": "`useLayoutEffect` fires synchronously after DOM updates, before paint—blocks visual update. `useEffect` fires asynchronously after paint—non-blocking, preferred for data fetching and subscriptions."
+    },
+    {
+      "id": 145,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Hooks Deep Dive",
+      "question": "What are the performance implications of `useLayoutEffect`?",
+      "answer": "It blocks browser painting. Overuse causes jank and poor INP. Default to `useEffect`; reach for `useLayoutEffect` only when you see flicker or need pre-paint measurements."
+    },
+    {
+      "id": 146,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Hooks Deep Dive",
+      "question": "Have you used `useCallback` in your codebase?",
+      "answer": "Yes—when passing stable callbacks to memoized child components (`React.memo`) or as dependencies to other hooks. Not everywhere—only when profiling shows unnecessary re-renders or dep instability."
+    },
+    {
+      "id": 147,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Hooks Deep Dive",
+      "question": "What is the use case of `useMemo`?",
+      "answer": "Memoize expensive computed values between renders. Example: filtering/sorting large lists, derived data from props. Don't use for cheap calculations—the overhead isn't worth it."
+    },
+    {
+      "id": 148,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Hooks Deep Dive",
+      "question": "What is the use case of `useCallback`?",
+      "answer": "Memoize function references so child components wrapped in `React.memo` don't re-render when the parent re-renders but the callback's logical behavior hasn't changed."
+    },
+    {
+      "id": 149,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Hooks Deep Dive",
+      "question": "When should you NOT use `useMemo`?",
+      "answer": "For trivial computations, when premature optimization adds complexity, when deps change every render anyway, or when the memoized value is only used once per render."
+    },
+    {
+      "id": 150,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Hooks Deep Dive",
+      "question": "What's the difference between `useMemo` and `React.memo`?",
+      "answer": "`useMemo` memoizes a **value** inside a component. `React.memo` memoizes an entire **component**—skips re-render if props are shallowly equal."
+    },
+    {
+      "id": 151,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Hooks Deep Dive",
+      "question": "How does `useRef` work and what are its use cases?",
+      "answer": "Returns a mutable `{ current }` object persisting across renders without triggering re-renders. Uses: DOM refs, storing previous values, timers IDs, instance variables, avoiding stale closures."
+    },
+    {
+      "id": 152,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Hooks Deep Dive",
+      "question": "Can you store non-DOM values in `useRef`?",
+      "answer": "Yes—that's a primary use case. Any mutable value that shouldn't cause re-renders: interval IDs, previous prop values, imperative handles."
+    },
+    {
+      "id": 153,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Hooks Deep Dive",
+      "question": "What is `useImperativeHandle` and when would you use it?",
+      "answer": "Customizes the ref value exposed to parent components when using `forwardRef`. Use sparingly—for focus management, scroll control, or integrating non-React widgets."
+    },
+    {
+      "id": 154,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Hooks Deep Dive",
+      "question": "How does `useReducer` compare to `useState`?",
+      "answer": "`useReducer` manages complex state transitions via a reducer `(state, action) => newState`. Better for multiple sub-values, complex update logic, or when next state depends on previous."
+    },
+    {
+      "id": 155,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Hooks Deep Dive",
+      "question": "When would you choose `useReducer` over `useState`?",
+      "answer": "Complex state with interdependent fields, many event types updating state, or when you want predictable state transitions (similar to Redux locally). Forms with validation are a common case."
+    },
+    {
+      "id": 156,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Hooks Deep Dive",
+      "question": "What is `useDebugValue` for?",
+      "answer": "Displays a label for custom hooks in React DevTools. Helps debug hook state in reusable abstractions like `useAuth` or `useFetch`."
+    },
+    {
+      "id": 157,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Hooks Deep Dive",
+      "question": "Have you created custom hooks? Give examples",
+      "answer": "Yes—`useDebounce`, `useLocalStorage`, `useMediaQuery`, `useFetch`, `useOnClickOutside`, `useIntersectionObserver`. They encapsulate reusable stateful logic."
+    },
+    {
+      "id": 158,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Hooks Deep Dive",
+      "question": "How do you test custom hooks?",
+      "answer": "`@testing-library/react`'s `renderHook` and `act()`. Assert return values change after actions. Mock dependencies. Test cleanup on unmount."
+    },
+    {
+      "id": 159,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Hooks Deep Dive",
+      "question": "What is the `useId` hook in React 18?",
+      "answer": "Generates stable unique IDs across server and client renders—fixes hydration mismatches for accessibility attributes (`id`, `aria-labelledby`)."
+    },
+    {
+      "id": 160,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Hooks Deep Dive",
+      "question": "What are `useTransition` and `useDeferredValue`?",
+      "answer": "`useTransition` marks state updates as non-urgent (`startTransition`), keeping UI responsive. `useDeferredValue` defers updating a value—useful for deferring expensive re-renders (search filtering)."
+    },
+    {
+      "id": 161,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Hooks Deep Dive",
+      "question": "How does `useSyncExternalStore` work?",
+      "answer": "Subscribes to external stores (Redux, Zustand, browser APIs) safely for concurrent rendering. Ensures consistent snapshot during render—used by state libraries for React 18 compatibility."
+    },
+    {
+      "id": 162,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "State Management",
+      "question": "What is the difference between React Context and Redux?",
+      "answer": "Context provides prop-drilling escape via Provider/Consumer—built into React. Redux is a predictable state container with middleware, devtools, time-travel, and strict unidirectional data flow. Context is simpler; Redux scales better for complex global state."
+    },
+    {
+      "id": 163,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "State Management",
+      "question": "If Context and Redux work similarly, why should we choose Redux?",
+      "answer": "Redux offers middleware (async, logging), DevTools, selectors with memoization (Reselect), clear action/reducer patterns, and ecosystem. Context lacks built-in performance optimization for frequent updates."
+    },
+    {
+      "id": 164,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "State Management",
+      "question": "When would you choose Context over Redux?",
+      "answer": "Simple global state (theme, locale, auth user), infrequent updates, small apps, or when you want zero dependencies. Split contexts by domain to limit re-renders."
+    },
+    {
+      "id": 165,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "State Management",
+      "question": "How does Context cause performance issues?",
+      "answer": "Any context value change re-renders **all** consumers of that context—even if they only use part of the value. No built-in selector granularity."
+    },
+    {
+      "id": 166,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "State Management",
+      "question": "What are the alternatives to Redux in 2025?",
+      "answer": "Zustand, Jotai, Valtio, TanStack Query (server state), XState (state machines), Redux Toolkit (still popular), and Context + `useReducer` for simpler cases."
+    },
+    {
+      "id": 167,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "State Management",
+      "question": "How do you prevent Context from causing unnecessary re-renders?",
+      "answer": "Split contexts by concern, memoize provider value with `useMemo`, use state selectors (Zustand/Jotai), or move frequently changing state out of context into localized state or external stores."
+    },
+    {
+      "id": 168,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "State Management",
+      "question": "Can you have multiple Contexts in one app?",
+      "answer": "Yes—and you should. Separate ThemeContext, AuthContext, etc. Consumers only re-render when their specific context changes."
+    },
+    {
+      "id": 169,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "State Management",
+      "question": "What is prop drilling and how do you avoid it?",
+      "answer": "Passing props through many intermediate components that don't use them. Avoid with Context, component composition (children/render props), state management libraries, or colocating state closer to consumers."
+    },
+    {
+      "id": 170,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "State Management",
+      "question": "How do you structure global state?",
+      "answer": "Separate server state (TanStack Query/SWR) from client UI state. Keep global state minimal—auth, theme, cart. Colocate feature state. Use normalized shapes for relational data."
+    },
+    {
+      "id": 171,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "State Management",
+      "question": "What's the difference between local and global state?",
+      "answer": "Local state lives in a component (form inputs, toggles). Global state is shared across the app (user session, theme). Prefer local; lift only when needed."
+    },
+    {
+      "id": 172,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "State Management",
+      "question": "When should state be lifted up?",
+      "answer": "When sibling components need the same state, or when a parent needs to coordinate children. Move state to the nearest common ancestor."
+    },
+    {
+      "id": 173,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "State Management",
+      "question": "How do you share state between sibling components?",
+      "answer": "Lift state to parent, use Context, use a shared store (Zustand/Redux), or URL/query params for shareable state."
+    },
+    {
+      "id": 174,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "State Management",
+      "question": "What is component composition vs prop drilling?",
+      "answer": "Composition uses `children`, slots, or render props to inject UI without passing every prop through intermediates. Prop drilling passes data through layers; composition flattens the tree structurally."
+    },
+    {
+      "id": 175,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "State Management",
+      "question": "How does Redux Toolkit improve upon Redux?",
+      "answer": "Includes Immer for immutable updates, `createSlice` for reducers/actions, `configureStore` with good defaults, RTK Query for data fetching, and less boilerplate."
+    },
+    {
+      "id": 176,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "State Management",
+      "question": "What are Redux middleware and why are they useful?",
+      "answer": "Functions intercepting actions before they reach the reducer—enabling async logic (redux-thunk, redux-saga), logging, analytics, and side effects in a predictable pipeline."
+    },
+    {
+      "id": 177,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "State Management",
+      "question": "Have you used Zustand, Jotai, or Valtio?",
+      "answer": "(Adapt to your experience.) Zustand: minimal API, no Provider, great for medium apps. Jotai: atomic state, fine-grained updates. Valtio: proxy-based mutable state with reactive reads. I pick based on team familiarity and update granularity needs."
+    },
+    {
+      "id": 178,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "State Management",
+      "question": "What is the difference between flux and Redux patterns?",
+      "answer": "Flux is the unidirectional data flow architecture (actions → dispatcher → stores → views). Redux is a specific Flux implementation with a single store, pure reducers, and immutability."
+    },
+    {
+      "id": 179,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "State Management",
+      "question": "How do you handle server state vs client state?",
+      "answer": "Server state: TanStack Query/SWR—caching, revalidation, stale-while-revalidate. Client state: React state, Zustand, URL state. Don't duplicate server data in Redux unnecessarily."
+    },
+    {
+      "id": 180,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "State Management",
+      "question": "What is optimistic UI updating?",
+      "answer": "Update UI immediately assuming success, then rollback on failure. Improves perceived performance for mutations (likes, todos). TanStack Query and Apollo support this natively."
+    },
+    {
+      "id": 181,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "State Management",
+      "question": "How do you handle state persistence?",
+      "answer": "`localStorage`/`sessionStorage` with hydration on mount, `redux-persist`, Zustand persist middleware, or URL for shareable state. Handle SSR hydration mismatches carefully."
+    },
+    {
+      "id": 182,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Performance Optimization",
+      "question": "If a parent component re-renders, how do you prevent child re-renders?",
+      "answer": "Wrap child in `React.memo`, stabilize props with `useMemo`/`useCallback`, move state down, use context selectors (external library), or split components so only affected subtrees re-render."
+    },
+    {
+      "id": 183,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Performance Optimization",
+      "question": "What triggers unnecessary re-renders?",
+      "answer": "New object/array/function references on every render, context changes, parent re-renders without memoization, unstable keys, and global state updates affecting unrelated components."
+    },
+    {
+      "id": 184,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Performance Optimization",
+      "question": "How do you identify performance bottlenecks in React?",
+      "answer": "React DevTools Profiler, Chrome Performance tab, why-did-you-render (dev), measuring render counts, and Lighthouse. Look for slow components, wasted renders, and long tasks."
+    },
+    {
+      "id": 185,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Performance Optimization",
+      "question": "What tools do you use for React performance profiling?",
+      "answer": "React DevTools Profiler, Chrome Performance/Memory tabs, `@welldone-software/why-did-you-render`, Bundle Analyzer, and Web Vitals in production (RUM)."
+    },
+    {
+      "id": 186,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Performance Optimization",
+      "question": "What is `React.memo` and when should you use it?",
+      "answer": "HOC that skips re-render if props are shallowly equal. Use on expensive pure components receiving stable props—not on every component (memo has overhead)."
+    },
+    {
+      "id": 187,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Performance Optimization",
+      "question": "How does `React.lazy` work?",
+      "answer": "Dynamically imports a component, returning a lazy component that suspends while loading. Pair with `<Suspense fallback={...}>` for code splitting."
+    },
+    {
+      "id": 188,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Performance Optimization",
+      "question": "What is code splitting and how do you implement it?",
+      "answer": "Splitting bundles so users load only needed code. Implement with `React.lazy` + dynamic `import()`, route-based splitting in Next.js/React Router, and analyzing with webpack-bundle-analyzer."
+    },
+    {
+      "id": 189,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Performance Optimization",
+      "question": "What are the performance implications of inline functions?",
+      "answer": "Inline functions in JSX create new references each render, breaking `React.memo` on children. Fix with `useCallback` or by extracting stable handlers—only when profiling shows impact."
+    },
+    {
+      "id": 190,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Performance Optimization",
+      "question": "How do you optimize large lists in React?",
+      "answer": "Virtualization (`react-window`, `@tanstack/react-virtual`), pagination, memoized row components, stable keys, and avoiding inline objects in list items."
+    },
+    {
+      "id": 191,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Performance Optimization",
+      "question": "What is virtualization and when do you need it?",
+      "answer": "Rendering only visible DOM nodes in long lists. Needed when lists exceed ~100–500 items (depends on row complexity) and scrolling becomes janky."
+    },
+    {
+      "id": 192,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Performance Optimization",
+      "question": "How do you implement infinite scrolling?",
+      "answer": "Intersection Observer on a sentinel element at list bottom, fetch next page on intersect, append to state. Libraries: TanStack Virtual + Query, or `react-infinite-scroll-component`."
+    },
+    {
+      "id": 193,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Performance Optimization",
+      "question": "What is the `key` prop and why is it important?",
+      "answer": "Keys help React identify which list items changed, were added, or removed. Stable unique keys preserve component state and improve diff performance."
+    },
+    {
+      "id": 194,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Performance Optimization",
+      "question": "Can using index as key cause issues?",
+      "answer": "Yes—when list order changes, inserts, or deletes occur, index keys cause wrong component reuse, lost local state, and buggy animations. Use stable IDs instead."
+    },
+    {
+      "id": 195,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Performance Optimization",
+      "question": "How do you optimize images in React applications?",
+      "answer": "Use `next/image` or similar, lazy loading (`loading=\"lazy\"`), responsive `srcset`, WebP/AVIF, CDN, blur placeholders, and proper width/height to prevent CLS."
+    },
+    {
+      "id": 196,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Performance Optimization",
+      "question": "What are the performance costs of Context?",
+      "answer": "All consumers re-render on any value change. Large provider values cause unnecessary work. Mitigate by splitting contexts and memoizing values."
+    },
+    {
+      "id": 197,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Performance Optimization",
+      "question": "How do you prevent memory leaks in React?",
+      "answer": "Clean up effects (listeners, intervals, subscriptions), abort fetches on unmount, cancel debounced functions, and avoid setting state on unmounted components."
+    },
+    {
+      "id": 198,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Performance Optimization",
+      "question": "What is tree shaking and how does it work?",
+      "answer": "Dead code elimination—bundlers remove unused exports when code uses ES modules with static imports. Requires side-effect-free modules and `\"sideEffects\": false` in package.json."
+    },
+    {
+      "id": 199,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Performance Optimization",
+      "question": "How do you reduce bundle size?",
+      "answer": "Code splitting, tree shaking, analyze bundles, replace heavy libraries, use dynamic imports, enable compression (gzip/brotli), and audit dependencies with bundle analyzer."
+    },
+    {
+      "id": 200,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Performance Optimization",
+      "question": "What is the cost of creating new objects in render?",
+      "answer": "New object references break memoization, trigger child re-renders, and add GC pressure. Extract stable objects outside render or memoize with `useMemo`."
+    },
+    {
+      "id": 201,
+      "part": "Part 3: React Fundamentals and Hooks",
+      "section": "Performance Optimization",
+      "question": "Should you use arrow functions in render?",
+      "answer": "Generally fine unless passed to memoized children—then they break referential equality. Profile first; optimize with `useCallback` when needed."
+    },
+    {
+      "id": 202,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "React 18+ Features",
+      "question": "What are Server Components?",
+      "answer": "React components that run only on the server—zero client JS for their logic. They can access backend resources directly, stream HTML, and compose with Client Components. Used heavily in Next.js App Router."
+    },
+    {
+      "id": 203,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "React 18+ Features",
+      "question": "How do Server Components differ from SSR?",
+      "answer": "SSR renders components to HTML on each request but still sends component JS to hydrate. RSC never ship their logic to the client—they're not hydrated. Client Components handle interactivity separately."
+    },
+    {
+      "id": 204,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "React 18+ Features",
+      "question": "What is Concurrent Rendering?",
+      "answer": "React can interrupt, pause, and resume rendering work. Enables transitions, Suspense, and keeping the UI responsive during heavy updates—not blocking the main thread on large renders."
+    },
+    {
+      "id": 205,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "React 18+ Features",
+      "question": "What are Suspense boundaries?",
+      "answer": "Components that wrap async content and show fallback UI while children load. They catch promises thrown during render (data fetching, lazy loading) and coordinate with concurrent features."
+    },
+    {
+      "id": 206,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "React 18+ Features",
+      "question": "How do you use Suspense for data fetching?",
+      "answer": "Frameworks (Next.js, Relay) integrate Suspense with data loaders that throw promises. Wrap async components in `<Suspense fallback={<Spinner />}>`. TanStack Query v5+ supports Suspense mode."
+    },
+    {
+      "id": 207,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "React 18+ Features",
+      "question": "What is selective hydration?",
+      "answer": "React 18 prioritizes hydrating interactive parts of the page first (based on user interaction) rather than hydrating the entire page sequentially—improves TTI and INP."
+    },
+    {
+      "id": 208,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "React 18+ Features",
+      "question": "What are the new features in React 19?",
+      "answer": "Actions (form mutations), `useActionState`, `useOptimistic`, `useFormStatus`, ref as prop (no forwardRef), document metadata support, improved Suspense, and React Compiler (memoization)."
+    },
+    {
+      "id": 209,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "React 18+ Features",
+      "question": "How does streaming SSR work?",
+      "answer": "Server sends HTML in chunks as components resolve—browser can paint early content while slower parts stream in. Uses Suspense boundaries to define chunk boundaries."
+    },
+    {
+      "id": 210,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "React 18+ Features",
+      "question": "What is React Forget (Auto-memoization)?",
+      "answer": "The React Compiler automatically inserts memoization (`useMemo`/`useCallback`/`React.memo` equivalent) at compile time—reducing manual optimization and re-render bugs."
+    },
+    {
+      "id": 211,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "React 18+ Features",
+      "question": "What are React Server Actions?",
+      "answer": "Async functions marked with `\"use server\"` that run on the server but can be called from Client Components—handle form submissions and mutations without manual API routes."
+    },
+    {
+      "id": 212,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "React 18+ Features",
+      "question": "How do Error Boundaries work?",
+      "answer": "Class components (or `react-error-boundary`) implementing `getDerivedStateFromError`/`componentDidCatch` catch render errors in children and show fallback UI. They don't catch event handler or async errors."
+    },
+    {
+      "id": 213,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "React 18+ Features",
+      "question": "Can Error Boundaries catch async errors?",
+      "answer": "No—not errors in event handlers, async code, or SSR by themselves. Handle async errors with try/catch and route to error state manually."
+    },
+    {
+      "id": 214,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "React 18+ Features",
+      "question": "What is the `useFormStatus` hook?",
+      "answer": "React 19 hook returning pending state of a parent `<form>`—useful for disabling submit buttons during Server Action execution without prop drilling."
+    },
+    {
+      "id": 215,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "React 18+ Features",
+      "question": "How does `useOptimistic` work?",
+      "answer": "Shows optimistic UI immediately while an async action runs. On success, keeps update; on failure, reverts to previous state. Built for responsive mutation UX."
+    },
+    {
+      "id": 216,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "React 18+ Features",
+      "question": "What improvements came with the new JSX Transform?",
+      "answer": "No need to `import React from 'react'` in every file. JSX runtime imports automatically. Slightly smaller bundles and cleaner code."
+    },
+    {
+      "id": 217,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "TypeScript with React",
+      "question": "How do you type React components?",
+      "answer": "Define props interface/type and annotate: `function Button({ label, onClick }: ButtonProps) { ... }`. For children: `PropsWithChildren<ButtonProps>` or explicit `children: ReactNode`."
+    },
+    {
+      "id": 218,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "TypeScript with React",
+      "question": "What's the difference between `FC` and function components?",
+      "answer": "`React.FC` implicitly includes `children` and return type—now generally discouraged. Plain typed functions with explicit props are preferred for clarity and flexibility."
+    },
+    {
+      "id": 219,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "TypeScript with React",
+      "question": "How do you type children props?",
+      "answer": "`React.ReactNode` for anything renderable. `React.ReactElement` for single element. `PropsWithChildren<T>` helper adds optional children to props."
+    },
+    {
+      "id": 220,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "TypeScript with React",
+      "question": "How do you handle generic components in TypeScript?",
+      "answer": "`function List<T>({ items, renderItem }: { items: T[]; renderItem: (item: T) => ReactNode }) { ... }`. Generics preserve item type through props."
+    },
+    {
+      "id": 221,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "TypeScript with React",
+      "question": "What are discriminated unions and how do they help?",
+      "answer": "Union types with a common literal discriminator field: `{ type: 'success'; data: T } | { type: 'error'; message: string }`. TypeScript narrows correctly in switch/if—great for API states and reducers."
+    },
+    {
+      "id": 222,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "TypeScript with React",
+      "question": "How do you type event handlers?",
+      "answer": "`React.ChangeEvent<HTMLInputElement>`, `React.MouseEvent<HTMLButtonElement>`, etc. Or inline: `(e: React.FormEvent) => void`."
+    },
+    {
+      "id": 223,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "TypeScript with React",
+      "question": "What's the difference between `type` and `interface`?",
+      "answer": "Interfaces are extendable/mergeable (declaration merging). Types support unions, intersections, mapped types, and primitives. For React props, either works; I use `type` for unions and `interface` for public object shapes."
+    },
+    {
+      "id": 224,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "TypeScript with React",
+      "question": "How do you type custom hooks?",
+      "answer": "Explicit return type or let inference work. Generic hooks: `function useLocalStorage<T>(key: string, initial: T): [T, (v: T) => void]`."
+    },
+    {
+      "id": 225,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "TypeScript with React",
+      "question": "How do you handle strict null checks?",
+      "answer": "Enable `strictNullChecks`. Use optional chaining, nullish coalescing, type guards, and narrow with `if (value !== null)`. Avoid non-null assertion (`!`) unless truly safe."
+    },
+    {
+      "id": 226,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "TypeScript with React",
+      "question": "What are type guards and when do you use them?",
+      "answer": "Functions that narrow types: `function isUser(x: unknown): x is User { return typeof x === 'object' && x !== null && 'id' in x }`. Use when parsing API responses or handling union types."
+    },
+    {
+      "id": 227,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "TypeScript with React",
+      "question": "How do you type Higher-Order Components?",
+      "answer": "Generic wrapper preserving wrapped component props: `function withAuth<P extends object>(Component: ComponentType<P>): ComponentType<P & AuthProps>`."
+    },
+    {
+      "id": 228,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "TypeScript with React",
+      "question": "What are conditional types?",
+      "answer": "Types depending on a condition: `type NonNullable<T> = T extends null | undefined ? never : T`. Useful for utility types and advanced generic APIs."
+    },
+    {
+      "id": 229,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "TypeScript with React",
+      "question": "How do you use mapped types with React?",
+      "answer": "Transform prop types: `type PartialProps<T> = { [K in keyof T]?: T[K] }`. Useful for form field configs, optional overrides, and generic component libraries."
+    },
+    {
+      "id": 230,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "TypeScript with React",
+      "question": "What is the `as const` assertion?",
+      "answer": "Makes values deeply readonly and literal: `const roles = ['admin', 'user'] as const` → readonly tuple with literal types. Great for discriminated unions and config objects."
+    },
+    {
+      "id": 231,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "TypeScript with React",
+      "question": "How do you handle type inference issues?",
+      "answer": "Add explicit generic parameters, annotate function return types, use `satisfies` operator (TS 4.9+), break complex expressions into typed intermediate variables, and enable strict mode."
+    },
+    {
+      "id": 232,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "Testing",
+      "question": "What's your testing strategy for React components?",
+      "answer": "Testing pyramid: many unit tests (hooks, utils), integration tests (component + user flows with Testing Library), fewer e2e (Playwright/Cypress). Test behavior, not implementation."
+    },
+    {
+      "id": 233,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "Testing",
+      "question": "How do you test hooks?",
+      "answer": "`renderHook` from `@testing-library/react`, wrap state updates in `act()`, assert results and cleanup. Mock external dependencies."
+    },
+    {
+      "id": 234,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "Testing",
+      "question": "What's the difference between unit, integration, and e2e tests?",
+      "answer": "Unit: isolated function/component. Integration: multiple units working together (form submission flow). E2E: full app in real browser simulating user journeys."
+    },
+    {
+      "id": 235,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "Testing",
+      "question": "How do you test asynchronous code?",
+      "answer": "`waitFor`, `findBy*` queries (async), fake timers for debounce, mock API with MSW, and `act()` for state updates after async resolution."
+    },
+    {
+      "id": 236,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "Testing",
+      "question": "What do you mock in tests and what do you keep real?",
+      "answer": "Mock external APIs (MSW), timers, and non-deterministic deps. Keep real: component rendering, user interactions, state logic, and routing (with test wrappers)."
+    },
+    {
+      "id": 237,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "Testing",
+      "question": "How do you test components with Context?",
+      "answer": "Wrap in a test Provider with mock values: `render(<AuthProvider value={mockUser}><Component /></AuthProvider>)`. Or create test utility wrappers."
+    },
+    {
+      "id": 238,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "Testing",
+      "question": "What is React Testing Library philosophy?",
+      "answer": "Test how users interact with the app—queries by role, label, text. Avoid testing implementation details (state, internal methods). \"The more your tests resemble how users use your software, the more confidence they give.\""
+    },
+    {
+      "id": 239,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "Testing",
+      "question": "How does it differ from Enzyme?",
+      "answer": "Enzyme tests component internals (shallow render, instance methods)—discouraged now. RTL focuses on DOM output and user-visible behavior. Enzyme is largely unmaintained for React 18+."
+    },
+    {
+      "id": 240,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "Testing",
+      "question": "How do you test error boundaries?",
+      "answer": "Suppress console.error, render component that throws inside boundary, assert fallback UI appears. `react-error-boundary` simplifies this."
+    },
+    {
+      "id": 241,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "Testing",
+      "question": "How do you test performance?",
+      "answer": "React Profiler in tests (limited), benchmark scripts, Lighthouse CI, and production RUM. Usually performance is monitored rather than unit-tested."
+    },
+    {
+      "id": 242,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "Testing",
+      "question": "What is snapshot testing and is it useful?",
+      "answer": "Captures rendered output as snapshot, fails on diff. Useful for stable UI components but brittle—prefer explicit assertions. Update snapshots carefully."
+    },
+    {
+      "id": 243,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "Testing",
+      "question": "How do you test accessibility?",
+      "answer": "`jest-axe`, `@testing-library/jest-dom`, manual keyboard navigation tests, and axe DevTools. Assert roles, labels, and focus management."
+    },
+    {
+      "id": 244,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "Testing",
+      "question": "What tools do you use for e2e testing?",
+      "answer": "Playwright (preferred—fast, reliable, multi-browser), Cypress for developer experience, or WebdriverIO. Playwright for CI parallelism."
+    },
+    {
+      "id": 245,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "Testing",
+      "question": "How do you test SSR components?",
+      "answer": "Render on server (`renderToString`), assert HTML output, test hydration with `hydrateRoot`, and verify no mismatch warnings. Next.js testing utilities help."
+    },
+    {
+      "id": 246,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "Testing",
+      "question": "How do you achieve good test coverage?",
+      "answer": "Focus on critical paths and edge cases over 100% coverage. Cover business logic, error states, and user flows. Use coverage reports to find gaps, not as a goal itself."
+    },
+    {
+      "id": 247,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "Build Tools and Configuration",
+      "question": "What is the difference between Webpack and Vite?",
+      "answer": "Webpack bundles everything before serving—slower dev startup. Vite serves native ESM in dev (esbuild pre-bundling) and uses Rollup for production—near-instant HMR and faster cold starts."
+    },
+    {
+      "id": 248,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "Build Tools and Configuration",
+      "question": "Why is Vite faster than Webpack?",
+      "answer": "Dev: no full bundle—browser requests modules directly. Dependencies pre-bundled with esbuild (Go). HMR updates only changed modules. Production: Rollup tree-shaking."
+    },
+    {
+      "id": 249,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "Build Tools and Configuration",
+      "question": "How does Hot Module Replacement work?",
+      "answer": "Bundler swaps changed modules at runtime without full page reload. Preserves application state. Vite/Webpack send update events via WebSocket; runtime accepts new module and re-executes."
+    },
+    {
+      "id": 250,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "Build Tools and Configuration",
+      "question": "What are ES modules vs CommonJS?",
+      "answer": "ESM: `import`/`export`, static analysis, async loading, browser-native. CJS: `require`/`module.exports`, synchronous, Node legacy. Bundlers convert CJS to ESM for tree shaking."
+    },
+    {
+      "id": 251,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "Build Tools and Configuration",
+      "question": "How do you configure Babel?",
+      "answer": "`babel.config.js` with presets (`@babel/preset-env`, `@babel/preset-react`, `@babel/preset-typescript`) and plugins. Target browsers via `browserslist`. Many projects now use SWC/esbuild instead."
+    },
+    {
+      "id": 252,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "Build Tools and Configuration",
+      "question": "What are Babel presets and plugins?",
+      "answer": "Plugins transform specific syntax (optional chaining). Presets are bundled plugin sets (`preset-env` includes syntax transforms based on targets). Order matters: plugins before presets."
+    },
+    {
+      "id": 253,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "Build Tools and Configuration",
+      "question": "How does tree shaking work?",
+      "answer": "Static analysis of ES module imports/exports. Unused exports are dropped during production bundling. Requires side-effect-free modules and proper `\"sideEffects\"` field."
+    },
+    {
+      "id": 254,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "Build Tools and Configuration",
+      "question": "What is the difference between dev and prod builds?",
+      "answer": "Dev: source maps, HMR, no minification, verbose errors. Prod: minification, tree shaking, code splitting, hashed filenames, env variable inlining, no devtools overhead."
+    },
+    {
+      "id": 255,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "Build Tools and Configuration",
+      "question": "How do you implement environment variables?",
+      "answer": "`.env` files with bundler-specific prefix (`VITE_`, `NEXT_PUBLIC_`, `REACT_APP_`). Never expose secrets to client bundles. Server-only vars without public prefix in Next.js."
+    },
+    {
+      "id": 256,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "Build Tools and Configuration",
+      "question": "What are source maps and their types?",
+      "answer": "`eval`, `source-map`, `hidden-source-map`, `nosources-source-map`. Full `source-map` for debugging; `hidden-source-map` for production error tracking without exposing sources to users."
+    },
+    {
+      "id": 257,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "Build Tools and Configuration",
+      "question": "How do you optimize build performance?",
+      "answer": "Use SWC/esbuild, persistent cache, thread-loader, reduce bundle analysis in CI, incremental TypeScript (`tsc --incremental`), and split CI build/test stages."
+    },
+    {
+      "id": 258,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "Build Tools and Configuration",
+      "question": "What is SWC and how does it compare to Babel?",
+      "answer": "Speedy Web Compiler—Rust-based transpiler, 20–70x faster than Babel for transpilation. Used by Next.js, Vite (via plugin). Babel still has broader plugin ecosystem."
+    },
+    {
+      "id": 259,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "Build Tools and Configuration",
+      "question": "What are module bundlers doing?",
+      "answer": "Resolve dependency graph, transform (TS/JSX), bundle into optimized files, code split, tree shake, inject runtime, and output assets for deployment."
+    },
+    {
+      "id": 260,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "Build Tools and Configuration",
+      "question": "How do you handle CSS in modern React apps?",
+      "answer": "CSS Modules, Tailwind, CSS-in-JS (styled-components, Emotion), or vanilla extract. Tailwind + CSS Modules is popular for performance and colocation. Tailwind v4 uses CSS-first config."
+    },
+    {
+      "id": 261,
+      "part": "Part 4: Modern React and Ecosystem",
+      "section": "Build Tools and Configuration",
+      "question": "What is PostCSS and why use it?",
+      "answer": "Tool for transforming CSS with plugins—Autoprefixer, nesting, Tailwind, cssnano minification. Part of most modern build pipelines."
+    },
+    {
+      "id": 262,
+      "part": "Part 5: Web Fundamentals and Browser APIs",
+      "section": "DOM and Browser APIs",
+      "question": "How do you manipulate the DOM efficiently?",
+      "answer": "Batch reads/writes (avoid layout thrashing), use `DocumentFragment`, delegate events, minimize reflows, prefer CSS classes over inline styles, and use virtual DOM frameworks for complex UIs."
+    },
+    {
+      "id": 263,
+      "part": "Part 5: Web Fundamentals and Browser APIs",
+      "section": "DOM and Browser APIs",
+      "question": "What's the difference between `innerHTML` and `textContent`?",
+      "answer": "`innerHTML` parses and sets HTML—XSS risk with user input. `textContent` sets plain text only—safe for user content. Use `textContent` unless you need HTML rendering (then sanitize)."
+    },
+    {
+      "id": 264,
+      "part": "Part 5: Web Fundamentals and Browser APIs",
+      "section": "DOM and Browser APIs",
+      "question": "How does event delegation work?",
+      "answer": "Attach one listener on a parent; use `event.target` to identify which child triggered the event. Efficient for dynamic lists—fewer listeners, works for future elements."
+    },
+    {
+      "id": 265,
+      "part": "Part 5: Web Fundamentals and Browser APIs",
+      "section": "DOM and Browser APIs",
+      "question": "What's event bubbling vs capturing?",
+      "answer": "Capturing: event travels down from window to target. Target phase: at element. Bubbling: travels up from target to window. Default listeners run in bubbling phase; use `{ capture: true }` for capturing."
+    },
+    {
+      "id": 266,
+      "part": "Part 5: Web Fundamentals and Browser APIs",
+      "section": "DOM and Browser APIs",
+      "question": "How do you prevent event propagation?",
+      "answer": "`event.stopPropagation()` stops bubbling/capturing to other elements. `stopImmediatePropagation()` also prevents other listeners on the same element."
+    },
+    {
+      "id": 267,
+      "part": "Part 5: Web Fundamentals and Browser APIs",
+      "section": "DOM and Browser APIs",
+      "question": "What's the difference between `preventDefault` and `stopPropagation`?",
+      "answer": "`preventDefault()` stops the browser's default action (form submit, link navigation). `stopPropagation()` stops the event from reaching other elements—it doesn't prevent default behavior."
+    },
+    {
+      "id": 268,
+      "part": "Part 5: Web Fundamentals and Browser APIs",
+      "section": "DOM and Browser APIs",
+      "question": "How do you handle scroll events efficiently?",
+      "answer": "Throttle or debounce handlers, use `{ passive: true }` for touch/wheel listeners, prefer `IntersectionObserver` over scroll polling, and avoid layout reads in scroll handlers."
+    },
+    {
+      "id": 269,
+      "part": "Part 5: Web Fundamentals and Browser APIs",
+      "section": "DOM and Browser APIs",
+      "question": "What is the Intersection Observer API?",
+      "answer": "Observes when elements enter/exit viewport asynchronously—no main-thread scroll listeners. Used for lazy loading, infinite scroll, analytics visibility, and animations."
+    },
+    {
+      "id": 270,
+      "part": "Part 5: Web Fundamentals and Browser APIs",
+      "section": "DOM and Browser APIs",
+      "question": "When would you use `MutationObserver`?",
+      "answer": "When you need to react to DOM changes (added/removed nodes, attribute changes)—third-party widget integration, testing utilities, or legacy code without framework control."
+    },
+    {
+      "id": 271,
+      "part": "Part 5: Web Fundamentals and Browser APIs",
+      "section": "DOM and Browser APIs",
+      "question": "How does `requestAnimationFrame` work?",
+      "answer": "Schedules a callback before the next repaint (~60fps). Ideal for animations and visual updates synced with the browser's render cycle—better than `setInterval` for DOM animation."
+    },
+    {
+      "id": 272,
+      "part": "Part 5: Web Fundamentals and Browser APIs",
+      "section": "DOM and Browser APIs",
+      "question": "What are Web Workers and when do you use them?",
+      "answer": "Run JavaScript on background threads—no DOM access. Use for CPU-heavy tasks: parsing large JSON, image processing, cryptography—keeping the main thread responsive."
+    },
+    {
+      "id": 273,
+      "part": "Part 5: Web Fundamentals and Browser APIs",
+      "section": "DOM and Browser APIs",
+      "question": "What is the difference between `localStorage` and `sessionStorage`?",
+      "answer": "Both store key-value strings (~5MB). `localStorage` persists until cleared. `sessionStorage` clears when the tab closes. Same-origin policy applies to both."
+    },
+    {
+      "id": 274,
+      "part": "Part 5: Web Fundamentals and Browser APIs",
+      "section": "DOM and Browser APIs",
+      "question": "How do cookies differ from web storage?",
+      "answer": "Cookies: sent with every HTTP request, ~4KB limit, can set expiry, `HttpOnly`/`Secure`/`SameSite` flags. Web storage: not sent automatically, larger limit, JS-only access (XSS risk)."
+    },
+    {
+      "id": 275,
+      "part": "Part 5: Web Fundamentals and Browser APIs",
+      "section": "DOM and Browser APIs",
+      "question": "What are the limitations of `localStorage`?",
+      "answer": "Synchronous (blocks main thread), string-only, ~5MB limit, same-origin, no automatic expiry, not accessible from Web Workers, XSS can read all data."
+    },
+    {
+      "id": 276,
+      "part": "Part 5: Web Fundamentals and Browser APIs",
+      "section": "DOM and Browser APIs",
+      "question": "How do you handle browser compatibility?",
+      "answer": "`browserslist` config, Autoprefixer, progressive enhancement, feature detection (`if ('IntersectionObserver' in window)`), polyfills for critical features, and caniuse.com for support checks."
+    },
+    {
+      "id": 277,
+      "part": "Part 5: Web Fundamentals and Browser APIs",
+      "section": "DOM and Browser APIs",
+      "question": "What are polyfills and when do you need them?",
+      "answer": "Code implementing features missing in older browsers. Need them when supporting legacy browsers for newer APIs (fetch, Promise, Array.flat). Modern apps often skip IE entirely."
+    },
+    {
+      "id": 278,
+      "part": "Part 5: Web Fundamentals and Browser APIs",
+      "section": "DOM and Browser APIs",
+      "question": "How does the History API work?",
+      "answer": "`history.pushState()`/`replaceState()` change URL without reload. `popstate` event fires on back/forward. Foundation of SPA routing (React Router, Next.js client navigation)."
+    },
+    {
+      "id": 279,
+      "part": "Part 5: Web Fundamentals and Browser APIs",
+      "section": "DOM and Browser APIs",
+      "question": "What is CORS and how do you handle it?",
+      "answer": "Cross-Origin Resource Sharing—browser security blocking cross-origin requests unless server sends `Access-Control-Allow-Origin` headers. Fix on server; dev proxy for local development; never disable CORS in production client-side."
+    },
+    {
+      "id": 280,
+      "part": "Part 5: Web Fundamentals and Browser APIs",
+      "section": "DOM and Browser APIs",
+      "question": "What are CSP headers?",
+      "answer": "Content Security Policy restricts resource loading (scripts, styles, frames) to prevent XSS. Configure `script-src`, `style-src`, nonces/hashes for inline scripts. Critical for production security."
+    },
+    {
+      "id": 281,
+      "part": "Part 5: Web Fundamentals and Browser APIs",
+      "section": "DOM and Browser APIs",
+      "question": "How do you implement drag and drop?",
+      "answer": "HTML5 Drag and Drop API (`draggable`, `dragstart`, `drop`) or pointer events for custom UX. Libraries: `@dnd-kit`, `react-beautiful-dnd`. Consider accessibility (keyboard alternatives)."
+    },
+    {
+      "id": 282,
+      "part": "Part 5: Web Fundamentals and Browser APIs",
+      "section": "Performance and Optimization",
+      "question": "What are Core Web Vitals?",
+      "answer": "Google's UX metrics: **LCP** (loading), **INP** (interactivity—replaced FID), **CLS** (visual stability). They affect SEO and measure real user experience."
+    },
+    {
+      "id": 283,
+      "part": "Part 5: Web Fundamentals and Browser APIs",
+      "section": "Performance and Optimization",
+      "question": "How do you improve LCP (Largest Contentful Paint)?",
+      "answer": "Optimize hero images (preload, WebP, CDN), reduce TTFB (SSR/edge), eliminate render-blocking resources, use font-display: swap, and prioritize above-the-fold content."
+    },
+    {
+      "id": 284,
+      "part": "Part 5: Web Fundamentals and Browser APIs",
+      "section": "Performance and Optimization",
+      "question": "What causes layout shifts (CLS)?",
+      "answer": "Images without dimensions, dynamically injected content, web fonts causing FOIT/FOUT, ads/embeds, and animations affecting layout. Fix with reserved space and `aspect-ratio`."
+    },
+    {
+      "id": 285,
+      "part": "Part 5: Web Fundamentals and Browser APIs",
+      "section": "Performance and Optimization",
+      "question": "How do you optimize First Input Delay?",
+      "answer": "FID is replaced by **INP** in Core Web Vitals. Reduce long tasks, break up JS, use web workers, defer non-critical JS, and optimize event handlers for responsiveness."
+    },
+    {
+      "id": 286,
+      "part": "Part 5: Web Fundamentals and Browser APIs",
+      "section": "Performance and Optimization",
+      "question": "What is the Critical Rendering Path?",
+      "answer": "Sequence: HTML → DOM, CSS → CSSOM, combine into render tree → layout → paint. Optimize by minimizing blocking resources and prioritizing above-the-fold content."
+    },
+    {
+      "id": 287,
+      "part": "Part 5: Web Fundamentals and Browser APIs",
+      "section": "Performance and Optimization",
+      "question": "How does the browser render a page?",
+      "answer": "Parse HTML → DOM, parse CSS → CSSOM, render tree, layout (calculate geometry), paint (pixels), composite (layers). JS can trigger reflow/repaint at any stage."
+    },
+    {
+      "id": 288,
+      "part": "Part 5: Web Fundamentals and Browser APIs",
+      "section": "Performance and Optimization",
+      "question": "What blocks the rendering process?",
+      "answer": "Render-blocking CSS, synchronous JS in `<head>`, large DOM, expensive layout calculations, and fonts blocking text render."
+    },
+    {
+      "id": 289,
+      "part": "Part 5: Web Fundamentals and Browser APIs",
+      "section": "Performance and Optimization",
+      "question": "What is reflow vs repaint?",
+      "answer": "Reflow (layout): recalculates geometry—expensive. Repaint: redraws pixels without layout change—cheaper. Composite: GPU layer updates—cheapest. Minimize reflows."
+    },
+    {
+      "id": 290,
+      "part": "Part 5: Web Fundamentals and Browser APIs",
+      "section": "Performance and Optimization",
+      "question": "How do you minimize reflows?",
+      "answer": "Batch DOM reads/writes, use `transform`/`opacity` for animations (composite-only), avoid reading layout properties after writes, and use `DocumentFragment`."
+    },
+    {
+      "id": 291,
+      "part": "Part 5: Web Fundamentals and Browser APIs",
+      "section": "Performance and Optimization",
+      "question": "What are the performance implications of CSS selectors?",
+      "answer": "Modern browsers optimize well—don't over-worry. Avoid overly deep universal selectors in huge DOMs. Prefer classes over complex descendant chains for maintainability."
+    },
+    {
+      "id": 292,
+      "part": "Part 5: Web Fundamentals and Browser APIs",
+      "section": "Performance and Optimization",
+      "question": "How does lazy loading work?",
+      "answer": "Defer loading off-screen images/resources until needed—native `loading=\"lazy\"`, Intersection Observer, dynamic imports for JS, and route-based code splitting."
+    },
+    {
+      "id": 293,
+      "part": "Part 5: Web Fundamentals and Browser APIs",
+      "section": "Performance and Optimization",
+      "question": "What is resource prioritization?",
+      "answer": "Browser assigns priority to resources (critical CSS high, lazy images low). Use `<link rel=\"preload\">`, `fetchpriority=\"high\"`, and early hints (103) to guide loading order."
+    },
+    {
+      "id": 294,
+      "part": "Part 5: Web Fundamentals and Browser APIs",
+      "section": "Performance and Optimization",
+      "question": "How do you implement progressive enhancement?",
+      "answer": "Build core functionality with HTML/CSS first, then enhance with JS. App works without JS (where possible), better accessibility, and graceful degradation on slow devices."
+    },
+    {
+      "id": 295,
+      "part": "Part 5: Web Fundamentals and Browser APIs",
+      "section": "Performance and Optimization",
+      "question": "What is the RAIL performance model?",
+      "answer": "**R**esponse <100ms to input, **A**nimation 60fps (16ms/frame), **I**dle maximize idle time, **L**oad key content <1s. User-centric performance budgeting."
+    },
+    {
+      "id": 296,
+      "part": "Part 5: Web Fundamentals and Browser APIs",
+      "section": "Performance and Optimization",
+      "question": "How do you optimize for mobile devices?",
+      "answer": "Responsive design, touch targets ≥44px, reduce JS payload, optimize images, test on real devices, use network-aware loading, and monitor INP on mobile."
+    },
+    {
+      "id": 297,
+      "part": "Part 5: Web Fundamentals and Browser APIs",
+      "section": "Performance and Optimization",
+      "question": "What tools do you use for performance testing?",
+      "answer": "Lighthouse, WebPageTest, Chrome DevTools Performance, Calibre, Speedcurve, and production RUM (Vercel Analytics, Datadog RUM, Google CrUX)."
+    },
+    {
+      "id": 298,
+      "part": "Part 5: Web Fundamentals and Browser APIs",
+      "section": "Performance and Optimization",
+      "question": "What is Lighthouse and how do you use it?",
+      "answer": "Automated auditing tool for performance, accessibility, SEO, and best practices. Run in Chrome DevTools, CI (Lighthouse CI), or PageSpeed Insights. Use as guidance, not gospel."
+    },
+    {
+      "id": 299,
+      "part": "Part 5: Web Fundamentals and Browser APIs",
+      "section": "Performance and Optimization",
+      "question": "How do you implement caching strategies?",
+      "answer": "HTTP cache headers (`Cache-Control`, `ETag`), CDN caching, service worker cache strategies (cache-first, network-first, stale-while-revalidate), and TanStack Query for API caching."
+    },
+    {
+      "id": 300,
+      "part": "Part 5: Web Fundamentals and Browser APIs",
+      "section": "Performance and Optimization",
+      "question": "What are service workers?",
+      "answer": "Scripts running between network and app—enable offline support, push notifications, and advanced caching (PWAs). Register with `navigator.serviceWorker.register()`."
+    },
+    {
+      "id": 301,
+      "part": "Part 5: Web Fundamentals and Browser APIs",
+      "section": "Performance and Optimization",
+      "question": "How do you optimize network requests?",
+      "answer": "HTTP/2 multiplexing, bundle splitting, compression (brotli), CDN, prefetch/preconnect, GraphQL/tRPC to reduce over-fetching, debounce search, and cache with SWR patterns."
+    },
+    {
+      "id": 302,
+      "part": "Part 6: System Design and Architecture",
+      "section": "Application Architecture",
+      "question": "How would you structure a large React application?",
+      "answer": "Feature-based folders (`features/auth`, `features/dashboard`), shared `components/ui`, `hooks`, `lib/utils`, `services/api`. Colocate tests. Separate server/client boundaries in Next.js App Router."
+    },
+    {
+      "id": 303,
+      "part": "Part 6: System Design and Architecture",
+      "section": "Application Architecture",
+      "question": "Where do you put business logic in a React app?",
+      "answer": "Custom hooks, service/API layers, domain modules—not in components. Components orchestrate UI; hooks/services encapsulate rules. Redux/Zustand for shared domain state."
+    },
+    {
+      "id": 304,
+      "part": "Part 6: System Design and Architecture",
+      "section": "Application Architecture",
+      "question": "How do you handle cross-cutting concerns?",
+      "answer": "Middleware (logging, auth), React Context for theme/locale, HOCs/wrappers (legacy), higher-order hooks, error boundaries, and observability (Sentry, analytics) at app shell level."
+    },
+    {
+      "id": 305,
+      "part": "Part 6: System Design and Architecture",
+      "section": "Application Architecture",
+      "question": "What's your approach to component composition?",
+      "answer": "Prefer composition over inheritance—compound components, render props, children slots. Small focused components assembled into features. Share behavior via hooks."
+    },
+    {
+      "id": 306,
+      "part": "Part 6: System Design and Architecture",
+      "section": "Application Architecture",
+      "question": "When do you split a component into smaller pieces?",
+      "answer": "When it exceeds ~150–200 lines, has multiple responsibilities, re-renders are expensive, or sub-sections are reused elsewhere. Extract when readability suffers."
+    },
+    {
+      "id": 307,
+      "part": "Part 6: System Design and Architecture",
+      "section": "Application Architecture",
+      "question": "How do you decide between props and context?",
+      "answer": "Props for direct parent-child communication (1–2 levels). Context for widely shared, infrequently changing data. External store for frequently updated global state."
+    },
+    {
+      "id": 308,
+      "part": "Part 6: System Design and Architecture",
+      "section": "Application Architecture",
+      "question": "What is the Container/Presenter pattern?",
+      "answer": "Container components handle data fetching and state; presenter components are pure UI receiving props. Now largely replaced by hooks—logic in custom hooks, UI in components."
+    },
+    {
+      "id": 309,
+      "part": "Part 6: System Design and Architecture",
+      "section": "Application Architecture",
+      "question": "How do you implement dependency injection in React?",
+      "answer": "Context providers injecting services, prop injection, or module-level abstractions with test doubles. Example: `ApiProvider` with mock client in tests."
+    },
+    {
+      "id": 310,
+      "part": "Part 6: System Design and Architecture",
+      "section": "Application Architecture",
+      "question": "What are your thoughts on monorepos?",
+      "answer": "Great for shared packages (UI lib, utils, types) across apps. Tools: Turborepo, Nx, pnpm workspaces. Tradeoff: tooling complexity vs code reuse and atomic changes."
+    },
+    {
+      "id": 311,
+      "part": "Part 6: System Design and Architecture",
+      "section": "Application Architecture",
+      "question": "How do you handle micro-frontends?",
+      "answer": "Split by domain (Module Federation, single-spa, iframe). Independent deploys, team autonomy. Challenges: shared dependencies, consistent UX, routing, and performance overhead."
+    },
+    {
+      "id": 312,
+      "part": "Part 6: System Design and Architecture",
+      "section": "Application Architecture",
+      "question": "What is island architecture?",
+      "answer": "Mostly static HTML with small interactive \"islands\" hydrated independently (Astro model). Minimal JS—good for content sites. Different from full SPA."
+    },
+    {
+      "id": 313,
+      "part": "Part 6: System Design and Architecture",
+      "section": "Application Architecture",
+      "question": "How do you design a plugin system?",
+      "answer": "Define extension points (hooks/events), stable API contracts, sandboxing, version compatibility, and registration mechanism. React: render props, slot components, or dynamic imports."
+    },
+    {
+      "id": 314,
+      "part": "Part 6: System Design and Architecture",
+      "section": "Application Architecture",
+      "question": "What's your approach to error handling architecture?",
+      "answer": "Error boundaries at route/feature level, global error handler for unhandled rejections, structured error types from API, user-friendly fallbacks, and Sentry/logging with context."
+    },
+    {
+      "id": 315,
+      "part": "Part 6: System Design and Architecture",
+      "section": "Application Architecture",
+      "question": "How do you structure API calls?",
+      "answer": "Dedicated API layer (fetch wrappers, TanStack Query hooks), typed responses, centralized error handling, retry logic, and separation from UI components."
+    },
+    {
+      "id": 316,
+      "part": "Part 6: System Design and Architecture",
+      "section": "Application Architecture",
+      "question": "Where does data transformation logic belong?",
+      "answer": "Between API layer and UI—selectors, mappers, or view-model hooks. Not in components. Keep components dumb; transform in hooks or `select` functions."
+    },
+    {
+      "id": 317,
+      "part": "Part 6: System Design and Architecture",
+      "section": "Scalability and Maintenance",
+      "question": "How do you ensure code maintainability?",
+      "answer": "Consistent conventions, TypeScript strict mode, code reviews, documentation for architecture decisions (ADRs), automated linting/formatting, and keeping components/hooks small and focused."
+    },
+    {
+      "id": 318,
+      "part": "Part 6: System Design and Architecture",
+      "section": "Scalability and Maintenance",
+      "question": "What coding standards do you follow?",
+      "answer": "ESLint + Prettier, Conventional Commits, feature branches, PR templates, absolute imports, no `any` in TypeScript, and team-agreed naming conventions."
+    },
+    {
+      "id": 319,
+      "part": "Part 6: System Design and Architecture",
+      "section": "Scalability and Maintenance",
+      "question": "How do you handle technical debt?",
+      "answer": "Track in backlog, allocate ~10–20% sprint capacity, prioritize debt causing bugs or blocking features, refactor incrementally (boy scout rule), and prevent new debt via reviews."
+    },
+    {
+      "id": 320,
+      "part": "Part 6: System Design and Architecture",
+      "section": "Scalability and Maintenance",
+      "question": "What's your approach to refactoring?",
+      "answer": "Small incremental changes with tests, strangler fig pattern for large rewrites, feature flags for safe rollout, and never big-bang rewrites without business justification."
+    },
+    {
+      "id": 321,
+      "part": "Part 6: System Design and Architecture",
+      "section": "Scalability and Maintenance",
+      "question": "How do you implement feature flags?",
+      "answer": "LaunchDarkly, Unleash, or custom flags in config/DB. Wrap features in flag checks, gradual rollout, A/B testing, and kill switches for risky releases."
+    },
+    {
+      "id": 322,
+      "part": "Part 6: System Design and Architecture",
+      "section": "Scalability and Maintenance",
+      "question": "What is your branching strategy?",
+      "answer": "Trunk-based development with short-lived feature branches, or GitFlow for release-heavy products. PRs required, CI must pass, squash or merge commits per team preference."
+    },
+    {
+      "id": 323,
+      "part": "Part 6: System Design and Architecture",
+      "section": "Scalability and Maintenance",
+      "question": "How do you handle database migrations?",
+      "answer": "(Frontend angle:) Coordinate with backend on API versioning. For full-stack: migration tools (Prisma, Flyway), backward-compatible migrations, and never breaking API without deprecation period."
+    },
+    {
+      "id": 324,
+      "part": "Part 6: System Design and Architecture",
+      "section": "Scalability and Maintenance",
+      "question": "What's your deployment process?",
+      "answer": "CI pipeline: lint → test → build → deploy preview → manual/auto promote to production. Vercel/Netlify for frontend, blue-green or canary for zero-downtime."
+    },
+    {
+      "id": 325,
+      "part": "Part 6: System Design and Architecture",
+      "section": "Scalability and Maintenance",
+      "question": "How do you implement blue-green deployments?",
+      "answer": "Two identical environments—deploy to inactive (green), run smoke tests, switch traffic via load balancer, keep blue for instant rollback."
+    },
+    {
+      "id": 326,
+      "part": "Part 6: System Design and Architecture",
+      "section": "Scalability and Maintenance",
+      "question": "What monitoring do you implement?",
+      "answer": "Error tracking (Sentry), RUM (Web Vitals), API latency, uptime checks, custom dashboards (Datadog/Grafana), and alerting on SLO breaches."
+    },
+    {
+      "id": 327,
+      "part": "Part 6: System Design and Architecture",
+      "section": "Scalability and Maintenance",
+      "question": "How do you handle logging in production?",
+      "answer": "Structured JSON logs, correlation IDs, log levels (error/warn in prod), no PII/secrets, centralized aggregation (Datadog, CloudWatch), and client-side error reporting to Sentry."
+    },
+    {
+      "id": 328,
+      "part": "Part 6: System Design and Architecture",
+      "section": "Scalability and Maintenance",
+      "question": "What's your approach to documentation?",
+      "answer": "README for setup, Storybook for components, ADRs for decisions, inline JSDoc for public APIs, and runbooks for operations. Keep docs close to code."
+    },
+    {
+      "id": 329,
+      "part": "Part 6: System Design and Architecture",
+      "section": "Scalability and Maintenance",
+      "question": "How do you onboard new developers?",
+      "answer": "Structured onboarding doc, codebase walkthrough, pair programming first tasks, documented dev environment setup, and assign a buddy for questions."
+    },
+    {
+      "id": 330,
+      "part": "Part 6: System Design and Architecture",
+      "section": "Scalability and Maintenance",
+      "question": "What makes code readable?",
+      "answer": "Clear naming, small functions, consistent patterns, minimal nesting, meaningful comments for *why* not *what*, and code that reads like prose top-to-bottom."
+    }
+  ]
+}

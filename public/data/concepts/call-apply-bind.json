@@ -1,0 +1,41 @@
+{
+  "id": "call-apply-bind",
+  "title": "call, apply, and bind",
+  "aliases": [
+    "call",
+    "apply",
+    "bind",
+    "Function.prototype.call"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "this-binding",
+    "partial-application"
+  ],
+  "usedInFlashcards": [
+    10,
+    20,
+    29,
+    30,
+    43,
+    44,
+    64,
+    67,
+    77,
+    129,
+    130,
+    137,
+    138,
+    315
+  ],
+  "body": "## Definition\r\n\r\n**call**, **apply**, and **bind** are `Function.prototype` methods to invoke functions with an explicit `this` and optional arguments — `call(thisArg, a, b)`, `apply(thisArg, [a,b])`, `bind(thisArg, a)` returns a new bound function.\r\n\r\n## Why it exists\r\n\r\nControl [this binding](concept:this-binding) and implement [partial application](concept:partial-application) without arrow wrappers.\r\n\r\n## How it works\r\n\r\n```js\r\nfunction greet(greeting, name) {\r\n  return `${greeting}, ${name}`;\r\n}\r\n\r\ngreet.call({ id: 1 }, \"Hi\", \"Ada\");\r\ngreet.apply(null, [\"Hi\", \"Ada\"]);\r\nconst sayHi = greet.bind(null, \"Hi\");\r\nsayHi(\"Grace\");\r\n```\r\n\r\n`bind` returns a new function; does not invoke immediately.\r\n\r\n## Common confusion\r\n\r\nArrow functions ignore bound `this`. `bind` with `new` can create bound constructors with limited use.\r\n\r\n## In practice\r\n\r\nLegacy React patterns, borrowing methods (`Array.prototype.slice.call(arguments)`), and utility libraries.",
+  "bodyLinked": "## Definition\r\n\r\n**[call](concept:call-apply-bind)**, **[apply](concept:call-apply-bind)**, and **[bind](concept:call-apply-bind)** are `Function.prototype` methods to invoke functions with an explicit [this](concept:this-binding) and optional [arguments](concept:arguments-object) — `call(thisArg, a, b)`, `apply(thisArg, [a,b])`, `bind(thisArg, a)` returns a [new](concept:new-operator) bound function.\r\n\r\n## Why it exists\r\n\r\nControl [this binding](concept:this-binding) and implement [partial application](concept:partial-application) without arrow wrappers.\r\n\r\n## How it works\r\n\r\n```js\r\nfunction greet(greeting, name) {\r\n  return `${greeting}, ${name}`;\r\n}\r\n\r\ngreet.call({ id: 1 }, \"Hi\", \"Ada\");\r\ngreet.apply(null, [\"Hi\", \"Ada\"]);\r\nconst sayHi = greet.bind(null, \"Hi\");\r\nsayHi(\"Grace\");\r\n```\r\n\r\n[bind](concept:call-apply-bind) returns a [new](concept:new-operator) function; does not invoke immediately.\r\n\r\n## Common confusion\r\n\r\n[Arrow functions](concept:arrow-function) ignore bound [this](concept:this-binding). [bind](concept:call-apply-bind) with [new](concept:new-operator) can create bound constructors with limited use.\r\n\r\n## In practice\r\n\r\nLegacy React patterns, borrowing methods (`Array.prototype.slice.call(arguments)`), and utility libraries.",
+  "conceptIds": [
+    "call-apply-bind",
+    "this-binding",
+    "arguments-object",
+    "new-operator",
+    "partial-application",
+    "arrow-function"
+  ]
+}

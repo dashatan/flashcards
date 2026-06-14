@@ -1,0 +1,23 @@
+{
+  "id": "technical-debt",
+  "title": "Technical Debt",
+  "aliases": [
+    "technical debt",
+    "tech debt"
+  ],
+  "depth": "foundation",
+  "related": [
+    "adr",
+    "strangler-fig-pattern"
+  ],
+  "usedInFlashcards": [
+    319
+  ],
+  "body": "## Definition\r\n\r\n**Technical debt** is the implied cost of shortcuts — outdated patterns, missing tests, tangled modules — that slow future work.\r\n\r\n## Why it exists\r\n\r\nTeams trade quality for speed; debt accumulates when shortcuts aren’t repaid.\r\n\r\n## How it works\r\n\r\nManage: track in backlog, allocate ~10–20% sprint capacity, boy scout rule (leave code cleaner), prevent new debt via reviews.\r\n\r\n## In practice\r\n\r\nSenior interviews: balance delivery vs refactoring; use [ADRs](concept:adr) for intentional tradeoffs.",
+  "bodyLinked": "## Definition\r\n\r\n**[Technical debt](concept:technical-debt)** is the implied cost of shortcuts — outdated patterns, missing tests, tangled modules — that slow future work.\r\n\r\n## Why it exists\r\n\r\nTeams trade quality for speed; debt accumulates when shortcuts aren’t repaid.\r\n\r\n## How it works\r\n\r\nManage: track in backlog, allocate ~10–20% sprint capacity, boy scout rule (leave code cleaner), prevent [new](concept:new-operator) debt via reviews.\r\n\r\n## In practice\r\n\r\nSenior interviews: balance delivery vs refactoring; use [ADRs](concept:adr) for intentional tradeoffs.",
+  "conceptIds": [
+    "technical-debt",
+    "new-operator",
+    "adr"
+  ]
+}

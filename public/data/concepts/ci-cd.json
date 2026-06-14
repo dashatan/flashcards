@@ -1,0 +1,26 @@
+{
+  "id": "ci-cd",
+  "title": "CI/CD",
+  "aliases": [
+    "CI/CD",
+    "continuous integration",
+    "continuous deployment"
+  ],
+  "depth": "foundation",
+  "related": [
+    "feature-flags",
+    "blue-green-deployment"
+  ],
+  "usedInFlashcards": [
+    324
+  ],
+  "body": "## Definition\r\n\r\n**CI/CD** automates building, testing, and deploying code on every change — continuous integration and (optional) continuous deployment.\r\n\r\n## Why it exists\r\n\r\nCatch bugs early; repeatable releases; reduce manual deploy risk.\r\n\r\n## How it works\r\n\r\nPipeline: lint → typecheck → test → build → deploy preview → production promote. GitHub Actions, GitLab CI, Vercel.\r\n\r\n## In practice\r\n\r\nFrontend: Lighthouse CI, Playwright in pipeline, preview URLs per PR.",
+  "bodyLinked": "## Definition\r\n\r\n**[CI/CD](concept:ci-cd)** automates building, testing, and deploying code on [every](concept:array-some-every) change — [continuous integration](concept:ci-cd) and (optional) [continuous deployment](concept:ci-cd).\r\n\r\n## Why it exists\r\n\r\n[Catch](concept:try-catch-finally) bugs early; repeatable releases; [reduce](concept:array-map-filter-reduce) manual deploy risk.\r\n\r\n## How it works\r\n\r\nPipeline: lint → typecheck → test → build → deploy preview → production promote. GitHub Actions, GitLab CI, Vercel.\r\n\r\n## In practice\r\n\r\nFrontend: Lighthouse CI, [Playwright](concept:e2e-testing) in pipeline, preview URLs per PR.",
+  "conceptIds": [
+    "ci-cd",
+    "array-some-every",
+    "try-catch-finally",
+    "array-map-filter-reduce",
+    "e2e-testing"
+  ]
+}

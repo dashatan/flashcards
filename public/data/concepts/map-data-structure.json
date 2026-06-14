@@ -1,0 +1,26 @@
+{
+  "id": "map-data-structure",
+  "title": "Map (Data Structure)",
+  "aliases": [
+    "ES6 Map",
+    "JavaScript Map",
+    "Map object"
+  ],
+  "depth": "foundation",
+  "related": [
+    "set-data-structure",
+    "value-vs-reference"
+  ],
+  "usedInFlashcards": [
+    58,
+    96
+  ],
+  "body": "## Definition\r\n\r\nA **Map** is a key-value collection where keys can be any type (objects, functions), with predictable iteration order.\r\n\r\n## Why it exists\r\n\r\nBetter than plain objects for non-string keys, frequent add/delete, and avoiding prototype pollution.\r\n\r\n## How it works\r\n\r\n```js\r\nconst cache = new Map();\r\ncache.set(userObj, sessionData);\r\ncache.get(userObj);\r\n```\r\n\r\n## Common confusion\r\n\r\nNot the same as `Array.prototype.map`. Keys use [reference equality](concept:value-vs-reference) for objects.\r\n\r\n## In practice\r\n\r\nMemoization caches, metadata on objects, grouping by id, and replacing `Record` when keys are dynamic or non-string.",
+  "bodyLinked": "## Definition\r\n\r\nA **[Map](concept:array-map-filter-reduce)** is a key-value collection where keys can be any type (objects, functions), with predictable [iteration](concept:iterator) order.\r\n\r\n## Why it exists\r\n\r\nBetter than plain objects for non-string keys, frequent add/delete, and avoiding [prototype](concept:prototype-chain) pollution.\r\n\r\n## How it works\r\n\r\n```js\r\nconst cache = new Map();\r\ncache.set(userObj, sessionData);\r\ncache.get(userObj);\r\n```\r\n\r\n## Common confusion\r\n\r\nNot the same as `Array.prototype.map`. Keys use [reference equality](concept:value-vs-reference) for objects.\r\n\r\n## In practice\r\n\r\nMemoization caches, metadata on objects, grouping by id, and replacing `Record` when keys are dynamic or non-string.",
+  "conceptIds": [
+    "array-map-filter-reduce",
+    "iterator",
+    "prototype-chain",
+    "value-vs-reference"
+  ]
+}

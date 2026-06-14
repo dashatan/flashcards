@@ -1,0 +1,23 @@
+{
+  "id": "rules-of-hooks",
+  "title": "Rules of Hooks",
+  "aliases": [
+    "rules of hooks",
+    "hook rules"
+  ],
+  "depth": "foundation",
+  "related": [
+    "use-state",
+    "custom-hooks"
+  ],
+  "usedInFlashcards": [
+    137
+  ],
+  "body": "## Definition\r\n\r\nThe **rules of hooks** require: (1) only call hooks at the top level — not in loops/conditions; (2) only call from React functions or [custom hooks](concept:custom-hooks).\r\n\r\n## Why it exists\r\n\r\nReact matches hook calls to internal state by **call order** each render — conditional hooks break that mapping.\r\n\r\n## How it works\r\n\r\nViolations cause “Rendered more hooks than previous render” or wrong state attached to wrong hook.\r\n\r\n## Common confusion\r\n\r\nESLint `react-hooks/rules-of-hooks` catches many issues. Custom hooks can call other hooks — components cannot call hooks conditionally.\r\n\r\n## In practice\r\n\r\nNon-negotiable in all React code; explains why early return before hooks is invalid.",
+  "bodyLinked": "## Definition\r\n\r\nThe **[rules of hooks](concept:rules-of-hooks)** require: (1) only [call](concept:call-apply-bind) hooks at the top level — not in loops/conditions; (2) only [call](concept:call-apply-bind) from React functions or [custom hooks](concept:custom-hooks).\r\n\r\n## Why it exists\r\n\r\nReact matches hook [calls](concept:call-apply-bind) to internal state by **[call](concept:call-apply-bind) order** each render — conditional hooks break that mapping.\r\n\r\n## How it works\r\n\r\nViolations cause “Rendered more hooks than previous render” or wrong state attached to wrong hook.\r\n\r\n## Common confusion\r\n\r\nESLint `react-hooks/rules-of-hooks` catches many issues. [Custom hooks](concept:custom-hooks) can [call](concept:call-apply-bind) other hooks — components cannot [call](concept:call-apply-bind) hooks conditionally.\r\n\r\n## In practice\r\n\r\nNon-negotiable in all React code; explains why early return before hooks is invalid.",
+  "conceptIds": [
+    "rules-of-hooks",
+    "call-apply-bind",
+    "custom-hooks"
+  ]
+}

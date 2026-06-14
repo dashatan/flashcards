@@ -1,0 +1,32 @@
+{
+  "id": "function-scope",
+  "title": "Function Scope",
+  "aliases": [
+    "function-scoped"
+  ],
+  "depth": "foundation",
+  "related": [
+    "block-scope",
+    "hoisting",
+    "var"
+  ],
+  "usedInFlashcards": [
+    1,
+    3,
+    9,
+    11,
+    26
+  ],
+  "body": "## Definition\r\n\r\n**Function scope** means a binding is visible throughout the entire function body where it was declared, not only inside the nested block where the declaration appears.\r\n\r\n## Why it exists\r\n\r\nEarly JavaScript only had `var` and function-level scoping. This was simpler for engines in the 1990s but causes leakage from blocks into the whole function.\r\n\r\n## How it works\r\n\r\n`var` declarations are function-scoped (or global if outside any function). A `var` inside an `if` block is hoisted to the top of the enclosing function and shared across the whole function.\r\n\r\n## Example\r\n\r\n```js\r\nfunction demo() {\r\n  if (true) {\r\n    var count = 1;\r\n  }\r\n  console.log(count); // 1 — `count` is function-scoped, not block-scoped\r\n}\r\n```\r\n\r\n## Common confusion\r\n\r\nFunction scope is not the same as [block scope](concept:block-scope). `let`/`const` in a function still use block scope inside that function.\r\n\r\n## In practice\r\n\r\nLegacy code and interview questions about `var` in loops rely on function scope behavior. Modern code avoids `var` unless maintaining legacy bundles.",
+  "bodyLinked": "## Definition\r\n\r\n**[Function scope](concept:function-scope)** means a [binding](concept:binding) is visible throughout the entire function body where it was declared, not only inside the nested block where the declaration appears.\r\n\r\n## Why it exists\r\n\r\nEarly JavaScript only had [var](concept:var) and function-level scoping. [This](concept:this-binding) was simpler for engines in the 1990s but causes leakage from blocks into the whole function.\r\n\r\n## How it works\r\n\r\n[var](concept:var) declarations are [function-scoped](concept:function-scope) (or global if outside any function). A [var](concept:var) inside an `if` block is [hoisted](concept:hoisting) to the top of the enclosing function and shared across the whole function.\r\n\r\n## Example\r\n\r\n```js\r\nfunction demo() {\r\n  if (true) {\r\n    var count = 1;\r\n  }\r\n  console.log(count); // 1 — `count` is function-scoped, not block-scoped\r\n}\r\n```\r\n\r\n## Common confusion\r\n\r\n[Function scope](concept:function-scope) is not the same as [block scope](concept:block-scope). [let](concept:let)/[const](concept:const) in a function still use [block scope](concept:block-scope) inside that function.\r\n\r\n## In practice\r\n\r\nLegacy code and interview questions about [var](concept:var) in loops rely on [function scope](concept:function-scope) behavior. Modern code avoids [var](concept:var) unless maintaining legacy bundles.",
+  "conceptIds": [
+    "function-scope",
+    "binding",
+    "var",
+    "this-binding",
+    "hoisting",
+    "block-scope",
+    "let",
+    "const"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "id": "property-descriptors",
+  "title": "Property descriptors",
+  "aliases": [
+    "property attributes",
+    "data property descriptor"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "object-define-property",
+    "getters-setters"
+  ],
+  "usedInFlashcards": [
+    56,
+    60,
+    61,
+    63,
+    69
+  ],
+  "body": "## Definition\r\n\r\n**Property descriptors** are metadata flags for object properties: `value`, `writable`, `enumerable`, and `configurable` for data properties.\r\n\r\n## Why it exists\r\n\r\nFine-grained control over visibility (`enumerable`), mutability (`writable`), and whether a property can be deleted or redefined (`configurable`).\r\n\r\n## How it works\r\n\r\n```js\r\nObject.defineProperty(obj, \"id\", {\r\n  value: 1,\r\n  writable: false,\r\n  enumerable: true,\r\n  configurable: false,\r\n});\r\n```\r\n\r\nInspect with `Object.getOwnPropertyDescriptor(obj, \"id\")`.\r\n\r\n## Common confusion\r\n\r\n`for...in` and `Object.keys` only see **enumerable** own properties. [Getters/setters](concept:getters-setters) use a different descriptor shape.\r\n\r\n## In practice\r\n\r\nUsed in frameworks, polyfills, and immutability patterns alongside [Object.defineProperty](concept:object-define-property).",
+  "bodyLinked": "## Definition\r\n\r\n**[Property descriptors](concept:property-descriptors)** are metadata flags for object properties: `value`, [writable](concept:property-descriptors), [enumerable](concept:property-descriptors), and [configurable](concept:property-descriptors) for data properties.\r\n\r\n## Why it exists\r\n\r\nFine-grained control over visibility ([enumerable](concept:property-descriptors)), mutability ([writable](concept:property-descriptors)), and whether a property can be deleted or redefined ([configurable](concept:property-descriptors)).\r\n\r\n## How it works\r\n\r\n```js\r\nObject.defineProperty(obj, \"id\", {\r\n  value: 1,\r\n  writable: false,\r\n  enumerable: true,\r\n  configurable: false,\r\n});\r\n```\r\n\r\nInspect with `Object.getOwnPropertyDescriptor(obj, \"id\")`.\r\n\r\n## Common confusion\r\n\r\n[for...in](concept:for-loops) and `Object.keys` only see **[enumerable](concept:property-descriptors)** own properties. [Getters/setters](concept:getters-setters) use a different descriptor shape.\r\n\r\n## In practice\r\n\r\nUsed in frameworks, polyfills, and immutability patterns alongside [Object.defineProperty](concept:object-define-property).",
+  "conceptIds": [
+    "property-descriptors",
+    "for-loops",
+    "getters-setters",
+    "object-define-property"
+  ]
+}

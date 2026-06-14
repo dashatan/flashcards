@@ -1,0 +1,25 @@
+{
+  "id": "mutation-observer",
+  "title": "MutationObserver",
+  "aliases": [
+    "MutationObserver API"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "dom",
+    "intersection-observer",
+    "event-loop"
+  ],
+  "usedInFlashcards": [
+    32,
+    270
+  ],
+  "body": "## Definition\r\n\r\n**`MutationObserver`** watches [DOM](concept:dom) trees for changes (child list, attributes, character data) and delivers notifications asynchronously.\r\n\r\n## Why it exists\r\n\r\nReact to DOM mutations without polling — widgets, editors, legacy integration, and devtools-style instrumentation.\r\n\r\n## How it works\r\n\r\n```js\r\nconst observer = new MutationObserver(mutations => {\r\n  for (const m of mutations) console.log(m.type, m.target);\r\n});\r\nobserver.observe(root, { childList: true, subtree: true });\r\nobserver.disconnect();\r\n```\r\n\r\nCallbacks run as [microtasks](concept:microtask) after DOM updates in the same turn.\r\n\r\n## Common confusion\r\n\r\nNot a replacement for [Intersection Observer](concept:intersection-observer) — different use cases. Observing large subtrees can be expensive.\r\n\r\n## In practice\r\n\r\nPolyfills, contenteditable sync, and detecting third-party DOM injections — use sparingly for performance.",
+  "bodyLinked": "## Definition\r\n\r\n**[MutationObserver](concept:mutation-observer)** watches [DOM](concept:dom) trees for changes (child list, attributes, character data) and delivers notifications asynchronously.\r\n\r\n## Why it exists\r\n\r\nReact to [DOM](concept:dom) mutations without polling — widgets, editors, legacy integration, and devtools-style instrumentation.\r\n\r\n## How it works\r\n\r\n```js\r\nconst observer = new MutationObserver(mutations => {\r\n  for (const m of mutations) console.log(m.type, m.target);\r\n});\r\nobserver.observe(root, { childList: true, subtree: true });\r\nobserver.disconnect();\r\n```\r\n\r\nCallbacks run as [microtasks](concept:microtask) after [DOM](concept:dom) updates in the same turn.\r\n\r\n## Common confusion\r\n\r\nNot a replacement for [Intersection Observer](concept:intersection-observer) — different use cases. Observing large subtrees can be expensive.\r\n\r\n## In practice\r\n\r\nPolyfills, contenteditable sync, and detecting third-party [DOM](concept:dom) injections — use sparingly for performance.",
+  "conceptIds": [
+    "mutation-observer",
+    "dom",
+    "microtask",
+    "intersection-observer"
+  ]
+}

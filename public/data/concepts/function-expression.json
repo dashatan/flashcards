@@ -1,0 +1,29 @@
+{
+  "id": "function-expression",
+  "title": "Function Expression",
+  "aliases": [
+    "function expression",
+    "function expressions"
+  ],
+  "depth": "foundation",
+  "related": [
+    "function-declaration",
+    "arrow-function",
+    "closure"
+  ],
+  "usedInFlashcards": [
+    10
+  ],
+  "body": "## Definition\r\n\r\nA **function expression** creates a function as a value — `const fn = function() {}` or `(function() {})()` — with hoisting rules of the variable it is assigned to, not full function hoisting.\r\n\r\n## Why it exists\r\n\r\nFunctions are first-class values: pass to callbacks, return from factories, [IIFE](concept:iife) patterns.\r\n\r\n## How it works\r\n\r\nThe function object is created when the assignment line runs. Named function expressions (`const fn = function helper() {}`) help stack traces; `helper` is not visible outside.\r\n\r\n## Example\r\n\r\n```js\r\nconst operations = {\r\n  add: function (a, b) { return a + b; },\r\n};\r\n\r\nconst doubler = function (n) { return n * 2; };\r\n```\r\n\r\n## Common confusion\r\n\r\nArrow functions are also expressions but lexically bind `this`. `function` expressions can be constructors (unless class fields change rules).\r\n\r\n## In practice\r\n\r\n[Higher-order functions](concept:higher-order-function), React class callbacks (legacy), and module patterns use expressions heavily.",
+  "bodyLinked": "## Definition\r\n\r\nA **[function expression](concept:function-expression)** creates a function as a value — `const fn = function() {}` or `(function() {})()` — with [hoisting](concept:hoisting) rules of the variable it is assigned to, not full function [hoisting](concept:hoisting).\r\n\r\n## Why it exists\r\n\r\nFunctions are first-[class](concept:es6-class) values: pass to callbacks, return from factories, [IIFE](concept:iife) patterns.\r\n\r\n## How it works\r\n\r\nThe function object is created when the assignment line runs. Named [function expressions](concept:function-expression) (`const fn = function helper() {}`) help stack traces; `helper` is not visible outside.\r\n\r\n## Example\r\n\r\n```js\r\nconst operations = {\r\n  add: function (a, b) { return a + b; },\r\n};\r\n\r\nconst doubler = function (n) { return n * 2; };\r\n```\r\n\r\n## Common confusion\r\n\r\n[Arrow functions](concept:arrow-function) are also expressions but lexically [bind](concept:call-apply-bind) [this](concept:this-binding). `function` expressions can be constructors (unless [class](concept:es6-class) fields change rules).\r\n\r\n## In practice\r\n\r\n[Higher-order functions](concept:higher-order-function), React [class](concept:es6-class) callbacks (legacy), and module patterns use expressions heavily.",
+  "conceptIds": [
+    "function-expression",
+    "hoisting",
+    "es6-class",
+    "iife",
+    "arrow-function",
+    "call-apply-bind",
+    "this-binding",
+    "higher-order-function"
+  ]
+}

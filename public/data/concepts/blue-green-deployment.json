@@ -1,0 +1,21 @@
+{
+  "id": "blue-green-deployment",
+  "title": "Blue-Green Deployment",
+  "aliases": [
+    "blue-green deployment",
+    "blue green deploy"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "ci-cd",
+    "feature-flags"
+  ],
+  "usedInFlashcards": [
+    325
+  ],
+  "body": "## Definition\r\n\r\n**Blue-green deployment** runs two identical environments — deploy to idle (green), verify, then switch traffic from live (blue) for instant rollback.\r\n\r\n## Why it exists\r\n\r\nZero-downtime releases and fast rollback without rebuilding.\r\n\r\n## How it works\r\n\r\nLoad balancer or CDN switches traffic. Smoke tests on green before cutover. Keep blue warm for rollback.\r\n\r\n## In practice\r\n\r\nCommon at infrastructure level; frontend static assets on CDN with versioned URLs.",
+  "bodyLinked": "## Definition\r\n\r\n**[Blue-green deployment](concept:blue-green-deployment)** runs two identical environments — deploy to idle (green), verify, then switch traffic from live (blue) for instant rollback.\r\n\r\n## Why it exists\r\n\r\nZero-downtime releases and fast rollback without rebuilding.\r\n\r\n## How it works\r\n\r\nLoad balancer or CDN switches traffic. Smoke tests on green before cutover. Keep blue warm for rollback.\r\n\r\n## In practice\r\n\r\nCommon at infrastructure level; frontend static assets on CDN with versioned URLs.",
+  "conceptIds": [
+    "blue-green-deployment"
+  ]
+}

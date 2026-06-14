@@ -1,0 +1,28 @@
+{
+  "id": "lifting-state-up",
+  "title": "Lifting State Up",
+  "aliases": [
+    "lift state up",
+    "lifted state",
+    "lifted up",
+    "lifting state up",
+    "state be lifted up"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "props-vs-state",
+    "one-way-data-flow"
+  ],
+  "usedInFlashcards": [
+    172
+  ],
+  "body": "## Definition\r\n\r\n**Lifting state up** moves shared state to the closest common ancestor so siblings receive values via props and send updates via callbacks.\r\n\r\n## Why it exists\r\n\r\nTwo components need the same data — storing it in only one child makes the other unable to access it.\r\n\r\n## How it works\r\n\r\nParent holds `useState`; children get `value` + `onChange`. Single source of truth.\r\n\r\n## Common confusion\r\n\r\nIf many levels need the data, consider [React Context](concept:react-context-api) or a store — not infinite callback chains without structure.\r\n\r\n## In practice\r\n\r\nSibling forms, filters + list, master-detail UIs before reaching for global state.",
+  "bodyLinked": "## Definition\r\n\r\n**[Lifting state up](concept:lifting-state-up)** moves shared state to the closest common ancestor so siblings receive values via props and send updates via callbacks.\r\n\r\n## Why it exists\r\n\r\nTwo components need the same data — storing it in only one child makes the other unable to access it.\r\n\r\n## How it works\r\n\r\nParent holds [useState](concept:use-state); children [get](concept:getters-setters) `value` + `onChange`. Single source of truth.\r\n\r\n## Common confusion\r\n\r\nIf many levels need the data, consider [React Context](concept:react-context-api) or a store — not infinite callback chains without structure.\r\n\r\n## In practice\r\n\r\nSibling forms, [filters](concept:array-map-filter-reduce) + list, master-detail UIs before reaching for [global state](concept:react-context-api).",
+  "conceptIds": [
+    "lifting-state-up",
+    "use-state",
+    "getters-setters",
+    "react-context-api",
+    "array-map-filter-reduce"
+  ]
+}

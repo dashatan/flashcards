@@ -1,0 +1,24 @@
+{
+  "id": "inner-html",
+  "title": "innerHTML",
+  "aliases": [
+    "innerHTML property"
+  ],
+  "depth": "foundation",
+  "related": [
+    "dom",
+    "text-content",
+    "xss"
+  ],
+  "usedInFlashcards": [
+    263
+  ],
+  "body": "## Definition\r\n\r\n**`innerHTML`** is a [DOM](concept:dom) property that serializes or parses HTML markup for an element's contents.\r\n\r\n## Why it exists\r\n\r\nInsert structured HTML from templates or server responses — powerful but security-sensitive.\r\n\r\n## How it works\r\n\r\n```js\r\ncontainer.innerHTML = \"<p>Hello</p>\";\r\nconst html = container.innerHTML; // string of markup\r\n```\r\n\r\nParsing creates real DOM nodes; scripts in inserted HTML do not execute in modern browsers when inserted via `innerHTML`.\r\n\r\n## Common confusion\r\n\r\nMajor [XSS](concept:xss) vector when combined with untrusted strings. Prefer [textContent](concept:text-content) or framework rendering for user data.\r\n\r\n## In practice\r\n\r\nLegacy widgets and templating; sanitize untrusted HTML or use framework escaping.",
+  "bodyLinked": "## Definition\r\n\r\n**[innerHTML](concept:inner-html)** is a [DOM](concept:dom) property that serializes or parses HTML markup for an element's contents.\r\n\r\n## Why it exists\r\n\r\nInsert structured HTML from templates or server responses — powerful but security-sensitive.\r\n\r\n## How it works\r\n\r\n```js\r\ncontainer.innerHTML = \"<p>Hello</p>\";\r\nconst html = container.innerHTML; // string of markup\r\n```\r\n\r\nParsing creates real [DOM](concept:dom) nodes; scripts in inserted HTML do not execute in modern browsers when inserted via [innerHTML](concept:inner-html).\r\n\r\n## Common confusion\r\n\r\nMajor [XSS](concept:xss) vector when combined with untrusted strings. Prefer [textContent](concept:text-content) or framework rendering for user data.\r\n\r\n## In practice\r\n\r\nLegacy widgets and templating; sanitize untrusted HTML or use framework escaping.",
+  "conceptIds": [
+    "inner-html",
+    "dom",
+    "xss",
+    "text-content"
+  ]
+}

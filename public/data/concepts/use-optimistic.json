@@ -1,0 +1,25 @@
+{
+  "id": "use-optimistic",
+  "title": "useOptimistic",
+  "aliases": [
+    "useOptimistic",
+    "optimistic UI"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "react-server-actions",
+    "tanstack-query"
+  ],
+  "usedInFlashcards": [
+    180,
+    208,
+    215
+  ],
+  "body": "## Definition\r\n\r\n**useOptimistic** shows updated UI immediately while an async action runs, reverting if the action fails.\r\n\r\n## Why it exists\r\n\r\nResponsive mutation UX (likes, todos, cart) without waiting for network round-trip.\r\n\r\n## How it works\r\n\r\nReact 19 hook wrapping state with optimistic layer during pending server action or mutation.\r\n\r\n## Common confusion\r\n\r\nDistinct from TanStack Query optimistic updates — same UX pattern, different API.\r\n\r\n## In practice\r\n\r\nSocial actions, inline edits, shopping cart — always handle rollback errors visibly.",
+  "bodyLinked": "## Definition\r\n\r\n**[useOptimistic](concept:use-optimistic)** shows updated UI immediately while an [async](concept:async-await) action runs, reverting if the action fails.\r\n\r\n## Why it exists\r\n\r\nResponsive mutation UX (likes, todos, cart) without waiting for network round-trip.\r\n\r\n## How it works\r\n\r\nReact 19 hook wrapping state with optimistic layer during pending server action or mutation.\r\n\r\n## Common confusion\r\n\r\nDistinct from [TanStack Query](concept:tanstack-query) optimistic updates — same UX pattern, different API.\r\n\r\n## In practice\r\n\r\nSocial actions, inline edits, shopping cart — always handle rollback errors visibly.",
+  "conceptIds": [
+    "use-optimistic",
+    "async-await",
+    "tanstack-query"
+  ]
+}

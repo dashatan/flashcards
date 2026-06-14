@@ -1,0 +1,29 @@
+{
+  "id": "react-list-virtualization",
+  "title": "Virtualizing large lists",
+  "aliases": [
+    "large lists",
+    "list virtualization",
+    "virtualized list"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "react-key-prop",
+    "react-memo",
+    "tanstack-virtual"
+  ],
+  "usedInFlashcards": [
+    147,
+    190
+  ],
+  "body": "## Definition\r\n\r\n**List virtualization** renders only visible rows of huge lists — windowing DOM nodes to keep scroll performance acceptable.\r\n\r\n## Why it exists\r\n\r\nThousands of DOM nodes cause slow mount, layout, and [re-renders](concept:react-re-render).\r\n\r\n## How it works\r\n\r\nLibraries ([TanStack Virtual](concept:tanstack-virtual), react-window) measure viewport, render slice + overscan, translate positions.\r\n\r\n## Common confusion\r\n\r\nStable [keys](concept:react-key-prop) and item height assumptions matter — dynamic heights need measurement cache.\r\n\r\n## In practice\r\n\r\nUse for tables/feeds with 500+ rows; combine with [memo](concept:react-memo) on row components.",
+  "bodyLinked": "## Definition\r\n\r\n**[List virtualization](concept:react-list-virtualization)** renders only visible rows of huge lists — windowing [DOM](concept:dom) nodes to keep scroll performance acceptable.\r\n\r\n## Why it exists\r\n\r\nThousands of [DOM](concept:dom) nodes cause slow mount, layout, and [re-renders](concept:react-re-render).\r\n\r\n## How it works\r\n\r\nLibraries ([TanStack Virtual](concept:tanstack-virtual), react-window) measure viewport, render slice + overscan, translate positions.\r\n\r\n## Common confusion\r\n\r\nStable [keys](concept:react-key-prop) and item height assumptions matter — dynamic heights need measurement cache.\r\n\r\n## In practice\r\n\r\nUse for tables/feeds with 500+ rows; combine with [memo](concept:react-memo) on row components.",
+  "conceptIds": [
+    "react-list-virtualization",
+    "dom",
+    "react-re-render",
+    "tanstack-virtual",
+    "react-key-prop",
+    "react-memo"
+  ]
+}

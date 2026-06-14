@@ -1,0 +1,30 @@
+{
+  "id": "scope-chain",
+  "title": "Scope Chain",
+  "aliases": [
+    "scope chain"
+  ],
+  "depth": "foundation",
+  "related": [
+    "lexical-scope",
+    "lexical-environment"
+  ],
+  "usedInFlashcards": [
+    15
+  ],
+  "body": "## Definition\r\n\r\nThe **scope chain** is the linked list of [lexical environments](concept:lexical-environment) from the current scope outward to the global scope, used to resolve [identifiers](concept:identifier).\r\n\r\n## Why it exists\r\n\r\nInner code must read outer variables without copying them. The chain defines the lookup path.\r\n\r\n## How it works\r\n\r\nWhen JavaScript evaluates a name:\r\n\r\n1. Search the current environment's bindings.\r\n2. If not found, follow the outer reference to the parent environment.\r\n3. Repeat until found or until the chain ends → [ReferenceError](concept:reference-error).\r\n\r\n[Lexical scope](concept:lexical-scope) means this chain is fixed at write time, not at call time.\r\n\r\n## Example\r\n\r\n```js\r\nconst theme = \"dark\";\r\n\r\nfunction render() {\r\n  const padding = 8;\r\n  function label() {\r\n  return `${theme} ${padding}`; // walks chain: label → render → global\r\n  }\r\n  return label();\r\n}\r\n```\r\n\r\n## Common confusion\r\n\r\nScope chain is for variable lookup (`x`). `this` resolution uses different rules ([this binding](concept:this-binding)). `with` and `eval` can mutate scope in non-strict legacy code — avoid both.\r\n\r\n## In practice\r\n\r\nFoundation for closures, variable shadowing (inner `let` hides outer same name), and debugging “why is this undefined?”",
+  "bodyLinked": "## Definition\r\n\r\nThe **[scope chain](concept:scope-chain)** is the linked list of [lexical environments](concept:lexical-environment) from the current scope outward to the global scope, used to resolve [identifiers](concept:identifier).\r\n\r\n## Why it exists\r\n\r\nInner code must read outer variables without copying them. The chain defines the lookup path.\r\n\r\n## How it works\r\n\r\nWhen JavaScript evaluates a name:\r\n\r\n1. Search the current environment's [bindings](concept:binding).\r\n2. If not found, follow the outer reference to the parent environment.\r\n3. Repeat until found or until the chain ends → [ReferenceError](concept:reference-error).\r\n\r\n[Lexical scope](concept:lexical-scope) means [this](concept:this-binding) chain is fixed at write time, not at [call](concept:call-apply-bind) time.\r\n\r\n## Example\r\n\r\n```js\r\nconst theme = \"dark\";\r\n\r\nfunction render() {\r\n  const padding = 8;\r\n  function label() {\r\n  return `${theme} ${padding}`; // walks chain: label → render → global\r\n  }\r\n  return label();\r\n}\r\n```\r\n\r\n## Common confusion\r\n\r\n[Scope chain](concept:scope-chain) is for variable lookup (`x`). [this](concept:this-binding) resolution uses different rules ([this binding](concept:this-binding)). `with` and `eval` can mutate scope in non-strict legacy code — avoid both.\r\n\r\n## In practice\r\n\r\nFoundation for [closures](concept:closure), variable shadowing (inner [let](concept:let) hides outer same name), and debugging “why is [this](concept:this-binding) [undefined](concept:undefined)?”",
+  "conceptIds": [
+    "scope-chain",
+    "lexical-environment",
+    "identifier",
+    "binding",
+    "reference-error",
+    "lexical-scope",
+    "this-binding",
+    "call-apply-bind",
+    "closure",
+    "let",
+    "undefined"
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "id": "use-effect",
+  "title": "useEffect",
+  "aliases": [
+    "useEffect hook",
+    "React useEffect"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "dependency-array",
+    "use-layout-effect",
+    "memory-leak"
+  ],
+  "usedInFlashcards": [
+    121,
+    128,
+    129,
+    139,
+    140,
+    141,
+    144,
+    145
+  ],
+  "body": "## Definition\r\n\r\n**useEffect** runs side effects after React commits DOM updates and the browser paints — data fetching, subscriptions, timers.\r\n\r\n## Why it exists\r\n\r\nComponents need to sync with external systems without blocking paint.\r\n\r\n## How it works\r\n\r\n```js\r\nuseEffect(() => {\r\n  const sub = subscribe(cb);\r\n  return () => sub.unsubscribe(); // cleanup\r\n}, [userId]);\r\n```\r\n\r\n[Dependency array](concept:dependency-array) controls when effect re-runs. Omit deps → every render; `[]` → mount/unmount only.\r\n\r\n## Common confusion\r\n\r\nNot for synchronous DOM reads before paint — use [useLayoutEffect](concept:use-layout-effect). Fetch in effect, not during render body.\r\n\r\n## In practice\r\n\r\nDefault effect hook; always return cleanup for listeners and abort controllers to prevent [memory leaks](concept:memory-leak).",
+  "bodyLinked": "## Definition\r\n\r\n**[useEffect](concept:use-effect)** runs side effects after React commits [DOM](concept:dom) updates and the browser paints — data fetching, subscriptions, [timers](concept:timers).\r\n\r\n## Why it exists\r\n\r\nComponents need to sync with external systems without blocking paint.\r\n\r\n## How it works\r\n\r\n```js\r\nuseEffect(() => {\r\n  const sub = subscribe(cb);\r\n  return () => sub.unsubscribe(); // cleanup\r\n}, [userId]);\r\n```\r\n\r\n[Dependency array](concept:dependency-array) controls when effect re-runs. Omit deps → [every](concept:array-some-every) render; `[]` → mount/unmount only.\r\n\r\n## Common confusion\r\n\r\nNot for synchronous [DOM](concept:dom) reads before paint — use [useLayoutEffect](concept:use-layout-effect). [Fetch](concept:fetch) in effect, not during render body.\r\n\r\n## In practice\r\n\r\nDefault effect hook; always return cleanup for listeners and abort controllers to prevent [memory leaks](concept:memory-leak).",
+  "conceptIds": [
+    "use-effect",
+    "dom",
+    "timers",
+    "dependency-array",
+    "array-some-every",
+    "use-layout-effect",
+    "fetch",
+    "memory-leak"
+  ]
+}

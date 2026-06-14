@@ -1,0 +1,23 @@
+{
+  "id": "island-architecture",
+  "title": "Island Architecture",
+  "aliases": [
+    "islands architecture",
+    "Astro islands"
+  ],
+  "depth": "advanced",
+  "related": [
+    "hydration",
+    "progressive-enhancement"
+  ],
+  "usedInFlashcards": [
+    312
+  ],
+  "body": "## Definition\r\n\r\n**Island architecture** ships mostly static HTML with small interactive “islands” hydrated independently — minimal client JS.\r\n\r\n## Why it exists\r\n\r\nContent sites need little interactivity; avoid shipping React for entire page.\r\n\r\n## How it works\r\n\r\nStatic shell + selective [hydration](concept:hydration) of widgets (cart button, comments). Popularized by Astro.\r\n\r\n## Contrast\r\n\r\nFull SPA hydrates whole app; [micro-frontends](concept:micro-frontends) split by team/domain at runtime.\r\n\r\n## In practice\r\n\r\nMarketing sites, docs, blogs with sprinkles of interactivity.",
+  "bodyLinked": "## Definition\r\n\r\n**[Island architecture](concept:island-architecture)** ships mostly static HTML with small interactive “islands” hydrated independently — minimal client JS.\r\n\r\n## Why it exists\r\n\r\nContent sites need little interactivity; avoid shipping React for entire page.\r\n\r\n## How it works\r\n\r\nStatic shell + selective [hydration](concept:hydration) of widgets (cart button, comments). Popularized by Astro.\r\n\r\n## Contrast\r\n\r\nFull SPA [hydrates](concept:hydration) whole app; [micro-frontends](concept:micro-frontends) split by team/domain at runtime.\r\n\r\n## In practice\r\n\r\nMarketing sites, docs, blogs with sprinkles of interactivity.",
+  "conceptIds": [
+    "island-architecture",
+    "hydration",
+    "micro-frontends"
+  ]
+}

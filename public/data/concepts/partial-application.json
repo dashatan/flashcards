@@ -1,0 +1,34 @@
+{
+  "id": "partial-application",
+  "title": "Partial Application",
+  "aliases": [
+    "partial application",
+    "partial apply"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "currying",
+    "call-apply-bind",
+    "closure"
+  ],
+  "usedInFlashcards": [
+    24,
+    25
+  ],
+  "body": "## Definition\r\n\r\n**Partial application** fixes some arguments of a function to produce a new function with fewer parameters — unlike [currying](concept:currying), args can be fixed in one step.\r\n\r\n## Why it exists\r\n\r\nReuse logic with preset configuration (`multiplyBy2`, API client with base URL).\r\n\r\n## How it works\r\n\r\n```js\r\nfunction multiply(a, b) { return a * b; }\r\nconst double = multiply.bind(null, 2);\r\ndouble(5); // 10\r\n```\r\n\r\nOr manual [closure](concept:closure): `const double = (n) => multiply(2, n)`.\r\n\r\n## Common confusion\r\n\r\n`bind` partial application sets `this` too — pass `null`/`undefined` for plain functions in modules.\r\n\r\n## In practice\r\n\r\nEvent handlers with preset IDs, configurable validators, factory functions.",
+  "bodyLinked": "## Definition\r\n\r\n**[Partial application](concept:partial-application)** fixes [some](concept:array-some-every) [arguments](concept:arguments-object) of a function to produce a [new](concept:new-operator) function with fewer parameters — unlike [currying](concept:currying), args can be fixed in one step.\r\n\r\n## Why it exists\r\n\r\nReuse logic with preset configuration (`multiplyBy2`, API client with base URL).\r\n\r\n## How it works\r\n\r\n```js\r\nfunction multiply(a, b) { return a * b; }\r\nconst double = multiply.bind(null, 2);\r\ndouble(5); // 10\r\n```\r\n\r\nOr manual [closure](concept:closure): `const double = (n) => multiply(2, n)`.\r\n\r\n## Common confusion\r\n\r\n[bind](concept:call-apply-bind) [partial application](concept:partial-application) sets [this](concept:this-binding) too — pass [null](concept:null-value)/[undefined](concept:undefined) for plain functions in modules.\r\n\r\n## In practice\r\n\r\n[Event handlers](concept:typescript-react-events) with preset IDs, [configurable](concept:property-descriptors) validators, factory functions.",
+  "conceptIds": [
+    "partial-application",
+    "array-some-every",
+    "arguments-object",
+    "new-operator",
+    "currying",
+    "closure",
+    "call-apply-bind",
+    "this-binding",
+    "null-value",
+    "undefined",
+    "typescript-react-events",
+    "property-descriptors"
+  ]
+}

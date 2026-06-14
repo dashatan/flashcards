@@ -1,0 +1,30 @@
+{
+  "id": "boolean-conversion",
+  "title": "Boolean conversion",
+  "aliases": [
+    "Boolean()",
+    "double negation",
+    "!!",
+    "ToBoolean"
+  ],
+  "depth": "foundation",
+  "related": [
+    "truthy-falsy",
+    "type-coercion",
+    "loose-equality"
+  ],
+  "usedInFlashcards": [
+    72,
+    74,
+    77
+  ],
+  "body": "## Definition\r\n\r\n**Boolean conversion** turns any value into `true` or `false` using [truthy/falsy](concept:truthy-falsy) rules — `Boolean(value)` or idiomatic `!!value`.\r\n\r\n## Why it exists\r\n\r\nExplicit boolean context for conditionals, flags, and API contracts without loose equality surprises.\r\n\r\n## How it works\r\n\r\n```js\r\n!!\"\"; // false\r\n!!\"hello\"; // true\r\n!!0; // false\r\n!!{}; // true\r\n```\r\n\r\nSame result as `Boolean(value)` — double NOT negates twice.\r\n\r\n## Common confusion\r\n\r\n`!!` is not magic — it applies standard truthiness. Prefer explicit `Boolean(x)` in code reviews for readability.\r\n\r\n## In practice\r\n\r\nGuard clauses, React conditional render checks, and normalizing API inputs to booleans.",
+  "bodyLinked": "## Definition\r\n\r\n**[Boolean conversion](concept:boolean-conversion)** turns any value into `true` or `false` using [truthy/falsy](concept:truthy-falsy) rules — `Boolean(value)` or idiomatic `!!value`.\r\n\r\n## Why it exists\r\n\r\nExplicit [boolean](concept:boolean-conversion) [context](concept:use-context) for conditionals, flags, and API contracts without [loose equality](concept:loose-equality) surprises.\r\n\r\n## How it works\r\n\r\n```js\r\n!!\"\"; // false\r\n!!\"hello\"; // true\r\n!!0; // false\r\n!!{}; // true\r\n```\r\n\r\nSame result as `Boolean(value)` — double NOT negates twice.\r\n\r\n## Common confusion\r\n\r\n[!!](concept:boolean-conversion) is not magic — it applies standard truthiness. Prefer explicit `Boolean(x)` in code reviews for [readability](concept:coding-standards).\r\n\r\n## In practice\r\n\r\nGuard clauses, React conditional render checks, and normalizing API inputs to [booleans](concept:boolean-conversion).",
+  "conceptIds": [
+    "boolean-conversion",
+    "truthy-falsy",
+    "use-context",
+    "loose-equality",
+    "coding-standards"
+  ]
+}

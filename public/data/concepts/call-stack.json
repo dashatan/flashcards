@@ -1,0 +1,28 @@
+{
+  "id": "call-stack",
+  "title": "Call Stack",
+  "aliases": [
+    "call stack",
+    "stack frame"
+  ],
+  "depth": "foundation",
+  "related": [
+    "execution-context",
+    "event-loop"
+  ],
+  "usedInFlashcards": [
+    31
+  ],
+  "body": "## Definition\r\n\r\nThe **call stack** is the LIFO structure that tracks which [execution contexts](concept:execution-context) are currently active — each function call pushes a frame; `return` pops it.\r\n\r\n## Why it exists\r\n\r\nJavaScript runs on a single main thread. The stack orders nested calls (`a` calls `b` calls `c`) and detects infinite recursion (`Maximum call stack size exceeded`).\r\n\r\n## How it works\r\n\r\n- Synchronous code runs until the stack is empty.\r\n- The [event loop](concept:event-loop) schedules async callbacks only when the stack clears (then microtasks, then macrotasks).\r\n- Long synchronous work blocks the stack → UI jank, delayed timers.\r\n\r\n## Example\r\n\r\n```js\r\nfunction a() { b(); }\r\nfunction b() { c(); }\r\nfunction c() { console.log(\"deep\"); }\r\na(); // stack: a → b → c → pop c → pop b → pop a\r\n```\r\n\r\n## Common confusion\r\n\r\nCall stack is not where objects live long-term — that's the heap. Stack holds execution frames and primitive values in frames. Async functions still use the stack when their synchronous parts run; `await` suspends the async function without blocking the whole stack indefinitely.\r\n\r\n## In practice\r\n\r\nStack traces in errors show the call stack. Performance work breaks up long tasks so the stack can clear and the browser can paint.",
+  "bodyLinked": "## Definition\r\n\r\nThe **[call stack](concept:call-stack)** is the LIFO structure that tracks which [execution contexts](concept:execution-context) are currently active — each function [call](concept:call-apply-bind) pushes a frame; `return` pops it.\r\n\r\n## Why it exists\r\n\r\nJavaScript runs on a single main thread. The stack orders nested [calls](concept:call-apply-bind) (`a` [calls](concept:call-apply-bind) `b` [calls](concept:call-apply-bind) `c`) and detects infinite recursion (`Maximum call stack size exceeded`).\r\n\r\n## How it works\r\n\r\n- Synchronous code runs until the stack is empty.\r\n- The [event loop](concept:event-loop) schedules [async](concept:async-await) callbacks only when the stack clears (then [microtasks](concept:microtask), then [macrotasks](concept:macrotask)).\r\n- Long synchronous work blocks the stack → UI jank, delayed [timers](concept:timers).\r\n\r\n## Example\r\n\r\n```js\r\nfunction a() { b(); }\r\nfunction b() { c(); }\r\nfunction c() { console.log(\"deep\"); }\r\na(); // stack: a → b → c → pop c → pop b → pop a\r\n```\r\n\r\n## Common confusion\r\n\r\n[Call stack](concept:call-stack) is not where objects live long-term — that's the heap. Stack holds execution frames and primitive values in frames. [Async](concept:async-await) functions still use the stack when their synchronous parts run; [await](concept:async-await) suspends the [async](concept:async-await) function without blocking the whole stack indefinitely.\r\n\r\n## In practice\r\n\r\nStack traces in errors show the [call stack](concept:call-stack). Performance work breaks up long tasks so the stack can clear and the browser can paint.",
+  "conceptIds": [
+    "call-stack",
+    "execution-context",
+    "call-apply-bind",
+    "event-loop",
+    "async-await",
+    "microtask",
+    "macrotask",
+    "timers"
+  ]
+}

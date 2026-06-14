@@ -1,0 +1,31 @@
+{
+  "id": "strict-mode",
+  "title": "Strict Mode",
+  "aliases": [
+    "strict mode",
+    "use strict"
+  ],
+  "depth": "foundation",
+  "related": [
+    "type-error"
+  ],
+  "usedInFlashcards": [
+    6,
+    77,
+    231,
+    317
+  ],
+  "body": "## Definition\r\n\r\n**Strict mode** is an opt-in (or automatic in ES modules) variant of JavaScript that forbids silent errors and unsafe features — undeclared assignments throw, `delete` on unconfigurable properties fails, etc.\r\n\r\n## Why it exists\r\n\r\nCatches bugs early and enables engine optimizations. All modern bundlers emit modules in strict mode by default.\r\n\r\n## How it works\r\n\r\n- Files with `import`/`export` are modules → always strict.\r\n- `const` reassignment throws [TypeError](concept:type-error) in strict mode.\r\n- `this` in plain function calls is `undefined` (not global object).\r\n\r\n## Example\r\n\r\n```js\r\n\"use strict\";\r\nfunction loose() {\r\n  console.log(this); // undefined\r\n}\r\nloose();\r\n```\r\n\r\n## Common confusion\r\n\r\nStrict mode is per **execution context**, not per file fragment in classic scripts. Classes and modules are always strict.\r\n\r\n## In practice\r\n\r\nInterview: “modules are always strict” explains `const` mutation errors without mentioning `use strict` explicitly.",
+  "bodyLinked": "## Definition\r\n\r\n**[Strict mode](concept:strict-mode)** is an opt-in (or automatic in [ES modules](concept:es-modules)) variant of JavaScript that forbids silent errors and unsafe features — undeclared assignments throw, `delete` on unconfigurable properties fails, etc.\r\n\r\n## Why it exists\r\n\r\nCatches bugs early and enables engine optimizations. All modern [bundlers](concept:module-bundlers) emit modules in [strict mode](concept:strict-mode) by default.\r\n\r\n## How it works\r\n\r\n- Files with `import`/`export` are modules → always strict.\r\n- [const](concept:const) reassignment throws [TypeError](concept:type-error) in [strict mode](concept:strict-mode).\r\n- [this](concept:this-binding) in plain function [calls](concept:call-apply-bind) is [undefined](concept:undefined) (not global object).\r\n\r\n## Example\r\n\r\n```js\r\n\"use strict\";\r\nfunction loose() {\r\n  console.log(this); // undefined\r\n}\r\nloose();\r\n```\r\n\r\n## Common confusion\r\n\r\n[Strict mode](concept:strict-mode) is per **[execution context](concept:execution-context)**, not per file fragment in classic scripts. Classes and modules are always strict.\r\n\r\n## In practice\r\n\r\nInterview: “modules are always strict” explains [const](concept:const) mutation errors without mentioning [use strict](concept:strict-mode) explicitly.",
+  "conceptIds": [
+    "strict-mode",
+    "es-modules",
+    "module-bundlers",
+    "const",
+    "type-error",
+    "this-binding",
+    "call-apply-bind",
+    "undefined",
+    "execution-context"
+  ]
+}

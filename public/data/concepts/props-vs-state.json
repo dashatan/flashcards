@@ -1,0 +1,31 @@
+{
+  "id": "props-vs-state",
+  "title": "Props vs State",
+  "aliases": [
+    "props and state",
+    "React props",
+    "component state"
+  ],
+  "depth": "foundation",
+  "related": [
+    "use-state",
+    "one-way-data-flow"
+  ],
+  "usedInFlashcards": [
+    17,
+    171,
+    193,
+    194,
+    223
+  ],
+  "body": "## Definition\r\n\r\n**Props** are inputs from parent — read-only for the child. **State** is internal data the component owns and updates via [useState](concept:use-state)/reducer.\r\n\r\n## Why it exists\r\n\r\nClear data ownership and [one-way data flow](concept:one-way-data-flow) from parent to child.\r\n\r\n## How it works\r\n\r\nParent passes props down; child calls setters for its own state. Never mutate props directly.\r\n\r\n## Common confusion\r\n\r\n“Lift state up” moves state to common ancestor — props then carry values down, callbacks up.\r\n\r\n## In practice\r\n\r\nInterview staple; guides where to put form data, fetched data (often server state + hooks).",
+  "bodyLinked": "## Definition\r\n\r\n**Props** are inputs from parent — read-only for the child. **State** is internal data the component owns and updates via [useState](concept:use-state)/reducer.\r\n\r\n## Why it exists\r\n\r\nClear data ownership and [one-way data flow](concept:one-way-data-flow) from parent to child.\r\n\r\n## How it works\r\n\r\nParent passes props down; child [calls](concept:call-apply-bind) [setters](concept:getters-setters) for its own state. Never mutate props directly.\r\n\r\n## Common confusion\r\n\r\n“[Lift state up](concept:lifting-state-up)” moves state to common ancestor — props then carry values down, callbacks up.\r\n\r\n## In practice\r\n\r\nInterview staple; guides where to put form data, fetched data (often [server state](concept:server-state-vs-client-state) + hooks).",
+  "conceptIds": [
+    "use-state",
+    "one-way-data-flow",
+    "call-apply-bind",
+    "getters-setters",
+    "lifting-state-up",
+    "server-state-vs-client-state"
+  ]
+}

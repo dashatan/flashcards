@@ -1,0 +1,30 @@
+{
+  "id": "type-error",
+  "title": "TypeError",
+  "aliases": [
+    "TypeError"
+  ],
+  "depth": "foundation",
+  "related": [
+    "strict-mode",
+    "binding"
+  ],
+  "usedInFlashcards": [
+    6,
+    23,
+    106,
+    119
+  ],
+  "body": "## Definition\r\n\r\n**TypeError** is thrown when an operation is applied to a value of the wrong type — e.g. reassigning a `const` [binding](concept:binding), calling `null` as a function, or using an arrow function with `new`.\r\n\r\n## Why it exists\r\n\r\nProtects against invalid operations that would corrupt runtime state.\r\n\r\n## How it works\r\n\r\n```js\r\nconst n = 1;\r\nn = 2; // TypeError in strict mode / modules\r\n\r\nconst fn = () => {};\r\nnew fn(); // TypeError — arrow functions are not constructors\r\n```\r\n\r\n## Common confusion\r\n\r\n`TypeError` vs [ReferenceError](concept:reference-error): Reference = name resolution failed; Type = name resolved but operation invalid.\r\n\r\n## In practice\r\n\r\nCommon in interview answers about `const`, `new` on arrows, and optional chaining short-circuit (no TypeError on nullish base).",
+  "bodyLinked": "## Definition\r\n\r\n**[TypeError](concept:type-error)** is thrown when an operation is applied to a value of the wrong type — e.g. reassigning a [const](concept:const) [binding](concept:binding), calling [null](concept:null-value) as a function, or using an [arrow function](concept:arrow-function) with [new](concept:new-operator).\r\n\r\n## Why it exists\r\n\r\nProtects against invalid operations that would corrupt runtime state.\r\n\r\n## How it works\r\n\r\n```js\r\nconst n = 1;\r\nn = 2; // TypeError in strict mode / modules\r\n\r\nconst fn = () => {};\r\nnew fn(); // TypeError — arrow functions are not constructors\r\n```\r\n\r\n## Common confusion\r\n\r\n[TypeError](concept:type-error) vs [ReferenceError](concept:reference-error): Reference = name resolution failed; Type = name resolved but operation invalid.\r\n\r\n## In practice\r\n\r\nCommon in interview answers about [const](concept:const), [new](concept:new-operator) on arrows, and [optional chaining](concept:optional-chaining) short-circuit (no [TypeError](concept:type-error) on nullish base).",
+  "conceptIds": [
+    "type-error",
+    "const",
+    "binding",
+    "null-value",
+    "arrow-function",
+    "new-operator",
+    "reference-error",
+    "optional-chaining"
+  ]
+}

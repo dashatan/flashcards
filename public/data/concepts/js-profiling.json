@@ -1,0 +1,34 @@
+{
+  "id": "js-profiling",
+  "title": "JavaScript profiling",
+  "aliases": [
+    "performance profiling",
+    "DevTools Performance",
+    "profile JavaScript"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "call-stack",
+    "reflow-repaint",
+    "memory-leak"
+  ],
+  "usedInFlashcards": [
+    116,
+    146,
+    184,
+    185,
+    189,
+    297
+  ],
+  "body": "## Definition\r\n\r\n**Profiling** measures where CPU time and memory go — browser DevTools Performance/Memory tabs, `console.time`, and sampling profilers.\r\n\r\n## Why it exists\r\n\r\nOptimize hot paths with data instead of guessing; find [memory leaks](concept:memory-leak) and long tasks.\r\n\r\n## How it works\r\n\r\nRecord a Performance trace while reproducing jank; inspect flame chart, long tasks, and layout events ([reflow/repaint](concept:reflow-repaint)).\r\n\r\n## Common confusion\r\n\r\nProfiling in dev with HMR differs from production — validate with production builds and throttling.\r\n\r\n## In practice\r\n\r\nFix largest bottlenecks first; pair with [Core Web Vitals](concept:core-web-vitals) field data when available.",
+  "bodyLinked": "## Definition\r\n\r\n**[Profiling](concept:js-profiling)** measures where CPU time and memory go — browser [DevTools Performance](concept:js-profiling)/Memory tabs, `console.time`, and sampling profilers.\r\n\r\n## Why it exists\r\n\r\nOptimize hot paths with data instead of guessing; [find](concept:array-map-filter-reduce) [memory leaks](concept:memory-leak) and long tasks.\r\n\r\n## How it works\r\n\r\nRecord a Performance trace while reproducing jank; inspect flame chart, long tasks, and layout events ([reflow/repaint](concept:reflow-repaint)).\r\n\r\n## Common confusion\r\n\r\n[Profiling](concept:js-profiling) in dev with [HMR](concept:hmr) differs from production — validate with production builds and [throttling](concept:debounce-throttle).\r\n\r\n## In practice\r\n\r\nFix largest bottlenecks first; pair with [Core Web Vitals](concept:core-web-vitals) field data when available.",
+  "conceptIds": [
+    "js-profiling",
+    "array-map-filter-reduce",
+    "memory-leak",
+    "reflow-repaint",
+    "hmr",
+    "debounce-throttle",
+    "core-web-vitals"
+  ]
+}

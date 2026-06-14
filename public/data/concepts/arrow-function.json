@@ -1,0 +1,37 @@
+{
+  "id": "arrow-function",
+  "title": "Arrow Function",
+  "aliases": [
+    "arrow functions",
+    "arrow function"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "function-expression",
+    "this-binding",
+    "lexical-scope"
+  ],
+  "usedInFlashcards": [
+    10,
+    19,
+    20,
+    21,
+    22,
+    23,
+    201
+  ],
+  "body": "## Definition\r\n\r\nAn **arrow function** is `() => {}` — a concise [function expression](concept:function-expression) with lexical `this`, no `arguments` object, and no `new` capability.\r\n\r\n## Why it exists\r\n\r\nAvoids manual `this` binding in callbacks and keeps `this` from the enclosing [lexical scope](concept:lexical-scope).\r\n\r\n## How it works\r\n\r\n- `this` is captured from surrounding scope (not dynamic).\r\n- No own `arguments` — use rest parameters `...args`.\r\n- Cannot be used as constructor → `new` throws [TypeError](concept:type-error).\r\n- Implicit return with expression body: `x => x * 2`.\r\n\r\n## Example\r\n\r\n```js\r\nconst timer = {\r\n  seconds: 0,\r\n  start() {\r\n    setInterval(() => {\r\n      this.seconds++; // `this` is timer from lexical scope\r\n    }, 1000);\r\n  },\r\n};\r\n```\r\n\r\n## Common confusion\r\n\r\nNot for object methods that need dynamic `this`. Not for `prototype` methods if you rely on `this` at call time. Good for React functional components and array callbacks.\r\n\r\n## In practice\r\n\r\nDefault choice for callbacks in modern React. Use regular functions when you need `new`, `arguments`, or dynamic `this`.",
+  "bodyLinked": "## Definition\r\n\r\nAn **[arrow function](concept:arrow-function)** is `() => {}` — a concise [function expression](concept:function-expression) with lexical [this](concept:this-binding), no [arguments](concept:arguments-object) object, and no [new](concept:new-operator) capability.\r\n\r\n## Why it exists\r\n\r\nAvoids manual [this](concept:this-binding) [binding](concept:binding) in callbacks and keeps [this](concept:this-binding) from the enclosing [lexical scope](concept:lexical-scope).\r\n\r\n## How it works\r\n\r\n- [this](concept:this-binding) is captured from surrounding scope (not dynamic).\r\n- No own [arguments](concept:arguments-object) — use rest parameters `...args`.\r\n- Cannot be used as constructor → [new](concept:new-operator) throws [TypeError](concept:type-error).\r\n- Implicit return with expression body: `x => x * 2`.\r\n\r\n## Example\r\n\r\n```js\r\nconst timer = {\r\n  seconds: 0,\r\n  start() {\r\n    setInterval(() => {\r\n      this.seconds++; // `this` is timer from lexical scope\r\n    }, 1000);\r\n  },\r\n};\r\n```\r\n\r\n## Common confusion\r\n\r\nNot for object methods that need dynamic [this](concept:this-binding). Not for [prototype](concept:prototype-chain) methods if you rely on [this](concept:this-binding) at [call](concept:call-apply-bind) time. Good for React functional components and array callbacks.\r\n\r\n## In practice\r\n\r\nDefault choice for callbacks in modern React. Use regular functions when you need [new](concept:new-operator), [arguments](concept:arguments-object), or dynamic [this](concept:this-binding).",
+  "conceptIds": [
+    "arrow-function",
+    "function-expression",
+    "this-binding",
+    "arguments-object",
+    "new-operator",
+    "binding",
+    "lexical-scope",
+    "type-error",
+    "prototype-chain",
+    "call-apply-bind"
+  ]
+}

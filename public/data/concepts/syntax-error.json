@@ -1,0 +1,23 @@
+{
+  "id": "syntax-error",
+  "title": "SyntaxError",
+  "aliases": [
+    "SyntaxError"
+  ],
+  "depth": "foundation",
+  "related": [
+    "strict-mode"
+  ],
+  "usedInFlashcards": [
+    12,
+    106
+  ],
+  "body": "## Definition\r\n\r\nA **SyntaxError** is thrown when source code violates JavaScript grammar and cannot be parsed.\r\n\r\n## Why it exists\r\n\r\nFails at parse time before execution — illegal tokens, missing brackets, invalid `await` placement.\r\n\r\n## How it works\r\n\r\nCannot be caught by try/catch in the same script if the parser fails before running. Build tools (TypeScript, ESLint) catch these earlier.\r\n\r\n## Example\r\n\r\n```js\r\nif { } // SyntaxError\r\nconst fn = () => { return }; // ok\r\n```\r\n\r\n## Common confusion\r\n\r\nRuntime [TypeError](concept:type-error) vs parse-time SyntaxError — only SyntaxError prevents the file from running.\r\n\r\n## In practice\r\n\r\nFix in editor/CI; not recoverable at runtime in the broken module.",
+  "bodyLinked": "## Definition\r\n\r\nA **[SyntaxError](concept:syntax-error)** is thrown when source code violates JavaScript grammar and cannot be parsed.\r\n\r\n## Why it exists\r\n\r\nFails at parse time before execution — illegal tokens, missing brackets, invalid [await](concept:async-await) placement.\r\n\r\n## How it works\r\n\r\nCannot be caught by [try](concept:try-catch-finally)/catch in the same script if the parser fails before running. Build tools (TypeScript, ESLint) [catch](concept:try-catch-finally) these earlier.\r\n\r\n## Example\r\n\r\n```js\r\nif { } // SyntaxError\r\nconst fn = () => { return }; // ok\r\n```\r\n\r\n## Common confusion\r\n\r\nRuntime [TypeError](concept:type-error) vs parse-time [SyntaxError](concept:syntax-error) — only [SyntaxError](concept:syntax-error) prevents the file from running.\r\n\r\n## In practice\r\n\r\nFix in editor/CI; not recoverable at runtime in the broken module.",
+  "conceptIds": [
+    "syntax-error",
+    "async-await",
+    "try-catch-finally",
+    "type-error"
+  ]
+}

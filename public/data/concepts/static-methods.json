@@ -1,0 +1,26 @@
+{
+  "id": "static-methods",
+  "title": "Static methods",
+  "aliases": [
+    "static keyword",
+    "class static methods"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "es6-class",
+    "prototype-chain",
+    "new-operator"
+  ],
+  "usedInFlashcards": [
+    66
+  ],
+  "body": "## Definition\r\n\r\n**Static methods** belong to the constructor (class) itself, not instances — invoked as `ClassName.method()` without `new`.\r\n\r\n## Why it exists\r\n\r\nUtility functions, factories, and namespaced helpers tied to a type without needing an instance.\r\n\r\n## How it works\r\n\r\n```js\r\nclass MathUtils {\r\n  static clamp(n, min, max) {\r\n    return Math.min(max, Math.max(min, n));\r\n  }\r\n}\r\n\r\nMathUtils.clamp(5, 0, 10);\r\n```\r\n\r\nDefined with `static` in class syntax or directly on the function object in pre-class code.\r\n\r\n## Common confusion\r\n\r\nStatic methods are not on the [prototype chain](concept:prototype-chain) of instances. `this` inside static methods refers to the class, not an instance.\r\n\r\n## In practice\r\n\r\n`Array.from`, `Object.keys`, React legacy `React.createElement` patterns, and service singletons.",
+  "bodyLinked": "## Definition\r\n\r\n**[Static methods](concept:static-methods)** belong to the constructor ([class](concept:es6-class)) itself, not instances — invoked as `ClassName.method()` without [new](concept:new-operator).\r\n\r\n## Why it exists\r\n\r\nUtility functions, factories, and namespaced helpers tied to a type without needing an instance.\r\n\r\n## How it works\r\n\r\n```js\r\nclass MathUtils {\r\n  static clamp(n, min, max) {\r\n    return Math.min(max, Math.max(min, n));\r\n  }\r\n}\r\n\r\nMathUtils.clamp(5, 0, 10);\r\n```\r\n\r\nDefined with `static` in [class syntax](concept:es6-class) or directly on the function object in pre-[class](concept:es6-class) code.\r\n\r\n## Common confusion\r\n\r\n[Static methods](concept:static-methods) are not on the [prototype chain](concept:prototype-chain) of instances. [this](concept:this-binding) inside [static methods](concept:static-methods) refers to the [class](concept:es6-class), not an instance.\r\n\r\n## In practice\r\n\r\n`Array.from`, `Object.keys`, React legacy `React.createElement` patterns, and service singletons.",
+  "conceptIds": [
+    "static-methods",
+    "es6-class",
+    "new-operator",
+    "prototype-chain",
+    "this-binding"
+  ]
+}

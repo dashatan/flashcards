@@ -1,0 +1,28 @@
+{
+  "id": "higher-order-component",
+  "title": "Higher-Order Component (HOC)",
+  "aliases": [
+    "HOC",
+    "Higher-Order Components",
+    "withRouter"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "higher-order-function",
+    "custom-hooks",
+    "react-composition"
+  ],
+  "usedInFlashcards": [
+    186,
+    227
+  ],
+  "body": "## Definition\r\n\r\nA **Higher-Order Component** is a function that takes a component and returns a new component with extra props or behavior — `const Enhanced = withAuth(Component)`.\r\n\r\n## Why it exists\r\n\r\nReuse cross-cutting logic (auth, logging, data fetching) before hooks became standard.\r\n\r\n## How it works\r\n\r\n```tsx\r\nfunction withLoading<P>(Component: React.ComponentType<P>) {\r\n  return function Wrapped(props: P & { loading: boolean }) {\r\n    if (props.loading) return <Spinner />;\r\n    return <Component {...props} />;\r\n  };\r\n}\r\n```\r\n\r\nHOCs wrap render, not replace element trees.\r\n\r\n## Common confusion\r\n\r\nHooks + custom hooks often replace HOCs today. HOCs can cause prop name collisions and DevTools nesting noise.\r\n\r\n## In practice\r\n\r\nLegacy React Router `withRouter`, Redux `connect` — modern code prefers [custom hooks](concept:custom-hooks).",
+  "bodyLinked": "## Definition\r\n\r\nA **Higher-Order Component** is a function that takes a component and returns a [new](concept:new-operator) component with extra props or behavior — `const Enhanced = withAuth(Component)`.\r\n\r\n## Why it exists\r\n\r\nReuse cross-cutting logic (auth, [logging](concept:observability), data fetching) before hooks became standard.\r\n\r\n## How it works\r\n\r\n```tsx\r\nfunction withLoading<P>(Component: React.ComponentType<P>) {\r\n  return function Wrapped(props: P & { loading: boolean }) {\r\n    if (props.loading) return <Spinner />;\r\n    return <Component {...props} />;\r\n  };\r\n}\r\n```\r\n\r\nHOCs wrap render, not replace element trees.\r\n\r\n## Common confusion\r\n\r\nHooks + [custom hooks](concept:custom-hooks) often replace HOCs today. HOCs can cause prop name collisions and [DevTools](concept:js-debugging-tools) nesting noise.\r\n\r\n## In practice\r\n\r\nLegacy React Router [withRouter](concept:higher-order-component), Redux `connect` — modern code prefers [custom hooks](concept:custom-hooks).",
+  "conceptIds": [
+    "new-operator",
+    "observability",
+    "custom-hooks",
+    "js-debugging-tools",
+    "higher-order-component"
+  ]
+}

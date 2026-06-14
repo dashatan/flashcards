@@ -1,0 +1,31 @@
+{
+  "id": "custom-hooks",
+  "title": "Custom Hooks",
+  "aliases": [
+    "custom hooks",
+    "custom React hooks"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "rules-of-hooks",
+    "use-effect",
+    "use-state"
+  ],
+  "usedInFlashcards": [
+    137,
+    156,
+    157,
+    158,
+    224,
+    303,
+    308
+  ],
+  "body": "## Definition\r\n\r\nA **custom hook** is a function that calls other hooks to encapsulate reusable stateful logic — named `useSomething`.\r\n\r\n## Why it exists\r\n\r\nShare logic across components without HOCs or render props; colocate related effects and state.\r\n\r\n## How it works\r\n\r\n```js\r\nfunction useDebouncedValue(value, ms) {\r\n  const [debounced, setDebounced] = useState(value);\r\n  useEffect(() => { ... }, [value, ms]);\r\n  return debounced;\r\n}\r\n```\r\n\r\nMust follow [rules of hooks](concept:rules-of-hooks).\r\n\r\n## Common confusion\r\n\r\nCustom hooks do not share state between components — each call gets isolated state. For shared state use Context/store.\r\n\r\n## In practice\r\n\r\n`useFetch`, `useMediaQuery`, `useLocalStorage`, domain hooks (`useCart`).",
+  "bodyLinked": "## Definition\r\n\r\nA **custom hook** is a function that [calls](concept:call-apply-bind) other hooks to encapsulate reusable stateful logic — named `useSomething`.\r\n\r\n## Why it exists\r\n\r\nShare logic across components without HOCs or render props; colocate related effects and state.\r\n\r\n## How it works\r\n\r\n```js\r\nfunction useDebouncedValue(value, ms) {\r\n  const [debounced, setDebounced] = useState(value);\r\n  useEffect(() => { ... }, [value, ms]);\r\n  return debounced;\r\n}\r\n```\r\n\r\nMust follow [rules of hooks](concept:rules-of-hooks).\r\n\r\n## Common confusion\r\n\r\n[Custom hooks](concept:custom-hooks) do not share state between components — each [call](concept:call-apply-bind) gets isolated state. For shared state [use Context](concept:use-context)/store.\r\n\r\n## In practice\r\n\r\n`useFetch`, `useMediaQuery`, `useLocalStorage`, domain hooks (`useCart`).",
+  "conceptIds": [
+    "call-apply-bind",
+    "rules-of-hooks",
+    "custom-hooks",
+    "use-context"
+  ]
+}

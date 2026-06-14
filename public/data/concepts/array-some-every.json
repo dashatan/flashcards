@@ -1,0 +1,43 @@
+{
+  "id": "array-some-every",
+  "title": "Array.some and Array.every",
+  "aliases": [
+    "Array.some",
+    "Array.every",
+    "some",
+    "every"
+  ],
+  "depth": "foundation",
+  "related": [
+    "array-map-filter-reduce",
+    "higher-order-function"
+  ],
+  "usedInFlashcards": [
+    7,
+    25,
+    39,
+    42,
+    52,
+    76,
+    77,
+    94,
+    111,
+    128,
+    138,
+    140,
+    141,
+    142,
+    149,
+    174,
+    183,
+    186,
+    216,
+    274
+  ],
+  "body": "## Definition\r\n\r\n**`some`** returns true if at least one element passes a predicate; **`every`** returns true only if all elements pass.\r\n\r\n## Why it exists\r\n\r\nReadable existence/universal checks without manual loops.\r\n\r\n## How it works\r\n\r\n```js\r\n[1, 2, 3].some(n => n > 2); // true\r\n[1, 2, 3].every(n => n > 0); // true\r\n```\r\n\r\nShort-circuit: `some` stops at first match; `every` stops at first failure.\r\n\r\n## Common confusion\r\n\r\nEmpty array: `[].some(fn)` → `false`; `[].every(fn)` → `true` (vacuous truth).\r\n\r\n## In practice\r\n\r\nValidation, permissions checks, and feature flags on collections before expensive work.",
+  "bodyLinked": "## Definition\r\n\r\n**[some](concept:array-some-every)** returns true if at least one element passes a predicate; **[every](concept:array-some-every)** returns true only if all elements pass.\r\n\r\n## Why it exists\r\n\r\nReadable existence/universal checks without manual loops.\r\n\r\n## How it works\r\n\r\n```js\r\n[1, 2, 3].some(n => n > 2); // true\r\n[1, 2, 3].every(n => n > 0); // true\r\n```\r\n\r\nShort-circuit: [some](concept:array-some-every) stops at first match; [every](concept:array-some-every) stops at first failure.\r\n\r\n## Common confusion\r\n\r\nEmpty array: `[].some(fn)` → `false`; `[].every(fn)` → `true` (vacuous truth).\r\n\r\n## In practice\r\n\r\nValidation, permissions checks, and [feature flags](concept:feature-flags) on collections before expensive work.",
+  "conceptIds": [
+    "array-some-every",
+    "feature-flags"
+  ]
+}

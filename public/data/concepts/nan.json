@@ -1,0 +1,26 @@
+{
+  "id": "nan",
+  "title": "NaN",
+  "aliases": [
+    "Not a Number",
+    "NaN value"
+  ],
+  "depth": "foundation",
+  "related": [
+    "type-coercion",
+    "type-error"
+  ],
+  "usedInFlashcards": [
+    73,
+    83,
+    85
+  ],
+  "body": "## Definition\r\n\r\n**NaN** (“Not a Number”) is a numeric value representing an invalid or undefined mathematical result.\r\n\r\n## Why it exists\r\n\r\nDistinguishes failed numeric operations from valid numbers without throwing on every bad parse.\r\n\r\n## How it works\r\n\r\n- Produced by invalid math: `0 / 0`, `Number(\"foo\")`, `Math.sqrt(-1)`.\r\n- **NaN is not equal to itself:** `NaN === NaN` → false.\r\n- Use `Number.isNaN(value)` — not global `isNaN()` which coerces first.\r\n\r\n## Example\r\n\r\n```js\r\nNumber.isNaN(NaN);     // true\r\nNumber.isNaN(\"hello\"); // false\r\nisNaN(\"hello\");        // true (coerces)\r\n```\r\n\r\n## Common confusion\r\n\r\n`typeof NaN` is `\"number\"`. `NaN` is falsy but not equal to anything including itself.\r\n\r\n## In practice\r\n\r\nValidate parsed numbers with `Number.isFinite` or explicit checks before calculations.",
+  "bodyLinked": "## Definition\r\n\r\n**[NaN](concept:nan)** (“[Not a Number](concept:nan)”) is a numeric value representing an invalid or [undefined](concept:undefined) mathematical result.\r\n\r\n## Why it exists\r\n\r\nDistinguishes failed numeric operations from valid numbers without throwing on [every](concept:array-some-every) bad parse.\r\n\r\n## How it works\r\n\r\n- Produced by invalid math: `0 / 0`, `Number(\"foo\")`, `Math.sqrt(-1)`.\r\n- **[NaN](concept:nan) is not equal to itself:** `NaN === NaN` → false.\r\n- Use `Number.isNaN(value)` — not global `isNaN()` which coerces first.\r\n\r\n## Example\r\n\r\n```js\r\nNumber.isNaN(NaN);     // true\r\nNumber.isNaN(\"hello\"); // false\r\nisNaN(\"hello\");        // true (coerces)\r\n```\r\n\r\n## Common confusion\r\n\r\n`typeof NaN` is `\"number\"`. [NaN](concept:nan) is [falsy](concept:truthy-falsy) but not equal to anything including itself.\r\n\r\n## In practice\r\n\r\nValidate parsed numbers with `Number.isFinite` or explicit checks before calculations.",
+  "conceptIds": [
+    "nan",
+    "undefined",
+    "array-some-every",
+    "truthy-falsy"
+  ]
+}

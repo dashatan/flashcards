@@ -1,0 +1,30 @@
+{
+  "id": "prototype-chain",
+  "title": "Prototype Chain",
+  "aliases": [
+    "prototype chain",
+    "prototypal inheritance"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "value-vs-reference"
+  ],
+  "usedInFlashcards": [
+    23,
+    51,
+    52,
+    53,
+    54,
+    55,
+    64,
+    65,
+    67
+  ],
+  "body": "## Definition\r\n\r\nThe **prototype chain** is how objects inherit properties — each object has an internal link to another object (its prototype); lookup walks the chain until `null`.\r\n\r\n## Why it exists\r\n\r\nJavaScript uses prototypal inheritance instead of class-copying for shared methods.\r\n\r\n## How it works\r\n\r\n`Object.getPrototypeOf(obj)` returns the next object in the chain. Methods on `Array.prototype` are shared by all arrays. ES6 `class` is syntax over constructor + prototype.\r\n\r\n## Example\r\n\r\n```js\r\nconst arr = [1, 2];\r\narr.map((x) => x * 2); // `map` found on Array.prototype\r\n```\r\n\r\n## Common confusion\r\n\r\n`__proto__` is legacy; use `Object.getPrototypeOf`. `prototype` property exists on functions; instances link via internal `[[Prototype]]`.\r\n\r\n## In practice\r\n\r\n`instanceof` checks prototype chain. Know for interviews on OOP in JS and performance of property lookup (usually negligible).",
+  "bodyLinked": "## Definition\r\n\r\nThe **[prototype chain](concept:prototype-chain)** is how objects inherit properties — each object has an internal link to another object (its [prototype](concept:prototype-chain)); lookup walks the chain until [null](concept:null-value).\r\n\r\n## Why it exists\r\n\r\nJavaScript uses [prototypal inheritance](concept:prototype-chain) instead of class-copying for shared methods.\r\n\r\n## How it works\r\n\r\n`Object.getPrototypeOf(obj)` returns the next object in the chain. Methods on `Array.prototype` are shared by all arrays. ES6 [class](concept:es6-class) is syntax over constructor + [prototype](concept:prototype-chain).\r\n\r\n## Example\r\n\r\n```js\r\nconst arr = [1, 2];\r\narr.map((x) => x * 2); // `map` found on Array.prototype\r\n```\r\n\r\n## Common confusion\r\n\r\n`__proto__` is legacy; use `Object.getPrototypeOf`. [prototype](concept:prototype-chain) property exists on functions; instances link via internal [[[Prototype]]](concept:prototype-chain).\r\n\r\n## In practice\r\n\r\n`instanceof` checks [prototype chain](concept:prototype-chain). Know for interviews on OOP in JS and performance of property lookup (usually negligible).",
+  "conceptIds": [
+    "prototype-chain",
+    "null-value",
+    "es6-class"
+  ]
+}

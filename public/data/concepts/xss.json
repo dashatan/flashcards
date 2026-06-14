@@ -1,0 +1,29 @@
+{
+  "id": "xss",
+  "title": "XSS (Cross-Site Scripting)",
+  "aliases": [
+    "XSS",
+    "cross-site scripting"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "content-security-policy",
+    "dom"
+  ],
+  "usedInFlashcards": [
+    263,
+    274,
+    275,
+    280
+  ],
+  "body": "## Definition\r\n\r\n**XSS** is injecting malicious scripts into a page so they run in victims’ browsers — stealing cookies, session tokens, or DOM data.\r\n\r\n## Why it exists\r\n\r\nAttack vector when user-controlled strings become HTML or JS without sanitization.\r\n\r\n## How it works\r\n\r\nVectors: `innerHTML`, unsanitized URL params reflected in page, compromised npm package. Defense: escape output, [CSP](concept:content-security-policy), `textContent` over `innerHTML`, framework auto-escaping (JSX).\r\n\r\n## In practice\r\n\r\nNever trust user HTML; sanitize with library if rich text required; HttpOnly cookies.",
+  "bodyLinked": "## Definition\r\n\r\n**[XSS](concept:xss)** is injecting malicious scripts into a page so they run in victims’ browsers — stealing [cookies](concept:cookies), session tokens, or [DOM](concept:dom) data.\r\n\r\n## Why it exists\r\n\r\nAttack vector when user-controlled strings become HTML or JS without sanitization.\r\n\r\n## How it works\r\n\r\nVectors: [innerHTML](concept:inner-html), unsanitized URL params reflected in page, compromised npm package. Defense: escape output, [CSP](concept:content-security-policy), [textContent](concept:text-content) over [innerHTML](concept:inner-html), framework auto-escaping (JSX).\r\n\r\n## In practice\r\n\r\nNever trust user HTML; sanitize with library if rich text required; HttpOnly [cookies](concept:cookies).",
+  "conceptIds": [
+    "xss",
+    "cookies",
+    "dom",
+    "inner-html",
+    "content-security-policy",
+    "text-content"
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "id": "lexical-environment",
+  "title": "Lexical Environment",
+  "aliases": [
+    "lexical environment",
+    "environment record"
+  ],
+  "depth": "foundation",
+  "related": [
+    "lexical-scope",
+    "scope-chain",
+    "closure",
+    "execution-context"
+  ],
+  "usedInFlashcards": [
+    15
+  ],
+  "body": "## Definition\r\n\r\nA **lexical environment** is the internal data structure that stores [bindings](concept:binding) for a scope (variables, functions) and a reference to the outer environment — forming the [scope chain](concept:scope-chain).\r\n\r\n## Why it exists\r\n\r\nThe engine needs a concrete place to resolve [identifiers](concept:identifier) and to keep outer variables alive for [closures](concept:closure).\r\n\r\n## How it works\r\n\r\nEach function, block, or module has an environment. When code runs:\r\n\r\n1. New environment is created when entering a scope.\r\n2. Declarations register bindings (with [hoisting](concept:hoisting) / [TDZ](concept:temporal-dead-zone) rules).\r\n3. Identifier lookup searches the current environment, then outer environments, until global or `null`.\r\n\r\n## Example\r\n\r\nConceptually, when `inner` runs below, it closes over the environment where `count` lives:\r\n\r\n```js\r\nfunction outer() {\r\n  let count = 0;\r\n  return function inner() {\r\n    count++;\r\n    return count;\r\n  };\r\n}\r\n```\r\n\r\n## Common confusion\r\n\r\nLexical environment is spec terminology — interviews may say “scope” or “closure over variables” instead. It is not the same as the [call stack](concept:call-stack) (which tracks which function is executing).\r\n\r\n## In practice\r\n\r\nUnderstanding environments explains closures, module scope, and why detached event handlers can leak memory if they hold large environments.",
+  "bodyLinked": "## Definition\r\n\r\nA **[lexical environment](concept:lexical-environment)** is the internal data structure that stores [bindings](concept:binding) for a scope (variables, functions) and a reference to the outer environment — forming the [scope chain](concept:scope-chain).\r\n\r\n## Why it exists\r\n\r\nThe engine needs a concrete place to resolve [identifiers](concept:identifier) and to keep outer variables alive for [closures](concept:closure).\r\n\r\n## How it works\r\n\r\nEach function, block, or module has an environment. When code runs:\r\n\r\n1. [New](concept:new-operator) environment is created when entering a scope.\r\n2. Declarations register [bindings](concept:binding) (with [hoisting](concept:hoisting) / [TDZ](concept:temporal-dead-zone) rules).\r\n3. [Identifier](concept:identifier) lookup searches the current environment, then outer environments, until global or [null](concept:null-value).\r\n\r\n## Example\r\n\r\nConceptually, when `inner` runs below, it closes over the environment where `count` lives:\r\n\r\n```js\r\nfunction outer() {\r\n  let count = 0;\r\n  return function inner() {\r\n    count++;\r\n    return count;\r\n  };\r\n}\r\n```\r\n\r\n## Common confusion\r\n\r\n[Lexical environment](concept:lexical-environment) is spec terminology — interviews may say “scope” or “[closure](concept:closure) over variables” instead. It is not the same as the [call stack](concept:call-stack) (which tracks which function is executing).\r\n\r\n## In practice\r\n\r\nUnderstanding environments explains [closures](concept:closure), module scope, and why detached [event handlers](concept:typescript-react-events) can leak memory if they hold large environments.",
+  "conceptIds": [
+    "lexical-environment",
+    "binding",
+    "scope-chain",
+    "identifier",
+    "closure",
+    "new-operator",
+    "hoisting",
+    "temporal-dead-zone",
+    "null-value",
+    "call-stack",
+    "typescript-react-events"
+  ]
+}

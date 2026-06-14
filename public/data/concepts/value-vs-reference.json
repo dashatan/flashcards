@@ -1,0 +1,32 @@
+{
+  "id": "value-vs-reference",
+  "title": "Value vs Reference",
+  "aliases": [
+    "reference type",
+    "primitive vs object",
+    "by value",
+    "by reference"
+  ],
+  "depth": "foundation",
+  "related": [
+    "binding"
+  ],
+  "usedInFlashcards": [
+    81
+  ],
+  "body": "## Definition\r\n\r\n**Primitives** (number, string, boolean, null, undefined, symbol, bigint) are stored **by value** — assignments copy the value. **Objects** (including arrays and functions) are stored **by reference** — assignments copy the pointer to the same object in memory.\r\n\r\n## Why it exists\r\n\r\nThis model keeps primitives cheap to copy and lets multiple bindings share one object without duplicating large structures.\r\n\r\n## How it works\r\n\r\n```js\r\nlet a = 1;\r\nlet b = a; // copies the number 1\r\nb = 2;     // `a` is still 1\r\n\r\nconst obj1 = { x: 1 };\r\nconst obj2 = obj1; // both names point to the same object\r\nobj2.x = 99;       // `obj1.x` is also 99\r\n```\r\n\r\nEquality: primitives compare by value (with coercion caveats for `==`). Objects compare by reference — two literals `{} === {}` is false.\r\n\r\n## Common confusion\r\n\r\n“JavaScript is always pass-by-reference” is wrong. **Arguments are passed by value** — for objects, the value passed is the reference (pointer). Reassigning a parameter inside a function does not change the outer variable.\r\n\r\n## In practice\r\n\r\nExplains shallow copy pitfalls, React state updates (always replace references for change detection), and why `const` objects can still be mutated.",
+  "bodyLinked": "## Definition\r\n\r\n**Primitives** (number, string, [boolean](concept:boolean-conversion), [null](concept:null-value), [undefined](concept:undefined), [symbol](concept:symbol), bigint) are stored **[by value](concept:value-vs-reference)** — assignments copy the value. **Objects** (including arrays and functions) are stored **[by reference](concept:value-vs-reference)** — assignments copy the pointer to the same object in memory.\r\n\r\n## Why it exists\r\n\r\n[This](concept:this-binding) model keeps primitives cheap to copy and lets multiple [bindings](concept:binding) share one object without duplicating large structures.\r\n\r\n## How it works\r\n\r\n```js\r\nlet a = 1;\r\nlet b = a; // copies the number 1\r\nb = 2;     // `a` is still 1\r\n\r\nconst obj1 = { x: 1 };\r\nconst obj2 = obj1; // both names point to the same object\r\nobj2.x = 99;       // `obj1.x` is also 99\r\n```\r\n\r\nEquality: primitives compare [by value](concept:value-vs-reference) (with coercion caveats for [==](concept:loose-equality)). Objects compare [by reference](concept:value-vs-reference) — two literals `{} === {}` is false.\r\n\r\n## Common confusion\r\n\r\n“JavaScript is always pass-[by-reference](concept:value-vs-reference)” is wrong. **[Arguments](concept:arguments-object) are passed [by value](concept:value-vs-reference)** — for objects, the value passed is the reference (pointer). Reassigning a parameter inside a function does not change the outer variable.\r\n\r\n## In practice\r\n\r\nExplains [shallow copy](concept:shallow-copy) pitfalls, React state updates (always replace references for change detection), and why [const](concept:const) objects can still be mutated.",
+  "conceptIds": [
+    "boolean-conversion",
+    "null-value",
+    "undefined",
+    "symbol",
+    "value-vs-reference",
+    "this-binding",
+    "binding",
+    "loose-equality",
+    "arguments-object",
+    "shallow-copy",
+    "const"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": "msw",
+  "title": "MSW (Mock Service Worker)",
+  "aliases": [
+    "Mock Service Worker",
+    "MSW"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "react-testing-library",
+    "tanstack-query"
+  ],
+  "usedInFlashcards": [
+    235,
+    236
+  ],
+  "body": "## Definition\r\n\r\n**MSW** intercepts network requests in tests and development with realistic HTTP handlers — no real API needed.\r\n\r\n## Why it exists\r\n\r\nTest components that fetch without brittle `fetch` mocks; same handlers in dev and test.\r\n\r\n## How it works\r\n\r\nDefine `rest.get(\"/api/user\", () => res(ctx.json(user)))`. Browser uses Service Worker; Node uses interceptors.\r\n\r\n## In practice\r\n\r\nPair with RTL for integration tests; share handlers with Storybook optional.",
+  "bodyLinked": "## Definition\r\n\r\n**[MSW](concept:msw)** intercepts network requests in tests and development with realistic HTTP handlers — no real API needed.\r\n\r\n## Why it exists\r\n\r\nTest components that [fetch](concept:fetch) without brittle [fetch](concept:fetch) mocks; same handlers in dev and test.\r\n\r\n## How it works\r\n\r\nDefine `rest.get(\"/api/user\", () => res(ctx.json(user)))`. Browser uses [Service Worker](concept:service-worker); Node uses interceptors.\r\n\r\n## In practice\r\n\r\nPair with [RTL](concept:react-testing-library) for [integration tests](concept:testing-pyramid); share handlers with Storybook optional.",
+  "conceptIds": [
+    "msw",
+    "fetch",
+    "service-worker",
+    "react-testing-library",
+    "testing-pyramid"
+  ]
+}

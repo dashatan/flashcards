@@ -1,0 +1,28 @@
+{
+  "id": "higher-order-function",
+  "title": "Higher-Order Function",
+  "aliases": [
+    "higher-order functions",
+    "HOF"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "closure",
+    "function-expression"
+  ],
+  "usedInFlashcards": [
+    27
+  ],
+  "body": "## Definition\r\n\r\nA **higher-order function** takes another function as an argument, returns a function, or both — e.g. `map`, `filter`, middleware, React HOCs.\r\n\r\n## Why it exists\r\n\r\nAbstracts control flow and shared behavior (logging, validation, composition) without duplicating loops.\r\n\r\n## How it works\r\n\r\nFunctions are values in JS. HOFs close over configuration and return specialized callbacks via [closures](concept:closure).\r\n\r\n## Example\r\n\r\n```js\r\nfunction withLogging(fn) {\r\n  return (...args) => {\r\n    console.log(\"calling\", fn.name);\r\n    return fn(...args);\r\n  };\r\n}\r\n```\r\n\r\n## Common confusion\r\n\r\nNot the same as [currying](concept:currying) — currying is one style of HOF. Every `array.map` callback usage is HOF usage.\r\n\r\n## In practice\r\n\r\nArray methods, Express middleware, Redux, custom hooks wrapping behavior.",
+  "bodyLinked": "## Definition\r\n\r\nA **[higher-order function](concept:higher-order-function)** takes another function as an argument, returns a function, or both — e.g. [map](concept:array-map-filter-reduce), [filter](concept:array-map-filter-reduce), middleware, React HOCs.\r\n\r\n## Why it exists\r\n\r\nAbstracts control flow and shared behavior ([logging](concept:observability), validation, [composition](concept:react-composition)) without duplicating loops.\r\n\r\n## How it works\r\n\r\nFunctions are values in JS. HOFs close over configuration and return specialized callbacks via [closures](concept:closure).\r\n\r\n## Example\r\n\r\n```js\r\nfunction withLogging(fn) {\r\n  return (...args) => {\r\n    console.log(\"calling\", fn.name);\r\n    return fn(...args);\r\n  };\r\n}\r\n```\r\n\r\n## Common confusion\r\n\r\nNot the same as [currying](concept:currying) — [currying](concept:currying) is one style of [HOF](concept:higher-order-function). [Every](concept:array-some-every) [array.map](concept:array-map-filter-reduce) callback usage is [HOF](concept:higher-order-function) usage.\r\n\r\n## In practice\r\n\r\nArray methods, Express middleware, Redux, [custom hooks](concept:custom-hooks) wrapping behavior.",
+  "conceptIds": [
+    "higher-order-function",
+    "array-map-filter-reduce",
+    "observability",
+    "react-composition",
+    "closure",
+    "currying",
+    "array-some-every",
+    "custom-hooks"
+  ]
+}

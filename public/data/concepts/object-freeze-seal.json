@@ -1,0 +1,27 @@
+{
+  "id": "object-freeze-seal",
+  "title": "Object.freeze and Object.seal",
+  "aliases": [
+    "Object.freeze",
+    "Object.seal",
+    "freeze",
+    "seal"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "property-descriptors",
+    "object-assign",
+    "deep-copy"
+  ],
+  "usedInFlashcards": [
+    8,
+    62,
+    63
+  ],
+  "body": "## Definition\r\n\r\n**`Object.seal`** prevents adding/removing properties but allows changing existing values. **`Object.freeze`** additionally makes all properties non-writable — both are shallow.\r\n\r\n## Why it exists\r\n\r\nImmutability guarantees for configuration objects, constants, and defensive copies.\r\n\r\n## How it works\r\n\r\n```js\r\nconst sealed = Object.seal({ a: 1 });\r\nsealed.a = 2; // OK\r\nsealed.b = 3; // fails silently or throws in strict mode\r\n\r\nconst frozen = Object.freeze({ a: 1 });\r\nfrozen.a = 2; // fails\r\n```\r\n\r\n`Object.isSealed` / `Object.isFrozen` check state.\r\n\r\n## Common confusion\r\n\r\nFreezing is **shallow** — nested objects remain mutable unless recursively frozen or using immutable data libraries.\r\n\r\n## In practice\r\n\r\nUse for shallow config immutability; deep immutability needs libraries or recursive freeze.",
+  "bodyLinked": "## Definition\r\n\r\n**[Object.seal](concept:object-freeze-seal)** prevents adding/removing properties but allows changing existing values. **[Object.freeze](concept:object-freeze-seal)** additionally makes all properties non-[writable](concept:property-descriptors) — both are shallow.\r\n\r\n## Why it exists\r\n\r\nImmutability guarantees for configuration objects, constants, and defensive copies.\r\n\r\n## How it works\r\n\r\n```js\r\nconst sealed = Object.seal({ a: 1 });\r\nsealed.a = 2; // OK\r\nsealed.b = 3; // fails silently or throws in strict mode\r\n\r\nconst frozen = Object.freeze({ a: 1 });\r\nfrozen.a = 2; // fails\r\n```\r\n\r\n`Object.isSealed` / `Object.isFrozen` check state.\r\n\r\n## Common confusion\r\n\r\nFreezing is **shallow** — nested objects remain mutable unless recursively frozen or using immutable data libraries.\r\n\r\n## In practice\r\n\r\nUse for shallow config immutability; deep immutability needs libraries or recursive [freeze](concept:object-freeze-seal).",
+  "conceptIds": [
+    "object-freeze-seal",
+    "property-descriptors"
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "id": "react-context-api",
+  "title": "React Context API",
+  "aliases": [
+    "React Context",
+    "Context API",
+    "createContext"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "use-context",
+    "prop-drilling"
+  ],
+  "usedInFlashcards": [
+    162,
+    164,
+    170,
+    171,
+    183,
+    304,
+    307
+  ],
+  "body": "## Definition\r\n\r\nThe **Context API** (`createContext`, `Provider`, `Consumer`/`useContext`) broadcasts a value to all descendants without manual prop passing.\r\n\r\n## Why it exists\r\n\r\nTheme, locale, auth, and DI containers for widely needed, relatively stable values.\r\n\r\n## How it works\r\n\r\n```js\r\nconst ThemeContext = createContext(\"light\");\r\n<ThemeContext.Provider value={theme}>\r\n  <App />\r\n</ThemeContext.Provider>\r\n```\r\n\r\nValue change re-renders all consumers.\r\n\r\n## Common confusion\r\n\r\nPoor fit for high-frequency updates (cursor position, animation). Split contexts by update frequency.\r\n\r\n## In practice\r\n\r\nPair with `useMemo` on provider value object to reduce unnecessary renders.",
+  "bodyLinked": "## Definition\r\n\r\nThe **[Context API](concept:react-context-api)** ([createContext](concept:react-context-api), `Provider`, `Consumer`/[useContext](concept:use-context)) broadcasts a value to all descendants without manual prop passing.\r\n\r\n## Why it exists\r\n\r\nTheme, locale, auth, and DI containers for widely needed, relatively stable values.\r\n\r\n## How it works\r\n\r\n```js\r\nconst ThemeContext = createContext(\"light\");\r\n<ThemeContext.Provider value={theme}>\r\n  <App />\r\n</ThemeContext.Provider>\r\n```\r\n\r\nValue change [re-renders](concept:react-re-render) all consumers.\r\n\r\n## Common confusion\r\n\r\nPoor fit for high-frequency updates (cursor position, animation). Split [contexts](concept:use-context) by update frequency.\r\n\r\n## In practice\r\n\r\nPair with [useMemo](concept:use-memo) on provider value object to [reduce](concept:array-map-filter-reduce) unnecessary renders.",
+  "conceptIds": [
+    "react-context-api",
+    "use-context",
+    "react-re-render",
+    "use-memo",
+    "array-map-filter-reduce"
+  ]
+}

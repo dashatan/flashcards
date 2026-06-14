@@ -1,0 +1,36 @@
+{
+  "id": "es6-class",
+  "title": "ES6 class",
+  "aliases": [
+    "class",
+    "class syntax",
+    "JavaScript class"
+  ],
+  "depth": "foundation",
+  "related": [
+    "prototype-chain",
+    "new-operator",
+    "static-methods",
+    "super-keyword"
+  ],
+  "usedInFlashcards": [
+    21,
+    67,
+    121,
+    132,
+    212
+  ],
+  "body": "## Definition\r\n\r\n**`class`** is syntactic sugar over constructor functions and [prototype chain](concept:prototype-chain) inheritance — `class Foo {}` ≈ `function Foo() {}` with `Foo.prototype` methods.\r\n\r\n## Why it exists\r\n\r\nFamiliar OOP syntax for constructors, inheritance, [static methods](concept:static-methods), and private fields.\r\n\r\n## How it works\r\n\r\n```js\r\nclass User {\r\n  #id;\r\n  constructor(name) { this.name = name; }\r\n  greet() { return this.name; }\r\n  static create(name) { return new User(name); }\r\n}\r\n```\r\n\r\n`extends` sets up prototype linkage; [super](concept:super-keyword) calls parent constructor/methods.\r\n\r\n## Common confusion\r\n\r\nClasses are hoisted like `let` (TDZ) — not callable before declaration. Methods are non-enumerable on the prototype.\r\n\r\n## In practice\r\n\r\nReact class components (legacy), domain models, and service classes — most UI code uses functions + hooks today.",
+  "bodyLinked": "## Definition\r\n\r\n**[class](concept:es6-class)** is syntactic sugar over constructor functions and [prototype chain](concept:prototype-chain) inheritance — `class Foo {}` ≈ `function Foo() {}` with `Foo.prototype` methods.\r\n\r\n## Why it exists\r\n\r\nFamiliar OOP syntax for constructors, inheritance, [static methods](concept:static-methods), and private fields.\r\n\r\n## How it works\r\n\r\n```js\r\nclass User {\r\n  #id;\r\n  constructor(name) { this.name = name; }\r\n  greet() { return this.name; }\r\n  static create(name) { return new User(name); }\r\n}\r\n```\r\n\r\n`extends` sets up [prototype](concept:prototype-chain) linkage; [super](concept:super-keyword) [calls](concept:call-apply-bind) parent constructor/methods.\r\n\r\n## Common confusion\r\n\r\nClasses are [hoisted](concept:hoisting) like [let](concept:let) ([TDZ](concept:temporal-dead-zone)) — not callable before declaration. Methods are non-[enumerable](concept:property-descriptors) on the [prototype](concept:prototype-chain).\r\n\r\n## In practice\r\n\r\nReact [class](concept:es6-class) components (legacy), domain models, and service classes — most UI code uses functions + hooks today.",
+  "conceptIds": [
+    "es6-class",
+    "prototype-chain",
+    "static-methods",
+    "super-keyword",
+    "call-apply-bind",
+    "hoisting",
+    "let",
+    "temporal-dead-zone",
+    "property-descriptors"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "id": "react-compiler",
+  "title": "React Compiler",
+  "aliases": [
+    "React Compiler",
+    "React Forget",
+    "auto-memoization"
+  ],
+  "depth": "advanced",
+  "related": [
+    "use-memo",
+    "use-callback",
+    "react-memo"
+  ],
+  "usedInFlashcards": [
+    208,
+    210
+  ],
+  "body": "## Definition\r\n\r\nThe **React Compiler** automatically inserts memoization equivalent to [useMemo](concept:use-memo), [useCallback](concept:use-callback), and [React.memo](concept:react-memo) at build time.\r\n\r\n## Why it exists\r\n\r\nReduce manual optimization bugs and unnecessary [re-renders](concept:react-re-render) without developer overhead.\r\n\r\n## How it works\r\n\r\nStatic analysis of component purity and dependencies; emits optimized code. “React Forget” was the research name.\r\n\r\n## Common confusion\r\n\r\nDoes not remove need to understand render behavior — edge cases and rules still matter.\r\n\r\n## In practice\r\n\r\nEmerging in React 19 ecosystem; watch adoption in Next.js builds.",
+  "bodyLinked": "## Definition\r\n\r\nThe **[React Compiler](concept:react-compiler)** automatically inserts memoization equivalent to [useMemo](concept:use-memo), [useCallback](concept:use-callback), and [React.memo](concept:react-memo) at build time.\r\n\r\n## Why it exists\r\n\r\n[Reduce](concept:array-map-filter-reduce) manual optimization bugs and unnecessary [re-renders](concept:react-re-render) without developer overhead.\r\n\r\n## How it works\r\n\r\nStatic analysis of component purity and dependencies; emits optimized code. “[React Forget](concept:react-compiler)” was the research name.\r\n\r\n## Common confusion\r\n\r\nDoes not remove need to understand render behavior — edge cases and rules still matter.\r\n\r\n## In practice\r\n\r\nEmerging in React 19 ecosystem; watch adoption in Next.js builds.",
+  "conceptIds": [
+    "react-compiler",
+    "use-memo",
+    "use-callback",
+    "react-memo",
+    "array-map-filter-reduce",
+    "react-re-render"
+  ]
+}

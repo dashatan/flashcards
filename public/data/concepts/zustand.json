@@ -1,0 +1,31 @@
+{
+  "id": "zustand",
+  "title": "Zustand",
+  "aliases": [
+    "Zustand state library"
+  ],
+  "depth": "intermediate",
+  "related": [
+    "server-state-vs-client-state",
+    "react-context-api"
+  ],
+  "usedInFlashcards": [
+    123,
+    161,
+    166,
+    167,
+    173,
+    177,
+    179,
+    181
+  ],
+  "body": "## Definition\r\n\r\n**Zustand** is a minimal client state library for React — store with hooks, no Provider required, fine-grained subscriptions.\r\n\r\n## Why it exists\r\n\r\nSimpler than Redux for medium apps; avoids [Context](concept:react-context-api) re-render issues when store selectors are used.\r\n\r\n## How it works\r\n\r\n```js\r\nconst useStore = create(set => ({\r\n  count: 0,\r\n  inc: () => set(s => ({ count: s.count + 1 })),\r\n}));\r\n```\r\n\r\n## In practice\r\n\r\nUI state, modals, client cart — not duplicate [server state](concept:server-state-vs-client-state) (use TanStack Query).",
+  "bodyLinked": "## Definition\r\n\r\n**[Zustand](concept:zustand)** is a minimal [client state](concept:server-state-vs-client-state) library for React — store with hooks, no Provider required, fine-grained subscriptions.\r\n\r\n## Why it exists\r\n\r\nSimpler than Redux for medium apps; avoids [Context](concept:react-context-api) [re-render](concept:react-re-render) issues when store selectors are used.\r\n\r\n## How it works\r\n\r\n```js\r\nconst useStore = create(set => ({\r\n  count: 0,\r\n  inc: () => set(s => ({ count: s.count + 1 })),\r\n}));\r\n```\r\n\r\n## In practice\r\n\r\n[UI state](concept:server-state-vs-client-state), modals, client cart — not duplicate [server state](concept:server-state-vs-client-state) (use [TanStack Query](concept:tanstack-query)).",
+  "conceptIds": [
+    "zustand",
+    "server-state-vs-client-state",
+    "react-context-api",
+    "react-re-render",
+    "tanstack-query"
+  ]
+}

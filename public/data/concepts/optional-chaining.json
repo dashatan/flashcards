@@ -1,0 +1,29 @@
+{
+  "id": "optional-chaining",
+  "title": "Optional Chaining (?.)",
+  "aliases": [
+    "optional chaining",
+    "?. operator"
+  ],
+  "depth": "foundation",
+  "related": [
+    "nullish-coalescing",
+    "undefined",
+    "type-error"
+  ],
+  "usedInFlashcards": [
+    78,
+    80,
+    225,
+    252
+  ],
+  "body": "## Definition\r\n\r\n**Optional chaining** short-circuits property access, method calls, or indexing when the base is `null` or `undefined`, returning `undefined` instead of throwing.\r\n\r\n## Why it exists\r\n\r\nAvoids nested guard clauses when drilling into optional API or user objects.\r\n\r\n## How it works\r\n\r\n```js\r\nuser?.address?.city;\r\narr?.[0];\r\ncallback?.();\r\n```\r\n\r\nOnly protects against nullish **base** — wrong property on a valid object still throws.\r\n\r\n## Common confusion\r\n\r\nDoes not replace validation for wrong types (`user.name.toUpperCase()` if `name` is a number).\r\n\r\n## In practice\r\n\r\nUbiquitous in TypeScript React for optional props and API responses; pair with [nullish coalescing](concept:nullish-coalescing) for defaults.",
+  "bodyLinked": "## Definition\r\n\r\n**[Optional chaining](concept:optional-chaining)** short-circuits property access, method [calls](concept:call-apply-bind), or indexing when the base is [null](concept:null-value) or [undefined](concept:undefined), returning [undefined](concept:undefined) instead of throwing.\r\n\r\n## Why it exists\r\n\r\nAvoids nested guard clauses when drilling into optional API or user objects.\r\n\r\n## How it works\r\n\r\n```js\r\nuser?.address?.city;\r\narr?.[0];\r\ncallback?.();\r\n```\r\n\r\nOnly protects against nullish **base** — wrong property on a valid object still throws.\r\n\r\n## Common confusion\r\n\r\nDoes not replace validation for wrong types (`user.name.toUpperCase()` if `name` is a number).\r\n\r\n## In practice\r\n\r\nUbiquitous in TypeScript React for optional props and API responses; pair with [nullish coalescing](concept:nullish-coalescing) for defaults.",
+  "conceptIds": [
+    "optional-chaining",
+    "call-apply-bind",
+    "null-value",
+    "undefined",
+    "nullish-coalescing"
+  ]
+}
