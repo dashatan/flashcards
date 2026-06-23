@@ -20,7 +20,7 @@ export function ConceptDetailView({ conceptId }: { conceptId: string }) {
     staleTime: Infinity,
   });
 
-  const { data: concept, isLoading, error } = useQuery({
+  const { data: concept, error } = useQuery({
     queryKey: contentKeys.concept(conceptId),
     queryFn: () => fetchConceptDetail(conceptId),
     staleTime: Infinity,
@@ -41,8 +41,8 @@ export function ConceptDetailView({ conceptId }: { conceptId: string }) {
     });
   };
 
-  if (isLoading) {
-    return <p className="text-muted">Loading concept…</p>;
+  if (!concept && !error) {
+    return null;
   }
 
   if (error || !concept) {

@@ -1,3 +1,5 @@
+import type { QueryClient } from "@tanstack/react-query";
+
 import type {
   ConceptDetail,
   ConceptManifest,
@@ -30,3 +32,16 @@ export const contentKeys = {
   conceptsIndex: ["concepts-index"] as const,
   concept: (id: string) => ["concept", id] as const,
 };
+
+export function getConceptIdFromPathname(pathname: string): string | undefined {
+  const match = pathname.match(/^\/concepts\/([^/?#]+)/);
+  return match?.[1];
+}
+
+export function prefetchConceptDetail(client: QueryClient, conceptId: string) {
+  return client.prefetchQuery({
+    queryKey: contentKeys.concept(conceptId),
+    queryFn: () => fetchConceptDetail(conceptId),
+    staleTime: Infinity,
+  });
+}

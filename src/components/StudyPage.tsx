@@ -311,7 +311,12 @@ export function StudyPage() {
           </p>
         )}
 
-        {currentCard ? (
+        {!data ? (
+          <div
+            className="mx-auto h-[min(60vh,28rem)] w-full max-w-2xl animate-pulse rounded-2xl border border-border bg-surface"
+            aria-hidden
+          />
+        ) : currentCard ? (
           <>
             <FlashcardFlip card={currentCard} onToggleFlip={() => undefined} />
             <div className="flex flex-wrap items-center justify-center gap-2">

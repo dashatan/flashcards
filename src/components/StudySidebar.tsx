@@ -30,17 +30,18 @@ export function StudySidebar({ location }: StudySidebarProps) {
       ?.scrollIntoView({ block: "nearest", behavior: "smooth" });
   }, [location.part, location.section, data]);
 
-  if (!data) return null;
-
   return (
     <aside
       ref={asideRef}
       className="scrollbar-left hidden min-h-0 w-56 shrink-0 flex-col self-stretch overflow-y-auto px-4 lg:flex"
+      aria-hidden={!data}
     >
-      <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-muted">
-        Sections
-      </p>
-      <nav className="space-y-4">
+      {!data ? null : (
+        <>
+          <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-muted">
+            Sections
+          </p>
+          <nav className="space-y-4">
         {data.parts.map((part) => {
           const sections = data.sections[part] ?? [];
           return (
@@ -82,7 +83,9 @@ export function StudySidebar({ location }: StudySidebarProps) {
             </div>
           );
         })}
-      </nav>
+          </nav>
+        </>
+      )}
     </aside>
   );
 }

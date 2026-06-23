@@ -47,6 +47,10 @@
   }
 }
 
+html {
+  color-scheme: light dark;
+}
+
 html,
 body,
 #root {
@@ -71,7 +75,9 @@ body {
   transform: scaleX(-1);
 }
 * {
-  transition: all 0.3s ease-in-out;
+  transition-property: color, border-color, box-shadow, opacity, transform, fill, stroke;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in-out;
 }
 
 .scrollbar-left > * {

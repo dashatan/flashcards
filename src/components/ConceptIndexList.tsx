@@ -39,7 +39,12 @@ export function ConceptIndexList({ filter }: { filter: string }) {
   });
 
   if (isLoading) {
-    return <p className="text-sm text-muted">Loading concepts…</p>;
+    return (
+      <div
+        className="h-[calc(100vh-12rem)] animate-pulse rounded-xl border border-border bg-surface"
+        aria-hidden
+      />
+    );
   }
 
   return (
