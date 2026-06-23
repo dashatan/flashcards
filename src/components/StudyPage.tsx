@@ -1,28 +1,33 @@
-import { createFileRoute } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
+import { useNavigate, useParams } from "@tanstack/react-router";
 import { useCallback, useEffect, useMemo } from "react";
 import { useStore } from "@tanstack/react-store";
 
 import { FlashcardFlip } from "@/components/FlashcardFlip";
 import { computeStats, StudySidebar } from "@/components/StudySidebar";
 import { contentKeys } from "@/lib/api";
-import { mergeStudySearch } from "@/lib/defaultStudySearch";
+import {
+  buildStudyNavigateTarget,
+  mergeStudyLocation,
+  parseStudySplat,
+  resolveStudyLocation,
+} from "@/lib/studyPath";
 import { setFlashcardStatus } from "@/lib/db";
-import { parseStudySearch } from "@/lib/studySearch";
 import {
   navigationStore,
   resetNav,
   setFlipped,
   setReturnContext,
 } from "@/store/navigationStore";
+import { patchStudyFilters, studyFiltersStore } from "@/store/studyFiltersStore";
 import { progressStore, updateFlashcardProgress } from "@/store/progressStore";
-import type { Flashcard, FlashcardStatus, StudySearch } from "@/types/content";
-
-export const Route = createFileRoute("/study")({
-  validateSearch: (search) =>
-    parseStudySearch(search as Record<string, unknown>),
-  component: StudyPage,
-});
+import type {
+  Flashcard,
+  FlashcardStatus,
+  StudyFilters,
+  StudyLocation,
+  StudySearch,
+} from "@/types/content";
 
 function shuffleArray<T>(array: T[]): T[] {
   const copy = [...array];
@@ -61,11 +66,13 @@ function buildDeck(
   return deck;
 }
 
-function StudyPage() {
-  const search = Route.useSearch();
-  const navigate = Route.useNavigate();
+export function StudyPage() {
+  const navigate = useNavigate();
+  const params = useParams({ strict: false });
+  const splat = "_splat" in params ? params._splat : undefined;
   const flashcardProgress = useStore(progressStore, (s) => s.flashcards);
   const conceptProgress = useStore(progressStore, (s) => s.concepts);
+  const filters = useStore(studyFiltersStore, (s) => s);
   const isFlipped = useStore(navigationStore, (s) => s.isFlipped);
 
   const { data } = useQuery({
@@ -73,6 +80,19 @@ function StudyPage() {
     queryFn: () => import("@/lib/api").then((m) => m.fetchFlashcardManifest()),
     staleTime: Infinity,
   });
+
+  const location = useMemo(
+    () =>
+      data
+        ? resolveStudyLocation(data, parseStudySplat(splat))
+        : { part: "", section: "", cardId: undefined },
+    [data, splat],
+  );
+
+  const search = useMemo<StudySearch>(
+    () => ({ ...location, ...filters }),
+    [location, filters],
+  );
 
   const deck = useMemo(() => {
     if (!data) return [];
@@ -102,21 +122,24 @@ function StudyPage() {
       setReturnContext({
         cardId: currentCard.id,
         isFlipped,
-        search,
+        location,
+        filters,
       });
     }
-  }, [currentCard, isFlipped, search]);
+  }, [currentCard, isFlipped, location, filters]);
 
   const goToIndex = useCallback(
     (index: number) => {
       const card = deck[index];
       if (!card) return;
       setFlipped(false);
-      navigate({
-        search: (prev) => mergeStudySearch(prev, { cardId: card.id }),
-      });
+      navigate(
+        buildStudyNavigateTarget(
+          mergeStudyLocation(location, { cardId: card.id }),
+        ),
+      );
     },
-    [deck, navigate],
+    [deck, location, navigate],
   );
 
   const move = useCallback(
@@ -187,22 +210,28 @@ function StudyPage() {
 
   const stats = data ? computeStats(data.cards, flashcardProgress) : null;
 
-  const updateSearch = (patch: Partial<StudySearch>) => {
-    navigate({
-      search: (prev) => mergeStudySearch(prev, { ...patch, cardId: undefined }),
-    });
+  const updateLocation = (patch: Partial<StudyLocation>) => {
+    navigate(
+      buildStudyNavigateTarget(
+        mergeStudyLocation(location, { ...patch, cardId: undefined }),
+      ),
+    );
+  };
+
+  const updateFilters = (patch: Partial<StudyFilters>) => {
+    patchStudyFilters(patch);
   };
 
   return (
     <div className="flex min-h-0 flex-1">
-      <StudySidebar />
+      <StudySidebar location={location} />
       <div className="flex min-w-0 flex-1 flex-col space-y-4">
         <div className="flex flex-wrap items-center gap-2">
           <select
             className="rounded-lg border border-border bg-surface px-3 py-2 text-sm"
             value={search.part}
             onChange={(e) =>
-              updateSearch({ part: e.target.value, section: "" })
+              updateLocation({ part: e.target.value, section: "" })
             }
             aria-label="Filter by part"
           >
@@ -216,7 +245,7 @@ function StudyPage() {
           <select
             className="rounded-lg border border-border bg-surface px-3 py-2 text-sm"
             value={search.section}
-            onChange={(e) => updateSearch({ section: e.target.value })}
+            onChange={(e) => updateLocation({ section: e.target.value })}
             aria-label="Filter by section"
           >
             <option value="">All sections</option>
@@ -233,8 +262,8 @@ function StudyPage() {
             className="rounded-lg border border-border bg-surface px-3 py-2 text-sm"
             value={search.status}
             onChange={(e) =>
-              updateSearch({
-                status: e.target.value as StudySearch["status"],
+              updateFilters({
+                status: e.target.value as StudyFilters["status"],
               })
             }
             aria-label="Filter by status"
@@ -249,7 +278,7 @@ function StudyPage() {
             <input
               type="checkbox"
               checked={search.shuffle}
-              onChange={(e) => updateSearch({ shuffle: e.target.checked })}
+              onChange={(e) => updateFilters({ shuffle: e.target.checked })}
             />
             Shuffle
           </label>
@@ -257,7 +286,7 @@ function StudyPage() {
             <input
               type="checkbox"
               checked={search.reviewOnly}
-              onChange={(e) => updateSearch({ reviewOnly: e.target.checked })}
+              onChange={(e) => updateFilters({ reviewOnly: e.target.checked })}
             />
             Review only
           </label>
@@ -266,7 +295,7 @@ function StudyPage() {
               type="checkbox"
               checked={search.unreadConcepts}
               onChange={(e) =>
-                updateSearch({ unreadConcepts: e.target.checked })
+                updateFilters({ unreadConcepts: e.target.checked })
               }
             />
             Unread concepts

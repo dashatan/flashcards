@@ -5,7 +5,7 @@ import { useStore } from "@tanstack/react-store";
 
 import { FlashcardStatusBadge } from "@/components/StatusBadge";
 import { contentKeys } from "@/lib/api";
-import { mergeStudySearch } from "@/lib/defaultStudySearch";
+import { buildStudyNavigateTarget } from "@/lib/studyPath";
 import { resetNav } from "@/store/navigationStore";
 import { progressStore } from "@/store/progressStore";
 import type { FlashcardStatus } from "@/types/content";
@@ -56,10 +56,11 @@ function BrowsePage() {
                     return (
                       <li key={card.id}>
                         <Link
-                          to="/study"
-                          search={(prev) =>
-                            mergeStudySearch(prev, { part, section, cardId: card.id })
-                          }
+                          {...buildStudyNavigateTarget({
+                            part,
+                            section,
+                            cardId: card.id,
+                          })}
                           className="flex items-start justify-between gap-2 rounded-lg px-2 py-2 hover:bg-surface-elevated"
                         >
                           <span className="text-sm line-clamp-2">

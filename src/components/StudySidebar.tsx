@@ -1,17 +1,20 @@
 import { useQuery } from "@tanstack/react-query";
-import { Link, useSearch } from "@tanstack/react-router";
+import { Link } from "@tanstack/react-router";
 import { useEffect, useRef } from "react";
 import { useStore } from "@tanstack/react-store";
 
 import { contentKeys } from "@/lib/api";
-import { mergeStudySearch } from "@/lib/defaultStudySearch";
+import { buildStudyNavigateTarget } from "@/lib/studyPath";
 import { shortPartLabel } from "@/lib/studySearch";
 import { progressStore } from "@/store/progressStore";
-import type { FlashcardStatus } from "@/types/content";
+import type { FlashcardStatus, StudyLocation } from "@/types/content";
 
-export function StudySidebar() {
+interface StudySidebarProps {
+  location: StudyLocation;
+}
+
+export function StudySidebar({ location }: StudySidebarProps) {
   const asideRef = useRef<HTMLElement>(null);
-  const { part, section } = useSearch({ from: "/study" });
   const flashcardProgress = useStore(progressStore, (s) => s.flashcards);
 
   const { data } = useQuery({
@@ -24,15 +27,15 @@ export function StudySidebar() {
     if (!data) return;
     asideRef.current
       ?.querySelector(".active")
-      ?.scrollIntoView({ block: "center", behavior: "smooth" });
-  }, [part, section, data]);
+      ?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+  }, [location.part, location.section, data]);
 
   if (!data) return null;
 
   return (
     <aside
       ref={asideRef}
-      className="scrollbar-left hidden min-h-0 w-fit shrink-0 flex-col self-stretch overflow-y-auto px-4 lg:flex"
+      className="scrollbar-left hidden min-h-0 w-56 shrink-0 flex-col self-stretch overflow-y-auto px-4 lg:flex"
     >
       <p className="mb-3 text-xs font-semibold uppercase tracking-wide text-muted">
         Sections
@@ -58,17 +61,12 @@ export function StudySidebar() {
                       ? Math.round((known / sectionCards.length) * 100)
                       : 0;
 
+                  const linkTarget = buildStudyNavigateTarget({ part, section });
+
                   return (
                     <li key={section}>
                       <Link
-                        to="/study"
-                        search={(prev) =>
-                          mergeStudySearch(prev, {
-                            part,
-                            section,
-                            cardId: undefined,
-                          })
-                        }
+                        {...linkTarget}
                         className="block rounded-lg px-2 py-1.5 text-sm text-muted hover:bg-surface-elevated hover:text-foreground [&.active]:bg-accent-muted [&.active]:text-accent"
                         activeProps={{ className: "active" }}
                       >

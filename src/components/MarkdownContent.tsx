@@ -13,6 +13,8 @@ import {
 import { pushNav, setReturnContext, navigationStore } from "@/store/navigationStore";
 import type { StudyReturnContext } from "@/types/content";
 
+import { DEFAULT_STUDY_FILTERS } from "@/store/studyFiltersStore";
+
 function conceptUrlTransform(url: string): string {
   if (url.startsWith("concept:")) return url;
   return defaultUrlTransform(url);
@@ -30,15 +32,8 @@ function prepareConceptNavigation(conceptId: string, label: string) {
     const studyContext: StudyReturnContext = {
       cardId: 0,
       isFlipped: navigationStore.state.isFlipped,
-      search: {
-        part: "",
-        section: "",
-        shuffle: false,
-        reviewOnly: false,
-        status: "all",
-        unreadConcepts: false,
-        cardId: undefined,
-      },
+      location: { part: "", section: "", cardId: undefined },
+      filters: DEFAULT_STUDY_FILTERS,
     };
     setReturnContext(studyContext);
   }

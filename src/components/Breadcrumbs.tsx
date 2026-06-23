@@ -1,7 +1,7 @@
 import { useStore } from "@tanstack/react-store";
 import { useNavigate } from "@tanstack/react-router";
 
-import { mergeStudySearch } from "@/lib/defaultStudySearch";
+import { buildStudyNavigateTarget, mergeStudyLocation } from "@/lib/studyPath";
 import { navigationStore, popNavTo } from "@/store/navigationStore";
 
 export function Breadcrumbs() {
@@ -33,10 +33,14 @@ export function Breadcrumbs() {
                 onClick={() => {
                   popNavTo(index);
                   if (entry.type === "study") {
-                    navigate({
-                      to: "/study",
-                      search: (prev) => mergeStudySearch(prev, { cardId: entry.cardId }),
-                    });
+                    const returnContext = navigationStore.state.returnContext;
+                    navigate(
+                      buildStudyNavigateTarget(
+                        mergeStudyLocation(returnContext?.location ?? { part: "", section: "", cardId: undefined }, {
+                          cardId: entry.cardId,
+                        }),
+                      ),
+                    );
                   } else if (entry.type === "concept") {
                     navigate({
                       to: "/concepts/$conceptId",
@@ -70,10 +74,13 @@ export function ReturnToCardChip() {
       type="button"
       className="rounded-full border border-accent/30 bg-accent-muted px-3 py-1 text-xs font-medium text-accent hover:bg-accent/10"
       onClick={() => {
-        navigate({
-          to: "/study",
-          search: mergeStudySearch(returnContext.search, { cardId: returnContext.cardId }),
-        });
+        navigate(
+          buildStudyNavigateTarget(
+            mergeStudyLocation(returnContext.location, {
+              cardId: returnContext.cardId,
+            }),
+          ),
+        );
         navigationStore.setState((s) => ({
           ...s,
           isFlipped: returnContext.isFlipped,

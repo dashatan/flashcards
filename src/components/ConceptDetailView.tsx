@@ -5,7 +5,7 @@ import { MarkdownContent, ConceptLinkButton } from "@/components/MarkdownContent
 import { ConceptStatusBadge } from "@/components/StatusBadge";
 import { ReturnToCardChip } from "@/components/Breadcrumbs";
 import { contentKeys, fetchConceptDetail } from "@/lib/api";
-import { mergeStudySearch } from "@/lib/defaultStudySearch";
+import { buildStudyNavigateTarget } from "@/lib/studyPath";
 import { setConceptStatus } from "@/lib/db";
 import { getConceptStatusFromStore, updateConceptProgress } from "@/store/progressStore";
 import type { ConceptStatus } from "@/types/content";
@@ -13,6 +13,12 @@ import type { ConceptStatus } from "@/types/content";
 export function ConceptDetailView({ conceptId }: { conceptId: string }) {
   const navigate = useNavigate();
   const queryClient = useQueryClient();
+
+  const { data: manifest } = useQuery({
+    queryKey: contentKeys.flashcards,
+    queryFn: () => import("@/lib/api").then((m) => m.fetchFlashcardManifest()),
+    staleTime: Infinity,
+  });
 
   const { data: concept, isLoading, error } = useQuery({
     queryKey: contentKeys.concept(conceptId),
@@ -110,12 +116,17 @@ export function ConceptDetailView({ conceptId }: { conceptId: string }) {
                 key={cardId}
                 type="button"
                 className="rounded-lg border border-border px-3 py-1 text-sm hover:bg-surface-elevated"
-                onClick={() =>
-                  navigate({
-                    to: "/study",
-                    search: (prev) => mergeStudySearch(prev, { cardId }),
-                  })
-                }
+                onClick={() => {
+                  const card = manifest?.cards.find((entry) => entry.id === cardId);
+                  if (!card) return;
+                  navigate(
+                    buildStudyNavigateTarget({
+                      part: card.part,
+                      section: card.section,
+                      cardId,
+                    }),
+                  );
+                }}
               >
                 Card #{cardId}
               </button>

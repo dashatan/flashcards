@@ -9,17 +9,13 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as StudyRouteImport } from './routes/study'
 import { Route as BrowseRouteImport } from './routes/browse'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as StudyIndexRouteImport } from './routes/study.index'
 import { Route as ConceptsIndexRouteImport } from './routes/concepts/index'
+import { Route as StudySplatRouteImport } from './routes/study.$'
 import { Route as ConceptsConceptIdRouteImport } from './routes/concepts/$conceptId'
 
-const StudyRoute = StudyRouteImport.update({
-  id: '/study',
-  path: '/study',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const BrowseRoute = BrowseRouteImport.update({
   id: '/browse',
   path: '/browse',
@@ -30,9 +26,19 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const StudyIndexRoute = StudyIndexRouteImport.update({
+  id: '/study/',
+  path: '/study/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ConceptsIndexRoute = ConceptsIndexRouteImport.update({
   id: '/concepts/',
   path: '/concepts/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StudySplatRoute = StudySplatRouteImport.update({
+  id: '/study/$',
+  path: '/study/$',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ConceptsConceptIdRoute = ConceptsConceptIdRouteImport.update({
@@ -44,56 +50,66 @@ const ConceptsConceptIdRoute = ConceptsConceptIdRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/browse': typeof BrowseRoute
-  '/study': typeof StudyRoute
   '/concepts/$conceptId': typeof ConceptsConceptIdRoute
+  '/study/$': typeof StudySplatRoute
   '/concepts/': typeof ConceptsIndexRoute
+  '/study/': typeof StudyIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/browse': typeof BrowseRoute
-  '/study': typeof StudyRoute
   '/concepts/$conceptId': typeof ConceptsConceptIdRoute
+  '/study/$': typeof StudySplatRoute
   '/concepts': typeof ConceptsIndexRoute
+  '/study': typeof StudyIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/browse': typeof BrowseRoute
-  '/study': typeof StudyRoute
   '/concepts/$conceptId': typeof ConceptsConceptIdRoute
+  '/study/$': typeof StudySplatRoute
   '/concepts/': typeof ConceptsIndexRoute
+  '/study/': typeof StudyIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/browse' | '/study' | '/concepts/$conceptId' | '/concepts/'
+  fullPaths:
+    | '/'
+    | '/browse'
+    | '/concepts/$conceptId'
+    | '/study/$'
+    | '/concepts/'
+    | '/study/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/browse' | '/study' | '/concepts/$conceptId' | '/concepts'
+  to:
+    | '/'
+    | '/browse'
+    | '/concepts/$conceptId'
+    | '/study/$'
+    | '/concepts'
+    | '/study'
   id:
     | '__root__'
     | '/'
     | '/browse'
-    | '/study'
     | '/concepts/$conceptId'
+    | '/study/$'
     | '/concepts/'
+    | '/study/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   BrowseRoute: typeof BrowseRoute
-  StudyRoute: typeof StudyRoute
   ConceptsConceptIdRoute: typeof ConceptsConceptIdRoute
+  StudySplatRoute: typeof StudySplatRoute
   ConceptsIndexRoute: typeof ConceptsIndexRoute
+  StudyIndexRoute: typeof StudyIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/study': {
-      id: '/study'
-      path: '/study'
-      fullPath: '/study'
-      preLoaderRoute: typeof StudyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/browse': {
       id: '/browse'
       path: '/browse'
@@ -108,11 +124,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/study/': {
+      id: '/study/'
+      path: '/study'
+      fullPath: '/study/'
+      preLoaderRoute: typeof StudyIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/concepts/': {
       id: '/concepts/'
       path: '/concepts'
       fullPath: '/concepts/'
       preLoaderRoute: typeof ConceptsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/study/$': {
+      id: '/study/$'
+      path: '/study/$'
+      fullPath: '/study/$'
+      preLoaderRoute: typeof StudySplatRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/concepts/$conceptId': {
@@ -128,9 +158,10 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   BrowseRoute: BrowseRoute,
-  StudyRoute: StudyRoute,
   ConceptsConceptIdRoute: ConceptsConceptIdRoute,
+  StudySplatRoute: StudySplatRoute,
   ConceptsIndexRoute: ConceptsIndexRoute,
+  StudyIndexRoute: StudyIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

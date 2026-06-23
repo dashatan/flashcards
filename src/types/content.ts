@@ -55,18 +55,24 @@ export type NavEntry =
   | { type: "browse"; label: string }
   | { type: "concepts-index"; label: string };
 
-export interface StudySearch {
+export interface StudyLocation {
   part: string;
   section: string;
+  cardId: number | undefined;
+}
+
+export interface StudyFilters {
   shuffle: boolean;
   reviewOnly: boolean;
   status: "all" | FlashcardStatus;
   unreadConcepts: boolean;
-  cardId: number | undefined;
 }
+
+export interface StudySearch extends StudyLocation, StudyFilters {}
 
 export interface StudyReturnContext {
   cardId: number;
   isFlipped: boolean;
-  search: StudySearch;
+  location: StudyLocation;
+  filters: StudyFilters;
 }

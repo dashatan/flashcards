@@ -10,7 +10,6 @@ import {
   importProgress,
 } from "@/lib/db";
 import { setProgressLoaded } from "@/store/progressStore";
-import { DEFAULT_STUDY_SEARCH } from "@/lib/defaultStudySearch";
 
 export const Route = createRootRoute({
   component: RootLayout,
@@ -34,7 +33,6 @@ function RootLayout() {
             <div className="flex items-center gap-4">
               <Link
                 to="/study"
-                search={DEFAULT_STUDY_SEARCH}
                 className="text-lg font-semibold tracking-tight text-foreground"
               >
                 Knowledge Flashcards
@@ -42,7 +40,6 @@ function RootLayout() {
               <nav className="flex gap-3 text-sm">
                 <Link
                   to="/study"
-                  search={DEFAULT_STUDY_SEARCH}
                   className="text-muted hover:text-accent [&.active]:text-accent [&.active]:font-medium"
                 >
                   Study
