@@ -27,7 +27,7 @@ function RootLayout() {
   }, []);
 
   return (
-    <div className="flex min-h-full flex-col">
+    <div className="flex min-h-full flex-col flex-1">
       <header className="border-b border-border bg-surface px-4 py-3">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-3">
           <div className="space-y-1">
@@ -104,7 +104,7 @@ function RootLayout() {
           </div>
         </div>
       </header>
-      <main className="mx-auto flex w-full max-w-6xl flex-1 gap-6 px-4 py-6">
+      <main className="mx-auto flex w-full max-w-6xl min-h-0 flex-1 gap-6 px-4 py-6">
         <Outlet />
       </main>
     </div>

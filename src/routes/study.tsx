@@ -15,14 +15,12 @@ import {
   setFlipped,
   setReturnContext,
 } from "@/store/navigationStore";
-import {
-  progressStore,
-  updateFlashcardProgress,
-} from "@/store/progressStore";
+import { progressStore, updateFlashcardProgress } from "@/store/progressStore";
 import type { Flashcard, FlashcardStatus, StudySearch } from "@/types/content";
 
 export const Route = createFileRoute("/study")({
-  validateSearch: (search) => parseStudySearch(search as Record<string, unknown>),
+  validateSearch: (search) =>
+    parseStudySearch(search as Record<string, unknown>),
   component: StudyPage,
 });
 
@@ -196,19 +194,23 @@ function StudyPage() {
   };
 
   return (
-    <>
+    <div className="flex min-h-0 flex-1">
       <StudySidebar />
       <div className="flex min-w-0 flex-1 flex-col space-y-4">
         <div className="flex flex-wrap items-center gap-2">
           <select
             className="rounded-lg border border-border bg-surface px-3 py-2 text-sm"
             value={search.part}
-            onChange={(e) => updateSearch({ part: e.target.value, section: "" })}
+            onChange={(e) =>
+              updateSearch({ part: e.target.value, section: "" })
+            }
             aria-label="Filter by part"
           >
             <option value="">All parts</option>
             {(data?.parts ?? []).map((part) => (
-              <option key={part} value={part}>{part}</option>
+              <option key={part} value={part}>
+                {part}
+              </option>
             ))}
           </select>
           <select
@@ -219,10 +221,12 @@ function StudyPage() {
           >
             <option value="">All sections</option>
             {(search.part
-              ? data?.sections[search.part] ?? []
+              ? (data?.sections[search.part] ?? [])
               : [...new Set((data?.cards ?? []).map((c) => c.section))].sort()
             ).map((section) => (
-              <option key={section} value={section}>{section}</option>
+              <option key={section} value={section}>
+                {section}
+              </option>
             ))}
           </select>
           <select
@@ -261,7 +265,9 @@ function StudyPage() {
             <input
               type="checkbox"
               checked={search.unreadConcepts}
-              onChange={(e) => updateSearch({ unreadConcepts: e.target.checked })}
+              onChange={(e) =>
+                updateSearch({ unreadConcepts: e.target.checked })
+              }
             />
             Unread concepts
           </label>
@@ -269,17 +275,16 @@ function StudyPage() {
 
         {stats && (
           <p className="text-sm text-muted">
-            {stats.known} known · {stats.learning} learning · {stats.review} review · {stats.total} total
-            {deck.length > 0 && ` · Showing ${currentIndex + 1} of ${deck.length}`}
+            {stats.known} known · {stats.learning} learning · {stats.review}{" "}
+            review · {stats.total} total
+            {deck.length > 0 &&
+              ` · Showing ${currentIndex + 1} of ${deck.length}`}
           </p>
         )}
 
         {currentCard ? (
           <>
-            <FlashcardFlip
-              card={currentCard}
-              onToggleFlip={() => undefined}
-            />
+            <FlashcardFlip card={currentCard} onToggleFlip={() => undefined} />
             <div className="flex flex-wrap items-center justify-center gap-2">
               <button
                 type="button"
@@ -334,13 +339,12 @@ function StudyPage() {
         )}
 
         <p className="text-center text-xs text-muted">
-          <span className="kbd">←</span> <span className="kbd">→</span> navigate ·
-          <span className="kbd">Space</span> flip ·
-          <span className="kbd">K</span> known ·
-          <span className="kbd">L</span> learning ·
-          <span className="kbd">R</span> review
+          <span className="kbd">←</span> <span className="kbd">→</span> navigate
+          ·<span className="kbd">Space</span> flip ·
+          <span className="kbd">K</span> known ·<span className="kbd">L</span>{" "}
+          learning ·<span className="kbd">R</span> review
         </p>
       </div>
-    </>
+    </div>
   );
 }

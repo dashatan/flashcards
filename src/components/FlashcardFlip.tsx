@@ -31,7 +31,8 @@ export function FlashcardFlip({ card, onToggleFlip }: FlashcardFlipProps) {
   const prefetchConcept = (conceptId: string) => {
     queryClient.prefetchQuery({
       queryKey: contentKeys.concept(conceptId),
-      queryFn: () => import("@/lib/api").then((m) => m.fetchConceptDetail(conceptId)),
+      queryFn: () =>
+        import("@/lib/api").then((m) => m.fetchConceptDetail(conceptId)),
       staleTime: Infinity,
     });
   };
@@ -43,7 +44,11 @@ export function FlashcardFlip({ card, onToggleFlip }: FlashcardFlipProps) {
 
   const handleCardPointer = (event: MouseEvent | KeyboardEvent) => {
     const target = event.target as Element;
-    if (target.closest("a.concept-link, a.external-link, button, input, select, textarea")) {
+    if (
+      target.closest(
+        "a.concept-link, a.external-link, button, input, select, textarea",
+      )
+    ) {
       return;
     }
     handleFlip();
@@ -54,8 +59,8 @@ export function FlashcardFlip({ card, onToggleFlip }: FlashcardFlipProps) {
       <div
         role="button"
         tabIndex={0}
-        className="relative w-full cursor-pointer text-left"
-        onClick={handleCardPointer}
+        className="relative w-full text-left"
+        // onClick={handleCardPointer}
         onKeyDown={(event) => {
           if (event.key === "Enter" || event.key === " ") {
             event.preventDefault();
@@ -65,11 +70,11 @@ export function FlashcardFlip({ card, onToggleFlip }: FlashcardFlipProps) {
         aria-label="Flip card"
       >
         <div ref={cardInnerRef} className="card-inner w-full">
-          <div
-            className="card-face flex flex-col rounded-2xl border border-border bg-surface p-6 shadow-sm sm:p-8"
-          >
+          <div className="card-face flex flex-col rounded-2xl border border-border bg-surface p-6 shadow-sm sm:p-8">
             <div className="mb-3 flex items-start justify-between gap-2">
-              <p className="text-xs font-medium uppercase tracking-wide text-accent">{meta}</p>
+              <p className="text-xs font-medium uppercase tracking-wide text-accent">
+                {meta}
+              </p>
               <FlashcardStatusBadge status={status} />
             </div>
             <p className="mb-2 text-xs font-medium text-muted">Question</p>
@@ -85,11 +90,11 @@ export function FlashcardFlip({ card, onToggleFlip }: FlashcardFlipProps) {
             </p>
           </div>
 
-          <div
-            className="card-face card-back flex flex-col rounded-2xl border border-accent/30 bg-slate-900 p-6 text-slate-100 shadow-sm sm:p-8"
-          >
+          <div className="card-face card-back flex flex-col rounded-2xl border border-accent/30 bg-slate-900 p-6 text-slate-100 shadow-sm sm:p-8">
             <div className="mb-3 flex items-start justify-between gap-2">
-              <p className="text-xs font-medium uppercase tracking-wide text-indigo-300">{meta}</p>
+              <p className="text-xs font-medium uppercase tracking-wide text-indigo-300">
+                {meta}
+              </p>
               <FlashcardStatusBadge status={status} />
             </div>
             <p className="mb-2 text-xs font-medium text-slate-400">Answer</p>

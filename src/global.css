@@ -26,6 +26,12 @@
   --color-warning: var(--warning);
 }
 
+@layer utilities {
+  .flex-1 {
+    flex: 1 1 0;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #0f172a;
@@ -59,6 +65,17 @@ body {
     Roboto,
     sans-serif;
   -webkit-font-smoothing: antialiased;
+}
+
+.scrollbar-left {
+  transform: scaleX(-1);
+}
+* {
+  transition: all 0.3s ease-in-out;
+}
+
+.scrollbar-left > * {
+  transform: scaleX(-1);
 }
 
 .card-scene {
@@ -189,4 +206,30 @@ body {
   background: var(--surface-elevated);
   font-size: 0.75rem;
   font-family: monospace;
+}
+
+button {
+  cursor: pointer;
+}
+
+/** Custom scrollbar for dark mode */
+@media (prefers-color-scheme: dark) {
+  ::-webkit-scrollbar {
+    width: 12px;
+    background: var(--background);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--surface-elevated);
+    border-radius: 8px;
+    border: 2px solid var(--background);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--surface);
+  }
+
+  /* Firefox scrollbar styles */
+  * {
+    scrollbar-color: var(--surface-elevated) var(--background);
+    scrollbar-width: thin;
+  }
 }
